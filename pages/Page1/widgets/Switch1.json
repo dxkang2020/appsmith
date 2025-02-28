@@ -4,14 +4,21 @@
   "animateLoading": true,
   "bottomRow": 9,
   "boxShadow": "none",
-  "defaultSwitchState": true,
+  "defaultSwitchState": "{{Table1.selectedRow.status==\"published\"}}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
+    },
+    {
+      "key": "defaultSwitchState"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
-  "dynamicPropertyPathList": [],
+  "dynamicPropertyPathList": [
+    {
+      "key": "defaultSwitchState"
+    }
+  ],
   "dynamicTriggerPathList": [
     {
       "key": "onChange"

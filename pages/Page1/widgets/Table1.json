@@ -34,6 +34,7 @@
   "columnOrder": [
     "level",
     "course_number",
+    "status",
     "version",
     "analysis_report",
     "pbl_design",
@@ -44,11 +45,10 @@
     "review_vocab",
     "sentence_patterns",
     "grammar",
-    "version",
-    "status",
-    "EditActions1"
+    "EditActions1",
+    "score"
   ],
-  "columnUpdatedAt": 1740479172595,
+  "columnUpdatedAt": 1740729569945,
   "columnWidthMap": {
     "course_number": 86,
     "level": 84,
@@ -232,7 +232,7 @@
       "saveBorderRadius": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( (appsmith.theme.borderRadius.appBorderRadius)))}}",
       "saveButtonColor": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( (appsmith.theme.colors.primaryColor)))}}",
       "saveIconAlign": "left",
-      "sticky": "right",
+      "sticky": "",
       "thousandSeparator": true,
       "validation": {},
       "width": 150
@@ -618,7 +618,7 @@
       "menuItemsSource": "STATIC",
       "notation": "standard",
       "originalId": "status",
-      "sticky": "right",
+      "sticky": "",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
