@@ -1,0 +1,5 @@
+SELECT update_document_status(
+    {{Table1.selectedRow.level}},
+    {{Table1.selectedRow.course_number}},
+    {{Table1.selectedRow.version}}
+);

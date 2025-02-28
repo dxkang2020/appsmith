@@ -697,7 +697,7 @@
   "searchKey": "",
   "serverSidePaginationEnabled": false,
   "showInlineEditingOptionDropdown": true,
-  "tableData": "{{Query2.data}}",
+  "tableData": "{{Query2.data}} ",
   "textSize": "0.875rem",
   "topRow": 26,
   "totalRecordsCount": "{{Total_record_public_course_documents1.data[0].count}}",

@@ -38,7 +38,7 @@
   "mobileRightColumn": 13,
   "mobileTopRow": 0,
   "needsErrorInfo": false,
-  "onChange": "{{showModal(Modal1.name);}}",
+  "onChange": "{{update_status.run().then(() => {\n  JSObject2.Switch1onChange();\n});}}",
   "originalBottomRow": 9,
   "originalTopRow": 5,
   "parentColumnSpace": 11.27734375,

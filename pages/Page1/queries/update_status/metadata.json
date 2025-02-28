@@ -1,11 +1,11 @@
 {
   "gitSyncId": "67baa06d87c7c10451dabe89_d4eb3a67-54d6-4001-bf30-ddf0f612afb0",
-  "id": "Page1_Query1",
+  "id": "Page1_update_status",
   "pluginId": "postgres-plugin",
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT * FROM public.course_documents",
+      "body": "SELECT update_document_status(\n    {{Table1.selectedRow.level}},\n    {{Table1.selectedRow.course_number}},\n    {{Table1.selectedRow.version}}\n);",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
@@ -22,9 +22,13 @@
       "name": "runfox",
       "pluginId": "postgres-plugin"
     },
-    "dynamicBindingPathList": [],
+    "dynamicBindingPathList": [
+      {
+        "key": "body"
+      }
+    ],
     "executeOnLoad": false,
-    "name": "Query1",
+    "name": "update_status",
     "pageId": "Page1",
     "userSetOnLoad": false
   }
