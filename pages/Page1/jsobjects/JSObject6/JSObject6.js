@@ -1,6 +1,6 @@
 export default {
 
-	getMarkdown() { return "```json\n" + this.test() + "\n```"; },
+	getMarkdown() { return "```json\n" + this.test() + "\n``` \n"; },
 	test(){
 		return JSON.stringify(Table1.selectedRow.script_json,null,2)
 	},
