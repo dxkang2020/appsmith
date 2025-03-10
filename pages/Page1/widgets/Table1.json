@@ -45,10 +45,13 @@
     "review_vocab",
     "sentence_patterns",
     "grammar",
-    "EditActions1",
-    "score"
+    "score",
+    "script_json",
+    "scenes_prompt",
+    "cards_prompt",
+    "EditActions1"
   ],
-  "columnUpdatedAt": 1740729569945,
+  "columnUpdatedAt": 1741574800336,
   "columnWidthMap": {
     "course_number": 86,
     "level": 84,
@@ -107,21 +110,6 @@
       "key": "tableData"
     },
     {
-      "key": "primaryColumns.EditActions1.saveButtonColor"
-    },
-    {
-      "key": "primaryColumns.EditActions1.saveBorderRadius"
-    },
-    {
-      "key": "primaryColumns.EditActions1.discardBorderRadius"
-    },
-    {
-      "key": "primaryColumns.EditActions1.isSaveDisabled"
-    },
-    {
-      "key": "primaryColumns.EditActions1.isDiscardDisabled"
-    },
-    {
       "key": "primaryColumns.unit_title.computedValue"
     },
     {
@@ -135,6 +123,30 @@
     },
     {
       "key": "primaryColumns.grammar.computedValue"
+    },
+    {
+      "key": "primaryColumns.script_json.computedValue"
+    },
+    {
+      "key": "primaryColumns.scenes_prompt.computedValue"
+    },
+    {
+      "key": "primaryColumns.cards_prompt.computedValue"
+    },
+    {
+      "key": "primaryColumns.EditActions1.saveButtonColor"
+    },
+    {
+      "key": "primaryColumns.EditActions1.saveBorderRadius"
+    },
+    {
+      "key": "primaryColumns.EditActions1.discardBorderRadius"
+    },
+    {
+      "key": "primaryColumns.EditActions1.isSaveDisabled"
+    },
+    {
+      "key": "primaryColumns.EditActions1.isDiscardDisabled"
     }
   ],
   "dynamicPropertyPathList": [
@@ -216,14 +228,14 @@
       "id": "EditActions1",
       "index": 10,
       "isCellEditable": false,
-      "isCellVisible": false,
+      "isCellVisible": true,
       "isDerived": true,
       "isDisabled": false,
       "isDiscardDisabled": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( !Table1.updatedRowIndices.includes(currentIndex)))}}",
       "isDiscardVisible": true,
       "isEditable": false,
       "isSaveDisabled": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( !Table1.updatedRowIndices.includes(currentIndex)))}}",
-      "isSaveVisible": false,
+      "isSaveVisible": true,
       "isVisible": true,
       "label": "Save / Discard",
       "notation": "standard",
@@ -232,7 +244,7 @@
       "saveBorderRadius": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( (appsmith.theme.borderRadius.appBorderRadius)))}}",
       "saveButtonColor": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( (appsmith.theme.colors.primaryColor)))}}",
       "saveIconAlign": "left",
-      "sticky": "",
+      "sticky": "right",
       "thousandSeparator": true,
       "validation": {},
       "width": 150
@@ -262,6 +274,40 @@
       "notation": "standard",
       "originalId": "analysis_report",
       "sticky": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "cards_prompt": {
+      "alias": "cards_prompt",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
+      "columnType": "text",
+      "computedValue": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"cards_prompt\"]))}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "LEFT",
+      "id": "cards_prompt",
+      "index": 21,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "cards_prompt",
+      "notation": "standard",
+      "originalId": "cards_prompt",
+      "sticky": "",
+      "textColor": "",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
@@ -463,6 +509,40 @@
       "verticalAlignment": "CENTER",
       "width": 150
     },
+    "scenes_prompt": {
+      "alias": "scenes_prompt",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
+      "columnType": "text",
+      "computedValue": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"scenes_prompt\"]))}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "LEFT",
+      "id": "scenes_prompt",
+      "index": 20,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "scenes_prompt",
+      "notation": "standard",
+      "originalId": "scenes_prompt",
+      "sticky": "",
+      "textColor": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
     "score": {
       "alias": "score",
       "allowCellWrapping": false,
@@ -550,6 +630,40 @@
       "notation": "standard",
       "originalId": "screenplay_json",
       "sticky": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "script_json": {
+      "alias": "script_json",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
+      "columnType": "text",
+      "computedValue": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"script_json\"]))}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "LEFT",
+      "id": "script_json",
+      "index": 19,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "script_json",
+      "notation": "standard",
+      "originalId": "script_json",
+      "sticky": "",
+      "textColor": "",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},

@@ -1,7 +1,7 @@
 {
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
   "animateLoading": true,
-  "backgroundColor": "#FFFFFF",
+  "backgroundColor": "#ffffff",
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": 1,
@@ -10,7 +10,7 @@
   "children": [
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-      "bottomRow": 860,
+      "bottomRow": 810,
       "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
       "canExtend": true,
       "detachFromLayout": true,
@@ -100,8 +100,9 @@
       "widgetName": "Canvas3"
     },
     {
+      "backgroundColor": "#ef4444",
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-      "bottomRow": 880,
+      "bottomRow": 840,
       "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
       "canExtend": false,
       "containerStyle": "none",
@@ -130,12 +131,15 @@
       "mobileRightColumn": 776.25,
       "mobileTopRow": 1,
       "needsErrorInfo": false,
+      "originalBottomRow": 810,
+      "originalTopRow": 1,
       "parentColumnSpace": 1,
       "parentId": "a9o1qzt281",
       "parentRowSpace": 1,
       "renderMode": "CANVAS",
       "responsiveBehavior": "fill",
       "rightColumn": 776.25,
+      "shouldScrollContents": true,
       "tabId": "tabwhdw0008p1",
       "tabName": "课程分析",
       "topRow": 1,
@@ -188,6 +192,96 @@
       "version": 1,
       "widgetId": "yryfdkx3s5",
       "widgetName": "Canvas7"
+    },
+    {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "bottomRow": 830,
+      "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+      "canExtend": false,
+      "containerStyle": "none",
+      "detachFromLayout": true,
+      "dynamicBindingPathList": [
+        {
+          "key": "borderRadius"
+        },
+        {
+          "key": "boxShadow"
+        }
+      ],
+      "dynamicHeight": "AUTO_HEIGHT",
+      "dynamicTriggerPathList": [],
+      "flexLayers": [],
+      "isLoading": false,
+      "isVisible": true,
+      "key": "2jk5zayald",
+      "leftColumn": 0,
+      "maxDynamicHeight": 9000,
+      "minDynamicHeight": 4,
+      "minHeight": 850,
+      "minWidth": 450,
+      "mobileBottomRow": 851,
+      "mobileLeftColumn": 0,
+      "mobileRightColumn": 776.25,
+      "mobileTopRow": 1,
+      "needsErrorInfo": false,
+      "parentColumnSpace": 1,
+      "parentId": "a9o1qzt281",
+      "parentRowSpace": 1,
+      "renderMode": "CANVAS",
+      "responsiveBehavior": "fill",
+      "rightColumn": 776.25,
+      "tabId": "tabm3ksrf1g3g",
+      "tabName": "Scenes",
+      "topRow": 1,
+      "type": "CANVAS_WIDGET",
+      "version": 1,
+      "widgetId": "zpzephcepu",
+      "widgetName": "Canvas8"
+    },
+    {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "bottomRow": 840,
+      "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+      "canExtend": false,
+      "containerStyle": "none",
+      "detachFromLayout": true,
+      "dynamicBindingPathList": [
+        {
+          "key": "borderRadius"
+        },
+        {
+          "key": "boxShadow"
+        }
+      ],
+      "dynamicHeight": "AUTO_HEIGHT",
+      "dynamicTriggerPathList": [],
+      "flexLayers": [],
+      "isLoading": false,
+      "isVisible": true,
+      "key": "2jk5zayald",
+      "leftColumn": 0,
+      "maxDynamicHeight": 9000,
+      "minDynamicHeight": 4,
+      "minHeight": 850,
+      "minWidth": 450,
+      "mobileBottomRow": 851,
+      "mobileLeftColumn": 0,
+      "mobileRightColumn": 776.25,
+      "mobileTopRow": 1,
+      "needsErrorInfo": false,
+      "parentColumnSpace": 1,
+      "parentId": "a9o1qzt281",
+      "parentRowSpace": 1,
+      "renderMode": "CANVAS",
+      "responsiveBehavior": "fill",
+      "rightColumn": 776.25,
+      "tabId": "tab5ncrs0yc79",
+      "tabName": "Cards",
+      "topRow": 1,
+      "type": "CANVAS_WIDGET",
+      "version": 1,
+      "widgetId": "0d63vzcv2n",
+      "widgetName": "Canvas9"
     }
   ],
   "defaultTab": "剧本",
@@ -202,8 +296,17 @@
       "key": "boxShadow"
     }
   ],
-  "dynamicHeight": "AUTO_HEIGHT",
-  "dynamicTriggerPathList": [],
+  "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "onTabSelected"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onTabSelected"
+    }
+  ],
   "flexVerticalAlignment": "stretch",
   "isCanvas": true,
   "isLoading": false,
@@ -211,13 +314,14 @@
   "key": "g02js3j4dt",
   "leftColumn": 19,
   "maxDynamicHeight": 9000,
-  "minDynamicHeight": 15,
+  "minDynamicHeight": 10,
   "minWidth": 450,
   "mobileBottomRow": 25,
   "mobileLeftColumn": 0,
   "mobileRightColumn": 7,
   "mobileTopRow": 10,
   "needsErrorInfo": false,
+  "onTabSelected": "",
   "originalBottomRow": 91,
   "originalTopRow": 6,
   "parentColumnSpace": 17.25,
@@ -246,6 +350,13 @@
       "label": "剧本",
       "widgetId": "yryfdkx3s5"
     },
+    "tab5ncrs0yc79": {
+      "id": "tab5ncrs0yc79",
+      "index": 5,
+      "isVisible": true,
+      "label": "Cards",
+      "widgetId": "0d63vzcv2n"
+    },
     "tabk9fhsl2fhi": {
       "id": "tabk9fhsl2fhi",
       "index": 1,
@@ -253,6 +364,13 @@
       "isVisible": true,
       "label": "PBL",
       "widgetId": "yc2rh3yqim"
+    },
+    "tabm3ksrf1g3g": {
+      "id": "tabm3ksrf1g3g",
+      "index": 4,
+      "isVisible": true,
+      "label": "Scenes",
+      "widgetId": "zpzephcepu"
     },
     "tabwhdw0008p1": {
       "id": "tabwhdw0008p1",

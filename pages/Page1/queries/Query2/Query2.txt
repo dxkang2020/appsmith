@@ -12,7 +12,11 @@ SELECT
     d.screenplay,
     d.screenplay_json,
     d.status,
-    d.score
+    d.score,
+		d.script_json,
+		d.scenes_prompt,
+		d.cards_prompt
+
 FROM course_outlines o
 LEFT JOIN course_documents d 
     ON o.level = d.level 
@@ -21,11 +25,11 @@ WHERE
     ({{Select1.selectedOptionValue}} = 'all' OR o.level = {{Select1.selectedOptionValue}})
     AND ({{Input1.text}} = '' OR o.course_number = {{Input1.text}})
     AND ({{Select2.selectedOptionValue}} = 'all' OR d.status = 
-        CASE 
-            WHEN {{Select2.selectedOptionValue}} = 'draft' THEN 'draft'
-            WHEN {{Select2.selectedOptionValue}} = 'release' THEN 'published'
-            ELSE d.status
-        END)
+				 CASE 
+				 WHEN {{Select2.selectedOptionValue}} = 'draft' THEN 'draft'
+				 WHEN {{Select2.selectedOptionValue}} = 'release' THEN 'published'
+				 ELSE d.status
+				 END)
 ORDER BY 
     CASE 
         WHEN o.level = 'starters' THEN 1
