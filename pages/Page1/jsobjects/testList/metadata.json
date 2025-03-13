@@ -1,0 +1,16 @@
+{
+  "gitSyncId": "67bed107a0c78065eecac2b6_4d6866e5-bcf5-46e3-a7ec-71e0ce04c44a",
+  "id": "Page1_testList",
+  "unpublishedCollection": {
+    "name": "testList",
+    "pageId": "Page1",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "appList",
+        "value": "[{\n  \"id\": \"001\",\n  \"name\": \"Blue\",\n  \"img\": \"https://assets.appsmith.com/widgets/default.png\"\n}, {\n  \"id\": \"002\",\n  \"name\": \"Green\",\n  \"img\": \"https://assets.appsmith.com/widgets/default.png\"\n}, {\n  \"id\": \"003\",\n  \"name\": \"Red\",\n  \"img\": \"https://assets.appsmith.com/widgets/default.png\"\n}]"
+      }
+    ]
+  }
+}

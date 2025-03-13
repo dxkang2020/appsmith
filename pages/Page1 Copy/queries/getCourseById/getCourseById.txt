@@ -1,0 +1,1 @@
+SELECT scenes_prompt,cards_prompt FROM public."course_documents" WHERE id = {{this.params.id}} LIMIT 10;

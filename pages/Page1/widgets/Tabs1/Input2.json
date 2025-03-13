@@ -21,6 +21,9 @@
   "dynamicTriggerPathList": [
     {
       "key": "onTextChanged"
+    },
+    {
+      "key": "onBlur"
     }
   ],
   "iconAlign": "left",
@@ -45,6 +48,7 @@
   "mobileRightColumn": 20,
   "mobileTopRow": 0,
   "needsErrorInfo": false,
+  "onBlur": "{{Tab.onTabSelectChanged();}}",
   "onTextChanged": "{{JSObject4.Input2onTextChanged();}}",
   "parentColumnSpace": 11.81640625,
   "parentId": "yryfdkx3s5",

@@ -3,7 +3,7 @@
   "animateLoading": true,
   "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 80,
+  "bottomRow": 75,
   "boxShadow": "none",
   "defaultText": "{{JSON.stringify(Table1.selectedRow.scenes_prompt,null,2)}}",
   "dynamicBindingPathList": [
@@ -56,7 +56,7 @@
   "shouldAllowAutofill": false,
   "shouldScrollContents": true,
   "showStepArrows": false,
-  "topRow": 1,
+  "topRow": 0,
   "type": "INPUT_WIDGET_V2",
   "version": 2,
   "widgetId": "3w9861rr1z",

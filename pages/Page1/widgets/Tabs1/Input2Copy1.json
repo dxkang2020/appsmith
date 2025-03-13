@@ -3,7 +3,7 @@
   "animateLoading": true,
   "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 80,
+  "bottomRow": 1968,
   "boxShadow": "none",
   "defaultText": "{{JSON.stringify(Table1.selectedRow.script_json,null,2)}}\n",
   "dynamicBindingPathList": [
@@ -17,7 +17,7 @@
       "key": "defaultText"
     }
   ],
-  "dynamicHeight": "FIXED",
+  "dynamicHeight": "AUTO_HEIGHT",
   "dynamicTriggerPathList": [
     {
       "key": "onTextChanged"
@@ -46,6 +46,8 @@
   "mobileTopRow": 0,
   "needsErrorInfo": false,
   "onTextChanged": "",
+  "originalBottomRow": 1968,
+  "originalTopRow": 1,
   "parentColumnSpace": 11.81640625,
   "parentId": "qv0p77aqd4",
   "parentRowSpace": 10,
