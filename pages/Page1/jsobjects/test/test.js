@@ -4,11 +4,11 @@ export default {
 	async testImg () {
 		//	write code here
 		//	this.myVar1 = [1,2,3]
-		await getImage.run({path:"/images/tests/2.jpeg"})
-		console.log(getImage.data)
-		await uploadImage.run({path:"/images/tests/5.jpeg",
-													 "data":getImage.data,
-													 "contentType":"image/jpeg"
+		await getImage.run({path:"/images/tests/7.jpeg"})
+		console.log("Content-Type",getImage.responseMeta.headers["Content-Type"])
+		await uploadImage.run({path:"/images/tests/6.png",
+													 "data":atob(getImage.data),
+													 "contentType":"image/png"
 													})
 	},
 	async myFun2 () {

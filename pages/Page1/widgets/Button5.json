@@ -15,7 +15,11 @@
       "key": "borderRadius"
     }
   ],
-  "dynamicPropertyPathList": [],
+  "dynamicPropertyPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
   "dynamicTriggerPathList": [
     {
       "key": "onClick"
@@ -33,7 +37,7 @@
   "mobileRightColumn": 64,
   "mobileTopRow": 5,
   "needsErrorInfo": false,
-  "onClick": "{{Query3.run().then(() => {\n  JSObject5.Button5onClick();\n});}}",
+  "onClick": "",
   "originalBottomRow": 6,
   "originalTopRow": 2,
   "parentColumnSpace": 17.25,

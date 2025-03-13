@@ -19,6 +19,13 @@ export default {
 		else
 			Button5.setVisibility(false)
 	},
+  onBtnClick(){
+		if(Tabs1.selectedTab == "剧本")
+			Query3.run()
+		else if(Tabs1.selectedTab == "Json"){
+			
+		}
+	},
 	onPlayBlur(){
 
 	},

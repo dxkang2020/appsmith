@@ -45,13 +45,13 @@ export default {
 	async upload(){
 		let data = FilePicker1.files[0].data
 
-		uploadImageCopy.run({path:"/images/tests/6.jpeg"
-												})
-		await Api9.run({path:"/images/tests/7.jpeg",
-										data,
-										"contentType":"image/jpeg"
-									 })
-		this.upload1("/images/tests/8.jpeg",data)
+		// uploadImageCopy.run({path:"/images/tests/6.jpeg"
+		// })
+		await uploadImage.run({path:"/images/tests/7.jpeg",
+													 data,
+													 "contentType":"image/jpeg"
+													})
+		// this.upload1("/images/tests/8.jpeg",data)
 	},
 	async myFun2 () {
 		//	use async-await or promises
