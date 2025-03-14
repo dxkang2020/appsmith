@@ -30,18 +30,18 @@
       "queryParameters": [
         {
           "key": "level",
-          "value": "starters"
+          "value": "movers"
         },
         {
           "key": "course_number",
-          "value": "1.1"
+          "value": "26.1"
         },
         {
           "key": "version",
-          "value": "0303090341"
+          "value": "0228010236"
         }
       ],
-      "timeoutInMillisecond": 10000
+      "timeoutInMillisecond": 70000
     },
     "confirmBeforeExecute": false,
     "datasource": {

@@ -19,9 +19,9 @@ export default {
 													})
 
 		if(Table1.selectedRow.cards_prompt[item.sceneName].clip != this.listItems[index].clip){
-			let scenes_prompt = JSON.parse(JSON.stringify(Table1.selectedRow.cards_prompt));
-			updateScene.run({scenes_prompt})
-			scenes_prompt[item.sceneName].clip = this.listItems[index].clip;
+			let cards_prompt = JSON.parse(JSON.stringify(Table1.selectedRow.cards_prompt));
+			updateScene.run({cards_prompt})
+			cards_prompt[item.sceneName].clip = this.listItems[index].clip;
 
 
 		}
