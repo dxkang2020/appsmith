@@ -18,12 +18,17 @@ export default {
 		}
 		else
 			Button5.setVisibility(false)
+		if(Tabs1.selectedTab == "Scenes"){
+			scenesList.getNewList()
+		}else if(Tabs1.selectedTab == "Cards"){
+			cardLsit.getNewList()
+		}
 	},
-  onBtnClick(){
+	onBtnClicked(){
 		if(Tabs1.selectedTab == "剧本")
 			Query3.run()
 		else if(Tabs1.selectedTab == "Json"){
-			
+
 		}
 	},
 	onPlayBlur(){

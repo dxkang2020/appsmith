@@ -5,12 +5,12 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": 1,
-  "bottomRow": 153,
+  "bottomRow": 175,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "children": [
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-      "bottomRow": 1410,
+      "bottomRow": 19680,
       "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
       "canExtend": true,
       "detachFromLayout": true,
@@ -56,7 +56,7 @@
     },
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-      "bottomRow": 1410,
+      "bottomRow": 1630,
       "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
       "canExtend": false,
       "containerStyle": "none",
@@ -102,7 +102,7 @@
     {
       "backgroundColor": "#ef4444",
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-      "bottomRow": 1410,
+      "bottomRow": 1630,
       "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
       "canExtend": false,
       "containerStyle": "none",
@@ -150,7 +150,7 @@
     },
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-      "bottomRow": 1410,
+      "bottomRow": 1630,
       "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
       "canExtend": false,
       "containerStyle": "none",
@@ -195,7 +195,7 @@
     },
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-      "bottomRow": 1410,
+      "bottomRow": 1630,
       "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
       "canExtend": false,
       "containerStyle": "none",
@@ -240,7 +240,7 @@
     },
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-      "bottomRow": 1410,
+      "bottomRow": 1630,
       "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
       "canExtend": false,
       "containerStyle": "none",
@@ -282,52 +282,6 @@
       "version": 1,
       "widgetId": "0d63vzcv2n",
       "widgetName": "Canvas9"
-    },
-    {
-      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-      "bottomRow": 1410,
-      "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
-      "canExtend": false,
-      "containerStyle": "none",
-      "detachFromLayout": true,
-      "dynamicBindingPathList": [
-        {
-          "key": "borderRadius"
-        },
-        {
-          "key": "boxShadow"
-        }
-      ],
-      "dynamicHeight": "AUTO_HEIGHT",
-      "dynamicPropertyPathList": [],
-      "dynamicTriggerPathList": [],
-      "flexLayers": [],
-      "isLoading": false,
-      "isVisible": true,
-      "key": "vxad2mph74",
-      "leftColumn": 0,
-      "maxDynamicHeight": 9000,
-      "minDynamicHeight": 4,
-      "minHeight": 850,
-      "minWidth": 450,
-      "mobileBottomRow": 851,
-      "mobileLeftColumn": 0,
-      "mobileRightColumn": 776.25,
-      "mobileTopRow": 1,
-      "needsErrorInfo": false,
-      "parentColumnSpace": 1,
-      "parentId": "a9o1qzt281",
-      "parentRowSpace": 1,
-      "renderMode": "CANVAS",
-      "responsiveBehavior": "fill",
-      "rightColumn": 776.25,
-      "tabId": "tabzdsbibg7tv",
-      "tabName": "test",
-      "topRow": 1,
-      "type": "CANVAS_WIDGET",
-      "version": 1,
-      "widgetId": "zmpu0sk9m6",
-      "widgetName": "Canvas10"
     }
   ],
   "defaultTab": "剧本",
@@ -364,7 +318,7 @@
   "mobileTopRow": 10,
   "needsErrorInfo": false,
   "onTabSelected": "{{Tab.onTabSelectChanged()}}",
-  "originalBottomRow": 153,
+  "originalBottomRow": 175,
   "originalTopRow": 8,
   "parentColumnSpace": 17.25,
   "parentId": "0",
@@ -421,13 +375,6 @@
       "isVisible": true,
       "label": "课程分析",
       "widgetId": "zsbqtcw0jp"
-    },
-    "tabzdsbibg7tv": {
-      "id": "tabzdsbibg7tv",
-      "index": 6,
-      "isVisible": true,
-      "label": "test",
-      "widgetId": "zmpu0sk9m6"
     }
   },
   "topRow": 8,

@@ -32,6 +32,8 @@
   "mobileTopRow": 14,
   "needsErrorInfo": false,
   "onClick": "{{Query2.run()}}",
+  "originalBottomRow": 9,
+  "originalTopRow": 5,
   "parentColumnSpace": 17.25,
   "parentId": "0",
   "parentRowSpace": 10,

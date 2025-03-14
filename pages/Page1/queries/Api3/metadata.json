@@ -30,10 +30,10 @@
       "queryParameters": [
         {
           "key": "prompt",
-          "value": ""
+          "value": "{{this.params.clip}}"
         }
       ],
-      "timeoutInMillisecond": 10000
+      "timeoutInMillisecond": 20000
     },
     "confirmBeforeExecute": false,
     "datasource": {
@@ -42,7 +42,14 @@
       "name": "Untitled datasource 2",
       "pluginId": "restapi-plugin"
     },
-    "dynamicBindingPathList": [],
+    "dynamicBindingPathList": [
+      {
+        "key": "path"
+      },
+      {
+        "key": "queryParameters[0].value"
+      }
+    ],
     "executeOnLoad": false,
     "name": "Api3",
     "pageId": "Page1",
