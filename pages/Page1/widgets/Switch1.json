@@ -17,6 +17,9 @@
   "dynamicPropertyPathList": [
     {
       "key": "defaultSwitchState"
+    },
+    {
+      "key": "onChange"
     }
   ],
   "dynamicTriggerPathList": [
@@ -26,7 +29,7 @@
   ],
   "isDisabled": false,
   "isLoading": false,
-  "isVisible": false,
+  "isVisible": true,
   "key": "h4sf52any4",
   "label": "定稿",
   "labelPosition": "Right",
@@ -38,7 +41,7 @@
   "mobileRightColumn": 13,
   "mobileTopRow": 0,
   "needsErrorInfo": false,
-  "onChange": "{{update_status.run().then(() => {\n  JSObject2.Switch1onChange();\n});}}",
+  "onChange": "{{JSObject2.Switch1onChange()}}",
   "originalBottomRow": 4,
   "originalTopRow": 0,
   "parentColumnSpace": 11.27734375,
@@ -46,7 +49,7 @@
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 30,
+  "rightColumn": 24,
   "topRow": 0,
   "type": "SWITCH_WIDGET",
   "version": 1,

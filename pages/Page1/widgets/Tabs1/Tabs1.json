@@ -321,7 +321,7 @@
       "responsiveBehavior": "fill",
       "rightColumn": 741.75,
       "tabId": "tab2749m9u5yr",
-      "tabName": "Sound",
+      "tabName": "Sounds",
       "topRow": 1,
       "type": "CANVAS_WIDGET",
       "version": 1,
@@ -387,7 +387,7 @@
       "id": "tab2749m9u5yr",
       "index": 6,
       "isVisible": true,
-      "label": "Sound",
+      "label": "Sounds",
       "widgetId": "x1qs5y2yha"
     },
     "tab2x3e90bu6u": {
