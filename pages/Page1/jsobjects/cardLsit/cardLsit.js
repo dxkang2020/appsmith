@@ -1,8 +1,14 @@
 export default {
 	myVar1: [],
 	myVar2: {},
-	isShowBtn:true,
-
+	isShowBtn:false,
+	// testbtn(){
+	// this.isShowBtn =true
+	// Button6.setLabel('加载中')
+	// setTimeout(()=>{
+	// this.isShowBtn =false
+	// },8000)
+	// },
 	changeImg(){
 		showAlert(
 			'选中图片',
@@ -39,17 +45,21 @@ export default {
 
 	// 生成图片事件
 	async getAIIMG(currentIndex,item){
-
-
+		this.isShowBtn = true
 		if(this.isShowBtn){
-			this.isShowBtn = false
+
 			await Api3.run(item).then((res)=>{
 
 				this.listItems[currentIndex].ImgURL =  'data:image/png;base64,' + res
-				this.isShowBtn = true
+				this.isShowBtn = false
+				console.log(this.isShowBtn,'hhaa')
+
+				this.imgP =  'data:image/png;base64,' + res
+				showModal(Modal3.name)
+
 			}).catch((err) =>{
 				console.log(err)
-				this.isShowBtn = true
+				this.isShowBtn = false
 			})
 		}
 		// storeValue('isShowBtn',true)

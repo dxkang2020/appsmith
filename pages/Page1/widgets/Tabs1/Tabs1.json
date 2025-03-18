@@ -10,7 +10,7 @@
   "children": [
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-      "bottomRow": 19680,
+      "bottomRow": 19660,
       "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
       "canExtend": true,
       "detachFromLayout": true,
@@ -282,6 +282,51 @@
       "version": 1,
       "widgetId": "0d63vzcv2n",
       "widgetName": "Canvas9"
+    },
+    {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "bottomRow": 1630,
+      "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+      "canExtend": false,
+      "containerStyle": "none",
+      "detachFromLayout": true,
+      "dynamicBindingPathList": [
+        {
+          "key": "borderRadius"
+        },
+        {
+          "key": "boxShadow"
+        }
+      ],
+      "dynamicHeight": "AUTO_HEIGHT",
+      "dynamicTriggerPathList": [],
+      "flexLayers": [],
+      "isLoading": false,
+      "isVisible": true,
+      "key": "icjmj8szme",
+      "leftColumn": 0,
+      "maxDynamicHeight": 9000,
+      "minDynamicHeight": 4,
+      "minHeight": 1670,
+      "minWidth": 450,
+      "mobileBottomRow": 1671,
+      "mobileLeftColumn": 0,
+      "mobileRightColumn": 741.75,
+      "mobileTopRow": 1,
+      "needsErrorInfo": false,
+      "parentColumnSpace": 1,
+      "parentId": "a9o1qzt281",
+      "parentRowSpace": 1,
+      "renderMode": "CANVAS",
+      "responsiveBehavior": "fill",
+      "rightColumn": 741.75,
+      "tabId": "tab2749m9u5yr",
+      "tabName": "Sound",
+      "topRow": 1,
+      "type": "CANVAS_WIDGET",
+      "version": 1,
+      "widgetId": "x1qs5y2yha",
+      "widgetName": "Canvas11"
     }
   ],
   "defaultTab": "剧本",
@@ -337,6 +382,13 @@
       "label": "Json",
       "positioning": "vertical",
       "widgetId": "qv0p77aqd4"
+    },
+    "tab2749m9u5yr": {
+      "id": "tab2749m9u5yr",
+      "index": 6,
+      "isVisible": true,
+      "label": "Sound",
+      "widgetId": "x1qs5y2yha"
     },
     "tab2x3e90bu6u": {
       "id": "tab2x3e90bu6u",

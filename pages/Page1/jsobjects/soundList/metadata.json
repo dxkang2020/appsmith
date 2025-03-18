@@ -1,0 +1,20 @@
+{
+  "gitSyncId": "67bed107a0c78065eecac2b6_672dd70d-9072-4453-8085-88ec03058d27",
+  "id": "Page1_soundList",
+  "unpublishedCollection": {
+    "name": "soundList",
+    "pageId": "Page1",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "jsonArr",
+        "value": "Table1.selectedRow.script_json.scripts"
+      },
+      {
+        "name": "textArr",
+        "value": "[{\n  \"step\": \"#1\",\n  \"task\": \"Drop a table\",\n  \"status\": \"approved\"\n}, {\n  \"step\": \"#2\",\n  \"task\": \"Create a query fetch_users with the Mock DB\",\n  \"status\": \"pending\"\n}, {\n  \"step\": \"#3\",\n  \"task\": \"Bind the query using => fetch_users.data\",\n  \"status\": \"pending\"\n}]"
+      }
+    ]
+  }
+}

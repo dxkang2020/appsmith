@@ -6,7 +6,11 @@
   "buttonColor": "#22c55e",
   "buttonVariant": "SECONDARY",
   "disabledWhenInvalid": false,
-  "dynamicBindingPathList": [],
+  "dynamicBindingPathList": [
+    {
+      "key": "isDisabled"
+    }
+  ],
   "dynamicHeight": "FIXED",
   "dynamicPropertyPathList": [
     {
@@ -14,6 +18,9 @@
     },
     {
       "key": "animateLoading"
+    },
+    {
+      "key": "isDisabled"
     }
   ],
   "dynamicTriggerPathList": [
@@ -22,7 +29,7 @@
     }
   ],
   "isDefaultClickDisabled": true,
-  "isDisabled": false,
+  "isDisabled": "{{scenesList.isShowBtn}}",
   "isLoading": false,
   "isVisible": true,
   "key": "hd8wbvjuqy",

@@ -37,7 +37,7 @@
   "mobileRightColumn": 64,
   "mobileTopRow": 5,
   "needsErrorInfo": false,
-  "onClick": "",
+  "onClick": "{{Tab.onBtnClicked()}}",
   "originalBottomRow": 6,
   "originalTopRow": 2,
   "parentColumnSpace": 17.25,

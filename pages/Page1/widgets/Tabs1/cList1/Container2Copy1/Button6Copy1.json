@@ -1,19 +1,23 @@
 {
-  "animateLoading": "",
+  "animateLoading": true,
   "borderRadius": "1.5rem",
   "bottomRow": 24,
   "boxShadow": "0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)",
   "buttonColor": "#22c55e",
   "buttonVariant": "SECONDARY",
   "disabledWhenInvalid": false,
-  "dynamicBindingPathList": [],
+  "dynamicBindingPathList": [
+    {
+      "key": "isDisabled"
+    }
+  ],
   "dynamicHeight": "FIXED",
   "dynamicPropertyPathList": [
     {
       "key": "onClick"
     },
     {
-      "key": "animateLoading"
+      "key": "isDisabled"
     }
   ],
   "dynamicTriggerPathList": [
@@ -22,7 +26,7 @@
     }
   ],
   "isDefaultClickDisabled": true,
-  "isDisabled": false,
+  "isDisabled": "{{cardLsit.isShowBtn}}",
   "isLoading": false,
   "isVisible": true,
   "key": "hd8wbvjuqy",

@@ -24,10 +24,35 @@ export default {
 			cardLsit.getNewList()
 		}
 	},
+	onTestClicked(){
+		console.log("gen json")
+		let version = Table1.selectedRow.version
+		let level = Table1.selectedRow.level
+		let course_number = Table1.selectedRow.course_number
+		let course = Table1.selectedRow.script_json
+		let scenes =Table1.selectedRow.scenes_prompt
+		let cards = Table1.selectedRow.cards_prompt
+
+		// n8Json.run({course_number,version,level})
+		// n8JsonTest.run({course_number,version,level})
+		n8Gen.run({course_number,version,level,course,scenes,cards})
+	},
 	onBtnClicked(){
+		console.log("onBtnClicked")
 		if(Tabs1.selectedTab == "剧本")
 			Query3.run()
 		else if(Tabs1.selectedTab == "Json"){
+			console.log("gen json")
+			let version = Table1.selectedRow.version
+			let level = Table1.selectedRow.level
+			let course_number = Table1.selectedRow.course_number
+			let course = btoa(JSON.stringify(Table1.selectedRow.script_json))
+			let scenes = btoa(JSON.stringify(Table1.selectedRow.scenes_prompt))
+			let cards = btoa(JSON.stringify(Table1.selectedRow.cards_prompt))
+
+			// n8Json.run({course_number,version,level})
+			n8JsonTest.run({course_number,version,level})
+			// n8Gen.run({course_number,version,level,course,scenes,cards})
 
 		}
 	},

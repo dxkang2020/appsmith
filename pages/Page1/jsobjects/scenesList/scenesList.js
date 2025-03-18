@@ -1,5 +1,5 @@
 export default {
-	isShowBtn:true,
+	isShowBtn:false,
 
 	changeImg(){
 		showAlert(
@@ -37,16 +37,18 @@ export default {
 
 	// 生成图片事件
 	async getAIIMG(currentIndex,item){
-		console.log('123',this.isShowBtn)
+		// console.log('123',this.isShowBtn)
+		this.isShowBtn = true
+
 		if(this.isShowBtn){
-			this.isShowBtn = false
 			await Api4.run(item).then((res)=>{
+				this.isShowBtn = false
 
 				this.listItems[currentIndex].ImgURL =  'data:image/png;base64,' + res
-				this.isShowBtn = true
 			}).catch((err) =>{
 				console.log(err)
-				this.isShowBtn = true
+				this.isShowBtn = false
+
 			})
 		}
 		// storeValue('isShowBtn',true)

@@ -1,6 +1,15 @@
 export default {
 	Switch1onChange () {
-		Query2.run()//	write code here
-		
+		console.log("Switch1onChange")
+		update_status.run().then(v =>{
+			console.log("success!")
+			Query2.run()
+		}).catch(e=>{
+			console.log("eeee:",e)
+			Switch1.setValue(false)
+			showAlert(update_status.data)
+		})
+		//	write code here
+
 	}
 }

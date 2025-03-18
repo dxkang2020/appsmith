@@ -1,6 +1,6 @@
 {
-  "gitSyncId": "67bed107a0c78065eecac2b6_94e7a972-11b1-432f-8cba-ffa1ffcacd1c",
-  "id": "Page1_n8JsonCopy",
+  "gitSyncId": "67bed107a0c78065eecac2b6_4b73ec9d-1c94-48fa-af35-ddaff20e6271",
+  "id": "Page1_n8JsonTest",
   "pluginId": "restapi-plugin",
   "pluginType": "API",
   "unpublishedAction": {
@@ -30,15 +30,15 @@
       "queryParameters": [
         {
           "key": "level",
-          "value": "movers"
+          "value": "{{this.params.level}}"
         },
         {
           "key": "course_number",
-          "value": "26.1"
+          "value": "{{this.params.course_number}}"
         },
         {
           "key": "version",
-          "value": "0228010236"
+          "value": "{{this.params.version}}"
         }
       ],
       "timeoutInMillisecond": 70000
@@ -50,9 +50,22 @@
       "name": "n8",
       "pluginId": "restapi-plugin"
     },
-    "dynamicBindingPathList": [],
+    "dynamicBindingPathList": [
+      {
+        "key": "path"
+      },
+      {
+        "key": "queryParameters[0].value"
+      },
+      {
+        "key": "queryParameters[1].value"
+      },
+      {
+        "key": "queryParameters[2].value"
+      }
+    ],
     "executeOnLoad": false,
-    "name": "n8JsonCopy",
+    "name": "n8JsonTest",
     "pageId": "Page1",
     "userSetOnLoad": false
   }
