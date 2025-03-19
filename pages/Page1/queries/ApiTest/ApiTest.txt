@@ -1,0 +1,15 @@
+{
+	"course_number": "1.1",
+	"level": "starters",
+	"overwrite":false,
+	"course": {
+		"scripts": [
+			{
+				"character": "mrs_clove",
+				"text": "Good morning, <player>!"
+			}
+		]
+	},
+	"cards": "",
+	"scenes": ""
+}

@@ -24,6 +24,14 @@ export default {
 			cardLsit.getNewList()
 		}
 	},
+	onGenRes(){
+		let level = Table1.selectedRow.level
+		let course_number = Table1.selectedRow.course_number
+		let course = Table1.selectedRow.script_json
+		let scenes =Table1.selectedRow.scenes_prompt
+		let cards = Table1.selectedRow.cards_prompt
+		GenResource.run({course_number,level,course,scenes,cards})
+	},
 	onTestClicked(){
 		console.log("gen json")
 		let version = Table1.selectedRow.version

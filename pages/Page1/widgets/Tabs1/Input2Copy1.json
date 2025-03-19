@@ -3,7 +3,7 @@
   "animateLoading": true,
   "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 1966,
+  "bottomRow": 1405,
   "boxShadow": "none",
   "defaultText": "{{JSON.stringify(Table1.selectedRow.script_json,null,2)}}\n",
   "dynamicBindingPathList": [
@@ -46,7 +46,7 @@
   "mobileTopRow": 0,
   "needsErrorInfo": false,
   "onTextChanged": "",
-  "originalBottomRow": 1966,
+  "originalBottomRow": 1405,
   "originalTopRow": 1,
   "parentColumnSpace": 11.81640625,
   "parentId": "qv0p77aqd4",

@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 12,
+  "bottomRow": 15,
   "dynamicBindingPathList": [
     {
       "key": "truncateButtonColor"
@@ -30,8 +30,8 @@
   "mobileRightColumn": 11,
   "mobileTopRow": 2,
   "needsErrorInfo": false,
-  "originalBottomRow": 8,
-  "originalTopRow": 4,
+  "originalBottomRow": 15,
+  "originalTopRow": 5,
   "overflow": "NONE",
   "parentColumnSpace": 11.0078125,
   "parentId": "pdskef7epv",
@@ -43,7 +43,7 @@
   "text": "{{\"新词: \" + \nTable1.selectedRow.new_vocab.map(word => word).join(\",\")+\"\\n复习词: \" + \nTable1.selectedRow.review_vocab.map(word => word).join(\",\")+\"\\n句型: \" + \nTable1.selectedRow.sentence_patterns.map(word => word).join(\",\")+\"\\n语法: \" + \nTable1.selectedRow.grammar}}",
   "textAlign": "LEFT",
   "textColor": "#15803d",
-  "topRow": 4,
+  "topRow": 5,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,
