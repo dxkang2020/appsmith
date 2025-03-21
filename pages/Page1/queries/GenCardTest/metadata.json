@@ -1,6 +1,6 @@
 {
-  "gitSyncId": "67baa06d87c7c10451dabe89_99892887-8235-404e-a711-f236d5c18952",
-  "id": "Page1_Api3",
+  "gitSyncId": "67bed107a0c78065eecac2b6_4d6ae2f4-0505-447e-91e3-e5d35b5a84ba",
+  "id": "Page1_GenCardTest",
   "pluginId": "restapi-plugin",
   "pluginType": "API",
   "unpublishedAction": {
@@ -30,7 +30,7 @@
       "queryParameters": [
         {
           "key": "prompt",
-          "value": "{{this.params.clip}}"
+          "value": "1 orange"
         }
       ],
       "timeoutInMillisecond": 20000
@@ -45,13 +45,10 @@
     "dynamicBindingPathList": [
       {
         "key": "path"
-      },
-      {
-        "key": "queryParameters[0].value"
       }
     ],
     "executeOnLoad": false,
-    "name": "Api3",
+    "name": "GenCardTest",
     "pageId": "Page1",
     "userSetOnLoad": false
   }

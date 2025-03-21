@@ -11,7 +11,7 @@
           "value": "application/json"
         }
       ],
-      "body": "{\n\t\"course_number\": \"1.1\",\n\t\"level\": \"starters\",\n\t\"overwrite\":false,\n\t\"course\": {\n\t\t\"scripts\": [\n\t\t\t{\n\t\t\t\t\"character\": \"mrs_clove\",\n\t\t\t\t\"text\": \"Good morning, <player>!\"\n\t\t\t}\n\t\t]\n\t},\n\t\"cards\": \"\",\n\t\"scenes\": \"\"\n}",
+      "body": "{\n\t\"course_number\": \"1.1\",\n\t\"level\": \"starters\",\n\t\"overwrite\": false,\n\t\"course\": {\n\t\t\"scripts\": []\n\t},\n\t\"cards\": {\n\t\t\"apple\": {\n\t\t\t\"description\": \"苹果\",\n\t\t\t\"clip_zh\": \"一个红色的苹果\",\n\t\t\t\"confidence\": \"95\",\n\t\t\t\"clip\": \"A red apple\"\n\t\t},\n\t\t\"orange\": {\n\t\t\t\"description\": \"橙子\",\n\t\t\t\"clip_zh\": \"一个橙色的橙子\",\n\t\t\t\"confidence\": \"95\",\n\t\t\t\"clip\": \"An orange orange\"\n\t\t}\n\t},\n\t\"scenes\": {}\n}",
       "bodyFormData": [],
       "encodeParamsToggle": true,
       "formData": {

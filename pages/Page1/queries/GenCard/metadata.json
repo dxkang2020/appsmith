@@ -1,6 +1,6 @@
 {
-  "gitSyncId": "67baa06d87c7c10451dabe89_99892887-8235-404e-a711-f236d5c18952",
-  "id": "Page1_Api3",
+  "gitSyncId": "67bed107a0c78065eecac2b6_c20af74a-2997-48f4-8364-2649eac7d324",
+  "id": "Page1_GenCard",
   "pluginId": "restapi-plugin",
   "pluginType": "API",
   "unpublishedAction": {
@@ -51,7 +51,7 @@
       }
     ],
     "executeOnLoad": false,
-    "name": "Api3",
+    "name": "GenCard",
     "pageId": "Page1",
     "userSetOnLoad": false
   }

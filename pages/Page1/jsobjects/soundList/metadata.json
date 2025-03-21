@@ -14,6 +14,10 @@
       {
         "name": "showText",
         "value": "''"
+      },
+      {
+        "name": "audioIndex",
+        "value": "0"
       }
     ]
   }

@@ -1,11 +1,11 @@
 {
-  "gitSyncId": "67bed107a0c78065eecac2b6_ee4b8bb9-b0c5-47df-a11b-17680102f72a",
-  "id": "Page1_updateScene",
+  "gitSyncId": "67bed107a0c78065eecac2b6_77db544d-53c0-4b90-a30d-3cede1aed62b",
+  "id": "Page1_updateCardsPrompt",
   "pluginId": "postgres-plugin",
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "UPDATE course_documents\nSET scenes_prompt =  coalesce({{this.params.scenes_prompt}},scenes_prompt), \n\tcards_prompt = coalesce({{this.params.cards_prompt}},cards_prompt)\nWHERE id = {{Table1.selectedRow.id}} AND version = {{Table1.selectedRow.version}};",
+      "body": "UPDATE course_documents\nSET cards_prompt = coalesce({{this.params.cards_prompt}},cards_prompt)\nWHERE id = {{Table1.selectedRow.id}} AND version = {{Table1.selectedRow.version}};",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
@@ -28,7 +28,7 @@
       }
     ],
     "executeOnLoad": false,
-    "name": "updateScene",
+    "name": "updateCardsPrompt",
     "pageId": "Page1",
     "userSetOnLoad": false
   }

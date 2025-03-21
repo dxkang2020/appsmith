@@ -1,6 +1,6 @@
 {
-  "gitSyncId": "67baa06d87c7c10451dabe89_99892887-8235-404e-a711-f236d5c18952",
-  "id": "Page1_Api3",
+  "gitSyncId": "67bed107a0c78065eecac2b6_54b7ad2a-133f-4994-b386-1caa638bcb0a",
+  "id": "Page1_SaveImage",
   "pluginId": "restapi-plugin",
   "pluginType": "API",
   "unpublishedAction": {
@@ -21,7 +21,7 @@
       "httpMethod": "GET",
       "httpVersion": "HTTP11",
       "paginationType": "NONE",
-      "path": "/gen/card",
+      "path": "/gen/saveImage",
       "pluginSpecifiedTemplates": [
         {
           "value": true
@@ -29,8 +29,16 @@
       ],
       "queryParameters": [
         {
-          "key": "prompt",
-          "value": "{{this.params.clip}}"
+          "key": "filename",
+          "value": "{{this.params.path}}"
+        },
+        {
+          "key": "prompt_id",
+          "value": "{{this.params.prompt_id}}"
+        },
+        {
+          "key": "overwrite",
+          "value": "{{this.params.overwrite}}"
         }
       ],
       "timeoutInMillisecond": 20000
@@ -44,14 +52,17 @@
     },
     "dynamicBindingPathList": [
       {
-        "key": "path"
+        "key": "queryParameters[0].value"
       },
       {
-        "key": "queryParameters[0].value"
+        "key": "queryParameters[1].value"
+      },
+      {
+        "key": "queryParameters[2].value"
       }
     ],
     "executeOnLoad": false,
-    "name": "Api3",
+    "name": "SaveImage",
     "pageId": "Page1",
     "userSetOnLoad": false
   }

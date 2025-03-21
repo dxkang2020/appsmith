@@ -1,6 +1,6 @@
 {
-  "gitSyncId": "67baa06d87c7c10451dabe89_99892887-8235-404e-a711-f236d5c18952",
-  "id": "Page1_Api3",
+  "gitSyncId": "67bed107a0c78065eecac2b6_4dce62d9-f9fe-4c0f-9369-9a1c00a9e27e",
+  "id": "Page1_GenScene",
   "pluginId": "restapi-plugin",
   "pluginType": "API",
   "unpublishedAction": {
@@ -21,7 +21,7 @@
       "httpMethod": "GET",
       "httpVersion": "HTTP11",
       "paginationType": "NONE",
-      "path": "/gen/card",
+      "path": "/gen/scene",
       "pluginSpecifiedTemplates": [
         {
           "value": true
@@ -51,7 +51,7 @@
       }
     ],
     "executeOnLoad": false,
-    "name": "Api3",
+    "name": "GenScene",
     "pageId": "Page1",
     "userSetOnLoad": false
   }

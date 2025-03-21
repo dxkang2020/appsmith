@@ -1,15 +1,23 @@
 {
 	"course_number": "1.1",
 	"level": "starters",
-	"overwrite":false,
+	"overwrite": false,
 	"course": {
-		"scripts": [
-			{
-				"character": "mrs_clove",
-				"text": "Good morning, <player>!"
-			}
-		]
+		"scripts": []
 	},
-	"cards": "",
-	"scenes": ""
+	"cards": {
+		"apple": {
+			"description": "苹果",
+			"clip_zh": "一个红色的苹果",
+			"confidence": "95",
+			"clip": "A red apple"
+		},
+		"orange": {
+			"description": "橙子",
+			"clip_zh": "一个橙色的橙子",
+			"confidence": "95",
+			"clip": "An orange orange"
+		}
+	},
+	"scenes": {}
 }

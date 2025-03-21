@@ -1,0 +1,3 @@
+UPDATE course_documents
+SET scenes_prompt =  coalesce({{this.params.scenes_prompt}},scenes_prompt)
+WHERE id = {{Table1.selectedRow.id}} AND version = {{Table1.selectedRow.version}};

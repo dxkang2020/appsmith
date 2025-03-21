@@ -15,22 +15,28 @@ export default {
 			'success'
 		)
 	},
+
 	async cardconfirm (item,index) {
 
+		console.log("item:", index, item )
+		if(item.prompt_id){
+			let path = `cards/${item.sceneName}.png`
+			let prompt_id = item.prompt_id
+			let overwrite = false
+			SaveImage.run({path, prompt_id, overwrite}).then(res =>{
+				if(res == "sucess"){
+					let cards_prompt = JSON.parse(JSON.stringify(Table1.selectedRow.cards_prompt));
+					if(cards_prompt[item.sceneName].clip != item.clip){
+						cards_prompt[item.sceneName].clip = item.clip;
+						// cards_prompt[item.sceneName].prompt_id = item.prompt_id;
+						updateCardsPrompt.run({cards_prompt})
+					}
 
-		const base64Data = item.ImgURL.split(',')[1];
-		await uploadImage.run({path:`/images/cards/${item.sceneName}.png`,
-													 "data":atob(base64Data),
-													 "contentType":"image/png"
-													})
 
-		if(Table1.selectedRow.cards_prompt[item.sceneName].clip != this.listItems[index].clip){
-			let cards_prompt = JSON.parse(JSON.stringify(Table1.selectedRow.cards_prompt));
-			updateScene.run({cards_prompt})
-			cards_prompt[item.sceneName].clip = this.listItems[index].clip;
-
-
+				}	
+			})
 		}
+
 		// await uploadImage.run({path:"/images/scen/6.png",
 		// "data":atob(getImage.data),
 		// "contentType":"image/png"
@@ -48,14 +54,16 @@ export default {
 		this.isShowBtn = true
 		if(this.isShowBtn){
 
-			await Api3.run(item).then((res)=>{
+			await GenCard.run(item).then((res)=>{
 
 				this.listItems[currentIndex].ImgURL =  'data:image/png;base64,' + res
+				this.listItems[currentIndex].prompt_id = GenCard.responseMeta.headers?.prompt_id[0]
 				this.isShowBtn = false
 				console.log(this.isShowBtn,'hhaa')
 
 				this.imgP =  'data:image/png;base64,' + res
 				showModal(Modal3.name)
+
 
 			}).catch((err) =>{
 				console.log(err)
@@ -70,15 +78,20 @@ export default {
 	listItems : [],
 
 	// 获取列表
-	getNewList(){
-
+	getNewList(srow){
+		let row = srow ||  Table1.selectedRow
 		const newArray = [];
+		console.log("cards_prompt", row.cards_prompt)
 		for (const sceneName in Table1.selectedRow.cards_prompt) {
+
 			const newObj = {
 				sceneName: sceneName,
 				...Table1.selectedRow.cards_prompt[sceneName],
-				ImgURL:`https://s.runfox.cn/storage/v1/object/public/images/cards/${sceneName}.png`
+
+				// ImgURL:`https://s.runfox.cn/storage/v1/object/public/images/cards/${sceneName}.png`
 			};
+			newObj.ImgURL = `https://af.runfox.cn/courses/cards/${sceneName}.png`
+			console.log("imgurl:", newObj.ImgURL)
 			newArray.push(newObj);
 
 		}
@@ -101,7 +114,7 @@ export default {
 		if(cards_prompt["doctor_treating"])
 			cards_prompt["doctor_treating"].url = ""
 		console.log("cards_prompt::", cards_prompt)
-		await updateScene.run({cards_prompt})
+		await updateScenePrompt.run({cards_prompt})
 		let id = Table1?.selectedRow?.id
 		await getCourseById.run({id})
 		console.log(`data:::${Table1?.selectedRow?.id}`, getCourseById.data)

@@ -54,12 +54,10 @@ export default {
 			let version = Table1.selectedRow.version
 			let level = Table1.selectedRow.level
 			let course_number = Table1.selectedRow.course_number
-			let course = btoa(JSON.stringify(Table1.selectedRow.script_json))
-			let scenes = btoa(JSON.stringify(Table1.selectedRow.scenes_prompt))
-			let cards = btoa(JSON.stringify(Table1.selectedRow.cards_prompt))
 
-			// n8Json.run({course_number,version,level})
-			n8JsonTest.run({course_number,version,level})
+
+			n8Json.run({course_number,version,level})
+			// n8JsonTest.run({course_number,version,level})
 			// n8Gen.run({course_number,version,level,course,scenes,cards})
 
 		}
