@@ -1,6 +1,6 @@
 {
   "animateLoading": true,
-  "autoPlay": false,
+  "autoPlay": true,
   "bottomRow": 6,
   "dynamicBindingPathList": [],
   "dynamicPropertyPathList": [
@@ -17,7 +17,7 @@
     }
   ],
   "isLoading": false,
-  "isVisible": false,
+  "isVisible": true,
   "key": "i3q8fnd5ie",
   "leftColumn": 0,
   "minWidth": 450,
