@@ -43,7 +43,14 @@ export default {
 
 		// n8Json.run({course_number,version,level})
 		// n8JsonTest.run({course_number,version,level})
-		n8Gen.run({course_number,version,level,course,scenes,cards})
+		Button5.setDisabled(true)
+		showAlert('正在生成','success')
+		n8Gen.run({course_number,version,level,course,scenes,cards}).then(
+			Button5.setDisabled(false)
+		).catch(e =>{
+			Button5.setDisabled(false)
+			showAlert('生成失败','error')
+		})
 	},
 	onBtnClicked(){
 		console.log("onBtnClicked")
@@ -55,8 +62,13 @@ export default {
 			let level = Table1.selectedRow.level
 			let course_number = Table1.selectedRow.course_number
 
-
-			n8Json.run({course_number,version,level})
+			Button5.setDisabled(true)
+			showAlert('正在生成','success')
+			n8Json.run({course_number,version,level}).then(
+				Button5.setDisabled(false)
+			).catch(e=>{
+				Button5.setDisabled(false)
+			})
 			// n8JsonTest.run({course_number,version,level})
 			// n8Gen.run({course_number,version,level,course,scenes,cards})
 
