@@ -203,7 +203,7 @@
   "needsErrorInfo": false,
   "onAddNewRowSave": "{{Insert_public_course_documents1.run(() => {\n            showAlert(\"Successfully created!\");\n            Select_public_course_documents1.run()\n          }, () => {\n            showAlert(\"Unable to create!\");\n          })}}",
   "onPageChange": "{{\n            Select_public_course_documents1.run();\n            Total_record_public_course_documents1.run()\n          }}",
-  "onRowSelected": "",
+  "onRowSelected": "{{Tab.onTabSelectChanged();}}",
   "onSearchTextChanged": "{{\n            Select_public_course_documents1.run();\n            Total_record_public_course_documents1.run()\n          }}",
   "onSort": "",
   "originalBottomRow": 98,
