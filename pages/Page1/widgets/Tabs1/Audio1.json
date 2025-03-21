@@ -1,6 +1,6 @@
 {
   "animateLoading": true,
-  "autoPlay": true,
+  "autoPlay": false,
   "bottomRow": 6,
   "dynamicBindingPathList": [],
   "dynamicPropertyPathList": [

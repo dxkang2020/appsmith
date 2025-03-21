@@ -45,11 +45,12 @@ export default {
 		// n8JsonTest.run({course_number,version,level})
 		Button5.setDisabled(true)
 		showAlert('正在生成','success')
-		n8Gen.run({course_number,version,level,course,scenes,cards}).then( res=>{
+		n8Gen.run({course_number,version,level,course,scenes,cards}).then(
+			function(){
+				Button5.setDisabled(false)
+			}
+		).catch(function(){
 			Button5.setDisabled(false)
-		}).catch(e =>{
-			Button5.setDisabled(false)
-			showAlert('生成失败','error')
 		})
 	},
 	onBtnClicked(){
@@ -65,14 +66,15 @@ export default {
 			Button5.setDisabled(true)
 			showAlert('正在生成','success')
 			n8Json.run({course_number,version,level}).then(
-				res =>{
+				function(){
 					Button5.setDisabled(false)
 				}
-			).catch(e=>{
+			).catch(function(){
 				Button5.setDisabled(false)
 			})
+
 			// n8JsonTest.run({course_number,version,level})
-			// n8Gen.run({course_number,version,level,course,scenes,cards})
+
 
 		}
 	},
