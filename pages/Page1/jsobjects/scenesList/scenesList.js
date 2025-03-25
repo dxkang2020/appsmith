@@ -17,10 +17,13 @@ export default {
 			let prompt_id = item.prompt_id
 			let overwrite = index =='cover' ? true :  false
 			SaveImage.run({path, prompt_id, overwrite}).then(res =>{
-				if(res == "sucess"){
+				if(res == "success"){
 
 					showAlert('保存成功','sucess')
-					closeModal(Modal7.name)
+					if(index == 'cover'){
+						closeModal(Modal7.name)
+					}
+
 					let scenes_prompt = JSON.parse(JSON.stringify(Table1.selectedRow.scenes_prompt));
 					if(scenes_prompt[item.sceneName].clip != item.clip){
 						scenes_prompt[item.sceneName].clip = item.clip;
@@ -93,7 +96,7 @@ export default {
 	},
 	InputOnBlur(index){
 
-		this.listItems[index].clip = 	sList1.currentItemsView[index].Input3.text
+		this.listItems[index].clip = 	sList1.currentItemsView[index % sList1.pageSize ].Input3.text
 
 
 	},

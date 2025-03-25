@@ -24,7 +24,7 @@ export default {
 						// delete cards_prompt[item.sceneName]
 						// cards_prompt[item.sceneName].prompt_id = item.prompt_id;
 						updateCardsPrompt.run({cards_prompt}).then(()=>Query2.run())
-					
+
 					}
 				}	
 				else if (res == "exists")
@@ -80,8 +80,9 @@ export default {
 		this.cardconfirm(this.updateVal,'cover')
 	},
 	InputOnBlur(index){
-
-		this.listItems[index].clip = 	cList1.currentItemsView[index].Input9.text
+		let idx = index % cList1.pageSize 
+		console.log("idx::", idx, index)
+		this.listItems[index].clip = 	cList1.currentItemsView[idx].Input9.text
 
 
 	},
@@ -90,9 +91,9 @@ export default {
 	async getAIIMG(currentIndex,item){
 		this.isShowBtn = true
 		if(this.isShowBtn){
-
+			console.log(item)
 			await GenCard.run(item).then((res)=>{
-
+				console.log("currentIndex", currentIndex)
 				this.listItems[currentIndex].ImgURL =  'data:image/png;base64,' + res
 				this.listItems[currentIndex].prompt_id = GenCard.responseMeta.headers?.prompt_id[0]
 				this.isShowBtn = false

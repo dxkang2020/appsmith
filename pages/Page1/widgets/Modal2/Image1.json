@@ -28,7 +28,7 @@
   "mobileRightColumn": 36,
   "mobileTopRow": 25,
   "needsErrorInfo": false,
-  "objectFit": "cover",
+  "objectFit": "contain",
   "parentColumnSpace": 15.5625,
   "parentId": "dw24hxwobl",
   "parentRowSpace": 10,

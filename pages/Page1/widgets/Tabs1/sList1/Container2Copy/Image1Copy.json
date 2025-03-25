@@ -40,7 +40,7 @@
   "mobileRightColumn": 16,
   "mobileTopRow": 0,
   "needsErrorInfo": false,
-  "objectFit": "cover",
+  "objectFit": "contain",
   "onClick": "{{scenesList.priviewImg(currentItem.ImgURL)}}",
   "parentId": "7cn32wmsx4",
   "renderMode": "CANVAS",

@@ -40,7 +40,7 @@
   "mobileRightColumn": 16,
   "mobileTopRow": 0,
   "needsErrorInfo": false,
-  "objectFit": "cover",
+  "objectFit": "contain",
   "onClick": "{{cardLsit.priviewImg(currentItem.ImgURL)}}",
   "parentId": "wewkc3xpbn",
   "renderMode": "CANVAS",
