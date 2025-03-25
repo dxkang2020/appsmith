@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 16,
+  "bottomRow": 17,
   "boxShadow": "none",
   "defaultImage": "https://s.runfox.cn/storage/v1/object/public/images/scenes/{{currentItem.sceneName}}.png",
   "dynamicBindingPathList": [
@@ -33,7 +33,7 @@
   "isLoading": false,
   "isVisible": true,
   "key": "25xa6lm1ba",
-  "leftColumn": 46,
+  "leftColumn": 44,
   "maxZoomLevel": 1,
   "mobileBottomRow": 8,
   "mobileLeftColumn": 0,
@@ -44,8 +44,8 @@
   "onClick": "{{scenesList.priviewImg(currentItem.ImgURL)}}",
   "parentId": "7cn32wmsx4",
   "renderMode": "CANVAS",
-  "rightColumn": 60,
-  "topRow": 2,
+  "rightColumn": 61,
+  "topRow": 0,
   "type": "IMAGE_WIDGET",
   "version": 1,
   "widgetId": "mcf4sst7ip",

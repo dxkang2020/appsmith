@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 16,
+  "bottomRow": 18,
   "boxShadow": "none",
   "defaultImage": "https://s.runfox.cn/storage/v1/object/public/images/cards/{{currentItem.sceneName}}.png",
   "dynamicBindingPathList": [
@@ -45,7 +45,7 @@
   "parentId": "wewkc3xpbn",
   "renderMode": "CANVAS",
   "rightColumn": 60,
-  "topRow": 2,
+  "topRow": 0,
   "type": "IMAGE_WIDGET",
   "version": 1,
   "widgetId": "kczs3xbjgz",

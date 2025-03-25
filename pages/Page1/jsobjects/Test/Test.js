@@ -2,7 +2,8 @@ export default {
 
 	getMarkdown() { return "```json\n" + this.test() + "\n``` \n"; },
 	test(){
-		return JSON.stringify(Table1.selectedRow.script_json,null,2)
+		updateRow.updateJsonScene("runfox_school_gate","runfox_school_gate1")
+		updateRow.updateJsonImage("3","3.3")
 	},
 	lines100(){
 		return Array.from({length: 100}, (_, i) => `${i+1}`).join("\n")

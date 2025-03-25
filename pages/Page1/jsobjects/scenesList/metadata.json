@@ -12,6 +12,10 @@
         "value": "false"
       },
       {
+        "name": "updateVal",
+        "value": "{}"
+      },
+      {
         "name": "listItems",
         "value": "[]"
       },

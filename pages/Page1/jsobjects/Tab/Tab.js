@@ -11,8 +11,12 @@ export default {
 		}
 		else if(Tabs1.selectedTab == "Json" &&
 						Table1.selectedRow.screenplay&& Table1.selectedRow.screenplay.length > 300 &&
-						(!Table1.selectedRow.script_json || Table1.selectedRow.script_json == "null")){
-			Button5.setLabel("生成JSON") 
+						(Table1.selectedRow.status!= "scripting")){
+			if(!Table1.selectedRow?.script_json?.scripts?.length)
+				Button5.setLabel("生成JSON") 
+			else
+				Button5.setLabel("重新生成") 
+
 			Button5.setVisibility(true)
 
 		}
@@ -45,7 +49,7 @@ export default {
 		// n8JsonTest.run({course_number,version,level})
 		Button5.setDisabled(true)
 		showAlert('正在生成','success')
-		n8Gen.run({course_number,version,level,course,scenes,cards}).then(
+		n8JsonTest.run({course_number,version,level}).then(
 			function(){
 				Button5.setDisabled(false)
 			}
@@ -56,7 +60,7 @@ export default {
 	onBtnClicked(){
 		console.log("onBtnClicked")
 		if(Tabs1.selectedTab == "剧本")
-			Query3.run()
+			updateRow.updateScreenplay()
 		else if(Tabs1.selectedTab == "Json"){
 			console.log("gen json")
 			let version = Table1.selectedRow.version
@@ -65,6 +69,7 @@ export default {
 
 			Button5.setDisabled(true)
 			showAlert('正在生成','success')
+			Table1.selectedRow.status = "scripting"
 			n8Json.run({course_number,version,level}).then(
 				function(){
 					Button5.setDisabled(false)

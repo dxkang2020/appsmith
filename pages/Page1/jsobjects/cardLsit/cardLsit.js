@@ -2,38 +2,38 @@ export default {
 	myVar1: [],
 	myVar2: {},
 	isShowBtn:false,
-	// testbtn(){
-	// this.isShowBtn =true
-	// Button6.setLabel('加载中')
-	// setTimeout(()=>{
-	// this.isShowBtn =false
-	// },8000)
-	// },
-	changeImg(){
-		showAlert(
-			'选中图片',
-			'success'
-		)
-	},
+
+	updateVal:{}, //确认要上传的参数 覆盖后重新上传提取
 
 	async cardconfirm (item,index) {
-
+		this.updateVal = item
 		console.log("item:", index, item )
 		if(item.prompt_id){
 			let path = `cards/${item.sceneName}.png`
 			let prompt_id = item.prompt_id
-			let overwrite = false
+			let overwrite = index =='cover' ? true :  false
 			SaveImage.run({path, prompt_id, overwrite}).then(res =>{
-				if(res == "sucess"){
+				if(res == "success"){
+					showAlert('保存成功')
 					let cards_prompt = JSON.parse(JSON.stringify(Table1.selectedRow.cards_prompt));
 					if(cards_prompt[item.sceneName].clip != item.clip){
 						cards_prompt[item.sceneName].clip = item.clip;
+
+						// cards_prompt[new_name] = cards_prompt[item.sceneName]
+						// delete cards_prompt[item.sceneName]
 						// cards_prompt[item.sceneName].prompt_id = item.prompt_id;
 						updateCardsPrompt.run({cards_prompt})
 					}
-
-
 				}	
+				else if (res == "exists")
+				{
+					//弹窗提示改名或者覆盖
+					showModal(Modal6.name)
+				}
+				else
+				{
+					//failed
+				}
 			})
 		}
 
@@ -41,6 +41,37 @@ export default {
 		// "data":atob(getImage.data),
 		// "contentType":"image/png"
 		// })
+	},
+	modifySave(){
+		let newVal = Input13.text
+
+		console.log(newVal)
+		if(this.updateVal.prompt_id){
+			let path = `cards/${newVal}.png`
+			let prompt_id = this.updateVal.prompt_id
+			let overwrite = false
+			SaveImage.run({path, prompt_id, overwrite}).then(res =>{
+				if(res == "success"){
+
+					let cards_prompt = JSON.parse(JSON.stringify(Table1.selectedRow.cards_prompt));
+					cards_prompt[newVal] = cards_prompt[this.updateVal.sceneName]
+					delete cards_prompt[this.updateVal.sceneName]
+					closeModal(Modal6.name)
+					Input13.setValue('')
+					updateRow.updateJsonImage(this.updateVal.sceneName,newVal)
+					updateCardsPrompt.run({cards_prompt})
+
+				}	
+				else if(res == "exists"){
+					showAlert("名称重复","error")
+				}
+
+
+			})
+		}
+	},
+	coverSave(){
+		this.cardconfirm(this.updateVal,'cover')
 	},
 	InputOnBlur(index){
 

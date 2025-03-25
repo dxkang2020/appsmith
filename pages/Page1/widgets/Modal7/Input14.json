@@ -3,64 +3,55 @@
   "animateLoading": true,
   "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 1752,
+  "bottomRow": 15,
   "boxShadow": "none",
-  "defaultText": "{{JSON.stringify(Table1.selectedRow.script_json,null,2)}}\n",
+  "defaultText": "",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
     },
     {
       "key": "borderRadius"
-    },
-    {
-      "key": "defaultText"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
-  "dynamicTriggerPathList": [
-    {
-      "key": "onTextChanged"
-    }
-  ],
+  "dynamicTriggerPathList": [],
   "iconAlign": "left",
   "inputType": "MULTI_LINE_TEXT",
   "isDisabled": false,
   "isLoading": false,
   "isRequired": false,
   "isVisible": true,
-  "key": "saw55n9qrn",
-  "label": "",
+  "key": "kk0tyelnc1",
+  "label": "请输入：",
   "labelAlignment": "left",
   "labelPosition": "Top",
   "labelStyle": "",
   "labelTextSize": "0.875rem",
   "labelWidth": 5,
   "leftColumn": 0,
-  "maxDynamicHeight": 587,
-  "minDynamicHeight": 79,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
   "minWidth": 450,
-  "mobileBottomRow": 7,
-  "mobileLeftColumn": 0,
-  "mobileRightColumn": 20,
-  "mobileTopRow": 0,
+  "mobileBottomRow": 13,
+  "mobileLeftColumn": 5,
+  "mobileRightColumn": 25,
+  "mobileTopRow": 6,
   "needsErrorInfo": false,
-  "onTextChanged": "",
-  "originalBottomRow": 1829,
-  "originalTopRow": 1,
-  "parentColumnSpace": 11.81640625,
-  "parentId": "qv0p77aqd4",
+  "originalBottomRow": 15,
+  "originalTopRow": 5,
+  "parentColumnSpace": 6.9375,
+  "parentId": "lj3dkwg3fj",
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "resetOnSubmit": true,
   "responsiveBehavior": "fill",
-  "rightColumn": 64,
+  "rightColumn": 63,
   "shouldAllowAutofill": false,
-  "shouldScrollContents": true,
   "showStepArrows": false,
-  "topRow": 1,
+  "topRow": 5,
   "type": "INPUT_WIDGET_V2",
   "version": 2,
-  "widgetId": "0oxdj1lqsk",
-  "widgetName": "Input2Copy1"
+  "widgetId": "a5zskxf660",
+  "widgetName": "Input14"
 }

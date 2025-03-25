@@ -7,14 +7,15 @@ export default {
 			'success'
 		)
 	},
+	updateVal:{}, //确认要上传的参数 覆盖后重新上传提取
 	async confirm (item,index) {
-
+		this.updateVal = item
 
 		console.log("item:", index, item )
 		if(item.prompt_id){
 			let path = `scenes/${item.sceneName}.png`
 			let prompt_id = item.prompt_id
-			let overwrite = false
+			let overwrite = index =='cover' ? true :  false
 			SaveImage.run({path, prompt_id, overwrite}).then(res =>{
 				if(res == "sucess"){
 					let scenes_prompt = JSON.parse(JSON.stringify(Table1.selectedRow.scenes_prompt));
@@ -23,7 +24,13 @@ export default {
 						// cards_prompt[item.sceneName].prompt_id = item.prompt_id;
 						updateScenePrompt.run({scenes_prompt})
 					}
-				}	
+					showAlert('保存成功')
+				}else if (res == "exists"){
+					//弹窗提示改名或者覆盖
+					showModal(Modal7.name)
+				}	else{
+					//failed
+				}
 			})
 		}
 		// 
@@ -44,6 +51,37 @@ export default {
 		// "contentType":"image/png"
 		// })
 	},
+	modifySave(){
+		let newVal = Input14.text
+
+		console.log(newVal)
+		if(this.updateVal.prompt_id){
+			let path = `scenes/${newVal}.png`
+			let prompt_id = this.updateVal.prompt_id
+			let overwrite = false
+			SaveImage.run({path, prompt_id, overwrite}).then(res =>{
+				if(res == "success"){
+
+					let scenes_prompt = JSON.parse(JSON.stringify(Table1.selectedRow.scenes_prompt));
+					scenes_prompt[newVal] = scenes_prompt[this.updateVal.sceneName]
+					delete scenes_prompt[this.updateVal.sceneName]
+					closeModal(Modal7.name)
+					Input14.setValue('')
+					updateRow.updateJsonScene(this.updateVal.sceneName,newVal)
+					updateCardsPrompt.run({scenes_prompt})
+
+				}	
+				else if(res == "exists"){
+					showAlert("名称重复","error")
+				}
+
+
+			})
+		}
+	},
+	coverSave(){
+		this.confirm(this.updateVal,'cover')
+	},
 	InputOnBlur(index){
 
 		this.listItems[index].clip = 	sList1.currentItemsView[index].Input3.text
@@ -62,6 +100,9 @@ export default {
 
 				this.listItems[currentIndex].ImgURL =  'data:image/png;base64,' + res
 				this.listItems[currentIndex].prompt_id = GenScene.responseMeta.headers?.prompt_id[0]
+
+				this.imgP =  'data:image/png;base64,' + res
+				showModal(Modal2.name)
 			}).catch((err) =>{
 				console.log(err)
 				this.isShowBtn = false

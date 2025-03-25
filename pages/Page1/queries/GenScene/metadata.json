@@ -33,7 +33,7 @@
           "value": "{{this.params.clip}}"
         }
       ],
-      "timeoutInMillisecond": 20000
+      "timeoutInMillisecond": 60000
     },
     "confirmBeforeExecute": false,
     "datasource": {

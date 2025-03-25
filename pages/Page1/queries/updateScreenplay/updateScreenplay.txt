@@ -1,0 +1,3 @@
+UPDATE course_documents
+SET screenplay = {{Input2.text}}
+WHERE id = {{Table1.selectedRow.id}}
