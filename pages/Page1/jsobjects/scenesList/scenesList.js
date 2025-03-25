@@ -18,15 +18,20 @@ export default {
 			let overwrite = index =='cover' ? true :  false
 			SaveImage.run({path, prompt_id, overwrite}).then(res =>{
 				if(res == "sucess"){
+
+					showAlert('保存成功','sucess')
+					closeModal(Modal7.name)
 					let scenes_prompt = JSON.parse(JSON.stringify(Table1.selectedRow.scenes_prompt));
 					if(scenes_prompt[item.sceneName].clip != item.clip){
 						scenes_prompt[item.sceneName].clip = item.clip;
 						// cards_prompt[item.sceneName].prompt_id = item.prompt_id;
-						updateScenePrompt.run({scenes_prompt})
 					}
-					showAlert('保存成功')
+					updateScenePrompt.run({scenes_prompt}).then(()=>Query2.run())
+
+
 				}else if (res == "exists"){
 					//弹窗提示改名或者覆盖
+					Input14.setValue(item.sceneName)
 					showModal(Modal7.name)
 				}	else{
 					//failed
@@ -53,8 +58,12 @@ export default {
 	},
 	modifySave(){
 		let newVal = Input14.text
-
 		console.log(newVal)
+
+		if(newVal.length <= 0){
+			showAlert('请输入','error')
+			return
+		}
 		if(this.updateVal.prompt_id){
 			let path = `scenes/${newVal}.png`
 			let prompt_id = this.updateVal.prompt_id
