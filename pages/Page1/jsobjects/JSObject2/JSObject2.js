@@ -3,7 +3,7 @@ export default {
 		console.log("Switch1onChange")
 		update_status.run().then(v =>{
 			console.log("success!")
-			Query2.run()
+			updateTable.run()
 		}).catch(e=>{
 			console.log("eeee:",e)
 			Switch1.setValue(false)

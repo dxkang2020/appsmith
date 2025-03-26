@@ -16,7 +16,9 @@ SELECT
 		d.script_json,
 		d.scenes_prompt,
 		d.cards_prompt,
-		d.id
+		d.id,
+		d.error,
+		d.updated_at
 FROM course_outlines o
 LEFT JOIN course_documents d 
     ON o.level = d.level 

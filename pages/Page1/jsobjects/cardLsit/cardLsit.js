@@ -16,16 +16,8 @@ export default {
 				if(res == "success"){
 					showAlert('保存成功','success')
 					closeModal(Modal6.name)
-					let cards_prompt = JSON.parse(JSON.stringify(Table1.selectedRow.cards_prompt));
-					if(cards_prompt[item.sceneName].clip != item.clip){
-						cards_prompt[item.sceneName].clip = item.clip;
+					updateRow.updateCardsPrompt(item)
 
-						// cards_prompt[new_name] = cards_prompt[item.sceneName]
-						// delete cards_prompt[item.sceneName]
-						// cards_prompt[item.sceneName].prompt_id = item.prompt_id;
-						updateCardsPrompt.run({cards_prompt}).then(()=>Query2.run())
-
-					}
 				}	
 				else if (res == "exists")
 				{
@@ -59,13 +51,12 @@ export default {
 			SaveImage.run({path, prompt_id, overwrite}).then(res =>{
 				if(res == "success"){
 
-					let cards_prompt = JSON.parse(JSON.stringify(Table1.selectedRow.cards_prompt));
-					cards_prompt[newVal] = cards_prompt[this.updateVal.sceneName]
-					delete cards_prompt[this.updateVal.sceneName]
+
 					closeModal(Modal6.name)
 					Input13.setValue('')
-					updateRow.updateJsonImage(this.updateVal.sceneName,newVal)
-					updateCardsPrompt.run({cards_prompt})
+
+					updateRow.updateJsonImage(this.updateVal,newVal)
+
 
 				}	
 				else if(res == "exists"){
@@ -128,10 +119,9 @@ export default {
 
 				// ImgURL:`https://s.runfox.cn/storage/v1/object/public/images/cards/${sceneName}.png`
 			};
-			newObj.ImgURL = `https://af.runfox.cn/courses/cards/${sceneName}.png`
-			console.log("imgurl:", newObj.ImgURL)
+			newObj.ImgURL = `https://af.runfox.cn/courses/cards/${sceneName}.png?r=${ newObj.prompt_id ?? Math.random()}`
 			newArray.push(newObj);
-
+			// cList1.listData
 		}
 
 		this.listItems =  newArray

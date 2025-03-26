@@ -3,16 +3,16 @@
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "bottomRow": 18,
   "boxShadow": "none",
-  "defaultImage": "https://s.runfox.cn/storage/v1/object/public/images/cards/{{currentItem.sceneName}}.png",
+  "defaultImage": "https://af.runfox.cn/courses/cards/{{currentItem.sceneName}}.png",
   "dynamicBindingPathList": [
     {
       "key": "borderRadius"
     },
     {
-      "key": "defaultImage"
+      "key": "image"
     },
     {
-      "key": "image"
+      "key": "defaultImage"
     }
   ],
   "dynamicPropertyPathList": [

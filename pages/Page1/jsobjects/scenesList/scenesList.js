@@ -29,7 +29,7 @@ export default {
 						scenes_prompt[item.sceneName].clip = item.clip;
 						// cards_prompt[item.sceneName].prompt_id = item.prompt_id;
 					}
-					updateScenePrompt.run({scenes_prompt}).then(()=>Query2.run())
+					updateScenePrompt.run({scenes_prompt}).then(()=>updateTable.run())
 
 
 				}else if (res == "exists"){
@@ -139,7 +139,7 @@ export default {
 
 				// `https://s.runfox.cn/storage/v1/object/public/images/scenes/${sceneName}.png`
 			};
-			newObj.ImgURL = `https://af.runfox.cn/courses/scenes/${sceneName}.png`
+			newObj.ImgURL = `https://af.runfox.cn/courses/scenes/${sceneName}.png?r=${Math.random()}`
 			console.log("imgurl:", newObj.ImgURL)
 			newArray.push(newObj);
 

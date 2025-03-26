@@ -60,7 +60,7 @@ export default {
 	onBtnClicked(){
 		console.log("onBtnClicked")
 		if(Tabs1.selectedTab == "剧本")
-			updateRow.updateScreenplay()
+			updateRow.updateScreenplay().then(v=>updateTable.run())
 		else if(Tabs1.selectedTab == "Json"){
 			console.log("gen json")
 			let version = Table1.selectedRow.version
@@ -73,6 +73,7 @@ export default {
 			n8Json.run({course_number,version,level}).then(
 				function(){
 					Button5.setDisabled(false)
+					updateTable.run()
 				}
 			).catch(function(){
 				Button5.setDisabled(false)

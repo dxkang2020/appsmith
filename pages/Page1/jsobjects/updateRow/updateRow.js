@@ -10,8 +10,30 @@ export default {
 		await updateScreenplay.run()
 		Button5.setDisabled(false)
 	},
+	async updateCardsPrompt(item){
+		let cards_prompt =  Table1.selectedRow.cards_prompt
+		let nowItem = Table1.selectedRow.cards_prompt[item.sceneName];
+		if(!nowItem){
+			nowItem = {
+				"clip":item.clip,
+				"clip_zh":item.clip_zh,
+				"description":item.description
+			}
+			Table1.selectedRow.cards_prompt[item.sceneName] = nowItem
+		}
+		if(nowItem.clip != item.clip ||nowItem.prompt_id != item.prompt_id){
+			nowItem.clip = item.clip;
+			nowItem.prompt_id = item.prompt_id
 
-	async updateJsonImage(oldName, newName){
+			return await updateCardsPrompt.run({cards_prompt}).then(()=>updateTable.run())
+
+		}
+	},
+	async updateScenesPrompt(item){
+
+	},
+	async updateJsonImage(updateVal, newName){
+		let oldName = updateVal?.sceneName
 		if(!oldName || !newName || oldName == newName || !Table1.selectedRow?.script_json?.scripts?.length)
 			return
 		function _updateScrits(scripts, on, nn){
@@ -40,9 +62,16 @@ export default {
 		}
 		_updateScrits(Table1.selectedRow?.script_json["scripts"], oldName, newName)
 		console.log(Table1.selectedRow.script_json["scripts"][25])
-		updateScriptJson.run().then(v=>{
+		await updateScriptJson.run().then(v=>{
 			// Input2Copy1.setValue(JSON.stringify(Table1.selectedRow.script_json,null,2))
-			Query2.run()
+			this.updateCardsPrompt({
+				"clip":updateVal.clip,
+				"clip_zh":updateVal.clip_zh,
+				"description":updateVal.description,
+				"prompt_id":updateVal.prompt_id,
+				"sceneName":newName
+			})
+
 		})
 
 	},
@@ -69,7 +98,7 @@ export default {
 		_updateScrits(Table1.selectedRow.script_json["scripts"], oldName, newName)
 		updateScriptJson.run().then(v=>{
 			// Input2Copy1.setValue(JSON.stringify(Table1.selectedRow.script_json,null,2))
-			Query2.run()
+			updateTable.run()
 		})
 
 		// Input2Copy1.setValue(JSON.stringify(Table1.selectedRow.script_json,null,2))
