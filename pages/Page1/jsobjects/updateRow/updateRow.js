@@ -64,6 +64,7 @@ export default {
 		console.log(Table1.selectedRow.script_json["scripts"][25])
 		await updateScriptJson.run().then(v=>{
 			// Input2Copy1.setValue(JSON.stringify(Table1.selectedRow.script_json,null,2))
+			delete Table1.selectedRow.cards_prompt[oldName]
 			this.updateCardsPrompt({
 				"clip":updateVal.clip,
 				"clip_zh":updateVal.clip_zh,
@@ -87,6 +88,10 @@ export default {
 				if(v.type == "scene" && v.name == on){
 					// console.log("rename scene",on, nn)
 					v.name = nn
+				}
+				else if(v.type == "task" && v.image == on){
+					// console.log("rename scene",on, nn)
+					v.image = nn
 				}
 				if(v.feedback?.length)
 					v.feedback.forEach(function(v){

@@ -67,6 +67,7 @@ export default {
 			showAlert('请输入','error')
 			return
 		}
+		return
 		if(this.updateVal.prompt_id){
 			let path = `scenes/${newVal}.png`
 			let prompt_id = this.updateVal.prompt_id

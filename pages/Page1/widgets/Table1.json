@@ -5,7 +5,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 98,
+  "bottomRow": 136,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "canFreezeColumn": true,
   "childStylesheet": {
@@ -214,7 +214,7 @@
   "onRowSelected": "{{Tab.onTabSelectChanged();}}",
   "onSearchTextChanged": "{{\n            Select_public_course_documents1.run();\n            Total_record_public_course_documents1.run()\n          }}",
   "onSort": "",
-  "originalBottomRow": 98,
+  "originalBottomRow": 136,
   "originalTopRow": 28,
   "parentColumnSpace": 17.25,
   "parentId": "0",
