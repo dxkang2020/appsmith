@@ -41,7 +41,7 @@
           "value": "{{this.params.version}}"
         }
       ],
-      "timeoutInMillisecond": 70000
+      "timeoutInMillisecond": 1000000
     },
     "confirmBeforeExecute": false,
     "datasource": {

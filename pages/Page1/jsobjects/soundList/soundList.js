@@ -37,6 +37,8 @@ export default {
 	playAudio(item){
 		// 继续播放不传值
 		if(!item){
+			if(!Checkbox1.isChecked)
+				return
 			this.audioIndex = this.audioIndex + 1
 		}else{
 			this.audioIndex = item.index
@@ -78,7 +80,8 @@ export default {
 		// 保留字母、数字、波浪号和指定标点
 		let text = item.text
 		let character = item.character || ""
-		const cleaned = text.replace(/[^a-zA-Z0-9~\']/g, ' ');
+		const cleaned = text.replace("<player>","").trim().replace(/[^a-zA-Z0-9~\']/g, ' ');
+		
 		return character.toLocaleLowerCase() + "_" + cleaned.toLowerCase().trim().replace(/\s+/g, '_');
 	}
 }

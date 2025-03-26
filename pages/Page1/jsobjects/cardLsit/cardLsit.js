@@ -40,7 +40,11 @@ export default {
 	modifySave(){
 		let newVal = Input13.text
 		if(newVal.length <= 0){
-			showAlert('请输入','error')
+			showAlert('不能为空','error')
+			return
+		}
+		if(!this.validateInput(newVal)){
+			showAlert('错误符号','error')
 			return
 		}
 		console.log(newVal)
@@ -50,14 +54,9 @@ export default {
 			let overwrite = false
 			SaveImage.run({path, prompt_id, overwrite}).then(res =>{
 				if(res == "success"){
-
-
 					closeModal(Modal6.name)
 					Input13.setValue('')
-
 					updateRow.updateJsonImage(this.updateVal,newVal)
-
-
 				}	
 				else if(res == "exists"){
 					showAlert("名称重复","error")
@@ -132,7 +131,10 @@ export default {
 		showModal(Modal3.name)
 	},
 	imgP:'',
-
+	validateInput(input) {
+		const regex = /^[a-zA-Z0-9_]+$/;
+		return regex.test(input);
+	},
 
 	async myFun2 () {
 		//	use async-await or promises

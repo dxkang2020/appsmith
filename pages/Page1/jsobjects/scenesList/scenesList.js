@@ -62,12 +62,16 @@ export default {
 	modifySave(){
 		let newVal = Input14.text
 		console.log(newVal)
-
 		if(newVal.length <= 0){
-			showAlert('请输入','error')
+			showAlert('不能为空','error')
 			return
 		}
-		return
+		if(!this.validateInput(newVal)){
+			showAlert('错误符号','error')
+			return
+		}
+
+
 		if(this.updateVal.prompt_id){
 			let path = `scenes/${newVal}.png`
 			let prompt_id = this.updateVal.prompt_id
@@ -75,13 +79,14 @@ export default {
 			SaveImage.run({path, prompt_id, overwrite}).then(res =>{
 				if(res == "success"){
 
-					let scenes_prompt = JSON.parse(JSON.stringify(Table1.selectedRow.scenes_prompt));
-					scenes_prompt[newVal] = scenes_prompt[this.updateVal.sceneName]
-					delete scenes_prompt[this.updateVal.sceneName]
+					// let scenes_prompt = JSON.parse(JSON.stringify(Table1.selectedRow.scenes_prompt));
+					// scenes_prompt[newVal] = scenes_prompt[this.updateVal.sceneName]
+					// scenes_prompt[newVal] = newVal
+					// delete scenes_prompt[this.updateVal.sceneName]
 					closeModal(Modal7.name)
 					Input14.setValue('')
-					updateRow.updateJsonScene(this.updateVal.sceneName,newVal)
-					updateCardsPrompt.run({scenes_prompt})
+					updateRow.updateJsonScene(this.updateVal,newVal)
+					// updateCardsPrompt.run({scenes_prompt})
 
 				}	
 				else if(res == "exists"){
@@ -154,7 +159,10 @@ export default {
 		showModal(Modal2.name)
 	},
 	imgP:'',
-
+	validateInput(input) {
+		const regex = /^[a-zA-Z0-9_]+$/;
+		return regex.test(input);
+	},
 
 
 
