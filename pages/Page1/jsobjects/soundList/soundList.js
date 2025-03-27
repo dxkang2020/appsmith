@@ -73,7 +73,10 @@ export default {
 			]
 		}
 
-		GenResource.run({course_number,level,overwrite, course})
+		GenResource.run({course_number,level,overwrite, course}).then(()=>	{
+			showAlert('生成成功','success')
+			Audio1.setURL('')
+		})
 	},
 	// 音频名字处理
 	generateAudioName(item) {
@@ -81,7 +84,7 @@ export default {
 		let text = item.text
 		let character = item.character || ""
 		const cleaned = text.replace("<player>","").trim().replace(/[^a-zA-Z0-9~\']/g, ' ');
-		
+
 		return character.toLocaleLowerCase() + "_" + cleaned.toLowerCase().trim().replace(/\s+/g, '_');
 	}
 }

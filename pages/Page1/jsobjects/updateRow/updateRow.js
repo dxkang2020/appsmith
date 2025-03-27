@@ -1,13 +1,27 @@
 export default {
 	async update(){
-
+		console.log("row update:")
+		let idx = Table1.selectedRowIndex
+		console.log("row index", idx)
+		updateTable.data[idx] = Table1.selectedRow
+		await Table1.setData(updateTable.data)
+		Table1.setSelectedRowIndex(idx)
 	},
-
+	showError(e){
+		showAlert(e,"error")
+	},
 	async updateScreenplay(){
-		if (Input2.text == Table1.selectedRow.screenplay)
+
+		if (Input2.text == Table1.selectedRow.screenplay){
 			return
+		}
+		console.log("updateScreenplay")
 		Button5.setDisabled(true)
-		await updateScreenplay.run()
+		await updateScreenplay.run().then(_=>{
+
+			Table1.selectedRow.screenplay = Input2.text
+			this.update()
+		}).catch(this.showError)
 		Button5.setDisabled(false)
 	},
 	async updateCardsPrompt(item){
@@ -25,7 +39,7 @@ export default {
 			nowItem.clip = item.clip;
 			nowItem.prompt_id = item.prompt_id
 
-			return await updateCardsPrompt.run({cards_prompt}).then(()=>updateTable.run())
+			return await updateCardsPrompt.run({cards_prompt}).then(()=>this.update())
 
 		}
 	},
@@ -44,7 +58,7 @@ export default {
 			nowItem.clip = item.clip;
 			nowItem.prompt_id = item.prompt_id
 
-			return await updateScenePrompt.run({scenes_prompt}).then(()=>updateTable.run())
+			return await updateScenePrompt.run({scenes_prompt}).then(()=>this.update())
 
 		}
 	},

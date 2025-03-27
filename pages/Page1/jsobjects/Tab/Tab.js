@@ -60,7 +60,7 @@ export default {
 	onBtnClicked(){
 		console.log("onBtnClicked")
 		if(Tabs1.selectedTab == "剧本")
-			updateRow.updateScreenplay().then(v=>updateTable.run())
+			updateRow.updateScreenplay()
 		else if(Tabs1.selectedTab == "Json"){
 			console.log("gen json")
 			let version = Table1.selectedRow.version
