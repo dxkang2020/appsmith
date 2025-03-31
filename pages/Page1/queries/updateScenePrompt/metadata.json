@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "UPDATE course_documents\nSET scenes_prompt =  coalesce({{this.params.scenes_prompt}},scenes_prompt)\nWHERE id = {{Table1.selectedRow.id}} AND version = {{Table1.selectedRow.version}};",
+      "body": "\nINSERT INTO public.scenes (name, clip, clip_zh, description)\nVALUES ({{this.params.name}}, {{this.params.clip}},\n\t\t\t\t{{this.params.clip_zh}}, {{this.params.description}})\nON CONFLICT (name) \nDO UPDATE SET clip = EXCLUDED.clip;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

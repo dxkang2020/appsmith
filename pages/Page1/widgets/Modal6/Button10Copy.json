@@ -37,7 +37,7 @@
   "mobileRightColumn": 47,
   "mobileTopRow": 18,
   "needsErrorInfo": false,
-  "onClick": "{{cardLsit.coverSave()}}",
+  "onClick": "{{cardList.coverSave()}}",
   "originalBottomRow": 21,
   "originalTopRow": 17,
   "parentId": "a102tejgp3",

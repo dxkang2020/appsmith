@@ -3,7 +3,7 @@
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "bottomRow": 18,
   "boxShadow": "none",
-  "defaultImage": "https://af.runfox.cn/courses/cards/{{currentItem.sceneName}}.png",
+  "defaultImage": "https://af.runfox.cn/courses/cards/{{currentItem.name}}.png",
   "dynamicBindingPathList": [
     {
       "key": "borderRadius"
@@ -28,7 +28,7 @@
   "enableDownload": false,
   "enableRotation": false,
   "flexVerticalAlignment": "start",
-  "image": "{{currentItem.ImgURL}}",
+  "image": "{{currentItem.urls}}",
   "imageShape": "RECTANGLE",
   "isLoading": false,
   "isVisible": true,

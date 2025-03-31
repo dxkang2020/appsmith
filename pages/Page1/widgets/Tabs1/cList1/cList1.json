@@ -103,7 +103,7 @@
   "itemSpacing": 8,
   "key": "oy83s6xie2",
   "leftColumn": 0,
-  "listData": "{{cardLsit.listItems}}",
+  "listData": "{{cardList.listItems}}",
   "mainCanvasId": "0wk5ahrnqk",
   "mainContainerId": "reaswy7532",
   "minWidth": 450,

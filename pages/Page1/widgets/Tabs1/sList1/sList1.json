@@ -111,7 +111,7 @@
   "parentColumnSpace": 13.29296875,
   "parentId": "zpzephcepu",
   "parentRowSpace": 10,
-  "primaryKeys": "{{sList1.listData.map((currentItem, currentIndex) => currentItem[\"id\"] )}}",
+  "primaryKeys": "{{sList1.listData.map((currentItem, currentIndex) => currentItem[\"urls\"] )}}",
   "renderMode": "CANVAS",
   "requiresFlatWidgetChildren": true,
   "responsiveBehavior": "fill",

@@ -43,7 +43,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 19,
   "shouldTruncate": false,
-  "text": "{{currentItem.sceneName}}",
+  "text": "{{currentItem.name}}",
   "textAlign": "LEFT",
   "textColor": "#231F20",
   "textStyle": "HEADING",

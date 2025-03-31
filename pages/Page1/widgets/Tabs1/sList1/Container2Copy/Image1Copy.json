@@ -1,9 +1,9 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 17,
+  "bottomRow": 19,
   "boxShadow": "none",
-  "defaultImage": "https://s.runfox.cn/storage/v1/object/public/images/scenes/{{currentItem.sceneName}}.png",
+  "defaultImage": "https://af.runfox.cn/courses/scenes/{{currentItem.name}}.png",
   "dynamicBindingPathList": [
     {
       "key": "borderRadius"
@@ -28,7 +28,7 @@
   "enableDownload": false,
   "enableRotation": false,
   "flexVerticalAlignment": "start",
-  "image": "{{currentItem.ImgURL}}",
+  "image": "{{currentItem.urls}}",
   "imageShape": "RECTANGLE",
   "isLoading": false,
   "isVisible": true,
@@ -41,11 +41,11 @@
   "mobileTopRow": 0,
   "needsErrorInfo": false,
   "objectFit": "contain",
-  "onClick": "{{scenesList.priviewImg(currentItem.ImgURL)}}",
+  "onClick": "{{scenesList.priviewImg(currentItem)}}",
   "parentId": "7cn32wmsx4",
   "renderMode": "CANVAS",
   "rightColumn": 61,
-  "topRow": 0,
+  "topRow": 2,
   "type": "IMAGE_WIDGET",
   "version": 1,
   "widgetId": "mcf4sst7ip",

@@ -23,9 +23,11 @@ export default {
 		else
 			Button5.setVisibility(false)
 		if(Tabs1.selectedTab == "Scenes"){
-			scenesList.getNewList()
+			scenesList.getScenesList()
+			// Test.getScenesList()
 		}else if(Tabs1.selectedTab == "Cards"){
-			cardLsit.getNewList()
+			cardList.getCardsList()
+			// Test.getCardsList()
 		}
 	},
 	onGenRes(){

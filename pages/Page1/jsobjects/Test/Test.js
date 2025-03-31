@@ -1,15 +1,29 @@
 export default {
 
+	cardslistItems : [],
 	getMarkdown() { return "```json\n" + this.test() + "\n``` \n"; },
+
 	test(){
-		updateRow.updateJsonScene("runfox_school_gate","runfox_school_gate1")
-		updateRow.updateJsonImage("3","3.3")
+		// updateRow.updateJsonSceneByName("hospital_boy","hospital")
+		// updateRow.updateJsonSceneByName("farm_00","farm")
+		// updateRow.updateJsonSceneByName("school_restaurant_123","school_restaurant")
+		let rlt = PackageTools.calcImages(Table1.selectedRow?.script_json)
+		let names = rlt[0]
+		let refs = rlt[1]
+		console.log(names, refs)
+
+	},
+
+	onFileSelected(){
+		console.log("data len", FilePicker2.files[0].data.length)
+		SaveCard.run({
+			filename:"_1.png",
+			overwrite:true,
+			data:FilePicker2.files[0].data
+		})
 	},
 	lines100(){
 		return Array.from({length: 100}, (_, i) => `${i+1}`).join("\n")
 	},
-	async myFun2 () {
-		//	use async-await or promises
-		//	await storeValue('varName', 'hello world')
-	}
+
 }

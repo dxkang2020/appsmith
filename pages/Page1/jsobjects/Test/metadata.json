@@ -6,6 +6,11 @@
     "pageId": "Page1",
     "pluginId": "js-plugin",
     "pluginType": "JS",
-    "variables": []
+    "variables": [
+      {
+        "name": "cardslistItems",
+        "value": "[]"
+      }
+    ]
   }
 }
