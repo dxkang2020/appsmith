@@ -2,7 +2,7 @@ export default {
 	myVar1: [],
 	myVar2: {},
 	isShowBtn:false,
-	
+
 	getPrompt(item){
 		return `**Goal:** Create a 512x512 vocabulary card image for a children's English learning app (ages 6-10).
 **Priority:** Achieve **extremely low cognitive cost** for instant, unambiguous recognition. Must be clean, kid-friendly, and visually appealing.
@@ -57,13 +57,13 @@ ${item.clip}
 		this.uploadImg(this.updateVal,'cover')
 	},
 	InputOnBlur(index){
-		// if(Input9.text.length <=0 ){
-		// showAlert('不能为空','error')	
-		// return
-		// }
-		// let idx = index % cList1.pageSize 
-		// console.log("idx::", idx, index)
-		// this.listItems[index].clip = 	cList1.currentItemsView[idx].Input9.text
+		if(Input9.text.length <=0 ){
+			showAlert('不能为空','error')	
+			return
+		}
+		let idx = index % cList1.pageSize 
+		console.log("idx::", idx, index)
+		this.listItems[index].clip = 	cList1.currentItemsView[idx].Input9.text
 
 
 	},

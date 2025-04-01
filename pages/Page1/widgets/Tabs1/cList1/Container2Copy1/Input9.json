@@ -3,7 +3,7 @@
   "animateLoading": true,
   "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 25,
+  "bottomRow": 29,
   "boxShadow": "none",
   "defaultText": "{{currentItem.clip}}",
   "dynamicBindingPathList": [
@@ -17,8 +17,17 @@
       "key": "defaultText"
     }
   ],
-  "dynamicHeight": "AUTO_HEIGHT",
-  "dynamicTriggerPathList": [],
+  "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "onBlur"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onBlur"
+    }
+  ],
   "iconAlign": "left",
   "inputType": "MULTI_LINE_TEXT",
   "isDisabled": false,
@@ -41,8 +50,9 @@
   "mobileRightColumn": 20,
   "mobileTopRow": 13,
   "needsErrorInfo": false,
+  "onBlur": "{{cardList.InputOnBlur(currentIndex)}}",
   "parentColumnSpace": 12.22265625,
-  "parentId": "7cn32wmsx4",
+  "parentId": "wewkc3xpbn",
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "resetOnSubmit": true,
@@ -50,9 +60,9 @@
   "rightColumn": 40,
   "shouldAllowAutofill": false,
   "showStepArrows": false,
-  "topRow": 13,
+  "topRow": 12,
   "type": "INPUT_WIDGET_V2",
   "version": 2,
-  "widgetId": "m03qnlmd89",
-  "widgetName": "Input16"
+  "widgetId": "geqww9gupa",
+  "widgetName": "Input9"
 }

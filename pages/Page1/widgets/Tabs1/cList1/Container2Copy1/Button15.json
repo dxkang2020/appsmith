@@ -33,7 +33,7 @@
   "mobileRightColumn": 61,
   "mobileTopRow": 27,
   "needsErrorInfo": false,
-  "onClick": "{{copyToClipboard(cardList.getPrompt(currentItem));}}",
+  "onClick": "{{copyToClipboard(cardList.getPrompt(currentItem)).then(() => {\n  showAlert('复制成功', 'success');\n}).catch(() => {\n  showAlert('复制错误', 'error');\n});}}",
   "parentColumnSpace": 8.3388671875,
   "parentId": "wewkc3xpbn",
   "parentRowSpace": 10,

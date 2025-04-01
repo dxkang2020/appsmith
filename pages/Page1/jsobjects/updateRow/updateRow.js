@@ -1,11 +1,13 @@
 export default {
+	json:null,
 	async update(){
 		console.log("row update:")
 		let idx = Table1.selectedRowIndex
 		console.log("row index", idx)
 		updateTable.data[idx] = Table1.selectedRow
 		await Table1.setData(updateTable.data)
-		await Table1.setSelectedRowIndex(idx)
+		// await Table1.setSelectedRowIndex(idx)
+
 		Tab.onTabSelectChanged()
 
 	},

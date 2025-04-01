@@ -52,7 +52,7 @@ ${item.clip}
 			return
 		}
 
-		// this.listItems[index].clip = 	txt
+		this.listItems[index].clip = 	txt
 		// this.sceneslistItems[index].clip = 	sList1.currentItemsView[index % sList1.pageSize ].Input3.text
 
 
