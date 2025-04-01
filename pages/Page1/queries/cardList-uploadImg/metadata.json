@@ -12,6 +12,9 @@
         },
         {
           "name": "isCover"
+        },
+        {
+          "name": "index"
         }
       ],
       "paginationType": "NONE",

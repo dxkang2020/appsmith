@@ -15,7 +15,27 @@ export default {
 		console.log("images", names)
 
 	},
+	genTestJson(){
+		console.log("gen json")
+		let version = Table1.selectedRow.version
+		let level = Table1.selectedRow.level
+		let course_number = Table1.selectedRow.course_number
+		let course = Table1.selectedRow.script_json
+		let scenes =Table1.selectedRow.scenes_prompt
+		let cards = Table1.selectedRow.cards_prompt
 
+		// n8Json.run({course_number,version,level})
+		// n8JsonTest.run({course_number,version,level})
+		Button5.setDisabled(true)
+		showAlert('正在生成','success')
+		n8JsonTest.run({course_number,version,level}).then(
+			function(){
+				Button5.setDisabled(false)
+			}
+		).catch(function(){
+			Button5.setDisabled(false)
+		})
+	},
 	onFileSelected(){
 		console.log("data len", FilePicker2.files[0].data.length)
 		SaveCard.run({

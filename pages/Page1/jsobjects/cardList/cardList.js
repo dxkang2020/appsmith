@@ -2,23 +2,67 @@ export default {
 	myVar1: [],
 	myVar2: {},
 	isShowBtn:false,
-
+	temText:'',
 	getPrompt(item){
 		return `**Goal:** Create a 512x512 vocabulary card image for a children's English learning app (ages 6-10).
 **Priority:** Achieve **extremely low cognitive cost** for instant, unambiguous recognition. Must be clean, kid-friendly, and visually appealing.
 **Style:** Use **Simplified Realism / Modern Illustration**. Enforce these key features for consistency:
-    *   **Outlines:** Apply **bold, clean, dark-colored outlines** with a **consistent line weight** throughout the illustration.
+    *   **Outlines:** Apply **bold, clean, dark-colored outlines, Hex:1F150D,24-pixel border** with a **consistent line weight** throughout the illustration.
     *   **Texture:** Integrate a **uniform, subtle noise or grain texture** across color-filled areas to add gentle surface detail.
     *   **Shading:** Use **simple, clean cell-shading** (minimal blending) beneath the texture layer to indicate form and dimension. Avoid overly complex gradients or photorealistic lighting.
     *   **Colors:** Employ a palette of **bright, clear, appealing, kid-friendly solid colors**.
 **Format:** Isolate subject with a **transparent background (alpha channel, PNG)**, **centered**, **no text/letters**.
------------------------------------
+------------
 ${item.clip}
 `
 	},
 
 	updateVal:{}, //确认要上传的参数 覆盖后重新上传提取
 
+	clipSave(item,index){
+
+		if(!this.temText){
+			showAlert('保存失败','error')
+			return
+		}
+		let startIndex = ((cList1.pageNo -1 ) * cList1.pageNo) + index
+		if(this.temText != item.clip){
+			let val = {
+				"clip":this.temText,
+				"clip_zh":item.clip_zh,
+				"description":item.description,
+				"name":item.name
+			}
+
+			updateRow.updateCardPrompt(val).then(()=>{
+				this.listItems[startIndex].clip =	this.temText
+				this.temText =''
+			})
+		}else{
+			showAlert('提示词相同')
+		}
+
+
+
+	},
+	InputOnBlur(index){
+		let txt = cList1.currentItemsView[index % cList1.pageSize ]?.Input9?.text
+		if(!txt?.length ){
+			showAlert('不能为空','error')	
+			return
+		}
+		this.temText =txt
+		// if(Input9.text.length <=0 ){
+		// showAlert('不能为空','error')	
+		// return
+		// }
+		// let idx = index % cList1.pageSize 
+		// console.log("idx::", idx, index)
+		// this.temText = Input9.text
+		// this.listItems[index].clip = 	cList1.currentItemsView[idx].Input9.text
+
+
+	},
 	modifySave(){
 		let newVal = Input13.text
 		if(newVal.length <= 0){
@@ -30,60 +74,45 @@ ${item.clip}
 			return
 		}
 		console.log(newVal)
-		const file =cList1.triggeredItemView.FilePicker3.files[0].data
-		let filename = `${newVal}.png`
-		let data = file
-		let overwrite = false
 
+		updateRow.updateJsonImage(this.updateVal,newVal).then(()=>{
+			this.updateVal.name = newVal
+			// closeModal(Modal6.name)
+			// Input13.setValue('')
+			// showAlert("修改成功","success")
+			// console.log(res)
 
-		SaveCard.run({filename, overwrite,data}).then(res =>{
-			if(res == "success"){
-				closeModal(Modal6.name)
-				Input13.setValue('')
-				showAlert("修改成功","success")
-				updateRow.updateJsonImage(this.updateVal,newVal)
-			}	
-			else if(res == "exists"){
-				showAlert("名称重复","error")
-			}else {
-				showAlert("failed","error") 
-			}
-
-
+			this.uploadImg(this.updateVal,false,this.localIndex)
 		})
-
 	},
 	coverSave(){
-		this.uploadImg(this.updateVal,'cover')
+		this.uploadImg(this.updateVal,'cover',this.localIndex)
 	},
-	InputOnBlur(index){
-		if(Input9.text.length <=0 ){
-			showAlert('不能为空','error')	
-			return
-		}
-		let idx = index % cList1.pageSize 
-		console.log("idx::", idx, index)
-		this.listItems[index].clip = 	cList1.currentItemsView[idx].Input9.text
-
-
-	},
+	localIndex :0,
 	// 上传图片
-	uploadImg(item,isCover){
+	uploadImg(item,isCover,index){
 		this.updateVal = item
-		const file =cList1.triggeredItemView.FilePicker3.files[0].data
+		const file =cList1.triggeredItemView.FilePicker3.files[0]
 
 		let filename = `${item.name}.png`
-		let data = file
+		// let data = file
+
+		let startIndex = ((cList1.pageNo -1 ) * cList1.pageNo) + index
 
 		let overwrite =  isCover == 'cover' ? true : false
-		SaveCard.run({filename, overwrite,data}).then(res =>{
+		SaveCard.run({filename, overwrite,file}).then(res =>{
 			if(res == "success"){
-				showAlert('保存成功','sucess')
+				showAlert('保存成功','success')
 				updateRow.updateCardPrompt(item)
 
-				if(isCover == 'cover'){
-					closeModal(Modal6.name)
-				}
+				let uri = 'data:image/png;base64,' + btoa(file.data)
+				this.listItems[startIndex].urls = uri
+
+				this.listItems[startIndex].clip = item.clip
+				this.listItems[startIndex].name = item.name
+				// if(isCover == 'cover'){
+				closeModal(Modal6.name)
+				// }
 
 			}else if (res == "exists"){
 				//弹窗提示改名或者覆盖
@@ -104,7 +133,7 @@ ${item.clip}
 		let refs = rlt[1]
 		console.log("images", names)
 		getCardsPrompt.run({names}).then(res=>{
-			console.log("images:",getCardsPrompt.data)
+
 
 			this.listItems = res.map((v)=>{
 				let item = {
@@ -112,11 +141,14 @@ ${item.clip}
 					urls :`https://af.runfox.cn/courses/cards/${v.name}.png?r=${Math.random()}` 
 
 				}
-				if(refs[item.name])
-					item.clip = `**Illustrate the word**: ${item.name}\n**references**:\n${refs[item.name].join("\n")}
-`
-					return item
+				// if(refs[item.name])
+				if(!item.clip.includes('Illustrate')){
+					item.clip = `**Illustrate the word**: ${item.name}\n**references**:\n${refs[item.name].join("\n")}`
+				}
+
+				return item
 			})
+			console.log("images:",this.listItems)
 		})
 
 

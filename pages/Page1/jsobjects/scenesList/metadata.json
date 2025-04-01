@@ -12,8 +12,16 @@
         "value": "false"
       },
       {
+        "name": "temText",
+        "value": "''"
+      },
+      {
         "name": "updateVal",
         "value": "{}"
+      },
+      {
+        "name": "localIndex",
+        "value": "0"
       },
       {
         "name": "listItems",

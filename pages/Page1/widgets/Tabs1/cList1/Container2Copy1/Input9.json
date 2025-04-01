@@ -3,9 +3,9 @@
   "animateLoading": true,
   "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 1966,
+  "bottomRow": 33,
   "boxShadow": "none",
-  "defaultText": "{{JSON.stringify(Table1.selectedRow.script_json,null,2)}}\n",
+  "defaultText": "{{currentItem.clip}}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
@@ -15,12 +15,20 @@
     },
     {
       "key": "defaultText"
+    },
+    {
+      "key": "placeholderText"
     }
   ],
-  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "onBlur"
+    }
+  ],
   "dynamicTriggerPathList": [
     {
-      "key": "onTextChanged"
+      "key": "onBlur"
     }
   ],
   "iconAlign": "left",
@@ -29,38 +37,36 @@
   "isLoading": false,
   "isRequired": false,
   "isVisible": true,
-  "key": "saw55n9qrn",
-  "label": "",
+  "key": "4gvwmd1hvh",
+  "label": "图片描述：",
   "labelAlignment": "left",
   "labelPosition": "Top",
   "labelStyle": "",
   "labelTextSize": "0.875rem",
   "labelWidth": 5,
   "leftColumn": 0,
-  "maxDynamicHeight": 587,
-  "minDynamicHeight": 79,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
   "minWidth": 450,
-  "mobileBottomRow": 7,
+  "mobileBottomRow": 20,
   "mobileLeftColumn": 0,
   "mobileRightColumn": 20,
-  "mobileTopRow": 0,
+  "mobileTopRow": 13,
   "needsErrorInfo": false,
-  "onTextChanged": "",
-  "originalBottomRow": 1441,
-  "originalTopRow": 1,
-  "parentColumnSpace": 11.81640625,
-  "parentId": "qv0p77aqd4",
+  "onBlur": "{{cardList.InputOnBlur(currentIndex)}}",
+  "parentColumnSpace": 12.22265625,
+  "parentId": "wewkc3xpbn",
   "parentRowSpace": 10,
+  "placeholderText": "{{currentItem.clip}}",
   "renderMode": "CANVAS",
-  "resetOnSubmit": true,
+  "resetOnSubmit": false,
   "responsiveBehavior": "fill",
-  "rightColumn": 64,
+  "rightColumn": 43,
   "shouldAllowAutofill": false,
-  "shouldScrollContents": true,
   "showStepArrows": false,
-  "topRow": 1,
+  "topRow": 13,
   "type": "INPUT_WIDGET_V2",
   "version": 2,
-  "widgetId": "0oxdj1lqsk",
-  "widgetName": "Input2Copy1"
+  "widgetId": "n9jukdmwem",
+  "widgetName": "Input9"
 }

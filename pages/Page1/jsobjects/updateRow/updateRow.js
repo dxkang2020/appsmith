@@ -2,16 +2,16 @@ export default {
 	json:null,
 	async update(){
 		// console.log("row update:")
-		// let idx = Table1.selectedRowIndex
+		let idx = Table1.selectedRowIndex
 		// console.log("row index", idx)
-		// updateTable.data[idx] = Table1.selectedRow
-		// await Table1.setData(updateTable.data)
-		// // await Table1.setSelectedRowIndex(idx)
+		updateTable.data[idx] = Table1.selectedRow
+		await Table1.setData(updateTable.data)
+		// await Table1.setSelectedRowIndex(idx)
 		// 
 		// Tab.onTabSelectChanged()
-		updateTable.run().then(r=>{
-			Tab.onTabSelectChanged()
-		})
+		// updateTable.run().then(r=>{
+		// Tab.onTabSelectChanged()
+		// })
 	},
 	showError(e){
 		showAlert(e,"error")
@@ -39,7 +39,7 @@ export default {
 		})
 	},
 	async updateJsonImage(updateVal, newName){
-		let oldName = updateVal?.sceneName
+		let oldName = updateVal?.name
 		if(!oldName || !newName || oldName == newName || !Table1.selectedRow?.script_json?.scripts?.length)
 			return
 		function _updateScrits(scripts, on, nn){
@@ -67,7 +67,7 @@ export default {
 
 		}
 		_updateScrits(Table1.selectedRow?.script_json["scripts"], oldName, newName)
-		Input2Copy1.setValue(JSON.stringify(Table1.selectedRow.script_json,null,2))
+		// Input2Copy1.setValue(JSON.stringify(Table1.selectedRow.script_json,null,2))
 		// console.log(Table1.selectedRow.script_json["scripts"][25])
 		await updateScriptJson.run(Table1.selectedRow).then(v=>{
 

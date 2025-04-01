@@ -1,5 +1,5 @@
 
-INSERT INTO public.scenes (name, clip, clip_zh, description)
+INSERT INTO public.cards (name , clip, clip_zh, description)
 VALUES ({{this.params.name}}, {{this.params.clip}},
 				{{this.params.clip_zh}}, {{this.params.description}})
 ON CONFLICT (name) 
