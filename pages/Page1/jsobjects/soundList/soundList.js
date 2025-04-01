@@ -4,7 +4,7 @@ export default {
 		//	use async-await or promises
 		//	await storeValue('varName', 'hello world')
 	},
-
+	listItems:null,
 	getTexts(jsonArr){
 		if (!Array.isArray(jsonArr)) {
 			jsonArr = [jsonArr];

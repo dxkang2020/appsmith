@@ -7,10 +7,12 @@ export default {
 		// updateRow.updateJsonSceneByName("hospital_boy","hospital")
 		// updateRow.updateJsonSceneByName("farm_00","farm")
 		// updateRow.updateJsonSceneByName("school_restaurant_123","school_restaurant")
-		let rlt = PackageTools.calcImages(Table1.selectedRow?.script_json)
-		let names = rlt[0]
-		let refs = rlt[1]
-		console.log(names, refs)
+		// let rlt = PackageTools.calcImages(Table1.selectedRow?.script_json)
+		// let names = rlt[0]
+		// let refs = rlt[1]
+		// console.log(names, refs)
+		let names = PackageTools.calcScenes(Table1.selectedRow.script_json)
+		console.log("images", names)
 
 	},
 

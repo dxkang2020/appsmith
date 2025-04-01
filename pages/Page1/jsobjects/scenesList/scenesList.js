@@ -8,6 +8,9 @@ export default {
 ${item.clip}
 `
 	},
+	clipSave(item){
+		
+	},
 	modifySave(){
 		let newVal = Input14.text
 		console.log(newVal)

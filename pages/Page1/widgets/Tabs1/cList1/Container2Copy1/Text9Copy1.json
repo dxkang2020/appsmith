@@ -1,8 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "borderWidth": "0.1",
-  "bottomRow": 5,
+  "bottomRow": 17,
   "dynamicBindingPathList": [
     {
       "key": "truncateButtonColor"
@@ -12,45 +11,40 @@
     },
     {
       "key": "borderRadius"
-    },
-    {
-      "key": "text"
     }
   ],
-  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicHeight": "FIXED",
   "dynamicTriggerPathList": [],
   "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
-  "fontSize": "0.875rem",
+  "fontSize": "1rem",
   "fontStyle": "BOLD",
   "isLoading": false,
   "isVisible": true,
-  "key": "udiq0x0cou",
-  "leftColumn": 2,
+  "key": "t93zoln14v",
+  "leftColumn": 0,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
   "minWidth": 450,
-  "mobileBottomRow": 4,
-  "mobileLeftColumn": 26,
-  "mobileRightColumn": 42,
-  "mobileTopRow": 0,
+  "mobileBottomRow": 16,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 13,
+  "mobileTopRow": 12,
   "needsErrorInfo": false,
-  "originalBottomRow": 5,
-  "originalTopRow": 0,
   "overflow": "NONE",
-  "parentColumnSpace": 4.78076171875,
-  "parentId": "pdskef7epv",
+  "parentColumnSpace": 12.22265625,
+  "parentId": "wewkc3xpbn",
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 35,
+  "rightColumn": 7,
   "shouldTruncate": false,
-  "text": "{{Table1.selectedRow.course_number+\" \"+Table1.selectedRow.unit_title}}",
+  "text": "图片描述:",
   "textAlign": "LEFT",
-  "textColor": "#be185d",
-  "topRow": 0,
+  "textColor": "#231F20",
+  "topRow": 13,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,
-  "widgetId": "zf8xw48go0",
-  "widgetName": "Text2"
+  "widgetId": "olmdksjnsa",
+  "widgetName": "Text9Copy1"
 }

@@ -20,6 +20,9 @@ export default {
 			Button5.setVisibility(true)
 
 		}
+		else if(Tabs1.selectedTab == "Sounds"){
+			soundList.getTexts(Table1.selectedRow.script_json.scripts)
+		}
 		else
 			Button5.setVisibility(false)
 		if(Tabs1.selectedTab == "Scenes"){

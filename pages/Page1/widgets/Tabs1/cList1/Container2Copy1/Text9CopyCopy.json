@@ -1,10 +1,13 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 13,
+  "bottomRow": 21,
   "dynamicBindingPathList": [
     {
       "key": "truncateButtonColor"
+    },
+    {
+      "key": "fontFamily"
     },
     {
       "key": "borderRadius"
@@ -13,40 +16,38 @@
       "key": "text"
     }
   ],
-  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicHeight": "FIXED",
   "dynamicTriggerPathList": [],
-  "fontFamily": "Poppins",
+  "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
   "fontSize": "0.875rem",
   "fontStyle": "",
   "isLoading": false,
   "isVisible": true,
-  "key": "udiq0x0cou",
-  "leftColumn": 2,
+  "key": "t93zoln14v",
+  "leftColumn": 7,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
   "minWidth": 450,
-  "mobileBottomRow": 6,
+  "mobileBottomRow": 16,
   "mobileLeftColumn": 0,
-  "mobileRightColumn": 11,
-  "mobileTopRow": 2,
+  "mobileRightColumn": 13,
+  "mobileTopRow": 12,
   "needsErrorInfo": false,
-  "originalBottomRow": 15,
-  "originalTopRow": 5,
   "overflow": "NONE",
-  "parentColumnSpace": 11.0078125,
-  "parentId": "pdskef7epv",
+  "parentColumnSpace": 12.22265625,
+  "parentId": "wewkc3xpbn",
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 62,
+  "rightColumn": 40,
   "shouldTruncate": false,
-  "text": "{{\"新词: \" + \nTable1.selectedRow.new_vocab.map(word => word).join(\",\")+\"\\n复习词: \" + \nTable1.selectedRow.review_vocab.map(word => word).join(\",\")+\"\\n句型: \" + \nTable1.selectedRow.sentence_patterns.map(word => word).join(\",\")+\"\\n语法: \" + \nTable1.selectedRow.grammar}}",
+  "text": "{{currentItem.clip}}",
   "textAlign": "LEFT",
-  "textColor": "#15803d",
-  "topRow": 5,
+  "textColor": "#231F20",
+  "topRow": 12,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,
-  "widgetId": "pey3fs2sky",
-  "widgetName": "Text1"
+  "widgetId": "h8gd3ahs95",
+  "widgetName": "Text9CopyCopy"
 }

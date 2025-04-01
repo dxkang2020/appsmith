@@ -12,6 +12,10 @@
         "value": "[]"
       },
       {
+        "name": "listItems",
+        "value": "null"
+      },
+      {
         "name": "showText",
         "value": "''"
       },

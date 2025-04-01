@@ -268,7 +268,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 63,
   "searchKey": "",
-  "tableData": "{{soundList.getTexts(Table1.selectedRow.script_json.scripts)}}",
+  "tableData": "{{soundList.audioArr}}",
   "textSize": "0.875rem",
   "topRow": 12,
   "totalRecordsCount": 0,
