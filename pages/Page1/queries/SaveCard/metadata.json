@@ -29,7 +29,7 @@
           "value": "{{this.params.file}}"
         }
       ],
-      "encodeParamsToggle": false,
+      "encodeParamsToggle": true,
       "formData": {
         "apiContentType": "multipart/form-data"
       },

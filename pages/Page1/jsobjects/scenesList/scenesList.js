@@ -71,6 +71,8 @@ ${item.clip}
 	localIndex :0, //记录index
 	// 上传图片
 	uploadImg(item, isCover, index){
+		showModal(Modal9.name)
+
 		this.updateVal = item
 		this.localIndex = index
 		const file =sList1.triggeredItemView.FilePicker1.files[0]
@@ -87,26 +89,33 @@ ${item.clip}
 		SaveScene.run({filename, overwrite,file}).then(res =>{
 			if(res == "success"){
 				showAlert('保存成功','success')
+				closeModal(Modal9.name)
 				updateRow.updateScenePrompt(item)
 
-				let uri = 'data:image/png;base64,' + btoa(file.data)
+				// let uri = 'data:image/png;base64,' + btoa(file.data)
 				console.log("listItems",startIndex,  this.listItems[startIndex])
-				this.listItems[startIndex].urls = uri
+				this.listItems[startIndex].urls = file.data
 				this.listItems[startIndex].clip = item.clip
 				this.listItems[startIndex].name = item.name
 
 				// debugger;
 				// if(isCover == 'cover'){
+
+
 				closeModal(Modal7.name)
 				// }
 
 			}else if (res == "exists"){
+				closeModal(Modal9.name)
 				//弹窗提示改名或者覆盖
 				Input14.setValue(item.name)
 				showModal(Modal7.name)
 			}	else{
 				//failed
+				closeModal(Modal9.name)
 			}
+		}).catch(()=>{
+			closeModal(Modal9.name)
 		})
 
 	},

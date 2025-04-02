@@ -27,7 +27,7 @@
     }
   ],
   "dynamicTyping": true,
-  "fileDataType": "Binary",
+  "fileDataType": "Base64",
   "files": [],
   "isDefaultClickDisabled": true,
   "isDisabled": false,
@@ -37,7 +37,7 @@
   "key": "uhnx7w6r2o",
   "label": "上传图片",
   "leftColumn": 42,
-  "maxFileSize": "5",
+  "maxFileSize": "10",
   "maxNumFiles": "1",
   "minWidth": 120,
   "mobileBottomRow": 10,

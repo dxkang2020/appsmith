@@ -91,8 +91,10 @@ ${item.clip}
 	localIndex :0,
 	// 上传图片
 	uploadImg(item,isCover,index){
+		showModal(Modal9.name)
 		this.updateVal = item
 		const file =cList1.triggeredItemView.FilePicker3.files[0]
+		console.log("file::", file.name, file.dataFormat, file.size, file.type)
 
 		let filename = `${item.name}.png`
 		// let data = file
@@ -100,27 +102,34 @@ ${item.clip}
 		let startIndex = ((cList1.pageNo -1 ) * cList1.pageNo) + index
 
 		let overwrite =  isCover == 'cover' ? true : false
+
 		SaveCard.run({filename, overwrite,file}).then(res =>{
 			if(res == "success"){
 				showAlert('保存成功','success')
+				closeModal(Modal9.name)
 				updateRow.updateCardPrompt(item)
 
-				let uri = 'data:image/png;base64,' + btoa(file.data)
-				this.listItems[startIndex].urls = uri
+				// let uri = 'data:image/png;base64,' + btoa(file.data)
+				this.listItems[startIndex].urls = file.data
 
 				this.listItems[startIndex].clip = item.clip
 				this.listItems[startIndex].name = item.name
 				// if(isCover == 'cover'){
+
 				closeModal(Modal6.name)
 				// }
 
 			}else if (res == "exists"){
 				//弹窗提示改名或者覆盖
+				closeModal(Modal9.name)
 				Input13.setValue(item.name)
 				showModal(Modal6.name)
 			}	else{
 				//failed
+				closeModal(Modal9.name)
 			}
+		}).catch(()=>{
+			closeModal(Modal9.name)
 		})
 
 	},

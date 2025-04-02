@@ -9,6 +9,7 @@ export default {
 		if (!Array.isArray(jsonArr)) {
 			jsonArr = [jsonArr];
 		}
+		
 		var that = this
 		let texts = []
 		let index = currentIndex;
@@ -26,12 +27,13 @@ export default {
 				v.feedback.forEach((item)=>{
 					let items = that.getTexts(item, index)
 					texts.push(...items)
-					index +=  items.length
+					console.log(items,'ssss',...items,items.length)
+					index += items.length
 				})
 			}
 		})
 		// let arr =  Array.from(texts) 
-		console.log(texts)
+		// console.log(texts)
 		this.audioArr = texts
 		return texts
 	},
