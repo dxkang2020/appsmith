@@ -131,25 +131,31 @@ ${item.clip}
 		let rlt = PackageTools.calcImages(Table1.selectedRow?.script_json)
 		let names = rlt[0]
 		let refs = rlt[1]
-		console.log("images", names)
+		// console.log("images", names)
+		let obj ={}
 		getCardsPrompt.run({names}).then(res=>{
+			console.log("res", res)
 
+			obj[res.name] = res
 
-			this.listItems = res.map((v)=>{
-				let item = {
-					...v,
-					urls :`https://af.runfox.cn/courses/cards/${v.name}.png?r=${Math.random()}` 
-
-				}
-				// if(refs[item.name])
-				if(!item.clip.includes('Illustrate')){
-					item.clip = `**Illustrate the word**: ${item.name}\n**references**:\n${refs[item.name].join("\n")}`
-				}
-
-				return item
-			})
-			console.log("images:",this.listItems)
 		})
+		this.listItems = names.map((v)=>{
+			let item = {
+				name:v,
+				urls :`https://af.runfox.cn/courses/cards/${v}.png?r=${Math.random()}` ,
+				clip:obj[v]?.clip ?? "",
+				clip_zh:obj[v]?.clip_zh ?? v,
+				description:obj[v]?.description ?? v,
+			}
+			// if(refs[item.name])
+			if(!item.clip.includes('Illustrate')){
+				item.clip = `**Illustrate the word**: ${item.name}\n**references**:\n${refs[item.name].join("\n")}`
+			}
+
+			return item
+		})
+		console.log("images:",this.listItems)
+
 
 
 	},

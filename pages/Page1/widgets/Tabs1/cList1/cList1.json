@@ -117,7 +117,7 @@
   "parentColumnSpace": 13.29296875,
   "parentId": "0d63vzcv2n",
   "parentRowSpace": 10,
-  "primaryKeys": "{{cList1.listData.map((currentItem, currentIndex) => currentItem[\"id\"] )}}",
+  "primaryKeys": "{{cList1.listData.map((currentItem, currentIndex) => currentItem[\"name\"] )}}",
   "renderMode": "CANVAS",
   "requiresFlatWidgetChildren": true,
   "responsiveBehavior": "fill",

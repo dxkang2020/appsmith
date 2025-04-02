@@ -5,25 +5,28 @@ export default {
 		//	await storeValue('varName', 'hello world')
 	},
 	listItems:null,
-	getTexts(jsonArr){
+	getTexts(jsonArr,currentIndex){
 		if (!Array.isArray(jsonArr)) {
 			jsonArr = [jsonArr];
 		}
 		var that = this
 		let texts = []
-		let a = 0;
-		jsonArr.forEach((v,i)=>{
+		let index = currentIndex;
+		jsonArr.forEach((v)=>{
 			if(v.text && v.type != "assess" &&v.character){
 
 				texts.push({
 					'text':v.text,
 					"character":v.character,
-					'index': ++a
+					'index': ++index
 				})
 			}
 			if(v.feedback && v.feedback.length > 0){
+
 				v.feedback.forEach((item)=>{
-					texts.push(...that.getTexts(item))
+					let items = that.getTexts(item, index)
+					texts.push(...items)
+					index +=  items.length
 				})
 			}
 		})
@@ -58,6 +61,9 @@ export default {
 	openMoadl4(){
 		Audio1.setPlaying(false)
 		showModal(Modal4.name)
+	},
+	RowSelected(currentRow){
+		console.log('12121',currentRow)
 	},
 	resetAudio(){
 		showAlert('正在生成','success')

@@ -21,7 +21,7 @@ export default {
 
 		}
 		else if(Tabs1.selectedTab == "Sounds"){
-			soundList.getTexts(Table1.selectedRow.script_json.scripts)
+			soundList.getTexts(Table1.selectedRow.script_json.scripts,0)
 		}
 		else
 			Button5.setVisibility(false)

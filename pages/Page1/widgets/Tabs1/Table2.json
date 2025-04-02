@@ -4,7 +4,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 166,
+  "bottomRow": 140,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "canFreezeColumn": true,
   "childStylesheet": {
@@ -36,7 +36,7 @@
     "index",
     "character"
   ],
-  "columnUpdatedAt": 1743044279890,
+  "columnUpdatedAt": 1743563400856,
   "columnWidthMap": {
     "text": 378
   },
@@ -86,11 +86,17 @@
     },
     {
       "key": "primaryColumns.customColumn1.onClick"
+    },
+    {
+      "key": "onRowSelected"
     }
   ],
   "dynamicTriggerPathList": [
     {
       "key": "primaryColumns.customColumn1.onClick"
+    },
+    {
+      "key": "onRowSelected"
     }
   ],
   "enableClientSideSearch": true,
@@ -114,7 +120,7 @@
   "mobileTopRow": 10,
   "multiRowSelection": false,
   "needsErrorInfo": false,
-  "onRowSelected": "{{}}",
+  "onRowSelected": "{{soundList.RowSelected()}}",
   "originalBottomRow": 168,
   "originalTopRow": 14,
   "parentColumnSpace": 13.29296875,
