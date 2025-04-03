@@ -14,10 +14,8 @@ export default {
 		// let names = PackageTools.calcScenes(Table1.selectedRow.script_json)
 		// console.log("images", names)
 		console.log(Table1.selectedRow.updated_at)
-		let diffMinute = (Date.now() - new Date(Table1.selectedRow.updated_at))/60000
-		console.log(diffMinute)
-		let hour = 1
-		let min
+
+		
 		
 
 	},

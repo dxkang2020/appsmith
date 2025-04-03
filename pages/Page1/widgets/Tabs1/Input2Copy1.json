@@ -3,9 +3,9 @@
   "animateLoading": true,
   "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 1430,
+  "bottomRow": 80,
   "boxShadow": "none",
-  "defaultText": "{{JSON.stringify(Table1.selectedRow.script_json,null,2)}}\n",
+  "defaultText": "{{\nTable1.selectedRow.status == \"scripting\" ? Table1.selectedRow.error:JSON.stringify(Table1.selectedRow.script_json,null,2)}}\n",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
@@ -46,7 +46,7 @@
   "mobileTopRow": 0,
   "needsErrorInfo": false,
   "onTextChanged": "",
-  "originalBottomRow": 1428,
+  "originalBottomRow": 1430,
   "originalTopRow": 1,
   "parentColumnSpace": 11.81640625,
   "parentId": "qv0p77aqd4",

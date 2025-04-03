@@ -12,14 +12,14 @@ export default {
 		else if(Tabs1.selectedTab == "Json" &&
 						Table1.selectedRow.screenplay&& Table1.selectedRow.screenplay.length > 300 ){
 			let label = ""
+			let diffMinute = (Date.now() - new Date(Table1.selectedRow.updated_at))/60000
 			if(!Table1.selectedRow?.script_json?.scripts?.length)
 				label = "生成JSON"
-			
-			else if (Table1.selectedRow.status != "scripting" || Table1.selectedRow.updated_at )
+			else if (Table1.selectedRow.status != "scripting" || diffMinute > 5 )
 				label = "重新生成"
 			if(label.length>0){
-							Button5.setLabel(label) 
-			Button5.setVisibility(true)
+				Button5.setLabel(label) 
+				Button5.setVisibility(true)
 			}
 
 		}

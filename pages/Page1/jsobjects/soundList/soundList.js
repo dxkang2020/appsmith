@@ -42,21 +42,25 @@ export default {
 		showModal(Modal4.name)
 	},
 	RowSelected(next){
-		// let selectedRow =	Table2.filteredTableData
-		let selectedRow =	Table2.selectedRow
-		let arr = Table2.filteredTableData
-		console.log('12121',selectedRow,arr)
+
+		// let selectedRow =	Table2.selectedRow  //选中某一行
+		let sIndex = Table2.selectedRowIndex //选中行index
+		let arr = Table2.filteredTableData  //数据列表
 
 		if(next){
 			if(!Checkbox1.isChecked)
 				return
 			this.audioIndex += 1
 		}else{
-			this.audioIndex = selectedRow.index
+			//选中某一行 赋值给index 
+			this.audioIndex = sIndex
 		}
+		console.log('12121',arr,this.audioIndex)
+		if(this.audioIndex >= arr.length) return;
 
-		selectedRow = arr[this.audioIndex -1]
+		let	selectedRow = arr[this.audioIndex]
 		this.showText = selectedRow.text;
+
 
 		let level = Table1.selectedRow.level
 		let course_number = Table1.selectedRow.course_number
