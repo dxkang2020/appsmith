@@ -1,16 +1,12 @@
 {
-  "gitSyncId": "67bed107a0c78065eecac2b6_47374170-a287-4182-b930-d0170d8b7d06",
-  "id": "Page1_soundList.playAudio",
+  "gitSyncId": "67bed107a0c78065eecac2b6_c8fcb615-8366-4c09-86ed-8d8201bba5b8",
+  "id": "Page1_soundList.testPause",
   "pluginId": "js-plugin",
   "pluginType": "JS",
   "unpublishedAction": {
     "actionConfiguration": {
       "encodeParamsToggle": true,
-      "jsArguments": [
-        {
-          "name": "item"
-        }
-      ],
+      "jsArguments": [],
       "paginationType": "NONE",
       "timeoutInMillisecond": 10000
     },
@@ -27,8 +23,8 @@
       }
     ],
     "executeOnLoad": false,
-    "fullyQualifiedName": "soundList.playAudio",
-    "name": "playAudio",
+    "fullyQualifiedName": "soundList.testPause",
+    "name": "testPause",
     "pageId": "Page1",
     "userSetOnLoad": false
   }

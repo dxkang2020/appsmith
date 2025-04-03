@@ -4,7 +4,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 140,
+  "bottomRow": 141,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "canFreezeColumn": true,
   "childStylesheet": {
@@ -31,12 +31,12 @@
     }
   },
   "columnOrder": [
+    "character",
     "text",
     "customColumn1",
-    "index",
-    "character"
+    "index"
   ],
-  "columnUpdatedAt": 1743563400856,
+  "columnUpdatedAt": 1743645460005,
   "columnWidthMap": {
     "text": 378
   },
@@ -89,6 +89,9 @@
     },
     {
       "key": "onRowSelected"
+    },
+    {
+      "key": "onSearchTextChanged"
     }
   ],
   "dynamicTriggerPathList": [
@@ -97,6 +100,9 @@
     },
     {
       "key": "onRowSelected"
+    },
+    {
+      "key": "onSearchTextChanged"
     }
   ],
   "enableClientSideSearch": true,
@@ -112,7 +118,7 @@
   "isVisibleSearch": true,
   "key": "i4rozl6rbw",
   "label": "Data",
-  "leftColumn": 0,
+  "leftColumn": 1,
   "minWidth": 450,
   "mobileBottomRow": 38,
   "mobileLeftColumn": 15,
@@ -121,6 +127,7 @@
   "multiRowSelection": false,
   "needsErrorInfo": false,
   "onRowSelected": "{{soundList.RowSelected()}}",
+  "onSearchTextChanged": "",
   "originalBottomRow": 168,
   "originalTopRow": 14,
   "parentColumnSpace": 13.29296875,
@@ -178,7 +185,7 @@
       "enableFilter": true,
       "enableSort": true,
       "horizontalAlignment": "LEFT",
-      "iconName": "caret-right",
+      "iconName": "refresh",
       "id": "customColumn1",
       "index": 3,
       "isCellEditable": false,
@@ -192,7 +199,7 @@
       "label": "operate",
       "labelColor": "#FFFFFF",
       "notation": "standard",
-      "onClick": "{{soundList.playAudio(currentRow)}}",
+      "onClick": "{{soundList.resetAudio(currentRow)}}",
       "originalId": "customColumn1",
       "sticky": "",
       "textSize": "0.875rem",
@@ -261,7 +268,7 @@
       "label": "text",
       "notation": "standard",
       "originalId": "text",
-      "sticky": "left",
+      "sticky": "",
       "textColor": "",
       "textSize": "0.875rem",
       "thousandSeparator": true,
@@ -272,11 +279,11 @@
   },
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 63,
+  "rightColumn": 64,
   "searchKey": "",
   "tableData": "{{soundList.audioArr}}",
   "textSize": "0.875rem",
-  "topRow": 12,
+  "topRow": 13,
   "totalRecordsCount": 0,
   "type": "TABLE_WIDGET_V2",
   "version": 2,

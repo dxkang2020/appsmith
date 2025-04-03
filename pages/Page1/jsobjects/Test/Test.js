@@ -11,8 +11,14 @@ export default {
 		// let names = rlt[0]
 		// let refs = rlt[1]
 		// console.log(names, refs)
-		let names = PackageTools.calcScenes(Table1.selectedRow.script_json)
-		console.log("images", names)
+		// let names = PackageTools.calcScenes(Table1.selectedRow.script_json)
+		// console.log("images", names)
+		console.log(Table1.selectedRow.updated_at)
+		let diffMinute = (Date.now() - new Date(Table1.selectedRow.updated_at))/60000
+		console.log(diffMinute)
+		let hour = 1
+		let min
+		
 
 	},
 	genTestJson(){

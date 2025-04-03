@@ -10,14 +10,17 @@ export default {
 			Button5.setVisibility( Table1.selectedRow.screenplay == Input2.text)
 		}
 		else if(Tabs1.selectedTab == "Json" &&
-						Table1.selectedRow.screenplay&& Table1.selectedRow.screenplay.length > 300 &&
-						(Table1.selectedRow.status!= "scripting")){
+						Table1.selectedRow.screenplay&& Table1.selectedRow.screenplay.length > 300 ){
+			let label = ""
 			if(!Table1.selectedRow?.script_json?.scripts?.length)
-				Button5.setLabel("生成JSON") 
-			else
-				Button5.setLabel("重新生成") 
-
+				label = "生成JSON"
+			
+			else if (Table1.selectedRow.status != "scripting" || Table1.selectedRow.updated_at )
+				label = "重新生成"
+			if(label.length>0){
+							Button5.setLabel(label) 
 			Button5.setVisibility(true)
+			}
 
 		}
 		else if(Tabs1.selectedTab == "Sounds"){

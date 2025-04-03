@@ -6,6 +6,9 @@
   "dynamicPropertyPathList": [
     {
       "key": "onEnd"
+    },
+    {
+      "key": "onPause"
     }
   ],
   "dynamicTriggerPathList": [
@@ -26,8 +29,8 @@
   "mobileRightColumn": 32,
   "mobileTopRow": 37,
   "needsErrorInfo": false,
-  "onEnd": "{{soundList.playAudio()}}",
-  "onPause": "",
+  "onEnd": "{{soundList.RowSelected('next')}}",
+  "onPause": "{{soundList.testPause()}}",
   "parentColumnSpace": 13.29296875,
   "parentId": "x1qs5y2yha",
   "parentRowSpace": 10,
