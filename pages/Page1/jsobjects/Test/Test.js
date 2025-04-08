@@ -3,6 +3,13 @@ export default {
 	cardslistItems : [],
 	getMarkdown() { return "```json\n" + this.test() + "\n``` \n"; },
 
+	updateScenesPrompt(){
+		let keys = Object.keys(Table1.selectedRow.scenes_prompt)
+		for (let k of keys ){
+			console.log(k)
+
+		}
+	},
 	test(){
 		// updateRow.updateJsonSceneByName("hospital_boy","hospital")
 		// updateRow.updateJsonSceneByName("farm_00","farm")
@@ -13,10 +20,13 @@ export default {
 		// console.log(names, refs)
 		// let names = PackageTools.calcScenes(Table1.selectedRow.script_json)
 		// console.log("images", names)
-		console.log(Table1.selectedRow.updated_at)
+		// console.log(Table1.selectedRow.scenes_prompt)
+		let matches = Table1.selectedRow.screenplay.matchAll(/\[出现任务卡(.*)\]/g)
+		for(let m of matches){
+			console.log("clip:",m[1])
+		}
 
-		
-		
+
 
 	},
 	genTestJson(){

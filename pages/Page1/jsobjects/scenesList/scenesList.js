@@ -150,15 +150,40 @@ ${item.clip}
 	getScenesList(){
 		let names = PackageTools.calcScenes(Table1.selectedRow.script_json)
 		console.log("images", names)
+		let screenplay = Table1.selectedRow.screenplay
+		let level = Table1.selectedRow.level
+		let course_number =  Table1.selectedRow.course_number
+		let jbArr = [] 
+		let obj ={}
+		const matches =Array.from( screenplay.matchAll(/\[出现任务卡：(.*)\]/g));
+		let index = 0
+		console.log(matches)
+		if(matches.length > 0){
+			for(let  m of matches){
+				obj.name= `task_${level}_${course_number}_${index+1}`
+				obj.clip = m[1]
+				obj.description = m[1]
+				index++;
+				console.log("clip:",m[1])
+				jbArr.push(obj) 
+				names.push(obj.name)
+			}
+		}
+		console.log(names,'match')
+
 		getScenesPrompt.run({names}).then(res=>{
 			// console.log("scenes:",res)
-			this.listItems = res.map((v)=>{
-				return {
-					...v,
-					urls :`https://af.runfox.cn/courses/scenes/${v.name}.png?r=${Math.random()}` 
+			if(names.length !== res.length){
+				this.listItems = [...res,...jbArr]
+			}else{
+				this.listItems = res.map((v,i)=>{
+					return {
+						...v,
+						urls :`https://af.runfox.cn/courses/scenes/${v.name}.png?r=${Math.random()}` 
+					}
+				})
+			}
 
-				}
-			})
 			console.log("scenes:",		this.listItems)
 			// return 	this.listItems
 
