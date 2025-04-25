@@ -10,6 +10,14 @@
       {
         "name": "json",
         "value": "null"
+      },
+      {
+        "name": "rowIndex",
+        "value": "''"
+      },
+      {
+        "name": "row",
+        "value": "{}"
       }
     ]
   }

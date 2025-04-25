@@ -1,12 +1,58 @@
 export default {
 	isShowBtn:false,
 	temText:'',
+	newNameText:'',
+	oldNameText:'',
 	updateVal:{}, //确认要上传的参数 覆盖后重新上传提取
 	getPrompt(item){
-		return `请按以下要求生成一张场景图，尺寸是横版1536x1024 ， 
+		if(item.name.includes('task_')){
+			return `A colorful and clean 2D digital illustration designed as a children's educational app visual. Size 1536x1024. Features a slightly claymation-inspired surface with a playful and whimsical atmosphere. Clean composition with a focused subject. Use a solid, low-saturation background color that provides clear value (light/dark) contrast with the subject, in order to enhance subject visibility. Ensure the subject stands out clearly using subtle soft shadows or light outlines if needed. Maintain generous spacing around the subject (visual breathing room). No scenery, no people, no characters, no text, no signature, no watermark. Simple flat background, optimized for UI integration in kids' content.
+illustrate：${item.clip}
+`
+		}else{
+			return `请按以下要求生成一张场景图，尺寸是横版1536x1024 ， 
 **Wide shot, camera pulled back**. 3D render simulating stop-motion claymation/plasticine miniature style. Chunky, stylized, clearly defined rounded forms with finely rendered key details. Possesses a matte/low-sheen plasticine texture with a clearly visible yet fine surface grain/texture, featuring only very subtle, controlled simulated handmade marks. Vibrant, saturated, cheerful solid colors. Bright daylight simulation, soft shadows.** Mandatory composition: Bottom 35% of frame MUST be empty ground/floor only,** no objects or details. Whimsical, charming, playful miniature aesthetic maintaining a good finish with visible material detail. cinematic depth of field ::2.2, warm/cool ratio=50±5%. void zone (bottom:0-35%) ::2.
 ${item.clip}
 `
+		}
+
+	},
+	openScens(item,index){
+		this.updateVal = item
+		this.oldNameText = item.name
+		Input15.setValue(item.name)
+		showModal(Modal8.name)
+		// let startIndex = ((sList1.pageNo -1 ) * sList1.pageNo) + index
+		// this.localIndex = startIndex
+	},
+	confirmName(){
+		let txt = Input15.text
+		if(!txt?.length ){
+			showAlert('不能为空','error')	
+			return
+		}
+		if(this.oldNameText == this.newNameText){
+			showAlert('场景名相同')
+			return
+		}
+		updateRow.updateJsonScene(this.updateVal,this.newNameText).then(res=>{
+			closeModal(Modal8.name)
+			// this.listItems[this.localIndex].name =  txt
+		})
+
+
+	},
+	Input15OnBlur(){
+		let txt = Input15.text
+		if(!txt?.length ){
+			showAlert('不能为空','error')	
+			return
+		}
+		if(!this.validateInput(txt)){
+			showAlert('错误符号','error')
+			return
+		}
+		this.newNameText = txt
 	},
 	clipSave(item,index){
 		console.log(this.temText,'45454',item.clip)
@@ -35,6 +81,27 @@ ${item.clip}
 
 
 	},
+	nameSave(item,index){
+
+		// if(!this.nameText){
+		// showAlert('保存失败','error')
+		// return
+		// }
+		// let startIndex = ((sList1.pageNo -1 ) * sList1.pageNo) + index
+		// if(this.nameText != item.name){
+		// let val = {
+		// "clip":item.clip,
+		// "clip_zh":item.clip_zh,
+		// "description":item.description,
+		// "name":this.nameText
+		// }
+		// 
+		// 
+		// }else{
+		// showAlert('场景名相同')
+		// }
+	},
+
 	InputOnBlur(index){
 		let txt = sList1.currentItemsView[index % sList1.pageSize ]?.Input3?.text
 		if(!txt?.length ){
@@ -70,7 +137,7 @@ ${item.clip}
 	},
 	localIndex :0, //记录index
 	// 上传图片
-	uploadImg(item, isCover, index){
+	async	uploadImg(item, isCover, index){
 		showModal(Modal9.name)
 
 		this.updateVal = item
@@ -86,25 +153,20 @@ ${item.clip}
 		let overwrite =  isCover == 'cover' ? true : false
 		console.log("saveScene:", filename, overwrite)
 
-		SaveScene.run({filename, overwrite,file}).then(res =>{
+		await	SaveScene.run({filename, overwrite,file}).then(res =>{
 			if(res == "success"){
 				showAlert('保存成功','success')
 				closeModal(Modal9.name)
-				updateRow.updateScenePrompt(item)
 
+				updateRow.updateScenePrompt(item)
 				// let uri = 'data:image/png;base64,' + btoa(file.data)
-				console.log("listItems",startIndex,  this.listItems[startIndex])
+
 				this.listItems[startIndex].urls = file.data
 				this.listItems[startIndex].clip = item.clip
 				this.listItems[startIndex].name = item.name
-
-				// debugger;
-				// if(isCover == 'cover'){
-
+				// console.log("listItems",item,  this.listItems[startIndex])
 
 				closeModal(Modal7.name)
-				// }
-
 			}else if (res == "exists"){
 				closeModal(Modal9.name)
 				//弹窗提示改名或者覆盖
@@ -120,35 +182,15 @@ ${item.clip}
 
 	},
 
-	// 生成图片事件
-	async getAIIMG(currentIndex,item){
-		// console.log('123',this.isShowBtn)
-		this.isShowBtn = true
 
-		if(this.isShowBtn){
-			await GenScene.run(item).then((res)=>{
-				this.isShowBtn = false
-
-				this.listItems[currentIndex].ImgURL =  'data:image/png;base64,' + res
-				this.listItems[currentIndex].prompt_id = GenScene.responseMeta.headers?.prompt_id[0]
-
-				this.imgP =  'data:image/png;base64,' + res
-				showModal(Modal2.name)
-			}).catch((err) =>{
-				console.log(err)
-				this.isShowBtn = false
-
-			})
-		}
-
-
-	},
 	listItems : [],
 
 	// 获取列表
 
-	getScenesList(){
+	async getScenesList(){
+		// console.log(Table1.selectedRow.script_json.scripts[0].name, '3333')
 		let names = PackageTools.calcScenes(Table1.selectedRow.script_json)
+
 		console.log("images", names)
 		let screenplay = Table1.selectedRow.screenplay
 		let level = Table1.selectedRow.level
@@ -171,7 +213,7 @@ ${item.clip}
 		}
 		console.log(names,'match')
 
-		getScenesPrompt.run({names}).then(res=>{
+		await getScenesPrompt.run({names}).then(res=>{
 			// console.log("scenes:",res)
 			if(names.length !== res.length){
 				this.listItems = [...res,...jbArr]
@@ -209,9 +251,33 @@ ${item.clip}
 
 		this.listItems =  newArray
 	},
+	// 生成图片事件
+	async getAIIMG(currentIndex,item){
+		// console.log('123',this.isShowBtn)
+		this.isShowBtn = true
+
+		if(this.isShowBtn){
+			await GenScene.run(item).then((res)=>{
+				this.isShowBtn = false
+
+				this.listItems[currentIndex].ImgURL =  'data:image/png;base64,' + res
+				this.listItems[currentIndex].prompt_id = GenScene.responseMeta.headers?.prompt_id[0]
+
+				this.imgP =  'data:image/png;base64,' + res
+				showModal(Modal2.name)
+			}).catch((err) =>{
+				console.log(err)
+				this.isShowBtn = false
+
+			})
+		}
+
+
+	},
 	// 查看图片
 	priviewImg(item){
-		this.imgP = item.urls
+
+		this.imgP = `https://af.runfox.cn/courses/scenes/${item.name}.png`
 		showModal(Modal2.name)
 	},
 	imgP:'',

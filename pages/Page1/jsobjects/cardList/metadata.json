@@ -24,6 +24,14 @@
         "value": "''"
       },
       {
+        "name": "newNameText",
+        "value": "''"
+      },
+      {
+        "name": "oldNameText",
+        "value": "''"
+      },
+      {
         "name": "updateVal",
         "value": "{}"
       },

@@ -1,0 +1,1 @@
+SELECT * FROM public."course_documents" LIMIT 10;

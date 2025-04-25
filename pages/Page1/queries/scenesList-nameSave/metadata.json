@@ -1,6 +1,6 @@
 {
-  "gitSyncId": "67bed107a0c78065eecac2b6_d834d9bc-4744-484f-a8c9-cac56d6d9336",
-  "id": "Page1_scenesList.getAIIMG",
+  "gitSyncId": "67bed107a0c78065eecac2b6_5e5b6435-c456-410a-9386-3342e70d5372",
+  "id": "Page1_scenesList.nameSave",
   "pluginId": "js-plugin",
   "pluginType": "JS",
   "unpublishedAction": {
@@ -8,10 +8,10 @@
       "encodeParamsToggle": true,
       "jsArguments": [
         {
-          "name": "currentIndex"
+          "name": "item"
         },
         {
-          "name": "item"
+          "name": "index"
         }
       ],
       "paginationType": "NONE",
@@ -30,8 +30,8 @@
       }
     ],
     "executeOnLoad": false,
-    "fullyQualifiedName": "scenesList.getAIIMG",
-    "name": "getAIIMG",
+    "fullyQualifiedName": "scenesList.nameSave",
+    "name": "nameSave",
     "pageId": "Page1",
     "userSetOnLoad": false
   }

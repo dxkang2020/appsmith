@@ -1,10 +1,16 @@
 export default {
 	myVar1: [],
 	myVar2: {},
+	
 	onTabSelectChanged () {
+		// console.log(table,'table')
+		// if(table)
+		// Table1 = table
 		//	write code here
 		//	this.myVar1 = [1,2,3]
 		console.log("selectedTab1:", Tabs1.selectedTab)
+		console.log("calcScenes", Table1.selectedRow.script_json.scripts)
+
 		if(Tabs1.selectedTab == "剧本"){
 			Button5.setLabel("保存修改") 
 			Button5.setVisibility( Table1.selectedRow.screenplay == Input2.text)

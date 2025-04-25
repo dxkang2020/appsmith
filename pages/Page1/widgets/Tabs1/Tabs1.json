@@ -10,7 +10,7 @@
   "children": [
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-      "bottomRow": 12120,
+      "bottomRow": 21400,
       "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
       "canExtend": true,
       "detachFromLayout": true,
@@ -353,7 +353,7 @@
   "isLoading": false,
   "isVisible": true,
   "key": "g02js3j4dt",
-  "leftColumn": 22,
+  "leftColumn": 19,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 10,
   "minWidth": 450,

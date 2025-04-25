@@ -3,24 +3,26 @@
   "animateLoading": true,
   "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 2140,
+  "bottomRow": 24,
   "boxShadow": "none",
-  "defaultText": "{{\nTable1.selectedRow.status == \"scripting\" ? Table1.selectedRow.error:JSON.stringify(Table1.selectedRow.script_json,null,2)}}\n",
+  "defaultText": "",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
     },
     {
       "key": "borderRadius"
-    },
-    {
-      "key": "defaultText"
     }
   ],
-  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "onBlur"
+    }
+  ],
   "dynamicTriggerPathList": [
     {
-      "key": "onTextChanged"
+      "key": "onBlur"
     }
   ],
   "iconAlign": "left",
@@ -29,38 +31,35 @@
   "isLoading": false,
   "isRequired": false,
   "isVisible": true,
-  "key": "saw55n9qrn",
-  "label": "",
+  "key": "4gvwmd1hvh",
+  "label": "修改卡片名：",
   "labelAlignment": "left",
   "labelPosition": "Top",
   "labelStyle": "",
   "labelTextSize": "0.875rem",
   "labelWidth": 5,
-  "leftColumn": 0,
-  "maxDynamicHeight": 587,
-  "minDynamicHeight": 79,
+  "leftColumn": 1,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
   "minWidth": 450,
-  "mobileBottomRow": 7,
-  "mobileLeftColumn": 0,
-  "mobileRightColumn": 20,
-  "mobileTopRow": 0,
+  "mobileBottomRow": 15,
+  "mobileLeftColumn": 14,
+  "mobileRightColumn": 34,
+  "mobileTopRow": 8,
   "needsErrorInfo": false,
-  "onTextChanged": "",
-  "originalBottomRow": 2140,
-  "originalTopRow": 1,
-  "parentColumnSpace": 11.81640625,
-  "parentId": "qv0p77aqd4",
+  "onBlur": "{{cardList.Input18OnBlur()}}",
+  "parentColumnSpace": 6.9375,
+  "parentId": "zmqw7sckxf",
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "resetOnSubmit": true,
   "responsiveBehavior": "fill",
-  "rightColumn": 64,
+  "rightColumn": 61,
   "shouldAllowAutofill": false,
-  "shouldScrollContents": true,
   "showStepArrows": false,
-  "topRow": 1,
+  "topRow": 5,
   "type": "INPUT_WIDGET_V2",
   "version": 2,
-  "widgetId": "0oxdj1lqsk",
-  "widgetName": "Input2Copy1"
+  "widgetId": "ekt424zqol",
+  "widgetName": "Input18"
 }

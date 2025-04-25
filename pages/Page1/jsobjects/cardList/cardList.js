@@ -3,6 +3,8 @@ export default {
 	myVar2: {},
 	isShowBtn:false,
 	temText:'',
+	newNameText:'',
+	oldNameText:'',
 	getPrompt(item){
 		return `**Goal:** Create a 512x512 vocabulary card image for a children's English learning app (ages 6-10).
 **Priority:** Achieve **extremely low cognitive cost** for instant, unambiguous recognition. Must be clean, kid-friendly, and visually appealing.
@@ -18,7 +20,39 @@ ${item.clip}
 	},
 
 	updateVal:{}, //确认要上传的参数 覆盖后重新上传提取
+	openScens(item,index){
+		this.updateVal = item
+		this.oldNameText = item.name
+		Input18.setValue(item.name)
+		showModal(Modal10.name)
+		// let startIndex = ((cList1.pageNo -1 ) * cList1.pageNo) + index
+		// this.localIndex = startIndex
+	},
+	confirmName(){
+		let txt = Input18.text
+		if(!txt?.length ){
+			showAlert('不能为空','error')	
+			return
+		}
+		if(this.oldNameText == this.newNameText){
+			showAlert('卡片名相同')
+			return
+		}
+		updateRow.updateJsonImage(this.updateVal,this.newNameText).then(res=>{
+			closeModal(Modal10.name)
+			// this.listItems[this.localIndex].name =  txt
+		})
 
+
+	},
+	Input18OnBlur(){
+		let txt = Input18.text
+		if(!txt?.length ){
+			showAlert('不能为空','error')	
+			return
+		}
+		this.newNameText = txt
+	},
 	clipSave(item,index){
 
 		if(!this.temText){
@@ -90,7 +124,7 @@ ${item.clip}
 	},
 	localIndex :0,
 	// 上传图片
-	uploadImg(item,isCover,index){
+	async uploadImg(item,isCover,index){
 		showModal(Modal9.name)
 		this.updateVal = item
 		const file =cList1.triggeredItemView.FilePicker3.files[0]

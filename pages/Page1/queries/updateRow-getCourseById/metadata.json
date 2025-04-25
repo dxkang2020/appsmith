@@ -1,19 +1,12 @@
 {
-  "gitSyncId": "67bed107a0c78065eecac2b6_5e4838e3-f4f2-4f23-89ce-048b5d31991e",
-  "id": "Page1_updateRow.updateJsonSceneByName",
+  "gitSyncId": "67bed107a0c78065eecac2b6_fddf2a96-b072-46da-a521-43bad818c20e",
+  "id": "Page1_updateRow.getCourseById",
   "pluginId": "js-plugin",
   "pluginType": "JS",
   "unpublishedAction": {
     "actionConfiguration": {
       "encodeParamsToggle": true,
-      "jsArguments": [
-        {
-          "name": "oldName"
-        },
-        {
-          "name": "newName"
-        }
-      ],
+      "jsArguments": [],
       "paginationType": "NONE",
       "timeoutInMillisecond": 10000
     },
@@ -30,8 +23,8 @@
       }
     ],
     "executeOnLoad": false,
-    "fullyQualifiedName": "updateRow.updateJsonSceneByName",
-    "name": "updateJsonSceneByName",
+    "fullyQualifiedName": "updateRow.getCourseById",
+    "name": "getCourseById",
     "pageId": "Page1",
     "userSetOnLoad": false
   }
