@@ -1,1 +1,1 @@
-SELECT * FROM public."course_documents" LIMIT 10;
+SELECT * FROM public."course_documents" WHERE level='starters' and course_number =  '11.1'  LIMIT 10;

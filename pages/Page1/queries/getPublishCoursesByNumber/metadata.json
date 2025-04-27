@@ -1,11 +1,11 @@
 {
-  "gitSyncId": "67bed107a0c78065eecac2b6_2f946e21-28f4-4776-a506-9e243affcdb6",
-  "id": "Page1_Query2",
+  "gitSyncId": "67bed107a0c78065eecac2b6_88f72c0a-472e-4f32-b304-b75c0efde9a1",
+  "id": "Page1_getPublishCoursesByNumber",
   "pluginId": "postgres-plugin",
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT * FROM public.\"course_documents\" WHERE level='starters' and course_number =  '11.1'  LIMIT 10;",
+      "body": "SELECT id FROM public.\"course_documents\" \nWHERE status = 'published' \nand script_json ISNULL\nand course_number =  ANY({{this.params.course_numbers}}) \nand level = {{this.params.level}}  LIMIT 30;\n\n",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
@@ -22,9 +22,13 @@
       "name": "runfox",
       "pluginId": "postgres-plugin"
     },
-    "dynamicBindingPathList": [],
+    "dynamicBindingPathList": [
+      {
+        "key": "body"
+      }
+    ],
     "executeOnLoad": false,
-    "name": "Query2",
+    "name": "getPublishCoursesByNumber",
     "pageId": "Page1",
     "userSetOnLoad": false
   }

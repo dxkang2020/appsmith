@@ -25,7 +25,7 @@ LEFT JOIN course_documents d
     AND o.course_number = d.course_number
 WHERE 
     ({{Select1.selectedOptionValue}} = 'all' OR o.level = {{Select1.selectedOptionValue}})
-    AND ({{Input1.text}} = '' OR o.course_number = {{Input1.text}})
+    AND ({{Input1.text}} = '' OR o.course_number =  ANY({{this.params.course_numbers}}))
     AND ({{Select2.selectedOptionValue}} = 'all' OR d.status = 
 				 CASE 
 				 WHEN {{Select2.selectedOptionValue}} = 'draft' THEN 'draft'

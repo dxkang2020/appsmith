@@ -1,7 +1,7 @@
 export default {
 	myVar1: [],
 	myVar2: {},
-	
+
 	onTabSelectChanged () {
 		// console.log(table,'table')
 		// if(table)
@@ -80,11 +80,12 @@ export default {
 			let version = Table1.selectedRow.version
 			let level = Table1.selectedRow.level
 			let course_number = Table1.selectedRow.course_number
+			let id = Table1.selectedRow.id
 
 			Button5.setDisabled(true)
 			showAlert('正在生成','success')
 			Table1.selectedRow.status = "scripting"
-			n8Json.run({course_number,version,level}).then(
+			n8Json.run({course_number,version,level, id}).then(
 				function(){
 					Button5.setDisabled(false)
 					updateTable.run()
