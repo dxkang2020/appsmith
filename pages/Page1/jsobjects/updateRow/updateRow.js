@@ -7,6 +7,10 @@ export default {
 		let idx = Table1.selectedRowIndex
 
 		this.rowIndex = Table1.selectedRowIndex
+
+		// let updatedTableData =[...Table1.tableData]
+		// updatedTableData[idx] = this.row
+
 		updateTable.data[idx] = this.row
 		await Table1.setData(updateTable.data)
 		Table1.setSelectedRowIndex(	this.rowIndex)
@@ -52,11 +56,15 @@ export default {
 		})
 	},
 	async updateJsonImage(updateVal, newName){
+		console.log('45454',updateVal)
 		let oldName = updateVal?.name
+		await this.getCourseById()
+		
+		
 		if(!oldName || !newName || oldName == newName || !this.row?.script_json?.scripts?.length)
 			return
 
-		await this.getCourseById()
+
 		function _updateScrits(scripts, on, nn){
 			if(!scripts?.length)
 				return
@@ -96,8 +104,9 @@ export default {
 				"prompt_id":updateVal.prompt_id,
 				"name":newName
 			}
-			await	updateCardPrompt.run(item).then( async()=>	{
-				await	this.update()	
+
+			await	updateCardPrompt.run(item).then(async ()=>	{
+				await this.update()
 				await Tab.onTabSelectChanged()
 
 			})
@@ -115,7 +124,7 @@ export default {
 					this.row[k] = arr[k]
 				}
 			}
-			console.log(this.row, 'getCourseById')
+			// console.log(this.row, 'getCourseById')
 		})
 	},
 

@@ -28,7 +28,7 @@ ${item.clip}
 		// let startIndex = ((cList1.pageNo -1 ) * cList1.pageNo) + index
 		// this.localIndex = startIndex
 	},
-	confirmName(){
+	async	confirmName(){
 		let txt = Input18.text
 		if(!txt?.length ){
 			showAlert('不能为空','error')	
@@ -38,9 +38,12 @@ ${item.clip}
 			showAlert('卡片名相同')
 			return
 		}
-		updateRow.updateJsonImage(this.updateVal,this.newNameText).then(res=>{
+		await updateRow.updateJsonImage(this.updateVal,this.newNameText).then(async res=>{
 			closeModal(Modal10.name)
 			// this.listItems[this.localIndex].name =  txt
+
+			await	updateRow.update()	
+			await Tab.onTabSelectChanged()
 		})
 
 
@@ -76,8 +79,6 @@ ${item.clip}
 			showAlert('提示词相同')
 		}
 
-
-
 	},
 	InputOnBlur(index){
 		let txt = cList1.currentItemsView[index % cList1.pageSize ]?.Input9?.text
@@ -86,18 +87,10 @@ ${item.clip}
 			return
 		}
 		this.temText =txt
-		// if(Input9.text.length <=0 ){
-		// showAlert('不能为空','error')	
-		// return
-		// }
-		// let idx = index % cList1.pageSize 
-		// console.log("idx::", idx, index)
-		// this.temText = Input9.text
-		// this.listItems[index].clip = 	cList1.currentItemsView[idx].Input9.text
 
 
 	},
-	async modifySave(){
+	modifySave(){
 		let newVal = Input13.text
 		if(newVal.length <= 0){
 			showAlert('不能为空','error')
@@ -107,16 +100,15 @@ ${item.clip}
 			showAlert('错误符号','error')
 			return
 		}
-		console.log(newVal)
-
-		await	updateRow.updateJsonImage(this.updateVal,newVal).then(async ()=>{
+		console.log(newVal,'newVal')
+		
+		
+		updateRow.updateJsonImage(this.updateVal,newVal).then(async()=>{
 			this.updateVal.name = newVal
-			// closeModal(Modal6.name)
-			// Input13.setValue('')
-			// showAlert("修改成功","success")
-			// console.log(res)
 
-			await this.uploadImg(this.updateVal,false,this.localIndex)
+			await this.uploadImg(this.updateVal,'modify',this.localIndex)
+
+
 		})
 	},
 	coverSave(){
@@ -128,7 +120,7 @@ ${item.clip}
 		showModal(Modal9.name)
 		this.updateVal = item
 		const file =cList1.triggeredItemView.FilePicker3.files[0]
-		console.log("file::", file.name, file.dataFormat, file.size, file.type)
+		// console.log("file::", file.name, file.dataFormat, file.size, file.type)
 
 		let filename = `${item.name}.webp`
 		// let data = file
@@ -141,17 +133,19 @@ ${item.clip}
 			if(res == "success"){
 				showAlert('保存成功','success')
 				closeModal(Modal9.name)
-				updateRow.updateCardPrompt(item)
+				if(isCover =='modify'){
+					// 如果是修改保存的话 则不在此处掉updateRow.updateCardProm()
+				}else{
+					updateRow.updateCardPrompt(item)
 
-				// let uri = 'data:image/png;base64,' + btoa(file.data)
+				}
+
+
 				this.listItems[startIndex].urls = file.data
-
 				this.listItems[startIndex].clip = item.clip
 				this.listItems[startIndex].name = item.name
-				// if(isCover == 'cover'){
-
 				closeModal(Modal6.name)
-				// }
+
 
 			}else if (res == "exists"){
 				//弹窗提示改名或者覆盖

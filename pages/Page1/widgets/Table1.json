@@ -55,7 +55,7 @@
     "created_by",
     "updated_by"
   ],
-  "columnUpdatedAt": 1745825571595,
+  "columnUpdatedAt": 1745834995841,
   "columnWidthMap": {
     "course_number": 150,
     "level": 84,
@@ -956,7 +956,7 @@
   },
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 19,
+  "rightColumn": 22,
   "searchKey": "",
   "serverSidePaginationEnabled": false,
   "showInlineEditingOptionDropdown": true,
