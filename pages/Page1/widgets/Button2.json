@@ -31,7 +31,7 @@
   "mobileRightColumn": 19,
   "mobileTopRow": 14,
   "needsErrorInfo": false,
-  "onClick": "{{updateTable.run();\nTab.onQueryClick();}}",
+  "onClick": "{{Tab.onQueryClick();}}",
   "originalBottomRow": 9,
   "originalTopRow": 5,
   "parentColumnSpace": 17.25,

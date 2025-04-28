@@ -71,6 +71,34 @@ export default {
 			Button5.setDisabled(false)
 		})
 	},
+	parseCourseRange(input) {
+		if (!input.includes('-')) return [input];
+
+		const [start, end] = input.split('-');
+		const [startUnit, startLesson] = start.split('.').map(Number);
+		const [endUnit, endLesson] = end.split('.').map(Number);
+
+		const results = [];
+		let currentUnit = startUnit;
+		let currentLesson = startLesson;
+
+		while (currentUnit < endUnit || (currentUnit === endUnit && currentLesson <= endLesson)) {
+			results.push(`${currentUnit}.${currentLesson}`);
+
+			currentLesson++;
+			if (currentLesson > 3) {
+				currentUnit++;
+				currentLesson = 1;
+			}
+		}
+
+		return results;
+	},
+	onQueryClick(){
+		let course_numbers = this.parseCourseRange(Input1.text)
+		updateTable.run({course_numbers})
+
+	},
 	onBtnClicked(){
 		console.log("onBtnClicked")
 		if(Tabs1.selectedTab == "剧本")
