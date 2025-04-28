@@ -148,7 +148,7 @@ ${item.clip}
 		let startIndex = ((sList1.pageNo -1 ) * sList1.pageNo) + index
 
 		console.log(startIndex,'startIndex')
-		let filename = `${item.name}.png`
+		let filename = `${item.name}.webp`
 
 		let overwrite =  isCover == 'cover' ? true : false
 		console.log("saveScene:", filename, overwrite)
@@ -216,12 +216,23 @@ ${item.clip}
 		await getScenesPrompt.run({names}).then(res=>{
 			// console.log("scenes:",res)
 			if(names.length !== res.length){
-				this.listItems = [...res,...jbArr]
+
+				console.log('1111122')
+				var urlarr = res.map((v)=>{
+					return {
+						...v,
+						urls :`https://af.runfox.cn/courses/scenes/${v.name}.webp?r=${Math.random()}` 
+					}
+				})
+
+				this.listItems = [...urlarr,...jbArr]
+
+
 			}else{
 				this.listItems = res.map((v,i)=>{
 					return {
 						...v,
-						urls :`https://af.runfox.cn/courses/scenes/${v.name}.png?r=${Math.random()}` 
+						urls :`https://af.runfox.cn/courses/scenes/${v.name}.webp?r=${Math.random()}` 
 					}
 				})
 			}
@@ -277,7 +288,7 @@ ${item.clip}
 	// 查看图片
 	priviewImg(item){
 
-		this.imgP = `https://af.runfox.cn/courses/scenes/${item.name}.png`
+		this.imgP = `https://af.runfox.cn/courses/scenes/${item.name}.webp`
 		showModal(Modal2.name)
 	},
 	imgP:'',

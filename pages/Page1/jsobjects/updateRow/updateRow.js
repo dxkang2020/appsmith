@@ -37,11 +37,18 @@ export default {
 		Button5.setDisabled(false)
 	},
 	async updateCardPrompt(item){
-		updateCardPrompt.run(item).then(()=>this.update())
+		await this.getCourseById()
+		updateCardPrompt.run(item).then(async(res)=>{
+			await		this.update()
+			await Tab.onTabSelectChanged()
+		})
 	},
 	async updateScenePrompt(item){
-		updateScenePrompt.run(item).then(res=>{
-			this.update()
+		await this.getCourseById()
+		updateScenePrompt.run(item).then(async res=>{
+			await this.update()
+
+			await Tab.onTabSelectChanged()
 		})
 	},
 	async updateJsonImage(updateVal, newName){

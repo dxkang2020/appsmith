@@ -38,7 +38,9 @@ export default {
 			scenesList.getScenesList()
 			// Test.getScenesList()
 		}else if(Tabs1.selectedTab == "Cards"){
+			
 			cardList.getCardsList()
+		
 			// Test.getCardsList()
 		}
 	},

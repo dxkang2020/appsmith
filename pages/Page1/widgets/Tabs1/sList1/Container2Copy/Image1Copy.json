@@ -3,7 +3,7 @@
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "bottomRow": 16,
   "boxShadow": "none",
-  "defaultImage": "https://af.runfox.cn/courses/scenes/{{currentItem.name}}.png",
+  "defaultImage": "https://af.runfox.cn/courses/scenes/{{currentItem.name}}.webp",
   "dynamicBindingPathList": [
     {
       "key": "borderRadius"

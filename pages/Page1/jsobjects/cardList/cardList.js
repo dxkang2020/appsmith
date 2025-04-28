@@ -130,7 +130,7 @@ ${item.clip}
 		const file =cList1.triggeredItemView.FilePicker3.files[0]
 		console.log("file::", file.name, file.dataFormat, file.size, file.type)
 
-		let filename = `${item.name}.png`
+		let filename = `${item.name}.webp`
 		// let data = file
 
 		let startIndex = ((cList1.pageNo -1 ) * cList1.pageNo) + index
@@ -170,34 +170,36 @@ ${item.clip}
 
 
 	listItems : [],
-	getCardsList(){
+
+	async getCardsList(){
 		let rlt = PackageTools.calcImages(Table1.selectedRow?.script_json)
 		let names = rlt[0]
 		let refs = rlt[1]
 		// console.log("images", names)
 		let obj ={}
-		getCardsPrompt.run({names}).then(res=>{
+		await	getCardsPrompt.run({names}).then( res=>{
 			console.log("res", res)
 
 			obj[res.name] = res
+			this.listItems = names.map((v)=>{
+				let item = {
+					name:v,
+					urls :`https://af.runfox.cn/courses/cards/${v}.webp?r=${Math.random()}` ,
+					clip:obj[v]?.clip ?? "",
+					clip_zh:obj[v]?.clip_zh ?? v,
+					description:obj[v]?.description ?? v,
+				}
+				// if(refs[item.name])
+				if(!item.clip.includes('Illustrate')){
+					item.clip = `**Illustrate the word**: ${item.name}\n**references**:\n${refs[item.name].join("\n")}`
+				}
 
+				return item
+			})
+			console.log("images:",this.listItems)
 		})
-		this.listItems = names.map((v)=>{
-			let item = {
-				name:v,
-				urls :`https://af.runfox.cn/courses/cards/${v}.png?r=${Math.random()}` ,
-				clip:obj[v]?.clip ?? "",
-				clip_zh:obj[v]?.clip_zh ?? v,
-				description:obj[v]?.description ?? v,
-			}
-			// if(refs[item.name])
-			if(!item.clip.includes('Illustrate')){
-				item.clip = `**Illustrate the word**: ${item.name}\n**references**:\n${refs[item.name].join("\n")}`
-			}
 
-			return item
-		})
-		console.log("images:",this.listItems)
+
 
 
 
@@ -205,7 +207,9 @@ ${item.clip}
 
 	// 查看图片
 	priviewImg(item){
-		this.imgP = item
+
+		this.imgP = `https://af.runfox.cn/courses/cards/${item.name}.webp`
+
 		showModal(Modal3.name)
 	},
 	imgP:'',
