@@ -9,7 +9,6 @@ export default {
 		//	write code here
 		//	this.myVar1 = [1,2,3]
 		console.log("selectedTab1:", Tabs1.selectedTab)
-		console.log("calcScenes", Table1.selectedRow.script_json.scripts)
 
 		if(Tabs1.selectedTab == "剧本"){
 			Button5.setLabel("保存修改") 
@@ -19,6 +18,7 @@ export default {
 						Table1.selectedRow.screenplay&& Table1.selectedRow.screenplay.length > 300 ){
 			let label = ""
 			let diffMinute = (Date.now() - new Date(Table1.selectedRow.updated_at))/60000
+
 			if(!Table1.selectedRow?.script_json?.scripts?.length)
 				label = "生成JSON"
 			else if (Table1.selectedRow.status != "scripting" || diffMinute > 5 )
