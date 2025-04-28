@@ -81,12 +81,13 @@ export default {
 			})
 
 		}
+		console.log(this.row,'rou')
 		_updateScrits(this.row.script_json.scripts, oldName, newName)
 
 
 		// Input2Copy1.setValue(JSON.stringify(this.row.script_json,null,2))
 		// console.log(this.row.script_json["scripts"][25])
-		await updateScriptJson.run(this.row).then(v=>{
+		await updateScriptJson.run(this.row).then(async v=>{
 
 			let item = {
 				"clip":updateVal.clip,
@@ -95,7 +96,7 @@ export default {
 				"prompt_id":updateVal.prompt_id,
 				"name":newName
 			}
-			updateCardPrompt.run(item).then( async()=>	{
+			await	updateCardPrompt.run(item).then( async()=>	{
 				await	this.update()	
 				await Tab.onTabSelectChanged()
 

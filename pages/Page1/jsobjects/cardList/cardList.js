@@ -97,7 +97,7 @@ ${item.clip}
 
 
 	},
-	modifySave(){
+	async modifySave(){
 		let newVal = Input13.text
 		if(newVal.length <= 0){
 			showAlert('不能为空','error')
@@ -109,14 +109,14 @@ ${item.clip}
 		}
 		console.log(newVal)
 
-		updateRow.updateJsonImage(this.updateVal,newVal).then(()=>{
+		await	updateRow.updateJsonImage(this.updateVal,newVal).then(async ()=>{
 			this.updateVal.name = newVal
 			// closeModal(Modal6.name)
 			// Input13.setValue('')
 			// showAlert("修改成功","success")
 			// console.log(res)
 
-			this.uploadImg(this.updateVal,false,this.localIndex)
+			await this.uploadImg(this.updateVal,false,this.localIndex)
 		})
 	},
 	coverSave(){
@@ -175,7 +175,7 @@ ${item.clip}
 		let rlt = PackageTools.calcImages(Table1.selectedRow?.script_json)
 		let names = rlt[0]
 		let refs = rlt[1]
-		// console.log("images", names)
+		console.log("rlt", rlt)
 		let obj ={}
 		await	getCardsPrompt.run({names}).then( res=>{
 			console.log("res", res)
