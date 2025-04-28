@@ -11,7 +11,7 @@ export default {
 		let texts = []
 		let index = currentIndex;
 		jsonArr.forEach((v)=>{
-			if(v.text && v.type != "assess" &&v.character){
+			if(v.text  &&v.character){
 
 				texts.push({
 					'text':v.text,

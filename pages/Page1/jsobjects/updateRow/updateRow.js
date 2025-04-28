@@ -74,7 +74,7 @@ export default {
 			})
 
 		}
-		_updateScrits(this.row.script_json["scripts"], oldName, newName)
+		_updateScrits(this.row.script_json.scripts, oldName, newName)
 
 
 		// Input2Copy1.setValue(JSON.stringify(this.row.script_json,null,2))
