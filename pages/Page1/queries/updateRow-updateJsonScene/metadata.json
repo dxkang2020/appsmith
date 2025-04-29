@@ -12,6 +12,9 @@
         },
         {
           "name": "newName"
+        },
+        {
+          "name": "ismodify"
         }
       ],
       "paginationType": "NONE",

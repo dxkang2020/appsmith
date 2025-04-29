@@ -34,7 +34,7 @@ ${item.clip}
 			showAlert('不能为空','error')	
 			return
 		}
-		if(this.oldNameText == this.newNameText){
+		if(this.oldNameText == txt){
 			showAlert('卡片名相同')
 			return
 		}
@@ -42,8 +42,8 @@ ${item.clip}
 			closeModal(Modal10.name)
 			// this.listItems[this.localIndex].name =  txt
 
-			await	updateRow.update()	
-			await Tab.onTabSelectChanged()
+			// await	updateRow.update()	
+			// await Tab.onTabSelectChanged()
 		})
 
 
@@ -101,12 +101,13 @@ ${item.clip}
 			return
 		}
 		console.log(newVal,'newVal')
-		
-		
-		updateRow.updateJsonImage(this.updateVal,newVal).then(async()=>{
-			this.updateVal.name = newVal
 
-			await this.uploadImg(this.updateVal,'modify',this.localIndex)
+
+		updateRow.updateJsonImage(this.updateVal,newVal,'ismodify').then(()=>{
+			// this.updateVal.name = newVal
+
+			// this.uploadImg(this.updateVal,'modify',this.localIndex)
+
 
 
 		})
@@ -135,15 +136,16 @@ ${item.clip}
 				closeModal(Modal9.name)
 				if(isCover =='modify'){
 					// 如果是修改保存的话 则不在此处掉updateRow.updateCardProm()
+					console.log(isCover)
 				}else{
 					updateRow.updateCardPrompt(item)
 
 				}
 
-
-				this.listItems[startIndex].urls = file.data
-				this.listItems[startIndex].clip = item.clip
-				this.listItems[startIndex].name = item.name
+				console.log(startIndex,'startIndex')
+				// this.listItems[startIndex].urls = file.data
+				// this.listItems[startIndex].clip = item.clip
+				// this.listItems[startIndex].name = item.name
 				closeModal(Modal6.name)
 
 

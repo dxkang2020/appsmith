@@ -49,18 +49,20 @@ export default {
 	},
 	async updateScenePrompt(item){
 		await this.getCourseById()
+		// console.log(item,'item')
+
 		updateScenePrompt.run(item).then(async res=>{
 			await this.update()
 
 			await Tab.onTabSelectChanged()
 		})
 	},
-	async updateJsonImage(updateVal, newName){
+	async updateJsonImage(updateVal, newName,ismodify){
 		console.log('45454',updateVal)
 		let oldName = updateVal?.name
 		await this.getCourseById()
-		
-		
+
+
 		if(!oldName || !newName || oldName == newName || !this.row?.script_json?.scripts?.length)
 			return
 
@@ -96,7 +98,12 @@ export default {
 		// Input2Copy1.setValue(JSON.stringify(this.row.script_json,null,2))
 		// console.log(this.row.script_json["scripts"][25])
 		await updateScriptJson.run(this.row).then(async v=>{
-
+			if(ismodify){
+				// 修改保存则不此处调用updateCardPrompt
+				// this.uploadImg(this.updateVal,'modify',this.localIndex)
+				updateVal.name = newName
+				cardList.uploadImg(updateVal,'modify',cardList.localIndex)
+			}
 			let item = {
 				"clip":updateVal.clip,
 				"clip_zh":updateVal.clip_zh,
@@ -110,6 +117,8 @@ export default {
 				await Tab.onTabSelectChanged()
 
 			})
+
+
 		})
 
 	},
@@ -129,7 +138,7 @@ export default {
 	},
 
 
-	async updateJsonScene(updateVal, newName){
+	async updateJsonScene(updateVal, newName,ismodify){
 		let oldName = updateVal?.name
 		console.log("updateVal:", updateVal)
 		await this.getCourseById()
@@ -173,6 +182,12 @@ export default {
 			// this.row.script_json = PackageTools.calcScenes(this.row.script_json)
 
 			// console.log(test,'test')
+			if(ismodify){
+				// 修改保存则不此处调用updateCardPrompt
+				// this.uploadImg(this.updateVal,'modify',this.localIndex)
+				updateVal.name = newName
+				scenesList.uploadImg(updateVal,'modify',scenesList.localIndex)
+			}
 			let item = {
 				"clip":updateVal.clip,
 				"clip_zh":updateVal.clip_zh,

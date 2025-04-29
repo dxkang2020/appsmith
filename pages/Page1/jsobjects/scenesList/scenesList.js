@@ -27,11 +27,13 @@ ${item.clip}
 	},
 	confirmName(){
 		let txt = Input15.text
+		console.log(this.oldNameText,this.newNameText)
+		// return
 		if(!txt?.length ){
 			showAlert('不能为空','error')	
 			return
 		}
-		if(this.oldNameText == this.newNameText){
+		if(this.oldNameText == txt){
 			showAlert('场景名相同')
 			return
 		}
@@ -81,26 +83,6 @@ ${item.clip}
 
 
 	},
-	nameSave(item,index){
-
-		// if(!this.nameText){
-		// showAlert('保存失败','error')
-		// return
-		// }
-		// let startIndex = ((sList1.pageNo -1 ) * sList1.pageNo) + index
-		// if(this.nameText != item.name){
-		// let val = {
-		// "clip":item.clip,
-		// "clip_zh":item.clip_zh,
-		// "description":item.description,
-		// "name":this.nameText
-		// }
-		// 
-		// 
-		// }else{
-		// showAlert('场景名相同')
-		// }
-	},
 
 	InputOnBlur(index){
 		let txt = sList1.currentItemsView[index % sList1.pageSize ]?.Input3?.text
@@ -124,11 +106,11 @@ ${item.clip}
 			return
 		}
 
-		updateRow.updateJsonScene(this.updateVal,newVal).then( r=>{
-			this.updateVal.name = newVal
-			this.uploadImg(this.updateVal,false,this.localIndex)
+		updateRow.updateJsonScene(this.updateVal,newVal,'ismodify').then( r=>{
+			// this.updateVal.name = newVal
+			// this.uploadImg(this.updateVal,false,this.localIndex)
 		}
-																												 )
+																																		)
 
 
 	},
@@ -144,6 +126,8 @@ ${item.clip}
 		this.localIndex = index
 		const file =sList1.triggeredItemView.FilePicker1.files[0]
 
+
+
 		// sList1.currentItemsView[index % sList1.pageSize ]?.sImage?.
 		let startIndex = ((sList1.pageNo -1 ) * sList1.pageNo) + index
 
@@ -157,8 +141,12 @@ ${item.clip}
 			if(res == "success"){
 				showAlert('保存成功','success')
 				closeModal(Modal9.name)
+				if(isCover != 'modify'){
+					// 如果是修改保存的话 则不在此处掉updateRow.updateScenePrompt()
 
-				updateRow.updateScenePrompt(item)
+					updateRow.updateScenePrompt(item)
+
+				}
 				// let uri = 'data:image/png;base64,' + btoa(file.data)
 
 				this.listItems[startIndex].urls = file.data
