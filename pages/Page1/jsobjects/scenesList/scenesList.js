@@ -177,10 +177,11 @@ ${item.clip}
 
 	async getScenesList(){
 		// console.log(Table1.selectedRow.script_json.scripts[0].name, '3333')
-		await updateRow.getCourseById()
+		// await updateRow.getCourseById()
+		// console.log(updateRow.row.script_json,'updateRow.row.script_json')
 		let names = PackageTools.calcScenes(updateRow.row.script_json)
 
-		console.log("images", names)
+		// console.log("images", names)
 		let screenplay = Table1.selectedRow.screenplay
 		let level = Table1.selectedRow.level
 		let course_number =  Table1.selectedRow.course_number
@@ -188,25 +189,25 @@ ${item.clip}
 		let obj ={}
 		const matches =Array.from( screenplay.matchAll(/\[出现任务卡：(.*)\]/g));
 		let index = 0
-		console.log(matches)
+		// console.log(matches)
 		if(matches.length > 0){
 			for(let  m of matches){
 				obj.name= `task_${level}_${course_number}_${index+1}`
 				obj.clip = m[1]
 				obj.description = m[1]
 				index++;
-				console.log("clip:",m[1])
+				// console.log("clip:",m[1])
 				jbArr.push(obj) 
 				names.push(obj.name)
 			}
 		}
-		console.log(names,'match')
+		// console.log(names,'match')
 
 		await getScenesPrompt.run({names}).then(res=>{
 			// console.log("scenes:",res)
 			if(names.length !== res.length){
 
-				console.log('1111122')
+				// console.log('1111122')
 				var urlarr = res.map((v)=>{
 					return {
 						...v,

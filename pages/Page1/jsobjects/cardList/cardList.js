@@ -168,7 +168,7 @@ ${item.clip}
 	listItems : [],
 
 	async getCardsList(){
-		await updateRow.getCourseById()
+		// await updateRow.getCourseById()
 		let rlt = PackageTools.calcImages(updateRow.row.script_json)
 		let names = rlt[0]
 		let refs = rlt[1]

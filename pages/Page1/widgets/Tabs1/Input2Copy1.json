@@ -3,7 +3,7 @@
   "animateLoading": true,
   "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 2140,
+  "bottomRow": 2277,
   "boxShadow": "none",
   "defaultText": "{{\nTable1.selectedRow.status == \"scripting\" ? Table1.selectedRow.error:JSON.stringify(Table1.selectedRow.script_json,null,2)}}\n",
   "dynamicBindingPathList": [

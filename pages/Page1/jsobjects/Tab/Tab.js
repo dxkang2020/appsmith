@@ -35,11 +35,11 @@ export default {
 		else
 			Button5.setVisibility(false)
 		if(Tabs1.selectedTab == "Scenes"){
-			// await updateRow.getCourseById()
+			await updateRow.getCourseById()
 			await	scenesList.getScenesList()
 			// Test.getScenesList()
 		}else if(Tabs1.selectedTab == "Cards"){
-			// await updateRow.getCourseById()
+			await updateRow.getCourseById()
 			await	cardList.getCardsList()
 
 			// Test.getCardsList()

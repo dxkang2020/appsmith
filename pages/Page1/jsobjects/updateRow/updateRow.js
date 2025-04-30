@@ -115,7 +115,7 @@ export default {
 
 			await	updateCardPrompt.run(item).then(async ()=>	{
 				await this.update()
-				
+
 				await cardList.getCardsList()
 
 			})
@@ -131,9 +131,11 @@ export default {
 			let arr =s[0]
 			// console.log(arr,'arr')
 			for(let k in arr){
-				if(Table1.selectedRow[k] == arr[k]){
-					this.row[k] = arr[k]
-				}
+				// if(Table1.selectedRow[k] == arr[k]){
+				this.row[k] = arr[k]
+				// console.log('du',	this.row[k])
+
+				// }
 			}
 			// console.log(this.row, 'getCourseById')
 		})

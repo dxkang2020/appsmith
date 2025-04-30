@@ -52,10 +52,11 @@
     "id",
     "error",
     "updated_at",
+    "created_at",
     "created_by",
     "updated_by"
   ],
-  "columnUpdatedAt": 1745981452604,
+  "columnUpdatedAt": 1745991321955,
   "columnWidthMap": {
     "course_number": 150,
     "level": 84,
@@ -146,6 +147,9 @@
     },
     {
       "key": "primaryColumns.updated_at.computedValue"
+    },
+    {
+      "key": "primaryColumns.created_at.computedValue"
     },
     {
       "key": "primaryColumns.created_by.computedValue"
@@ -310,6 +314,40 @@
       "verticalAlignment": "CENTER",
       "width": 150
     },
+    "created_at": {
+      "alias": "created_at",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
+      "columnType": "text",
+      "computedValue": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"created_at\"]))}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "LEFT",
+      "id": "created_at",
+      "index": 20,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "created_at",
+      "notation": "standard",
+      "originalId": "created_at",
+      "sticky": "",
+      "textColor": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
     "created_by": {
       "alias": "created_by",
       "allowCellWrapping": false,
@@ -324,7 +362,7 @@
       "fontStyle": "",
       "horizontalAlignment": "LEFT",
       "id": "created_by",
-      "index": 20,
+      "index": 21,
       "isCellEditable": false,
       "isCellVisible": true,
       "isDerived": false,
@@ -899,7 +937,7 @@
       "fontStyle": "",
       "horizontalAlignment": "LEFT",
       "id": "updated_by",
-      "index": 21,
+      "index": 22,
       "isCellEditable": false,
       "isCellVisible": true,
       "isDerived": false,
