@@ -44,7 +44,8 @@ export default {
 		await this.getCourseById()
 		updateCardPrompt.run(item).then(async(res)=>{
 			await		this.update()
-			await Tab.onTabSelectChanged()
+			await cardList.getCardsList()
+			// await Tab.onTabSelectChanged()
 		})
 	},
 	async updateScenePrompt(item){
@@ -53,8 +54,8 @@ export default {
 
 		updateScenePrompt.run(item).then(async res=>{
 			await this.update()
-
-			await Tab.onTabSelectChanged()
+			await scenesList.getScenesList()
+			// await Tab.onTabSelectChanged()
 		})
 	},
 	async updateJsonImage(updateVal, newName,ismodify){
@@ -114,7 +115,8 @@ export default {
 
 			await	updateCardPrompt.run(item).then(async ()=>	{
 				await this.update()
-				await Tab.onTabSelectChanged()
+				
+				await cardList.getCardsList()
 
 			})
 
@@ -199,8 +201,8 @@ export default {
 				// console.log(this.row.script_json,'script_json2',test)
 
 				await this.update()
-				await Tab.onTabSelectChanged()
-				// await scenesList.getScenesList()
+				// await Tab.onTabSelectChanged()
+				await scenesList.getScenesList()
 			})
 
 			// this.row.script_json.scripts[0].name = newName

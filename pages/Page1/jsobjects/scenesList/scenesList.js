@@ -177,7 +177,8 @@ ${item.clip}
 
 	async getScenesList(){
 		// console.log(Table1.selectedRow.script_json.scripts[0].name, '3333')
-		let names = PackageTools.calcScenes(Table1.selectedRow.script_json)
+		await updateRow.getCourseById()
+		let names = PackageTools.calcScenes(updateRow.row.script_json)
 
 		console.log("images", names)
 		let screenplay = Table1.selectedRow.screenplay

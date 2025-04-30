@@ -2,7 +2,7 @@ export default {
 	myVar1: [],
 	myVar2: {},
 
-	onTabSelectChanged () {
+	async	onTabSelectChanged () {
 		// console.log(table,'table')
 		// if(table)
 		// Table1 = table
@@ -35,12 +35,13 @@ export default {
 		else
 			Button5.setVisibility(false)
 		if(Tabs1.selectedTab == "Scenes"){
-			scenesList.getScenesList()
+			// await updateRow.getCourseById()
+			await	scenesList.getScenesList()
 			// Test.getScenesList()
 		}else if(Tabs1.selectedTab == "Cards"){
-			
-			cardList.getCardsList()
-		
+			// await updateRow.getCourseById()
+			await	cardList.getCardsList()
+
 			// Test.getCardsList()
 		}
 	},
