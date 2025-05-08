@@ -16,6 +16,14 @@
         "value": "null"
       },
       {
+        "name": "soundList",
+        "value": "{}"
+      },
+      {
+        "name": "soundTextArr",
+        "value": "''"
+      },
+      {
         "name": "showText",
         "value": "''"
       },

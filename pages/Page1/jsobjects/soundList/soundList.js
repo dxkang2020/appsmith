@@ -2,6 +2,7 @@ export default {
 	audioArr:[],
 
 	listItems:null,
+	soundList:{},
 	getTexts(jsonArr,currentIndex){
 		if (!Array.isArray(jsonArr)) {
 			jsonArr = [jsonArr];
@@ -18,13 +19,15 @@ export default {
 					"character":v.character,
 					'index': ++index
 				})
+				// this.soundList[v.character][v.text] =1
+
 			}
 			if(v.feedback && v.feedback.length > 0){
 
 				v.feedback.forEach((item)=>{
 					let items = that.getTexts(item, index)
 					texts.push(...items)
-					console.log(items,'ssss',...items,items.length)
+					// console.log(items,'ssss',...items,items.length)
 					index += items.length
 				})
 			}
@@ -32,8 +35,48 @@ export default {
 		// let arr =  Array.from(texts) 
 		// console.log(texts)
 		this.audioArr = texts
+
 		return texts
 	},
+	scriptFilter(){
+		let script =  Table1.selectedRow.screenplay.replaceAll("[player]","<player>")//剧本
+		console.log(script)
+		const dialogueArray = [];
+		const regex = /([\w\. _]+)[：:\s]+\[[^\]]+\]\s*"([^\[]*)"/gm;
+
+		let match;
+		while ((match = regex.exec(script))) {
+			dialogueArray.push({
+				character: match[1].trim(),
+				text: match[2]
+			});
+		}
+		console.log("dialogueArray",dialogueArray)
+		return dialogueArray
+	},
+	reviewAudio(){
+		let scripts =	this.scriptFilter()
+		const audioSet = new Set();
+		scripts.forEach(item => {
+			let key = `${item.character}|${item.text}`; // 用 "|" 连接字符和对话作为唯一键
+			audioSet.add(key);
+		});
+
+
+		const missingDialogues = this.audioArr.filter(item => {
+			const result = item.character.replace(/_/g, '. ').replace(/\b\w/g, char => char.toUpperCase()); // 每个单词首字母大写
+			let itemkey = `${result}|${item.text}`;
+			return !audioSet.has(itemkey);
+		});
+
+		showModal(Modal11.name)
+		this.soundTextArr = missingDialogues
+		console.log(missingDialogues,'sound')
+		console.log("lenght",this.audioArr.length, scripts.length)
+
+	},
+	soundTextArr:'',
+
 	showText:'',
 	audioIndex:0,
 

@@ -8,6 +8,8 @@ export default {
 
 		this.rowIndex = Table1.selectedRowIndex
 
+
+
 		// let updatedTableData =[...Table1.tableData]
 		// updatedTableData[idx] = this.row
 
@@ -46,7 +48,18 @@ export default {
 			await		this.update()
 			await cardList.getCardsList()
 			// await Tab.onTabSelectChanged()
+
+
 		})
+
+	},
+	async updateRes(){
+		let level = this.row.level
+		let course_number = this.row.course_number
+		let course = this.row.script_json
+		let scenes = this.row.scenes_prompt
+		let cards = this.row.cards_prompt
+		GenResource.run({course_number,level,course,scenes,cards})
 	},
 	async updateScenePrompt(item){
 		await this.getCourseById()
@@ -55,8 +68,10 @@ export default {
 		updateScenePrompt.run(item).then(async res=>{
 			await this.update()
 			await scenesList.getScenesList()
+
 			// await Tab.onTabSelectChanged()
 		})
+
 	},
 	async updateJsonImage(updateVal, newName,ismodify){
 		console.log('45454',updateVal)
@@ -117,6 +132,7 @@ export default {
 				await this.update()
 
 				await cardList.getCardsList()
+				this.updateRes()
 
 			})
 
@@ -205,6 +221,7 @@ export default {
 				await this.update()
 				// await Tab.onTabSelectChanged()
 				await scenesList.getScenesList()
+				this.updateRes()
 			})
 
 			// this.row.script_json.scripts[0].name = newName
