@@ -40,7 +40,7 @@ export default {
 	},
 	scriptFilter(){
 		let script =  Table1.selectedRow.screenplay.replaceAll("[player]","<player>")//剧本
-		console.log(script)
+		// console.log(script)
 		const dialogueArray = [];
 		const regex = /([\w\. _]+)[：:\s]+\[[^\]]+\]\s*"([^\[]*)"/gm;
 
@@ -51,7 +51,7 @@ export default {
 				text: match[2]
 			});
 		}
-		console.log("dialogueArray",dialogueArray)
+		// console.log("dialogueArray",dialogueArray)
 		return dialogueArray
 	},
 	reviewAudio(){
@@ -105,9 +105,9 @@ export default {
 		this.showText = selectedRow.text;
 
 
-		let level = Table1.selectedRow.level
-		let course_number = Table1.selectedRow.course_number
-		let url = `https://af.runfox.cn/courses/sounds/${level}/${course_number}/${this.generateAudioName(selectedRow)}.mp3`
+		// let level = Table1.selectedRow.level
+		// let course_number = Table1.selectedRow.course_number
+		let url = `https://af.runfox.cn/courses/sounds/dialogues/${this.generateAudioName(selectedRow)}.mp3`
 		console.log("url:", url)
 		Audio1.setPlaying(false)
 		Audio1.setURL(url)
@@ -137,7 +137,7 @@ export default {
 		GenResource.run({course_number,level,overwrite, course}).then(()=>	{
 			showAlert('生成成功','success')
 
-			let url = `https://af.runfox.cn/courses/sounds/${level}/${course_number}/${this.generateAudioName(item)}.mp3`
+			let url = `https://af.runfox.cn/courses/sounds/dialogues/${this.generateAudioName(item)}.mp3`
 			console.log("url:", url)
 
 
