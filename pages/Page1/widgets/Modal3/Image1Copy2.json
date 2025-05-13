@@ -13,7 +13,7 @@
     }
   ],
   "dynamicTriggerPathList": [],
-  "enableDownload": false,
+  "enableDownload": true,
   "enableRotation": false,
   "flexVerticalAlignment": "start",
   "image": "{{cardList.imgP}}",

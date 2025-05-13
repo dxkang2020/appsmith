@@ -25,7 +25,7 @@
       "key": "onClick"
     }
   ],
-  "enableDownload": false,
+  "enableDownload": true,
   "enableRotation": false,
   "flexVerticalAlignment": "start",
   "image": "{{currentItem.urls}}",
