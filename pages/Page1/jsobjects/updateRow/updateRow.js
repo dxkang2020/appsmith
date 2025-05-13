@@ -16,6 +16,7 @@ export default {
 		updateTable.data[idx] = this.row
 		await Table1.setData(updateTable.data)
 		Table1.setSelectedRowIndex(	this.rowIndex)
+		console.log(Table1.selectedRow,'====')
 		// await Table1.setSelectedRowIndex(idx)
 
 

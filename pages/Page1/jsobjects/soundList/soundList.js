@@ -38,45 +38,61 @@ export default {
 
 		return texts
 	},
-	scriptFilter(){
-		let script =  Table1.selectedRow.screenplay.replaceAll("[player]","<player>")//剧本
-		// console.log(script)
-		const dialogueArray = [];
-		const regex = /([\w\. _]+)[：:\s]+\[[^\]]+\]\s*"([^\[]*)"/gm;
 
+	reviewAudio(){
+		let script =  Table1.selectedRow.screenplay.replaceAll("[player]","<player>")//剧本
+		const scriptArray = [];
+		const regex = /([\w\. _]+)[：:\s]+\[[^\]]+\]\s*"([^\[]*)"/gm
 		let match;
 		while ((match = regex.exec(script))) {
-			dialogueArray.push({
+			scriptArray.push({
 				character: match[1].trim(),
 				text: match[2]
 			});
 		}
-		// console.log("dialogueArray",dialogueArray)
-		return dialogueArray
-	},
-	reviewAudio(){
-		let scripts =	this.scriptFilter()
 		const audioSet = new Set();
-		scripts.forEach(item => {
-			let key = `${item.character}|${item.text}`; // 用 "|" 连接字符和对话作为唯一键
-			audioSet.add(key);
+		scriptArray.forEach(item => {
+			let key2 = `${item.text}`;
+			audioSet.add(key2);
 		});
 
 
-		const missingDialogues = this.audioArr.filter(item => {
-			const result = item.character.replace(/_/g, '. ').replace(/\b\w/g, char => char.toUpperCase()); // 每个单词首字母大写
-			let itemkey = `${result}|${item.text}`;
+		var missingDialogues = this.audioArr.filter(item => {
+			//不拿角色名进行匹配
+			// const result = item.character.replace(/_/g, '. ').replace(/\b\w/g, char => char.toUpperCase()); // 每个单词首字母大写
+			// let itemkey = `${result}|${item.text}`;
+			let itemkey = `${item.text}`;
 			return !audioSet.has(itemkey);
 		});
 
+		let extra = 0
+		// let yiExtra= 0
+
+		missingDialogues =  missingDialogues.filter(v=>{
+			if (script.indexOf(v.text) >= 0){
+				extra+=1
+				return false
+			}else{
+				return true
+			}
+		})
+
+		// if(scriptArray.length + extra  > this.audioArr.length){
+		// 
+		// }
 		showModal(Modal11.name)
 		this.soundTextArr = missingDialogues
-		console.log(missingDialogues,'sound')
-		console.log("lenght",this.audioArr.length, scripts.length)
+
+
+		// , 未找到: ${extra}
+		this.soundNumText = `剧本条数:${scriptArray.length + extra},JSON音频条数:${this.audioArr.length}`
+		console.log(extra,"lenght",this.audioArr.length, scriptArray.length,this.soundTextArr.length)
+
+
 
 	},
 	soundTextArr:'',
-
+	soundNumText:'',
 	showText:'',
 	audioIndex:0,
 

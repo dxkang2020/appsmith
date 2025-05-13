@@ -41,3 +41,4 @@ ORDER BY
     END,
     CAST(SPLIT_PART(o.course_number, '.', 1) AS INTEGER),
     CAST(SPLIT_PART(o.course_number, '.', 2) AS INTEGER)
+LIMIT 50

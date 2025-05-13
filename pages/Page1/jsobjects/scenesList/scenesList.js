@@ -275,6 +275,17 @@ ${item.clip}
 
 
 	},
+
+	downloadImg(){
+
+		download(this.imgP,
+						 'my-image-name',
+						 'image/png').then(res=>{
+			console.log(res)
+		}).catch(err =>{
+			console.log('err',err)
+		})
+	},
 	// 查看图片
 	priviewImg(item){
 

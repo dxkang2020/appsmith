@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 218,
+  "bottomRow": 6,
   "dynamicBindingPathList": [
     {
       "key": "truncateButtonColor"
@@ -30,8 +30,8 @@
   "mobileRightColumn": 41,
   "mobileTopRow": 1,
   "needsErrorInfo": false,
-  "originalBottomRow": 227,
-  "originalTopRow": 11,
+  "originalBottomRow": 133,
+  "originalTopRow": 1,
   "overflow": "NONE",
   "parentId": "ksb7dx8alr",
   "renderMode": "CANVAS",
@@ -39,13 +39,13 @@
   "rightColumn": 47,
   "shouldScrollContents": true,
   "shouldTruncate": false,
-  "text": "{{soundList.soundTextArr}}",
+  "text": "{{soundList.soundNumText}}",
   "textAlign": "LEFT",
   "textColor": "#231F20",
-  "topRow": 11,
+  "topRow": 2,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,
-  "widgetId": "67t89jg6nr",
-  "widgetName": "Text10"
+  "widgetId": "5fbcja527m",
+  "widgetName": "Text10Copy"
 }

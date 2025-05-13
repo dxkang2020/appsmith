@@ -14,6 +14,14 @@
       {
         "name": "myVar2",
         "value": "{}"
+      },
+      {
+        "name": "JsonText",
+        "value": "''"
+      },
+      {
+        "name": "isJson",
+        "value": "false"
       }
     ]
   }

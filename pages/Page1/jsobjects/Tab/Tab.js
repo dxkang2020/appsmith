@@ -18,7 +18,7 @@ export default {
 						Table1.selectedRow.screenplay&& Table1.selectedRow.screenplay.length > 300 ){
 			let label = ""
 			let diffMinute = (Date.now() - new Date(Table1.selectedRow.updated_at))/60000
-
+			Button20.setDisabled(false)
 			if(!Table1.selectedRow?.script_json?.scripts?.length)
 				label = "生成JSON"
 			else if (Table1.selectedRow.status != "scripting" || diffMinute > 5 )
@@ -28,12 +28,11 @@ export default {
 				Button5.setVisibility(true)
 			}
 
-		}
-		else if(Tabs1.selectedTab == "Sounds"){
-			soundList.getTexts(Table1.selectedRow.script_json.scripts,0)
-		}
-		else
+		} else{
 			Button5.setVisibility(false)
+			Button20.setDisabled(true)
+		}
+
 		if(Tabs1.selectedTab == "Scenes"){
 			await updateRow.getCourseById()
 			await	scenesList.getScenesList()
@@ -43,6 +42,8 @@ export default {
 			await	cardList.getCardsList()
 
 			// Test.getCardsList()
+		}else if(Tabs1.selectedTab == "Sounds"){
+			soundList.getTexts(Table1.selectedRow.script_json.scripts,0)
 		}
 	},
 	onGenRes(){
@@ -100,6 +101,44 @@ export default {
 	onQueryClick(){
 		let course_numbers = this.parseCourseRange(Input1.text)
 		updateTable.run({course_numbers})
+
+	},
+	async 	saveJson(){
+		if(!this.isJson)return
+		let level = Table1.selectedRow.level
+		let course_number = Table1.selectedRow.course_number
+		let course = JSON.parse(this.JsonText) 	
+		let scenes =Table1.selectedRow.scenes_prompt
+		let cards = Table1.selectedRow.cards_prompt
+
+		await updateRow.getCourseById()
+		let val ={
+			script_json:course,
+			id:Table1.selectedRow.id
+		}
+		await updateScriptJson.run(val)
+		await GenResource.run({course_number,level,course,scenes,cards}).then(async res=>{
+			if(res.scripts == 'success'){
+				showAlert('保存成功','success')
+				// await updateRow.update()
+
+			}
+		})
+	},
+	JsonText:'',
+	isJson:false,
+	input2OnBlur(){
+		let txt = 	Input2Copy1.text
+		this.JsonText = txt
+		try{
+			this.isJson =true
+			JSON.parse(this.JsonText)
+			return true
+		}catch(e){
+			showAlert('不是标准的JSON格式','error')
+
+			return false
+		}
 
 	},
 	onBtnClicked(){

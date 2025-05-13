@@ -12,8 +12,17 @@
       "key": "image"
     }
   ],
-  "dynamicTriggerPathList": [],
-  "enableDownload": false,
+  "dynamicPropertyPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "enableDownload": true,
   "enableRotation": false,
   "flexVerticalAlignment": "start",
   "image": "{{scenesList.imgP}}",
@@ -29,6 +38,7 @@
   "mobileTopRow": 25,
   "needsErrorInfo": false,
   "objectFit": "contain",
+  "onClick": "{{scenesList.downloadImg()}}",
   "parentColumnSpace": 15.5625,
   "parentId": "dw24hxwobl",
   "parentRowSpace": 10,
