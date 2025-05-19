@@ -7,19 +7,13 @@ export default {
 		let idx = Table1.selectedRowIndex
 
 		this.rowIndex = Table1.selectedRowIndex
-
-
-
 		// let updatedTableData =[...Table1.tableData]
 		// updatedTableData[idx] = this.row
-
 		updateTable.data[idx] = this.row
 		await Table1.setData(updateTable.data)
 		Table1.setSelectedRowIndex(	this.rowIndex)
 		console.log(Table1.selectedRow,'====')
 		// await Table1.setSelectedRowIndex(idx)
-
-
 		// await updateTable.run().then(res=>{
 		// 
 		// })
@@ -49,8 +43,8 @@ export default {
 			await		this.update()
 			await cardList.getCardsList()
 			// await Tab.onTabSelectChanged()
-
-
+		}).catch(error =>{
+			showAlert(error,'error')
 		})
 
 	},
@@ -71,6 +65,8 @@ export default {
 			await scenesList.getScenesList()
 
 			// await Tab.onTabSelectChanged()
+		}).catch(error =>{
+			showAlert(error,'error')
 		})
 
 	},
@@ -135,9 +131,13 @@ export default {
 				await cardList.getCardsList()
 				this.updateRes()
 
+			}).catch(error =>{
+				showAlert(error,'error')
 			})
 
 
+		}).catch(error =>{
+			showAlert(error,'error')
 		})
 
 	},
@@ -223,7 +223,9 @@ export default {
 				// await Tab.onTabSelectChanged()
 				await scenesList.getScenesList()
 				this.updateRes()
-			})
+			}).catch(error =>{
+			showAlert(error,'error')
+		})
 
 			// this.row.script_json.scripts[0].name = newName
 			// console.log(this.row.script_json.scripts[0].name,'22222222')
@@ -233,6 +235,8 @@ export default {
 			// console.log("calcScenes2", PackageTools.calcScenes(this.row.script_json))
 			// })
 
+		}).catch(error =>{
+			showAlert(error,'error')
 		})
 		// console.log(this.row.script_json.scripts[0].name,'selectRow name')
 		// console.log(Table1.tableData[0].script_json.scripts[0].name,'tableData name')

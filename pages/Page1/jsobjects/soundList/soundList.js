@@ -161,6 +161,8 @@ export default {
 			Audio1.setPlaying(true)
 
 			// Audio1.setURL('')
+		}).catch(error =>{
+			showAlert(error,'error')
 		})
 	},
 	// 音频名字处理

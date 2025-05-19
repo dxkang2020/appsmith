@@ -107,9 +107,6 @@ ${item.clip}
 			// this.updateVal.name = newVal
 
 			// this.uploadImg(this.updateVal,'modify',this.localIndex)
-
-
-
 		})
 	},
 	coverSave(){
@@ -121,15 +118,9 @@ ${item.clip}
 		showModal(Modal9.name)
 		this.updateVal = item
 		const file =cList1.triggeredItemView.FilePicker3.files[0]
-		// console.log("file::", file.name, file.dataFormat, file.size, file.type)
-
 		let filename = `${item.name}.webp`
-		// let data = file
-
-		let startIndex = ((cList1.pageNo -1 ) * cList1.pageNo) + index
-
+		// let startIndex = ((cList1.pageNo -1 ) * cList1.pageNo) + index
 		let overwrite =  isCover == 'cover' ? true : false
-
 		SaveCard.run({filename, overwrite,file}).then(res =>{
 			if(res == "success"){
 				showAlert('保存成功','success')
@@ -142,7 +133,6 @@ ${item.clip}
 
 				}
 
-				console.log(startIndex,'startIndex')
 				// this.listItems[startIndex].urls = file.data
 				// this.listItems[startIndex].clip = item.clip
 				// this.listItems[startIndex].name = item.name
@@ -158,8 +148,9 @@ ${item.clip}
 				//failed
 				closeModal(Modal9.name)
 			}
-		}).catch(()=>{
+		}).catch((error)=>{
 			closeModal(Modal9.name)
+			showAlert(error,'error')
 		})
 
 	},
@@ -194,6 +185,8 @@ ${item.clip}
 				return item
 			})
 			console.log("images:",this.listItems)
+		}).catch(error =>{
+			showAlert(error,'error')
 		})
 
 

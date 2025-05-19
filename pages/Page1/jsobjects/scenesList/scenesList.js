@@ -125,13 +125,9 @@ ${item.clip}
 		this.updateVal = item
 		this.localIndex = index
 		const file =sList1.triggeredItemView.FilePicker1.files[0]
-
-
-
-		// sList1.currentItemsView[index % sList1.pageSize ]?.sImage?.
 		let startIndex = ((sList1.pageNo -1 ) * sList1.pageNo) + index
 
-		console.log(startIndex,'startIndex')
+		// console.log(startIndex,'startIndex')
 		let filename = `${item.name}.webp`
 
 		let overwrite =  isCover == 'cover' ? true : false
@@ -143,17 +139,12 @@ ${item.clip}
 				closeModal(Modal9.name)
 				if(isCover != 'modify'){
 					// 如果是修改保存的话 则不在此处掉updateRow.updateScenePrompt()
-
 					updateRow.updateScenePrompt(item)
-
 				}
-				// let uri = 'data:image/png;base64,' + btoa(file.data)
 
 				this.listItems[startIndex].urls = file.data
 				this.listItems[startIndex].clip = item.clip
 				this.listItems[startIndex].name = item.name
-				// console.log("listItems",item,  this.listItems[startIndex])
-
 				closeModal(Modal7.name)
 			}else if (res == "exists"){
 				closeModal(Modal9.name)
@@ -163,9 +154,11 @@ ${item.clip}
 			}	else{
 				//failed
 				closeModal(Modal9.name)
+
 			}
-		}).catch(()=>{
+		}).catch((error)=>{
 			closeModal(Modal9.name)
+			showAlert(error,'error')
 		})
 
 	},
@@ -231,6 +224,8 @@ ${item.clip}
 			// return 	this.listItems
 
 
+		}).catch(error =>{
+			showAlert(error,'error')
 		})
 	},
 
