@@ -34,7 +34,10 @@ export default {
 
 			this.row.screenplay = Input2.text
 			this.update()
-		}).catch(this.showError)
+		}).catch(error=>{
+			showAlert('保存失败'+error ,'error')
+
+		})
 		Button5.setDisabled(false)
 	},
 	async updateCardPrompt(item){
@@ -224,8 +227,8 @@ export default {
 				await scenesList.getScenesList()
 				this.updateRes()
 			}).catch(error =>{
-			showAlert(error,'error')
-		})
+				showAlert(error,'error')
+			})
 
 			// this.row.script_json.scripts[0].name = newName
 			// console.log(this.row.script_json.scripts[0].name,'22222222')
