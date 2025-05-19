@@ -31,7 +31,7 @@ export default {
 		console.log("updateScreenplay")
 		Button5.setDisabled(true)
 		await updateScreenplay.run().then(_=>{
-
+			showAlert('保存成功' ,'success')
 			this.row.screenplay = Input2.text
 			this.update()
 		}).catch(error=>{

@@ -123,6 +123,8 @@ export default {
 				// await updateRow.update()
 
 			}
+		}).catch(error =>{
+			showAlert(error,'error')
 		})
 	},
 	JsonText:'',
