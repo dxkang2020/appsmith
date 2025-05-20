@@ -48,7 +48,7 @@
   "mobileRightColumn": 20,
   "mobileTopRow": 0,
   "needsErrorInfo": false,
-  "onBlur": "{{Tab.onTabSelectChanged();}}",
+  "onBlur": "",
   "onTextChanged": "{{JSObject4.Input2onTextChanged();}}",
   "parentColumnSpace": 11.81640625,
   "parentId": "yryfdkx3s5",

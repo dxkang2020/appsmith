@@ -12,12 +12,15 @@ export default {
 
 		if(Tabs1.selectedTab == "剧本"){
 			Button5.setLabel("保存修改") 
-			Button5.setVisibility( Table1.selectedRow.screenplay == Input2.text)
+			// Button5.setVisibility( Table1.selectedRow.screenplay == Input2.text)
+			Button5.setVisibility(true)
+			Button20.setVisibility(false)
 		}
 		else if(Tabs1.selectedTab == "Json" &&
 						Table1.selectedRow.screenplay&& Table1.selectedRow.screenplay.length > 300 ){
 			let label = ""
 			let diffMinute = (Date.now() - new Date(Table1.selectedRow.updated_at))/60000
+			Button20.setVisibility(true)
 			Button20.setDisabled(false)
 			if(!Table1.selectedRow?.script_json?.scripts?.length)
 				label = "生成JSON"
@@ -30,7 +33,7 @@ export default {
 
 		} else{
 			Button5.setVisibility(false)
-			Button20.setDisabled(true)
+			Button20.setVisibility(false)
 		}
 
 		if(Tabs1.selectedTab == "Scenes"){
