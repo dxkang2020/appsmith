@@ -24,11 +24,11 @@ export default {
 		showAlert(e,"error")
 	},
 	async updateScreenplay(){
-		await this.getCourseById()
+		console.log("updateScreenplay")
 		if (Input2.text == this.row.screenplay){
 			return
 		}
-		console.log("updateScreenplay")
+		await this.getCourseById()
 		Button5.setDisabled(true)
 		await updateScreenplay.run().then(_=>{
 			showAlert('保存成功' ,'success')
