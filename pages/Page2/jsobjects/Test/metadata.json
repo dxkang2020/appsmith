@@ -1,0 +1,16 @@
+{
+  "gitSyncId": "67bed107a0c78065eecac2b6_aadd0e33-cd0b-482b-9067-0df49cf3a959",
+  "id": "Page2_Test",
+  "unpublishedCollection": {
+    "name": "Test",
+    "pageId": "Page2",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "cardslistItems",
+        "value": "[]"
+      }
+    ]
+  }
+}

@@ -1,0 +1,1019 @@
+-- SELECT * FROM public."course_documents" WHERE level='movers' and course_number='26.1' LIMIT 10;
+
+update public.course_documents set script_json='{
+  "course_title": "Jobs and Work",
+  "course_id": "u26-1",
+  "scripts": [
+	{
+	  "type": "scene",
+	  "name": "library_0940",
+	  "characters": [
+		"ben",
+		"mrs_clove"
+	  ]
+	},
+	{
+	  "character": "ben",
+	  "state": "happy",
+	  "text": "Hello, <player>!"
+	},
+	{
+	  "character": "ben",
+	  "text": "Welcome to the library!"
+	},
+	{
+	  "character": "ben",
+	  "text": "Mrs. Clove has a special task for us today."
+	},
+	{
+	  "type": "select",
+	  "text": "Hi, Ben!",
+	  "options": [
+		"Hi, Ben!"
+	  ],
+	  "feedback": [
+		[
+		  {
+			"type": "assess",
+			"assess_text": "Hi, Ben!",
+			"feedback": [
+			  []
+			]
+		  }
+		]
+	  ]
+	},
+	{
+	  "character": "ben",
+	  "state": "happy",
+	  "text": "Let''s go talk to Mrs. Clove."
+	},
+	{
+	  "character": "ben",
+	  "text": "She''s at the front desk."
+	},
+	{
+	  "character": "mrs_clove",
+	  "state": "happy",
+	  "text": "Hello, Ben! Hello, <player>!"
+	},
+	{
+	  "character": "mrs_clove",
+	  "text": "I need your help for our"
+	},
+	{
+	  "character": "mrs_clove",
+	  "text": "Jobs Exhibition next week."
+	},
+	{
+	  "character": "ben",
+	  "text": "What do you need, Mrs. Clove?"
+	},
+	{
+	  "character": "mrs_clove",
+	  "text": "I need you to find out"
+	},
+	{
+	  "character": "mrs_clove",
+	  "text": "about different jobs in our town."
+	},
+	{
+	  "character": "mrs_clove",
+	  "text": "Can you help me?"
+	},
+	{
+	  "type": "select",
+	  "text": "Yes, I can.",
+	  "options": [
+		"Yes, I can."
+	  ],
+	  "feedback": [
+		[
+		  {
+			"type": "assess",
+			"assess_text": "Yes, I can.",
+			"feedback": [
+			  []
+			]
+		  }
+		]
+	  ]
+	},
+	{
+	  "type": "task"
+	},
+	{
+	  "character": "ben",
+	  "state": "happy",
+	  "text": "Great! We''ll help you, Mrs. Clove!"
+	},
+	{
+	  "character": "mallow",
+	  "state": "surprised",
+	  "text": "Jobs? Did someone say JOBS?"
+	},
+	{
+	  "character": "mallow",
+	  "state": "happy",
+	  "text": "I know all about jobs!"
+	},
+	{
+	  "character": "mallow",
+	  "state": "happy",
+	  "text": "I''m an ice cream taster!"
+	},
+	{
+	  "character": "mrs_clove",
+	  "state": "happy",
+	  "text": "Hello, Mallow."
+	},
+	{
+	  "character": "mrs_clove",
+	  "text": "Ice cream tasting is not really a job."
+	},
+	{
+	  "character": "mrs_clove",
+	  "text": "We need to learn about real jobs"
+	},
+	{
+	  "character": "mrs_clove",
+	  "text": "like doctors, farmers, and teachers."
+	},
+	{
+	  "character": "mallow",
+	  "state": "scared",
+	  "text": "But... but... who tastes all the ice cream then?"
+	},
+	{
+	  "character": "ben",
+	  "text": "That''s a good question, Mallow."
+	},
+	{
+	  "character": "ben",
+	  "text": "But first, let''s focus on our task."
+	},
+	{
+	  "character": "ben",
+	  "text": "We should visit the hospital first"
+	},
+	{
+	  "character": "ben",
+	  "text": "to talk to Doctor."
+	},
+	{
+	  "character": "mallow",
+	  "state": "happy",
+	  "text": "Maybe Doctor knows who tastes ice cream!"
+	},
+	{
+	  "character": "ben",
+	  "state": "happy",
+	  "text": "Let''s go, <player>!"
+	},
+	{
+	  "type": "scene",
+	  "name": "hospital_scene_1657",
+	  "characters": [
+		"ben",
+		"mallow",
+		"doctor"
+	  ]
+	},
+	{
+	  "character": "ben",
+	  "text": "Here we are at the hospital."
+	},
+	{
+	  "character": "ben",
+	  "text": "Look, there''s Doctor!"
+	},
+	{
+	  "character": "mallow",
+	  "state": "surprised",
+	  "text": "Is he sleeping? At work?"
+	},
+	{
+	  "character": "ben",
+	  "state": "happy",
+	  "text": "That''s just Doctor."
+	},
+	{
+	  "character": "ben",
+	  "text": "He always looks sleepy,"
+	},
+	{
+	  "character": "ben",
+	  "text": "but he''s actually a great doctor."
+	},
+	{
+	  "character": "ben",
+	  "text": "Excuse me, Doctor?"
+	},
+	{
+	  "character": "doctor",
+	  "text": "Zzzz... Hmm?"
+	},
+	{
+	  "character": "doctor",
+	  "text": "Oh! Visitors! Welcome, welcome."
+	},
+	{
+	  "character": "doctor",
+	  "text": "What can I do for you today?"
+	},
+	{
+	  "character": "ben",
+	  "text": "We''re helping Mrs. Clove"
+	},
+	{
+	  "character": "ben",
+	  "text": "learn about different jobs in town."
+	},
+	{
+	  "character": "ben",
+	  "text": "Can you tell us about being a doctor?"
+	},
+	{
+	  "character": "doctor",
+	  "state": "happy",
+	  "text": "Ah, yes! Being a doctor is a very important job."
+	},
+	{
+	  "character": "doctor",
+	  "text": "<player>, do you know what a doctor does?"
+	},
+	{
+	  "type": "select",
+	  "text": "doctor",
+	  "images": [
+		"doctor_treating_patients",
+		"teacher_teaching",
+		"farmer_working"
+	  ],
+	  "feedback": [
+		[],
+		[],
+		[]
+	  ]
+	},
+	{
+	  "character": "doctor",
+	  "state": "happy",
+	  "text": "That''s right! Doctors help sick people."
+	},
+	{
+	  "character": "doctor",
+	  "text": "We examine patients,"
+	},
+	{
+	  "character": "doctor",
+	  "text": "give medicine, and help them feel better."
+	},
+	{
+	  "character": "mallow",
+	  "state": "surprised",
+	  "text": "Do you ever treat people"
+	},
+	{
+	  "character": "mallow",
+	  "state": "surprised",
+	  "text": "with ice cream stomachaches?"
+	},
+	{
+	  "character": "doctor",
+	  "state": "happy",
+	  "text": "Haha, sometimes, Mallow!"
+	},
+	{
+	  "character": "doctor",
+	  "text": "But mostly I treat fevers,"
+	},
+	{
+	  "character": "doctor",
+	  "text": "coughs, and other illnesses."
+	},
+	{
+	  "character": "ben",
+	  "text": "<player>, what does Doctor do?"
+	},
+	{
+	  "type": "select",
+	  "text": "Doctor helps sick people.",
+	  "options": [
+		"Doctor helps sick people."
+	  ],
+	  "feedback": [
+		[
+		  {
+			"type": "assess",
+			"assess_text": "Doctor helps sick people.",
+			"feedback": [
+			  []
+			]
+		  }
+		]
+	  ]
+	},
+	{
+	  "character": "doctor",
+	  "state": "happy",
+	  "text": "Exactly! That''s my job!"
+	},
+	{
+	  "character": "mallow",
+	  "text": "What does your father do, Doctor?"
+	},
+	{
+	  "character": "doctor",
+	  "text": "My father? He''s retired now,"
+	},
+	{
+	  "character": "doctor",
+	  "text": "but he was a teacher at the school."
+	},
+	{
+	  "character": "ben",
+	  "text": "<player>, can you ask Mallow"
+	},
+	{
+	  "character": "ben",
+	  "text": "about his father''s job?"
+	},
+	{
+	  "type": "select",
+	  "text": "What does your father do?",
+	  "options": [
+		"What does your father do?"
+	  ],
+	  "feedback": [
+		[
+		  {
+			"type": "assess",
+			"assess_text": "What does your father do?",
+			"feedback": [
+			  []
+			]
+		  }
+		]
+	  ]
+	},
+	{
+	  "character": "mallow",
+	  "state": "happy",
+	  "text": "My father? He''s a farmer!"
+	},
+	{
+	  "character": "mallow",
+	  "state": "happy",
+	  "text": "He grows carrots, lettuce,"
+	},
+	{
+	  "character": "mallow",
+	  "state": "happy",
+	  "text": "and the best strawberries for ice cream!"
+	},
+	{
+	  "character": "ben",
+	  "state": "happy",
+	  "text": "That''s interesting!"
+	},
+	{
+	  "character": "ben",
+	  "text": "Speaking of farmers,"
+	},
+	{
+	  "character": "ben",
+	  "text": "we should visit Ross''s farm next."
+	},
+	{
+	  "character": "ben",
+	  "text": "Thank you for your help, Doctor!"
+	},
+	{
+	  "character": "doctor",
+	  "state": "happy",
+	  "text": "You''re welcome! Zzzz..."
+	},
+	{
+	  "type": "scene",
+	  "name": "farm",
+	  "characters": [
+		"ben",
+		"ross",
+		"mallow"
+	  ]
+	},
+	{
+	  "character": "ben",
+	  "state": "happy",
+	  "text": "Here we are at Ross''s farm!"
+	},
+	{
+	  "character": "ross",
+	  "state": "happy",
+	  "text": "Hello, Ben! Hello, <player>!"
+	},
+	{
+	  "character": "ross",
+	  "text": "Welcome to my farm!"
+	},
+	{
+	  "character": "ross",
+	  "text": "What brings you here today?"
+	},
+	{
+	  "character": "ben",
+	  "text": "We''re helping Mrs. Clove"
+	},
+	{
+	  "character": "ben",
+	  "text": "learn about different jobs for the exhibition."
+	},
+	{
+	  "character": "ben",
+	  "text": "Can you tell us about being a farmer?"
+	},
+	{
+	  "character": "ross",
+	  "state": "happy",
+	  "text": "Of course! Farmers grow food"
+	},
+	{
+	  "character": "ross",
+	  "text": "for people to eat."
+	},
+	{
+	  "character": "ross",
+	  "text": "We plant seeds, water plants,"
+	},
+	{
+	  "character": "ross",
+	  "text": "and take care of animals."
+	},
+	{
+	  "character": "mallow",
+	  "state": "surprised",
+	  "text": "Do you grow ice cream here?"
+	},
+	{
+	  "character": "ross",
+	  "state": "happy",
+	  "text": "No, Mallow! Ice cream is made"
+	},
+	{
+	  "character": "ross",
+	  "state": "happy",
+	  "text": "from milk from cows!"
+	},
+	{
+	  "character": "ross",
+	  "text": "I grow vegetables and fruits,"
+	},
+	{
+	  "character": "ross",
+	  "text": "and I raise some animals too."
+	},
+	{
+	  "character": "ben",
+	  "text": "<player>, do you know"
+	},
+	{
+	  "character": "ben",
+	  "text": "what we call someone who works on a farm?"
+	},
+	{
+	  "type": "select",
+	  "text": "farmer",
+	  "options": [
+		"farmer",
+		"nurse",
+		"chef"
+	  ],
+	  "feedback": [
+		[],
+		[],
+		[]
+	  ]
+	},
+	{
+	  "character": "ross",
+	  "state": "happy",
+	  "text": "That''s right! I''m a farmer."
+	},
+	{
+	  "character": "ross",
+	  "text": "I work hard every day"
+	},
+	{
+	  "character": "ross",
+	  "text": "to grow healthy food."
+	},
+	{
+	  "character": "mallow",
+	  "state": "happy",
+	  "text": "What does your mother do, Ross?"
+	},
+	{
+	  "character": "ross",
+	  "text": "My mother is a teacher"
+	},
+	{
+	  "character": "ross",
+	  "text": "at the elementary school."
+	},
+	{
+	  "character": "ross",
+	  "text": "She teaches math to children."
+	},
+	{
+	  "character": "ben",
+	  "text": "<player>, can you ask Ross"
+	},
+	{
+	  "character": "ben",
+	  "text": "about his father''s job?"
+	},
+	{
+	  "type": "select",
+	  "text": "What does your father do?",
+	  "options": [
+		"What does your father do?"
+	  ],
+	  "feedback": [
+		[
+		  {
+			"type": "assess",
+			"assess_text": "What does your father do?",
+			"feedback": [
+			  []
+			]
+		  }
+		]
+	  ]
+	},
+	{
+	  "character": "ross",
+	  "text": "My father works with me on the farm."
+	},
+	{
+	  "character": "ross",
+	  "text": "He''s a farmer too."
+	},
+	{
+	  "character": "ross",
+	  "text": "We work together every day."
+	},
+	{
+	  "character": "ben",
+	  "text": "That''s nice that you"
+	},
+	{
+	  "character": "ben",
+	  "text": "work with your father!"
+	},
+	{
+	  "character": "ben",
+	  "text": "Now let''s visit the school"
+	},
+	{
+	  "character": "ben",
+	  "text": "to talk to Rico in the cafeteria."
+	},
+	{
+	  "character": "mallow",
+	  "state": "surprised",
+	  "text": "Cafeteria? FOOD? Let''s go!"
+	},
+	{
+	  "character": "ben",
+	  "state": "happy",
+	  "text": "Thank you for your help, Ross!"
+	},
+	{
+	  "character": "ross",
+	  "state": "happy",
+	  "text": "You''re welcome! Come back anytime!"
+	},
+	{
+	  "type": "scene",
+	  "name": "school_restaurant",
+	  "characters": [
+		"ben",
+		"rico",
+		"mallow",
+		"emma"
+	  ]
+	},
+	{
+	  "character": "ben",
+	  "text": "Here we are at the school cafeteria."
+	},
+	{
+	  "character": "rico",
+	  "state": "happy",
+	  "text": "Hello, my friends!"
+	},
+	{
+	  "character": "rico",
+	  "state": "happy",
+	  "text": "Welcome to my kitchen!"
+	},
+	{
+	  "character": "rico",
+	  "text": "Are you hungry?"
+	},
+	{
+	  "character": "mallow",
+	  "state": "happy",
+	  "text": "Yes! Do you have ice cream?"
+	},
+	{
+	  "character": "rico",
+	  "state": "happy",
+	  "text": "No ice cream today, Mallow!"
+	},
+	{
+	  "character": "rico",
+	  "state": "happy",
+	  "text": "But I have delicious vegetable soup"
+	},
+	{
+	  "character": "rico",
+	  "state": "happy",
+	  "text": "and fresh bread!"
+	},
+	{
+	  "character": "ben",
+	  "text": "Rico, we''re helping Mrs. Clove"
+	},
+	{
+	  "character": "ben",
+	  "text": "learn about different jobs in town."
+	},
+	{
+	  "character": "ben",
+	  "text": "Can you tell us about your job?"
+	},
+	{
+	  "character": "rico",
+	  "text": "I''m a chef! I cook food"
+	},
+	{
+	  "character": "rico",
+	  "text": "for all the students and teachers."
+	},
+	{
+	  "character": "rico",
+	  "text": "I plan menus, prepare ingredients,"
+	},
+	{
+	  "character": "rico",
+	  "text": "and make healthy meals."
+	},
+	{
+	  "character": "ben",
+	  "text": "<player>, do you know"
+	},
+	{
+	  "character": "ben",
+	  "text": "what we call someone who cooks food"
+	},
+	{
+	  "character": "ben",
+	  "text": "in a restaurant or school?"
+	},
+	{
+	  "type": "select",
+	  "text": "chef",
+	  "options": [
+		"chef",
+		"nurse",
+		"farmer"
+	  ],
+	  "feedback": [
+		[],
+		[],
+		[]
+	  ]
+	},
+	{
+	  "character": "rico",
+	  "state": "happy",
+	  "text": "Excellent! I''m a chef!"
+	},
+	{
+	  "character": "rico",
+	  "state": "happy",
+	  "text": "I love creating delicious food"
+	},
+	{
+	  "character": "rico",
+	  "state": "happy",
+	  "text": "for everyone to enjoy."
+	},
+	{
+	  "character": "mallow",
+	  "text": "What about ice cream? Do you make that too?"
+	},
+	{
+	  "character": "rico",
+	  "text": "Sometimes for special occasions!"
+	},
+	{
+	  "character": "rico",
+	  "text": "But mostly I make nutritious meals"
+	},
+	{
+	  "character": "rico",
+	  "text": "to help students learn and grow."
+	},
+	{
+	  "character": "ben",
+	  "text": "<player>, can you ask Rico"
+	},
+	{
+	  "character": "ben",
+	  "text": "about his mother''s job?"
+	},
+	{
+	  "type": "select",
+	  "text": "What does your mother do?",
+	  "options": [
+		"What does your mother do?"
+	  ],
+	  "feedback": [
+		[
+		  {
+			"type": "assess",
+			"assess_text": "What does your mother do?",
+			"feedback": [
+			  []
+			]
+		  }
+		]
+	  ]
+	},
+	{
+	  "character": "rico",
+	  "text": "My mother is a nurse at the hospital."
+	},
+	{
+	  "character": "rico",
+	  "text": "She works with Doctor"
+	},
+	{
+	  "character": "rico",
+	  "text": "to take care of patients."
+	},
+	{
+	  "character": "ben",
+	  "text": "<player>, do you know"
+	},
+	{
+	  "character": "ben",
+	  "text": "what a nurse does?"
+	},
+	{
+	  "type": "select",
+	  "text": "nurse",
+	  "options": [
+		"nurse",
+		"farmer",
+		"chef"
+	  ],
+	  "feedback": [
+		[],
+		[],
+		[]
+	  ]
+	},
+	{
+	  "character": "emma",
+	  "state": "happy",
+	  "text": "Hello, everyone!"
+	},
+	{
+	  "character": "ben",
+	  "state": "happy",
+	  "text": "Hi, Emma! We''re learning about jobs!"
+	},
+	{
+	  "character": "emma",
+	  "text": "That''s interesting!"
+	},
+	{
+	  "character": "emma",
+	  "text": "Nurses help doctors take care of patients."
+	},
+	{
+	  "character": "emma",
+	  "text": "They check temperatures,"
+	},
+	{
+	  "character": "emma",
+	  "text": "give medicine, and help people feel better."
+	},
+	{
+	  "character": "mallow",
+	  "state": "surprised",
+	  "text": "Do they give ice cream to sick children?"
+	},
+	{
+	  "character": "emma",
+	  "state": "happy",
+	  "text": "Sometimes they might,"
+	},
+	{
+	  "character": "emma",
+	  "state": "happy",
+	  "text": "if the doctor says it''s okay!"
+	},
+	{
+	  "character": "ben",
+	  "text": "We should go back to the library now"
+	},
+	{
+	  "character": "ben",
+	  "text": "to tell Mrs. Clove what we learned."
+	},
+	{
+	  "character": "ben",
+	  "text": "Thank you, Rico and Emma!"
+	},
+	{
+	  "character": "rico",
+	  "state": "happy",
+	  "text": "You''re welcome! Come back for lunch sometime!"
+	},
+	{
+	  "type": "scene",
+	  "name": "library_0940wwee",
+	  "characters": [
+		"mrs_clove",
+		"ben",
+		"mallow"
+	  ]
+	},
+	{
+	  "character": "mrs_clove",
+	  "state": "happy",
+	  "text": "Welcome back!"
+	},
+	{
+	  "character": "mrs_clove",
+	  "text": "Did you learn about different jobs?"
+	},
+	{
+	  "character": "ben",
+	  "state": "happy",
+	  "text": "Yes, we did!"
+	},
+	{
+	  "character": "ben",
+	  "text": "We learned about doctors, farmers, and chefs."
+	},
+	{
+	  "character": "ben",
+	  "text": "<player>, can you tell Mrs. Clove"
+	},
+	{
+	  "character": "ben",
+	  "text": "what Doctor does?"
+	},
+	{
+	  "type": "select",
+	  "text": "Doctor helps sick people.",
+	  "options": [
+		"Doctor helps sick people."
+	  ],
+	  "feedback": [
+		[
+		  {
+			"type": "assess",
+			"assess_text": "Doctor helps sick people.",
+			"feedback": [
+			  []
+			]
+		  }
+		]
+	  ]
+	},
+	{
+	  "character": "ben",
+	  "text": "And what does Ross do?"
+	},
+	{
+	  "type": "select",
+	  "text": "Ross is a farmer. He grows food.",
+	  "options": [
+		"Ross is a farmer. He grows food."
+	  ],
+	  "feedback": [
+		[
+		  {
+			"type": "assess",
+			"assess_text": "Ross is a farmer. He grows food.",
+			"feedback": [
+			  []
+			]
+		  }
+		]
+	  ]
+	},
+	{
+	  "character": "ben",
+	  "text": "And Rico? What is his job?"
+	},
+	{
+	  "type": "select",
+	  "text": "Rico is a chef. He cooks food.",
+	  "options": [
+		"Rico is a chef. He cooks food."
+	  ],
+	  "feedback": [
+		[
+		  {
+			"type": "assess",
+			"assess_text": "Rico is a chef. He cooks food.",
+			"feedback": [
+			  []
+			]
+		  }
+		]
+	  ]
+	},
+	{
+	  "character": "mrs_clove",
+	  "state": "happy",
+	  "text": "Excellent work!"
+	},
+	{
+	  "character": "mrs_clove",
+	  "state": "happy",
+	  "text": "Now we have good information"
+	},
+	{
+	  "character": "mrs_clove",
+	  "state": "happy",
+	  "text": "for our Jobs Exhibition!"
+	},
+	{
+	  "character": "mallow",
+	  "state": "surprised",
+	  "text": "What about ice cream tasters?"
+	},
+	{
+	  "character": "mallow",
+	  "state": "surprised",
+	  "text": "That''s a real job too, right?"
+	},
+	{
+	  "character": "mrs_clove",
+	  "state": "happy",
+	  "text": "Well, there are food tasters,"
+	},
+	{
+	  "character": "mrs_clove",
+	  "state": "happy",
+	  "text": "but they taste all kinds of food,"
+	},
+	{
+	  "character": "mrs_clove",
+	  "state": "happy",
+	  "text": "not just ice cream, Mallow."
+	},
+	{
+	  "character": "mallow",
+	  "state": "happy",
+	  "text": "When I grow up,"
+	},
+	{
+	  "character": "mallow",
+	  "state": "happy",
+	  "text": "I''ll be the world''s first"
+	},
+	{
+	  "character": "mallow",
+	  "state": "happy",
+	  "text": "professional ice cream taster!"
+	},
+	{
+	  "character": "ben",
+	  "state": "happy",
+	  "text": "That sounds like a cool job, Mallow!"
+	},
+	{
+	  "character": "ben",
+	  "state": "happy",
+	  "text": "Thank you for helping us, <player>!"
+	},
+	{
+	  "character": "ben",
+	  "state": "happy",
+	  "text": "We learned about many important jobs today!"
+	},
+	{
+	  "type": "task_end"
+	}
+  ]
+}' where id ='cb97892f-f473-445a-9e9f-5ef29805a842';

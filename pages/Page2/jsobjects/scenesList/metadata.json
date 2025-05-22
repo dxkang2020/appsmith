@@ -1,0 +1,44 @@
+{
+  "gitSyncId": "67bed107a0c78065eecac2b6_4050c9fe-5ecd-4323-899a-120b391925e1",
+  "id": "Page2_scenesList",
+  "unpublishedCollection": {
+    "name": "scenesList",
+    "pageId": "Page2",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "isShowBtn",
+        "value": "false"
+      },
+      {
+        "name": "temText",
+        "value": "''"
+      },
+      {
+        "name": "newNameText",
+        "value": "''"
+      },
+      {
+        "name": "oldNameText",
+        "value": "''"
+      },
+      {
+        "name": "updateVal",
+        "value": "{}"
+      },
+      {
+        "name": "localIndex",
+        "value": "0"
+      },
+      {
+        "name": "listItems",
+        "value": "[]"
+      },
+      {
+        "name": "imgP",
+        "value": "''"
+      }
+    ]
+  }
+}
