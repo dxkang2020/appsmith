@@ -3,9 +3,9 @@
   "animateLoading": true,
   "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 3343,
+  "bottomRow": 3474,
   "boxShadow": "none",
-  "defaultText": "{{Tab.JsonArr}}\n",
+  "defaultText": "{{Tab.jsonData}}\n",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
@@ -55,7 +55,7 @@
   "needsErrorInfo": false,
   "onBlur": "{{Tab.input2OnBlur()}}",
   "onTextChanged": "",
-  "originalBottomRow": 9,
+  "originalBottomRow": 3474,
   "originalTopRow": 1,
   "parentColumnSpace": 11.81640625,
   "parentId": "qv0p77aqd4",

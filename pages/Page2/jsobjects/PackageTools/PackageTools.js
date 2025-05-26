@@ -1,6 +1,7 @@
 export default {
 	calcImages(json){
 		let refrences = {}
+
 		function _calcImages(scripts){
 			let images = new Set()
 
@@ -27,7 +28,10 @@ export default {
 					refrences[img].push(ref)
 			}
 			if(scripts){
-				scripts.forEach(function(v){
+				// 确保 scripts 是数组
+				const myScripts = Array.isArray(scripts) ? scripts : [];
+
+				myScripts.forEach(function(v){
 					if(v.image && v.type != "task"  && v.image.length > 0){
 						images.add(v.image)
 						addRef(v.image, v)
@@ -39,25 +43,22 @@ export default {
 							addRef(vi, v)
 						})
 					}
-
-					if(v.feedback && v.feedback.length > 0){
-						v.feedback.forEach(function(fv){
-							_calcImages(fv).forEach(i=>images.add(i))
-						})
-					}
-						
 					if(v.answer_analysis){
 						_calcImages(v.answer_analysis).forEach(i=>images.add(i))
-						
-					}
 
+					}
+					// if(v.feedback && v.feedback.length > 0){
+					// v.feedback.forEach(function(fv){
+					// _calcImages(fv).forEach(i=>images.add(i))
+					// })
+					// }
 					if(v.scripts && v.scripts.length > 0){
-						v.scripts.forEach(function(fv){
-							_calcImages(fv).forEach(i=>images.add(i))
+						v.scripts.forEach(function(fvs){
+							_calcImages(fvs).forEach(is=>images.add(is))
 						})
 					}
 
-						
+
 				})
 			}
 			return images

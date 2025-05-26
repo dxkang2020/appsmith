@@ -21,6 +21,7 @@ export default {
 		// let names = PackageTools.calcScenes(Table1.selectedRow.script_json)
 		// console.log("images", names)
 		// console.log(Table1.selectedRow.scenes_prompt)
+		fetch("")
 		let splay = Table1.selectedRow.screenplay.replace("[player]","<player>")
 		let matches = Table1.selectedRow.screenplay.matchAll(/\[出现任务卡(.*)\]/g)
 		for(let m of matches){

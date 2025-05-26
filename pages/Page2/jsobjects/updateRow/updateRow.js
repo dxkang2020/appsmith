@@ -4,42 +4,21 @@ export default {
 	row:{},
 	async update(){
 
-		let idx = Table1.selectedRowIndex
+		// let idx = Table1.selectedRowIndex
 
 		this.rowIndex = Table1.selectedRowIndex
-		// let updatedTableData =[...Table1.tableData]
-		// updatedTableData[idx] = this.row
-		updateTable.data[idx] = this.row
-		await Table1.setData(updateTable.data)
+
+		// updateTable.data[idx] = this.row
+		// await Table1.setData(updateTable.data)
 		Table1.setSelectedRowIndex(	this.rowIndex)
 		console.log(Table1.selectedRow,'====')
-		// await Table1.setSelectedRowIndex(idx)
-		// await updateTable.run().then(res=>{
-		// 
-		// })
-		// Tab.onTabSelectChanged()
+
 
 	},
 	showError(e){
 		showAlert(e,"error")
 	},
-	async updateScreenplay(){
-		console.log("updateScreenplay")
-		if (Input2.text == this.row.screenplay){
-			return
-		}
-		await this.getCourseById()
-		Button5.setDisabled(true)
-		await updateScreenplay.run().then(_=>{
-			showAlert('保存成功' ,'success')
-			this.row.screenplay = Input2.text
-			this.update()
-		}).catch(error=>{
-			showAlert('保存失败'+error ,'error')
 
-		})
-		Button5.setDisabled(false)
-	},
 	async updateCardPrompt(item){
 		await this.getCourseById()
 		updateCardPrompt.run(item).then(async(res)=>{
@@ -74,13 +53,16 @@ export default {
 
 	},
 	async updateJsonImage(updateVal, newName,ismodify){
+
+
 		console.log('45454',updateVal)
 		let oldName = updateVal?.name
-		await this.getCourseById()
+		// await this.getCourseById()
 
 
-		if(!oldName || !newName || oldName == newName || !this.row?.script_json?.scripts?.length)
+		if(!oldName || !newName || oldName == newName || !Table1.selectedRow?.script_json?.scripts?.length)
 			return
+
 
 
 		function _updateScrits(scripts, on, nn){
@@ -100,43 +82,65 @@ export default {
 						}
 					}
 				}
-				if(v.feedback && v.feedback.length > 0)
-					v.feedback.forEach(function(v){
-						_updateScrits(v, on, nn)
-					})
+
+				// if(v.feedback && v.feedback.length > 0){
+				// v.feedback.forEach(function(v){
+				// _updateScrits(v, on, nn)
+				// })
+				// }
+
 			})
 
 		}
-		console.log(this.row,'rou')
-		_updateScrits(this.row.script_json.scripts, oldName, newName)
+		console.log( Table1.selectedRow,'rou')
+		_updateScrits( Table1.selectedRow.script_json.scripts, oldName, newName)
 
+		let level = Table1.selectedRow.level
+		let course_number = Table1.selectedRow.course_number
+		let course =  Table1.selectedRow.script_json
 
+		await GenResource.run({course_number,level,course}).then(async res=>{
+			if(res.scripts == 'success'){
+				showAlert('保存成功','success')
+				// await updateRow.update()
+				if(ismodify){
+					// 修改保存则不此处调用updateCardPrompt
+					// this.uploadImg(this.updateVal,'modify',this.localIndex)
+					updateVal.name = newName
+					cardList.uploadImg(updateVal,'modify',cardList.localIndex)
+				}
+				Tab.onTableClick()
+			}
+		}).catch(error =>{
+			showAlert(error,'error')
+		})
+		return
 		// Input2Copy1.setValue(JSON.stringify(this.row.script_json,null,2))
 		// console.log(this.row.script_json["scripts"][25])
-		await updateScriptJson.run(this.row).then(async v=>{
+		await updateScriptJson.run( Table1.selectedRow).then(async v=>{
 			if(ismodify){
 				// 修改保存则不此处调用updateCardPrompt
 				// this.uploadImg(this.updateVal,'modify',this.localIndex)
 				updateVal.name = newName
 				cardList.uploadImg(updateVal,'modify',cardList.localIndex)
 			}
-			let item = {
-				"clip":updateVal.clip,
-				"clip_zh":updateVal.clip_zh,
-				"description":updateVal.description,
-				"prompt_id":updateVal.prompt_id,
-				"name":newName
-			}
+			// let item = {
+			// "clip":updateVal.clip,
+			// "clip_zh":updateVal.clip_zh,
+			// "description":updateVal.description,
+			// "prompt_id":updateVal.prompt_id,
+			// "name":newName
+			// }
 
-			await	updateCardPrompt.run(item).then(async ()=>	{
-				await this.update()
-
-				await cardList.getCardsList()
-				this.updateRes()
-
-			}).catch(error =>{
-				showAlert(error,'error')
-			})
+			// await	updateCardPrompt.run(item).then(async ()=>	{
+			// await this.update()
+			// 
+			// await cardList.getCardsList()
+			// this.updateRes()
+			// 
+			// }).catch(error =>{
+			// showAlert(error,'error')
+			// })
 
 
 		}).catch(error =>{

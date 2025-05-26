@@ -10,7 +10,7 @@
   "children": [
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-      "bottomRow": 33430,
+      "bottomRow": 34740,
       "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
       "canExtend": true,
       "detachFromLayout": true,
@@ -53,51 +53,6 @@
       "version": 1,
       "widgetId": "qv0p77aqd4",
       "widgetName": "Canvas2"
-    },
-    {
-      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-      "bottomRow": 1750,
-      "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
-      "canExtend": false,
-      "containerStyle": "none",
-      "detachFromLayout": true,
-      "dynamicBindingPathList": [
-        {
-          "key": "borderRadius"
-        },
-        {
-          "key": "boxShadow"
-        }
-      ],
-      "dynamicHeight": "AUTO_HEIGHT",
-      "dynamicTriggerPathList": [],
-      "flexLayers": [],
-      "isLoading": false,
-      "isVisible": true,
-      "key": "2jk5zayald",
-      "leftColumn": 0,
-      "maxDynamicHeight": 9000,
-      "minDynamicHeight": 4,
-      "minHeight": 850,
-      "minWidth": 450,
-      "mobileBottomRow": 851,
-      "mobileLeftColumn": 0,
-      "mobileRightColumn": 776.25,
-      "mobileTopRow": 1,
-      "needsErrorInfo": false,
-      "parentColumnSpace": 1,
-      "parentId": "a9o1qzt281",
-      "parentRowSpace": 1,
-      "renderMode": "CANVAS",
-      "responsiveBehavior": "fill",
-      "rightColumn": 776.25,
-      "tabId": "tabm3ksrf1g3g",
-      "tabName": "Scenes",
-      "topRow": 1,
-      "type": "CANVAS_WIDGET",
-      "version": 1,
-      "widgetId": "zpzephcepu",
-      "widgetName": "Canvas8"
     },
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
@@ -259,14 +214,6 @@
       "isVisible": true,
       "label": "Cards",
       "widgetId": "0d63vzcv2n"
-    },
-    "tabm3ksrf1g3g": {
-      "id": "tabm3ksrf1g3g",
-      "index": 3,
-      "isDuplicateLabel": false,
-      "isVisible": true,
-      "label": "Scenes",
-      "widgetId": "zpzephcepu"
     }
   },
   "topRow": 5,

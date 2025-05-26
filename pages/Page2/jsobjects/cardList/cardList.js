@@ -119,7 +119,7 @@ ${item.clip}
 		this.updateVal = item
 		const file =cList1.triggeredItemView.FilePicker3.files[0]
 		let filename = `${item.name}.webp`
-		// let startIndex = ((cList1.pageNo -1 ) * cList1.pageNo) + index
+		let startIndex = ((cList1.pageNo -1 ) * cList1.pageNo) + index
 		let overwrite =  isCover == 'cover' ? true : false
 		SaveCard.run({filename, overwrite,file}).then(res =>{
 			if(res == "success"){
@@ -129,13 +129,13 @@ ${item.clip}
 					// 如果是修改保存的话 则不在此处掉updateRow.updateCardProm()
 					console.log(isCover)
 				}else{
-					updateRow.updateCardPrompt(item)
+					// updateRow.updateCardPrompt(item)
 
 				}
 
-				// this.listItems[startIndex].urls = file.data
-				// this.listItems[startIndex].clip = item.clip
-				// this.listItems[startIndex].name = item.name
+				this.listItems[startIndex].urls = file.data
+				this.listItems[startIndex].clip = item.clip
+				this.listItems[startIndex].name = item.name
 				closeModal(Modal6.name)
 
 
@@ -160,34 +160,49 @@ ${item.clip}
 
 	async getCardsList(){
 		// await updateRow.getCourseById()
-		let rlt = PackageTools.calcImages(updateRow.row.script_json)
+		let rlt = PackageTools.calcImages(Table1.selectedRow.script_json)
 		let names = rlt[0]
 		let refs = rlt[1]
 		console.log("rlt", rlt)
-		let obj ={}
-		await	getCardsPrompt.run({names}).then( res=>{
-			console.log("res", res)
+		this.listItems = names.map((v)=>{
+			let item = {
+				name:v,
+				urls :`https://af.runfox.cn/courses/cards/${v}.webp?r=${Math.random()}` ,
+				clip:refs[v][0]
+			}
+			// if(refs[item.name])
+			if(!item.clip.includes('Illustrate')){
+				item.clip = `**Illustrate the word**: ${item.name}\n**references**:\n${refs[item.name].join("\n")}`
+			}
 
-			obj[res.name] = res
-			this.listItems = names.map((v)=>{
-				let item = {
-					name:v,
-					urls :`https://af.runfox.cn/courses/cards/${v}.webp?r=${Math.random()}` ,
-					clip:obj[v]?.clip ?? "",
-					clip_zh:obj[v]?.clip_zh ?? v,
-					description:obj[v]?.description ?? v,
-				}
-				// if(refs[item.name])
-				if(!item.clip.includes('Illustrate')){
-					item.clip = `**Illustrate the word**: ${item.name}\n**references**:\n${refs[item.name].join("\n")}`
-				}
-
-				return item
-			})
-			console.log("images:",this.listItems)
-		}).catch(error =>{
-			showAlert(error,'error')
+			return item
 		})
+		// let obj ={}
+
+
+		// await	getCardsPrompt.run({names}).then( res=>{
+		// console.log("res", res)
+		// 
+		// obj[res.name] = res
+		// this.listItems = names.map((v)=>{
+		// let item = {
+		// name:v,
+		// urls :`https://af.runfox.cn/courses/cards/${v}.webp?r=${Math.random()}` ,
+		// clip:obj[v]?.clip ?? "",
+		// clip_zh:obj[v]?.clip_zh ?? v,
+		// description:obj[v]?.description ?? v,
+		// }
+		// // if(refs[item.name])
+		// if(!item.clip.includes('Illustrate')){
+		// item.clip = `**Illustrate the word**: ${item.name}\n**references**:\n${refs[item.name].join("\n")}`
+		// }
+		// 
+		// return item
+		// })
+		// console.log("images:",this.listItems)
+		// }).catch(error =>{
+		// showAlert(error,'error')
+		// })
 
 
 

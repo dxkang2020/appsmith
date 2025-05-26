@@ -1,53 +1,33 @@
 export default {
 	myVar1: [],
 	myVar2: {},
+	jsonData:{},
+	async onTableClick(){
+		await queryJson.run().then(res=>{
+			if(res){
+				this.jsonData  = res
+				// Table1.setData([{ level: 'John', course_number: 36 ,test:1}, { level: 'Jane', course_number: 28,test:2 }])
+				Table1.setData([{level:this.JsonArr[0]['level'],course_number:this.JsonArr[0]['course_number'],script_json:this.jsonData} ])
 
-	async	onTabSelectChanged () {
-		// console.log(table,'table')
-		// if(table)
-		// Table1 = table
-		//	write code here
-		//	this.myVar1 = [1,2,3]
-		console.log("selectedTab1:", Tabs1.selectedTab)
-
-		if(Tabs1.selectedTab == "剧本"){
-			Button5.setLabel("保存修改") 
-			// Button5.setVisibility( Table1.selectedRow.screenplay == Input2.text)
-			Button5.setVisibility(true)
-			Button20.setVisibility(false)
-		}
-		else if(Tabs1.selectedTab == "Json" &&
-						Table1.selectedRow.screenplay&& Table1.selectedRow.screenplay.length > 300 ){
-			let label = ""
-			let diffMinute = (Date.now() - new Date(Table1.selectedRow.updated_at))/60000
-			Button20.setVisibility(true)
-			Button20.setDisabled(false)
-			if(!Table1.selectedRow?.script_json?.scripts?.length)
-				label = "生成JSON"
-			else if (Table1.selectedRow.status != "scripting" || diffMinute > 5 )
-				label = "重新生成"
-			if(label.length>0){
-				Button5.setLabel(label) 
-				Button5.setVisibility(true)
 			}
+		})
 
-		} else{
-			Button5.setVisibility(false)
+	},
+	async	onTabSelectChanged () {
+		if(Tabs1.selectedTab == "Json"){
+			Button20.setVisibility(true)
+
+		}else{
 			Button20.setVisibility(false)
 		}
-
-		if(Tabs1.selectedTab == "Scenes"){
-			await updateRow.getCourseById()
-			await	scenesList.getScenesList()
-			// Test.getScenesList()
-		}else if(Tabs1.selectedTab == "Cards"){
-			await updateRow.getCourseById()
+		if(Tabs1.selectedTab == "Cards"){
+			// await updateRow.getCourseById()
 			await	cardList.getCardsList()
 
 			// Test.getCardsList()
 		}else if(Tabs1.selectedTab == "Sounds"){
 			// soundList.getTexts(Table1.selectedRow.script_json.scripts,0)
-			soundList.getTexts(testJson.json.scripts,0)
+			soundList.getTexts(Table1.selectedRow.script_json.scripts,0)
 		}
 	},
 	onGenRes(){
@@ -102,11 +82,43 @@ export default {
 
 		return results;
 	},
-	onQueryClick(){
-		// let course_numbers = this.parseCourseRange(Input1.text)
-		// updateTable.run({course_numbers})
+	test(){
 
-		this.JsonArr  = testJson.json
+
+	},
+	onQueryClick(){
+
+		// let course_numbers = this.parseCourseRange(Input1.text)
+		let course_numbers = Input1.text
+		let  level = Select1.selectedOptionValue
+		let  val =`scripts/${level}/${course_numbers}_lt.json`
+
+		// updateTable.run({course_numbers})
+		console.log(val,'params')
+
+		SearchFiles.run({filename:val}).then(res=>{
+			console.log(res)
+			if(res.length > 0){
+				this.JsonArr = res.map(filePath => {
+					// 1. 拆分路径
+					const parts = filePath.split('/'); // ["scripts", "starters", "3.3_lt.json"]
+					const fileName = parts.pop();      // "3.3_lt.json"
+
+					// 2. 提取 level 和 course_number
+					const level = parts[parts.length - 1]; // "starters"
+					const courseNumber = fileName.split('_')[0]; // "3.3"
+
+					// 3. 返回目标对象
+					return {
+						level: level,
+						course_number: courseNumber
+					};
+				});
+
+
+			}
+		})
+		// this.JsonArr  = testJson.json
 
 	},
 	JsonArr :'',
@@ -114,17 +126,9 @@ export default {
 		if(!this.isJson)return
 		let level = Table1.selectedRow.level
 		let course_number = Table1.selectedRow.course_number
-		let course = JSON.parse(this.JsonText) 	
-		let scenes =Table1.selectedRow.scenes_prompt
-		let cards = Table1.selectedRow.cards_prompt
+		let course = JSON.parse(this.JsonText.slice(1, -1).trim()) 	
 
-		await updateRow.getCourseById()
-		let val ={
-			script_json:course,
-			id:Table1.selectedRow.id
-		}
-		await updateScriptJson.run(val)
-		await GenResource.run({course_number,level,course,scenes,cards}).then(async res=>{
+		await GenResource.run({course_number,level,course}).then(async res=>{
 			if(res.scripts == 'success'){
 				showAlert('保存成功','success')
 				// await updateRow.update()

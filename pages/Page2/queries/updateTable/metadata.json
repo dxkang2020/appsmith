@@ -27,7 +27,7 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": true,
+    "executeOnLoad": false,
     "name": "updateTable",
     "pageId": "Page2",
     "userSetOnLoad": false
