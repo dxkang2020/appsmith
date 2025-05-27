@@ -5,16 +5,18 @@ export default {
 	async onTableClick(){
 		let  rowIndex = Table1.selectedRowIndex
 		console.log(rowIndex)
+		this.onTabSelectChanged()
 		await queryJson.run().then(res=>{
 			if(res){
 				this.jsonData  = res
-				console.log(typeof res,res)
+
 				Table1.setSelectedRowIndex(rowIndex)
 				if(Array.isArray(res)){
 					this.JsonArr[rowIndex].script_json = res[0]
 				}else{
 					this.JsonArr[rowIndex].script_json = res
 				}
+				// Table1.setData()
 				// Table1.setData([{level:this.JsonArr[rowIndex]['level'],course_number:this.JsonArr[rowIndex]['course_number'],script_json:this.jsonData} ])
 
 			}
@@ -36,6 +38,8 @@ export default {
 		}else if(Tabs1.selectedTab == "Sounds"){
 			// soundList.getTexts(Table1.selectedRow.script_json.scripts,0)
 			soundList.getTexts(Table1.selectedRow.script_json.scripts,0)
+		}else if(Tabs1.selectedTab == 'Scenes'){
+			await scenesList.getScenesList()
 		}
 	},
 	onGenRes(){

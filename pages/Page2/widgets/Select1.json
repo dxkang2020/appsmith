@@ -44,7 +44,7 @@
   "mobileRightColumn": 6,
   "mobileTopRow": 5,
   "needsErrorInfo": false,
-  "onOptionChange": "{{removeValue(Input1.setValue(\"\"));}}",
+  "onOptionChange": "",
   "optionLabel": "name",
   "optionValue": "code",
   "parentColumnSpace": 17.25,

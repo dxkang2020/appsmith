@@ -168,64 +168,68 @@ ${item.clip}
 	// 获取列表
 
 	async getScenesList(){
-		// console.log(Table1.selectedRow.script_json.scripts[0].name, '3333')
-		// await updateRow.getCourseById()
-		// console.log(updateRow.row.script_json,'updateRow.row.script_json')
+
 		let names = PackageTools.calcScenes(Table1.selectedRow.script_json)
-
-		// console.log("images", names)
-		let screenplay = Table1.selectedRow.screenplay
-		let level = Table1.selectedRow.level
-		let course_number =  Table1.selectedRow.course_number
-		let jbArr = [] 
-		let obj ={}
-		const matches =Array.from( screenplay.matchAll(/\[出现任务卡：(.*)\]/g));
-		let index = 0
+		console.log(names,'match')
+		// return
+		// let screenplay = Table1.selectedRow.screenplay
+		// let level = Table1.selectedRow.level
+		// let course_number =  Table1.selectedRow.course_number
+		// let jbArr = [] 
+		// let obj ={}
+		// const matches =Array.from( screenplay.matchAll(/\[出现任务卡：(.*)\]/g));
+		// let index = 0
 		// console.log(matches)
-		if(matches.length > 0){
-			for(let  m of matches){
-				obj.name= `task_${level}_${course_number}_${index+1}`
-				obj.clip = m[1]
-				obj.description = m[1]
-				index++;
-				// console.log("clip:",m[1])
-				jbArr.push(obj) 
-				names.push(obj.name)
+		// if(matches.length > 0){
+		// for(let  m of matches){
+		// obj.name= `task_${level}_${course_number}_${index+1}`
+		// obj.clip = m[1]
+		// obj.description = m[1]
+		// index++;
+		// // console.log("clip:",m[1])
+		// jbArr.push(obj) 
+		// names.push(obj.name)
+		// }
+		// }
+		this.listItems= names.map((v)=>{
+			return {
+				// ...v,
+				name:v,
+				urls :`https://af.runfox.cn/courses/scenes/${v}.webp?r=${Math.random()}` 
 			}
-		}
-		// console.log(names,'match')
-
-		await getScenesPrompt.run({names}).then(res=>{
-			// console.log("scenes:",res)
-			if(names.length !== res.length){
-
-				// console.log('1111122')
-				var urlarr = res.map((v)=>{
-					return {
-						...v,
-						urls :`https://af.runfox.cn/courses/scenes/${v.name}.webp?r=${Math.random()}` 
-					}
-				})
-
-				this.listItems = [...urlarr,...jbArr]
-
-
-			}else{
-				this.listItems = res.map((v,i)=>{
-					return {
-						...v,
-						urls :`https://af.runfox.cn/courses/scenes/${v.name}.webp?r=${Math.random()}` 
-					}
-				})
-			}
-
-			console.log("scenes:",		this.listItems)
-			// return 	this.listItems
-
-
-		}).catch(error =>{
-			showAlert(error,'error')
 		})
+		// await getScenesPrompt.run({names}).then(res=>{
+		// // console.log("scenes:",res)
+		// if(names.length !== res.length){
+		// 
+		// console.log('1111122')
+		// this.listItems= res.map((v)=>{
+		// return {
+		// ...v,
+		// urls :`https://af.runfox.cn/courses/scenes/${v.name}.webp?r=${Math.random()}` 
+		// }
+		// })
+		// 
+		// // this.listItems = [...urlarr,...jbArr]
+		// 
+		// 
+		// }else{
+		// this.listItems = res.map((v,i)=>{
+		// return {
+		// ...v,
+		// urls :`https://af.runfox.cn/courses/scenes/${v.name}.webp?r=${Math.random()}` 
+		// }
+		// })
+		// }
+		// 
+		// 
+		// console.log("scenes:",		this.listItems)
+		// // return 	this.listItems
+		// 
+		// 
+		// }).catch(error =>{
+		// showAlert(error,'error')
+		// })
 	},
 
 	getNewList(){

@@ -84,7 +84,8 @@ export default {
 				}
 				// if(v.scripts && v.scripts.length > 0){
 				// v.scripts.forEach(function(fvs){
-				// // _calcImages(fvs).forEach(is=>images.add(is))
+				// _updateScrits(fvs, on, nn)
+				// 
 				// })
 				// }
 				// if(v.feedback && v.feedback.length > 0){
@@ -174,9 +175,9 @@ export default {
 	async updateJsonScene(updateVal, newName,ismodify){
 		let oldName = updateVal?.name
 		console.log("updateVal:", updateVal)
-		await this.getCourseById()
+		// await this.getCourseById()
 
-		if(!oldName || !newName || oldName == newName || !this.row?.script_json?.scripts?.length)
+		if(!oldName || !newName || oldName == newName || !Table1.selectedRow?.script_json?.scripts?.length)
 			return
 
 		function _updateScrits(scripts, on, nn){
@@ -193,6 +194,11 @@ export default {
 					console.log("rename scene task",on, nn)
 					v.image = nn
 				}
+				if(v.scripts && v.scripts.length > 0){
+					_updateScrits(v.scripts, on, nn)
+
+
+				}
 				if(v.feedback?.length)
 					v.feedback.forEach(function(v){
 						_updateScrits(v, on, nn)
@@ -201,10 +207,30 @@ export default {
 
 		}
 
-		_updateScrits(this.row.script_json.scripts, oldName, newName)
-		console.log(this.row.script_json,'script_json')
+		_updateScrits(Table1.selectedRow.script_json.scripts, oldName, newName)
+		// console.log(this.row.script_json,'script_json')
 
+		let level = Table1.selectedRow.level
+		let course_number = Table1.selectedRow.course_number
+		let course =  Table1.selectedRow.script_json
 
+		await GenResource.run({course_number,level,course}).then(async res=>{
+			if(res.scripts == 'success'){
+				showAlert('保存成功','success')
+				// await updateRow.update()
+				if(ismodify){
+					// 修改保存则不此处调用updateCardPrompt
+					// this.uploadImg(this.updateVal,'modify',this.localIndex)
+					updateVal.name = newName
+					scenesList.uploadImg(updateVal,'modify',scenesList.localIndex)
+				}
+				Tab.onTableClick()
+				await  scenesList.getScenesList()
+			}
+		}).catch(error =>{
+			showAlert(error,'error')
+		})
+		return
 
 
 		await updateScriptJson.run(this.row).then(async v=>{

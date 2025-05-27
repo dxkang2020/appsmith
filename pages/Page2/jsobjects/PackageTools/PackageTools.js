@@ -77,10 +77,23 @@ export default {
 						scenes.add(v.name)
 
 					}
-					if(v.feedback && v.feedback.length > 0)
-						v.feedback.forEach(function(fv){
-							_calcScenes(fv).forEach(i=>scenes.add(i))
-						})
+					if(v.scripts && v.scripts.length > 0){
+						let rlt = _calcScenes(v.scripts)
+						console.log("rlt:",rlt)
+						scenes.add(...rlt)
+						// v.scripts.forEach(function(fv){
+						// console.log(fv,'fv')
+						// // _calcScenes(fv)
+						// // _calcScenes(fv).forEach(i=>scenes.add(i))
+						// scenes.add(fv.name)
+						// })
+					}
+
+
+					// if(v.feedback && v.feedback.length > 0)
+					// v.feedback.forEach(function(fv){
+					// _calcScenes(fv).forEach(i=>scenes.add(i))
+					// })
 				})
 			}
 			return scenes
