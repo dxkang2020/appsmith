@@ -10,7 +10,7 @@
   "children": [
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-      "bottomRow": 34740,
+      "bottomRow": 35320,
       "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
       "canExtend": true,
       "detachFromLayout": true,
@@ -143,9 +143,54 @@
       "version": 1,
       "widgetId": "x1qs5y2yha",
       "widgetName": "Canvas11"
+    },
+    {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "bottomRow": 1750,
+      "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+      "canExtend": false,
+      "containerStyle": "none",
+      "detachFromLayout": true,
+      "dynamicBindingPathList": [
+        {
+          "key": "borderRadius"
+        },
+        {
+          "key": "boxShadow"
+        }
+      ],
+      "dynamicHeight": "AUTO_HEIGHT",
+      "dynamicTriggerPathList": [],
+      "flexLayers": [],
+      "isLoading": false,
+      "isVisible": true,
+      "key": "jsev1ozk05",
+      "leftColumn": 0,
+      "maxDynamicHeight": 9000,
+      "minDynamicHeight": 4,
+      "minHeight": 1790,
+      "minWidth": 450,
+      "mobileBottomRow": 1791,
+      "mobileLeftColumn": 0,
+      "mobileRightColumn": 724.5,
+      "mobileTopRow": 1,
+      "needsErrorInfo": false,
+      "parentColumnSpace": 1,
+      "parentId": "a9o1qzt281",
+      "parentRowSpace": 1,
+      "renderMode": "CANVAS",
+      "responsiveBehavior": "fill",
+      "rightColumn": 724.5,
+      "tabId": "tabc2it6yu1ev",
+      "tabName": "Scenes",
+      "topRow": 1,
+      "type": "CANVAS_WIDGET",
+      "version": 1,
+      "widgetId": "tcjn9fmfhw",
+      "widgetName": "Canvas17"
     }
   ],
-  "defaultTab": "剧本",
+  "defaultTab": "Json",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
@@ -214,6 +259,13 @@
       "isVisible": true,
       "label": "Cards",
       "widgetId": "0d63vzcv2n"
+    },
+    "tabc2it6yu1ev": {
+      "id": "tabc2it6yu1ev",
+      "index": 3,
+      "isVisible": true,
+      "label": "Scenes",
+      "widgetId": "tcjn9fmfhw"
     }
   },
   "topRow": 5,

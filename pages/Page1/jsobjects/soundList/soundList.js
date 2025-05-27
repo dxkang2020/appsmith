@@ -40,6 +40,8 @@ export default {
 	},
 
 	reviewAudio(){
+		showAlert('检测失败','error')
+		return
 		let script =  Table1.selectedRow.screenplay.replaceAll("[player]","<player>")//剧本
 		const scriptArray = [];
 		const regex = /([\w\. _]+)[：:\s]+\[[^\]]+\]\s*"([^\[]*)"/gm

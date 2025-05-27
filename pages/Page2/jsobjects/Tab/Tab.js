@@ -3,11 +3,19 @@ export default {
 	myVar2: {},
 	jsonData:{},
 	async onTableClick(){
+		let  rowIndex = Table1.selectedRowIndex
+		console.log(rowIndex)
 		await queryJson.run().then(res=>{
 			if(res){
 				this.jsonData  = res
-				// Table1.setData([{ level: 'John', course_number: 36 ,test:1}, { level: 'Jane', course_number: 28,test:2 }])
-				Table1.setData([{level:this.JsonArr[0]['level'],course_number:this.JsonArr[0]['course_number'],script_json:this.jsonData} ])
+				console.log(typeof res,res)
+				Table1.setSelectedRowIndex(rowIndex)
+				if(Array.isArray(res)){
+					this.JsonArr[rowIndex].script_json = res[0]
+				}else{
+					this.JsonArr[rowIndex].script_json = res
+				}
+				// Table1.setData([{level:this.JsonArr[rowIndex]['level'],course_number:this.JsonArr[rowIndex]['course_number'],script_json:this.jsonData} ])
 
 			}
 		})
@@ -88,51 +96,73 @@ export default {
 	},
 	onQueryClick(){
 
-		// let course_numbers = this.parseCourseRange(Input1.text)
-		let course_numbers = Input1.text
+		let course_numbers = this.parseCourseRange(Input1.text)
 		let  level = Select1.selectedOptionValue
-		let  val =`scripts/${level}/${course_numbers}_lt.json`
+		console.log(course_numbers)
+		// if(course_numbers.length >10){
+		// showAlert('范围跨度不能大于10课','error')
+		// return
+		// }
 
-		// updateTable.run({course_numbers})
-		console.log(val,'params')
-
-		SearchFiles.run({filename:val}).then(res=>{
-			console.log(res)
-			if(res.length > 0){
-				this.JsonArr = res.map(filePath => {
-					// 1. 拆分路径
-					const parts = filePath.split('/'); // ["scripts", "starters", "3.3_lt.json"]
-					const fileName = parts.pop();      // "3.3_lt.json"
-
-					// 2. 提取 level 和 course_number
-					const level = parts[parts.length - 1]; // "starters"
-					const courseNumber = fileName.split('_')[0]; // "3.3"
-
-					// 3. 返回目标对象
-					return {
-						level: level,
-						course_number: courseNumber
-					};
-				});
-
-
-			}
+		this.JsonArr = course_numbers.map(v=>{
+			return {
+				level: level,
+				course_number: v
+			};
 		})
+		return
+		// let course_numbers = Input1.text
+
+		for(var i=0;i<course_numbers.length ;i++){
+			var  val =`scripts/${level}/${course_numbers[i]}_lt.json`
+			var temArr = []
+			SearchFiles.run({filename:val}).then(res=>{
+				console.log(res)
+				if(res.length > 0){
+					temArr = res.map(filePath => {
+						// 1. 拆分路径
+						const parts = filePath.split('/'); // ["scripts", "starters", "3.3_lt.json"]
+						const fileName = parts.pop();      // "3.3_lt.json"
+
+						// 2. 提取 level 和 course_number
+						const level = parts[parts.length - 1]; // "starters"
+						const courseNumber = fileName.split('_')[0]; // "3.3"
+
+						// 3. 返回目标对象
+						return {
+							level: level,
+							course_number: courseNumber
+						};
+					});
+					this.JsonArr = this.JsonArr.concat(temArr)
+
+
+				}
+			})
+		}
+
 		// this.JsonArr  = testJson.json
 
 	},
-	JsonArr :'',
+	JsonArr :[],
 	async 	saveJson(){
 		if(!this.isJson)return
 		let level = Table1.selectedRow.level
 		let course_number = Table1.selectedRow.course_number
-		let course = JSON.parse(this.JsonText.slice(1, -1).trim()) 	
+		let course =''
+		if (this.JsonText.startsWith('[') && this.JsonText.endsWith(']')) {
+			var result = this.JsonText.slice(1, -1);
+			course = JSON.parse(result) 	
+		}else{
+			course = JSON.parse(this.JsonText) 	
+
+		}
 
 		await GenResource.run({course_number,level,course}).then(async res=>{
 			if(res.scripts == 'success'){
 				showAlert('保存成功','success')
 				// await updateRow.update()
-
+				this.onTableClick()
 			}
 		}).catch(error =>{
 			showAlert(error,'error')

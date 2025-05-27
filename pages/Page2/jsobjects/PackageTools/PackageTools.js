@@ -1,5 +1,6 @@
 export default {
 	calcImages(json){
+		console.log(json)
 		let refrences = {}
 
 		function _calcImages(scripts){

@@ -3,9 +3,9 @@
   "animateLoading": true,
   "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 3532,
+  "bottomRow": 35,
   "boxShadow": "none",
-  "defaultText": "{{Tab.jsonData}}\n",
+  "defaultText": "{{currentItem.clip}}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
@@ -15,6 +15,9 @@
     },
     {
       "key": "defaultText"
+    },
+    {
+      "key": "placeholderText"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
@@ -25,9 +28,6 @@
   ],
   "dynamicTriggerPathList": [
     {
-      "key": "onTextChanged"
-    },
-    {
       "key": "onBlur"
     }
   ],
@@ -37,39 +37,36 @@
   "isLoading": false,
   "isRequired": false,
   "isVisible": true,
-  "key": "saw55n9qrn",
-  "label": "",
+  "key": "4gvwmd1hvh",
+  "label": "图片描述：",
   "labelAlignment": "left",
   "labelPosition": "Top",
   "labelStyle": "",
   "labelTextSize": "0.875rem",
   "labelWidth": 5,
-  "leftColumn": 0,
+  "leftColumn": 1,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
   "minWidth": 450,
-  "mobileBottomRow": 7,
+  "mobileBottomRow": 20,
   "mobileLeftColumn": 0,
   "mobileRightColumn": 20,
-  "mobileTopRow": 0,
+  "mobileTopRow": 13,
   "needsErrorInfo": false,
-  "onBlur": "{{Tab.input2OnBlur()}}",
-  "onTextChanged": "",
-  "originalBottomRow": 9,
-  "originalTopRow": 1,
-  "parentColumnSpace": 11.81640625,
-  "parentId": "qv0p77aqd4",
+  "onBlur": "{{scenesList.InputOnBlur(currentIndex)}}",
+  "parentColumnSpace": 12.22265625,
+  "parentId": "bwwr7onkab",
   "parentRowSpace": 10,
+  "placeholderText": "{{currentItem.clip}}",
   "renderMode": "CANVAS",
-  "resetOnSubmit": true,
+  "resetOnSubmit": false,
   "responsiveBehavior": "fill",
-  "rightColumn": 64,
+  "rightColumn": 41,
   "shouldAllowAutofill": false,
-  "shouldScrollContents": true,
   "showStepArrows": false,
-  "topRow": 1,
+  "topRow": 15,
   "type": "INPUT_WIDGET_V2",
   "version": 2,
-  "widgetId": "0oxdj1lqsk",
-  "widgetName": "Input2Copy1"
+  "widgetId": "bf2p3kdo6q",
+  "widgetName": "Input3"
 }

@@ -36,7 +36,7 @@
     "course_number",
     "script_json"
   ],
-  "columnUpdatedAt": 1748252939024,
+  "columnUpdatedAt": 1748317479871,
   "columnWidthMap": {
     "course_number": 150,
     "customColumn1": 84,
@@ -82,6 +82,9 @@
   "dynamicPropertyPathList": [
     {
       "key": "tableData"
+    },
+    {
+      "key": "onRowSelected"
     }
   ],
   "dynamicTriggerPathList": [

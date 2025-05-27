@@ -171,7 +171,7 @@ ${item.clip}
 		// console.log(Table1.selectedRow.script_json.scripts[0].name, '3333')
 		// await updateRow.getCourseById()
 		// console.log(updateRow.row.script_json,'updateRow.row.script_json')
-		let names = PackageTools.calcScenes(updateRow.row.script_json)
+		let names = PackageTools.calcScenes(Table1.selectedRow.script_json)
 
 		// console.log("images", names)
 		let screenplay = Table1.selectedRow.screenplay

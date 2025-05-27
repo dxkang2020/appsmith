@@ -82,7 +82,11 @@ export default {
 						}
 					}
 				}
-
+				// if(v.scripts && v.scripts.length > 0){
+				// v.scripts.forEach(function(fvs){
+				// // _calcImages(fvs).forEach(is=>images.add(is))
+				// })
+				// }
 				// if(v.feedback && v.feedback.length > 0){
 				// v.feedback.forEach(function(v){
 				// _updateScrits(v, on, nn)
@@ -110,6 +114,7 @@ export default {
 					cardList.uploadImg(updateVal,'modify',cardList.localIndex)
 				}
 				Tab.onTableClick()
+				await cardList.getCardsList()
 			}
 		}).catch(error =>{
 			showAlert(error,'error')
