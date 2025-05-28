@@ -58,10 +58,17 @@ export default {
 					// }
 					if(v.scripts && v.scripts.length > 0){
 						let rlt = _calcImages(v.scripts)
-						console.log("rlt:",rlt)
+						// console.log('7777',rlt)
+
+						// console.log("rlt:",rlt)
 						images.add(...rlt)
-						// v.scripts.forEach(function(fvs){
-						// _calcImages(fvs).forEach(is=>images.add(is))
+						addRef(...rlt, v.scripts)
+						// v.scripts.forEach(function(fvs,index){
+						// // _calcImages(fvs).forEach(is=>images.add(is))
+						// let rlt = _calcImages(fvs)
+						// console.log('7777',rlt)
+						// images.add(fvs)
+						// // addRef(fvs, v.scripts[index])
 						// })
 					}
 
