@@ -45,7 +45,7 @@ export default {
 						})
 					}
 					if(v.answer_analysis?.image){
-						console.log(v.answer_analysis.image)
+						// console.log(v.answer_analysis.image)
 						images.add(v.answer_analysis.image)
 						addRef(v.answer_analysis.image, v.answer_analysis)
 						// _calcImages(v.answer_analysis).forEach(i=>{ images.add(i)})

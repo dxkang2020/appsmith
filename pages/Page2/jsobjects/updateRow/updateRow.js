@@ -78,12 +78,12 @@ export default {
 				if(v.answer_analysis?.image == on){
 					v.answer_analysis.image = nn
 				}
-				// if(v.scripts && v.scripts.length > 0){
-				// v.scripts.forEach(function(fvs){
-				// _updateScrits(fvs, on, nn)
-				// 
-				// })
-				// }
+				if(v.scripts && v.scripts.length > 0){
+					// v.scripts.forEach(function(fvs){
+					_updateScrits(v.scripts, on, nn)
+
+					// })
+				}
 				// if(v.feedback && v.feedback.length > 0){
 				// v.feedback.forEach(function(v){
 				// _updateScrits(v, on, nn)
