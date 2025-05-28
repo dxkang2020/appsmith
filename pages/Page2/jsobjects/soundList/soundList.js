@@ -22,27 +22,35 @@ export default {
 				// this.soundList[v.character][v.text] =1
 
 			}
-			if(v.feedback && v.feedback.length > 0){
+			if(v.scripts && v.scripts.length > 0){
 
-				v.feedback.forEach((item)=>{
+				v.scripts.forEach((item)=>{
 					let items = that.getTexts(item, index)
 					texts.push(...items)
 					index += items.length
 				})
 			}
+			// if(v.feedback && v.feedback.length > 0){
+			// 
+			// v.feedback.forEach((item)=>{
+			// let items = that.getTexts(item, index)
+			// texts.push(...items)
+			// index += items.length
+			// })
+			// }
 			if(v.answer_analysis){
-						// let items = that.getTexts(item, index)
-					// texts.push(...items)
-					// index += items.length
-						
+				// let items = that.getTexts(item, index)
+				// texts.push(...items)
+				// index += items.length
+
 				texts.push({
 					'text':v.answer_analysis.text,
 					"character":v.answer_analysis.character,
 					'index': ++index
 				})
-					}
+			}
 
-					
+
 		})
 		// let arr =  Array.from(texts) 
 		// console.log(texts)
