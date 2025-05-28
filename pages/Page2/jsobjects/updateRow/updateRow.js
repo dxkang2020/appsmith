@@ -114,6 +114,7 @@ export default {
 				await cardList.getCardsList()
 			}else{
 				showAlert('保存失败','error')
+				return
 			}
 		}).catch(error =>{
 			showAlert('保存失败','error')

@@ -26,7 +26,6 @@ export default {
 	},
 	async	onTabSelectChanged () {
 		if(Tabs1.selectedTab == "Json"){
-			Button20.setDisabled(true)
 			Button20.setVisibility(true)
 
 		}else{
@@ -160,13 +159,11 @@ export default {
 			var result = this.JsonText.slice(1, -1);
 			course = JSON.parse(result) 	
 		}else{
+
 			course = JSON.parse(this.JsonText) 	
 
 		}
-		if(!level || !course_number ){
-			showAlert('参数错误','error')
-			return
-		}
+
 		await GenResource.run({course_number,level,course}).then(async res=>{
 			if(res.scripts == 'success'){
 				showAlert('保存成功','success')
@@ -176,7 +173,7 @@ export default {
 				showAlert('保存失败','error')
 			}
 		}).catch(error =>{
-			showAlert('保存失败','error')
+			showAlert('保存失败 catch','error')
 		})
 	},
 	JsonText:'',
