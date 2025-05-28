@@ -170,7 +170,7 @@ export default {
 				// await updateRow.update()
 				this.onTableClick()
 			}else{
-				showAlert('保存失败','error')
+				showAlert('保存失败'+res.scripts ,'error')
 			}
 		}).catch(error =>{
 			showAlert('保存失败 catch','error')
