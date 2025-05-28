@@ -45,7 +45,7 @@ export default {
 						})
 					}
 					if(v.answer_analysis?.image){
-
+						console.log(v.answer_analysis.image)
 						images.add(v.answer_analysis.image)
 						addRef(v.answer_analysis.image, v.answer_analysis)
 						// _calcImages(v.answer_analysis).forEach(i=>{ images.add(i)})
@@ -57,9 +57,12 @@ export default {
 					// })
 					// }
 					if(v.scripts && v.scripts.length > 0){
-						v.scripts.forEach(function(fvs){
-							_calcImages(fvs).forEach(is=>images.add(is))
-						})
+						let rlt = _calcImages(v.scripts)
+						console.log("rlt:",rlt)
+						images.add(...rlt)
+						// v.scripts.forEach(function(fvs){
+						// _calcImages(fvs).forEach(is=>images.add(is))
+						// })
 					}
 
 
