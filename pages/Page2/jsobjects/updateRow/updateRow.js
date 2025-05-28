@@ -103,7 +103,7 @@ export default {
 		let level = Table1.selectedRow.level
 		let course_number = Table1.selectedRow.course_number
 		let course =  Table1.selectedRow.script_json
-
+		
 		await GenResource.run({course_number,level,course}).then(async res=>{
 			if(res.scripts == 'success'){
 				showAlert('保存成功','success')
