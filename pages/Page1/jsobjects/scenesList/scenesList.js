@@ -179,7 +179,7 @@ ${item.clip}
 		let course_number =  Table1.selectedRow.course_number
 		let jbArr = [] 
 		let obj ={}
-		const matches =Array.from( screenplay.matchAll(/\[出现任务卡：(.*)\]/g));
+		const matches =Array.from( screenplay.matchAll(/\[出现任务卡[：:](.*)\]/g));
 		let index = 0
 		// console.log(matches)
 		if(matches.length > 0){

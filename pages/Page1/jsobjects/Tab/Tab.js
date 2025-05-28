@@ -125,9 +125,12 @@ export default {
 				showAlert('保存成功','success')
 				// await updateRow.update()
 
+			}else{
+				showAlert('保存失败','error')
+
 			}
 		}).catch(error =>{
-			showAlert(error,'error')
+			showAlert('保存失败','error')
 		})
 	},
 	JsonText:'',

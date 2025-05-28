@@ -5,7 +5,7 @@ export default {
 	async onTableClick(){
 		let  rowIndex = Table1.selectedRowIndex
 		console.log(rowIndex)
-		this.onTabSelectChanged()
+
 		await queryJson.run().then(res=>{
 			if(res){
 				this.jsonData  = res
@@ -16,6 +16,7 @@ export default {
 				}else{
 					this.JsonArr[rowIndex].script_json = res
 				}
+				this.onTabSelectChanged()
 				// Table1.setData()
 				// Table1.setData([{level:this.JsonArr[rowIndex]['level'],course_number:this.JsonArr[rowIndex]['course_number'],script_json:this.jsonData} ])
 
@@ -167,9 +168,11 @@ export default {
 				showAlert('保存成功','success')
 				// await updateRow.update()
 				this.onTableClick()
+			}else{
+				showAlert('保存失败','error')
 			}
 		}).catch(error =>{
-			showAlert(error,'error')
+			showAlert('保存失败','error')
 		})
 	},
 	JsonText:'',

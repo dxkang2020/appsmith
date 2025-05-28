@@ -116,9 +116,11 @@ export default {
 				}
 				Tab.onTableClick()
 				await cardList.getCardsList()
+			}else{
+				showAlert('保存失败','error')
 			}
 		}).catch(error =>{
-			showAlert(error,'error')
+			showAlert('保存失败','error')
 		})
 		return
 		// Input2Copy1.setValue(JSON.stringify(this.row.script_json,null,2))
@@ -226,9 +228,11 @@ export default {
 				}
 				Tab.onTableClick()
 				await  scenesList.getScenesList()
+			}else{
+				showAlert('保存失败','error')
 			}
 		}).catch(error =>{
-			showAlert(error,'error')
+			showAlert('保存失败','error')
 		})
 		return
 

@@ -3,7 +3,7 @@
   "animateLoading": true,
   "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 3406,
+  "bottomRow": 3532,
   "boxShadow": "none",
   "defaultText": "{{Tab.jsonData}}\n",
   "dynamicBindingPathList": [
@@ -55,7 +55,7 @@
   "needsErrorInfo": false,
   "onBlur": "{{Tab.input2OnBlur()}}",
   "onTextChanged": "",
-  "originalBottomRow": 3688,
+  "originalBottomRow": 3532,
   "originalTopRow": 1,
   "parentColumnSpace": 11.81640625,
   "parentId": "qv0p77aqd4",

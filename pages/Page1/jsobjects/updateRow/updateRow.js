@@ -57,7 +57,15 @@ export default {
 		let course = this.row.script_json
 		let scenes = this.row.scenes_prompt
 		let cards = this.row.cards_prompt
-		GenResource.run({course_number,level,course,scenes,cards})
+		GenResource.run({course_number,level,course,scenes,cards}).then(async res=>{
+			if(res.scripts == 'success'){
+				showAlert('保存成功','success')
+			}else{
+				showAlert('保存失败','error')
+			}
+		}).catch(error =>{
+			showAlert('保存失败','error')
+		})
 	},
 	async updateScenePrompt(item){
 		await this.getCourseById()
