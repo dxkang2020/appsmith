@@ -53,18 +53,11 @@ export default {
 
 	},
 	async updateJsonImage(updateVal, newName,ismodify){
-
-
 		console.log('45454',updateVal)
 		let oldName = updateVal?.name
 		// await this.getCourseById()
-
-
 		if(!oldName || !newName || oldName == newName || !Table1.selectedRow?.script_json?.scripts?.length)
 			return
-
-
-
 		function _updateScrits(scripts, on, nn){
 			if(!scripts?.length)
 				return
@@ -81,6 +74,9 @@ export default {
 							v.images[i] = nn
 						}
 					}
+				}
+				if(v.answer_analysis?.image == on){
+					v.answer_analysis.image = nn
 				}
 				// if(v.scripts && v.scripts.length > 0){
 				// v.scripts.forEach(function(fvs){
@@ -103,7 +99,7 @@ export default {
 		let level = Table1.selectedRow.level
 		let course_number = Table1.selectedRow.course_number
 		let course =  Table1.selectedRow.script_json
-		
+
 		await GenResource.run({course_number,level,course}).then(async res=>{
 			if(res.scripts == 'success'){
 				showAlert('保存成功','success')

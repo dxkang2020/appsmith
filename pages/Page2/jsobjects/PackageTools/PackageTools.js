@@ -44,8 +44,11 @@ export default {
 							addRef(vi, v)
 						})
 					}
-					if(v.answer_analysis){
-						_calcImages(v.answer_analysis).forEach(i=>images.add(i))
+					if(v.answer_analysis?.image){
+
+						images.add(v.answer_analysis.image)
+						addRef(v.answer_analysis.image, v.answer_analysis)
+						// _calcImages(v.answer_analysis).forEach(i=>{ images.add(i)})
 
 					}
 					// if(v.feedback && v.feedback.length > 0){
