@@ -35,11 +35,15 @@
   "icon": "heart",
   "pages": [
     {
-      "id": "Page1",
+      "id": "核心课程",
       "isDefault": true
     },
     {
-      "id": "Page2",
+      "id": "复习测试",
+      "isDefault": false
+    },
+    {
+      "id": "教材同步",
       "isDefault": false
     }
   ],

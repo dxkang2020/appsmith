@@ -1,0 +1,20 @@
+{
+  "gitSyncId": "67bed107a0c78065eecac2b6_9dcf4b82-b4f2-43f3-a528-a8af62bde6eb",
+  "id": "复习测试_DebugTools",
+  "unpublishedCollection": {
+    "name": "DebugTools",
+    "pageId": "复习测试",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "myVar1",
+        "value": "[]"
+      },
+      {
+        "name": "myVar2",
+        "value": "{}"
+      }
+    ]
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "gitSyncId": "67bed107a0c78065eecac2b6_9eb4523a-4782-40c2-bb55-c244d66382e6",
+  "id": "教材同步_cardList",
+  "unpublishedCollection": {
+    "name": "cardList",
+    "pageId": "教材同步",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "myVar1",
+        "value": "[]"
+      },
+      {
+        "name": "myVar2",
+        "value": "{}"
+      },
+      {
+        "name": "isShowBtn",
+        "value": "false"
+      },
+      {
+        "name": "temText",
+        "value": "''"
+      },
+      {
+        "name": "newNameText",
+        "value": "''"
+      },
+      {
+        "name": "oldNameText",
+        "value": "''"
+      },
+      {
+        "name": "updateVal",
+        "value": "{}"
+      },
+      {
+        "name": "localIndex",
+        "value": "0"
+      },
+      {
+        "name": "listItems",
+        "value": "[]"
+      },
+      {
+        "name": "imgP",
+        "value": "''"
+      }
+    ]
+  }
+}

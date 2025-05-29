@@ -1,0 +1,36 @@
+{
+  "gitSyncId": "67bed107a0c78065eecac2b6_6ff85fd0-e88a-4d72-a883-c5f9a1a42760",
+  "id": "复习测试_Tab",
+  "unpublishedCollection": {
+    "name": "Tab",
+    "pageId": "复习测试",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "myVar1",
+        "value": "[]"
+      },
+      {
+        "name": "myVar2",
+        "value": "{}"
+      },
+      {
+        "name": "jsonData",
+        "value": "{}"
+      },
+      {
+        "name": "JsonArr",
+        "value": "[]"
+      },
+      {
+        "name": "JsonText",
+        "value": "''"
+      },
+      {
+        "name": "isJson",
+        "value": "false"
+      }
+    ]
+  }
+}

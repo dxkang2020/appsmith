@@ -1,0 +1,20 @@
+{
+  "gitSyncId": "67bed107a0c78065eecac2b6_b40f4fe6-cae6-4aea-bbdf-460525ab23b9",
+  "id": "教材同步_DebugTools",
+  "unpublishedCollection": {
+    "name": "DebugTools",
+    "pageId": "教材同步",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "myVar1",
+        "value": "[]"
+      },
+      {
+        "name": "myVar2",
+        "value": "{}"
+      }
+    ]
+  }
+}

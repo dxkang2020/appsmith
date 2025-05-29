@@ -1,0 +1,20 @@
+{
+  "gitSyncId": "67bed107a0c78065eecac2b6_557db31b-8421-425d-b1a7-002c26290ba6",
+  "id": "教材同步_Markdown",
+  "unpublishedCollection": {
+    "name": "Markdown",
+    "pageId": "教材同步",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "myVar1",
+        "value": "[]"
+      },
+      {
+        "name": "myVar2",
+        "value": "{}"
+      }
+    ]
+  }
+}

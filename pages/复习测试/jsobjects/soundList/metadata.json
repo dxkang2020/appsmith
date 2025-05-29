@@ -1,0 +1,40 @@
+{
+  "gitSyncId": "67bed107a0c78065eecac2b6_84de03c3-4f19-4574-b1e8-aec663b3bdd9",
+  "id": "复习测试_soundList",
+  "unpublishedCollection": {
+    "name": "soundList",
+    "pageId": "复习测试",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "audioArr",
+        "value": "[]"
+      },
+      {
+        "name": "listItems",
+        "value": "null"
+      },
+      {
+        "name": "soundList",
+        "value": "{}"
+      },
+      {
+        "name": "soundTextArr",
+        "value": "''"
+      },
+      {
+        "name": "soundNumText",
+        "value": "''"
+      },
+      {
+        "name": "showText",
+        "value": "''"
+      },
+      {
+        "name": "audioIndex",
+        "value": "0"
+      }
+    ]
+  }
+}

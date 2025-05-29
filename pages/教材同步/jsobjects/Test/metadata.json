@@ -1,0 +1,16 @@
+{
+  "gitSyncId": "67bed107a0c78065eecac2b6_0578c724-97e3-4e39-91c9-a3749f39230e",
+  "id": "教材同步_Test",
+  "unpublishedCollection": {
+    "name": "Test",
+    "pageId": "教材同步",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "cardslistItems",
+        "value": "[]"
+      }
+    ]
+  }
+}

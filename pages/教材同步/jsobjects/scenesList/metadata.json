@@ -1,0 +1,44 @@
+{
+  "gitSyncId": "67bed107a0c78065eecac2b6_65b3fb48-32a1-47fc-8e61-1bf5ae3f2ca7",
+  "id": "教材同步_scenesList",
+  "unpublishedCollection": {
+    "name": "scenesList",
+    "pageId": "教材同步",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "isShowBtn",
+        "value": "false"
+      },
+      {
+        "name": "temText",
+        "value": "''"
+      },
+      {
+        "name": "newNameText",
+        "value": "''"
+      },
+      {
+        "name": "oldNameText",
+        "value": "''"
+      },
+      {
+        "name": "updateVal",
+        "value": "{}"
+      },
+      {
+        "name": "localIndex",
+        "value": "0"
+      },
+      {
+        "name": "listItems",
+        "value": "[]"
+      },
+      {
+        "name": "imgP",
+        "value": "''"
+      }
+    ]
+  }
+}

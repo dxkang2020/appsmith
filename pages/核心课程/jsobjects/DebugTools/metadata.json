@@ -1,0 +1,20 @@
+{
+  "gitSyncId": "67bed107a0c78065eecac2b6_541d3720-2483-40ad-9e67-459e62ebca3f",
+  "id": "核心课程_DebugTools",
+  "unpublishedCollection": {
+    "name": "DebugTools",
+    "pageId": "核心课程",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "myVar1",
+        "value": "[]"
+      },
+      {
+        "name": "myVar2",
+        "value": "{}"
+      }
+    ]
+  }
+}

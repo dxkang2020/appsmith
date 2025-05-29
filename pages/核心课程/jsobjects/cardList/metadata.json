@@ -1,0 +1,52 @@
+{
+  "gitSyncId": "67bed107a0c78065eecac2b6_519e31a5-44c1-41a8-be8f-353fd680345b",
+  "id": "核心课程_cardList",
+  "unpublishedCollection": {
+    "name": "cardList",
+    "pageId": "核心课程",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "myVar1",
+        "value": "[]"
+      },
+      {
+        "name": "myVar2",
+        "value": "{}"
+      },
+      {
+        "name": "isShowBtn",
+        "value": "false"
+      },
+      {
+        "name": "temText",
+        "value": "''"
+      },
+      {
+        "name": "newNameText",
+        "value": "''"
+      },
+      {
+        "name": "oldNameText",
+        "value": "''"
+      },
+      {
+        "name": "updateVal",
+        "value": "{}"
+      },
+      {
+        "name": "localIndex",
+        "value": "0"
+      },
+      {
+        "name": "listItems",
+        "value": "[]"
+      },
+      {
+        "name": "imgP",
+        "value": "''"
+      }
+    ]
+  }
+}

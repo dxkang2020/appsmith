@@ -1,0 +1,20 @@
+{
+  "gitSyncId": "67bed107a0c78065eecac2b6_0129d9e5-eaa8-4704-851b-da4db9b75e16",
+  "id": "复习测试_Markdown",
+  "unpublishedCollection": {
+    "name": "Markdown",
+    "pageId": "复习测试",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "myVar1",
+        "value": "[]"
+      },
+      {
+        "name": "myVar2",
+        "value": "{}"
+      }
+    ]
+  }
+}

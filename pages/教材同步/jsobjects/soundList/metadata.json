@@ -1,0 +1,40 @@
+{
+  "gitSyncId": "67bed107a0c78065eecac2b6_4e63ee52-b70d-49f4-b029-89a88354f8c1",
+  "id": "教材同步_soundList",
+  "unpublishedCollection": {
+    "name": "soundList",
+    "pageId": "教材同步",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "audioArr",
+        "value": "[]"
+      },
+      {
+        "name": "listItems",
+        "value": "null"
+      },
+      {
+        "name": "soundList",
+        "value": "{}"
+      },
+      {
+        "name": "soundTextArr",
+        "value": "''"
+      },
+      {
+        "name": "soundNumText",
+        "value": "''"
+      },
+      {
+        "name": "showText",
+        "value": "''"
+      },
+      {
+        "name": "audioIndex",
+        "value": "0"
+      }
+    ]
+  }
+}

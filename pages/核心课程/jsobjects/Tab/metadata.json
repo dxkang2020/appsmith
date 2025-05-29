@@ -1,0 +1,28 @@
+{
+  "gitSyncId": "67bed107a0c78065eecac2b6_f8a4db1b-db60-4a9e-abdb-d0d60336e2a4",
+  "id": "核心课程_Tab",
+  "unpublishedCollection": {
+    "name": "Tab",
+    "pageId": "核心课程",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "myVar1",
+        "value": "[]"
+      },
+      {
+        "name": "myVar2",
+        "value": "{}"
+      },
+      {
+        "name": "JsonText",
+        "value": "''"
+      },
+      {
+        "name": "isJson",
+        "value": "false"
+      }
+    ]
+  }
+}
