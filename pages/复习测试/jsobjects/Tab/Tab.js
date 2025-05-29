@@ -151,30 +151,38 @@ export default {
 	},
 	JsonArr :[],
 	async 	saveJson(){
+		console.log(this.isJson)
 		if(!this.isJson)return
 		let level = Table1.selectedRow.level
 		let course_number = Table1.selectedRow.course_number
 		let course =''
+		let temp = ''
 		if (this.JsonText.startsWith('[') && this.JsonText.endsWith(']')) {
-			var result = this.JsonText.slice(1, -1);
-			course = JSON.parse(result) 	
+			temp = this.JsonText.slice(1, -1);
+			// course = JSON.parse(result) 	
 		}else{
+			temp = this.JsonText
+		}
+		try{
 
-			course = JSON.parse(this.JsonText) 	
+			course = 	JSON.parse(temp) 
+			await GenResource.run({course_number,level,course}).then(async res=>{
+				if(res.scripts == 'success'){
+					showAlert('保存成功','success')
+					// await updateRow.update()
+					this.onTableClick()
+				}else{
+					showAlert('保存失败'+res.scripts ,'error')
+				}
+			}).catch(error =>{
+				showAlert('保存失败 catch','error')
+			})
+		}catch{
+			showAlert('不是标准的JSON格式','error')
 
+			return false
 		}
 
-		await GenResource.run({course_number,level,course}).then(async res=>{
-			if(res.scripts == 'success'){
-				showAlert('保存成功','success')
-				// await updateRow.update()
-				this.onTableClick()
-			}else{
-				showAlert('保存失败'+res.scripts ,'error')
-			}
-		}).catch(error =>{
-			showAlert('保存失败 catch','error')
-		})
 	},
 	JsonText:'',
 	isJson:false,
@@ -186,6 +194,7 @@ export default {
 			JSON.parse(this.JsonText)
 			return true
 		}catch(e){
+			this.isJson =false
 			showAlert('不是标准的JSON格式','error')
 
 			return false

@@ -58,7 +58,7 @@ export default {
 					// }
 					if(v.scripts && v.scripts.length > 0){
 						let rlt = _calcImages(v.scripts)
-						console.log("rlt:",rlt)
+						// console.log("rlt:",[...rlt])
 
 						images.add(...rlt)
 
