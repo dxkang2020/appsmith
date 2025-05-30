@@ -170,19 +170,24 @@ export default {
 			]
 		}
 
-		GenResource.run({course_number,level,overwrite, course}).then(()=>	{
-			showAlert('生成成功','success')
+		GenResource.run({course_number,level,overwrite, course}).then((res)=>	{
+			if(res.audio =='audios done'){
+				showAlert('生成成功','success')
 
-			let url = `https://af.runfox.cn/courses/sounds/dialogues/${this.generateAudioName(item)}.mp3`
-			console.log("url:", url)
+				let url = `https://af.runfox.cn/courses/sounds/dialogues/${this.generateAudioName(item)}.mp3`
+				console.log("url:", url)
 
 
-			Audio1.setURL(url)
-			Audio1.setPlaying(true)
+				Audio1.setURL(url)
+				Audio1.setPlaying(true)
+			}else{
+				showAlert('生成失败'+ res.audio,'error')
+			}
+
 
 			// Audio1.setURL('')
 		}).catch(error =>{
-			showAlert(error,'error')
+			showAlert('生成失败'+ error,'error')
 		})
 	},
 	// 音频名字处理
