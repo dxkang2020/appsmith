@@ -113,8 +113,9 @@ export default {
 		let course = ''
 		let scenes =Table1.selectedRow.scenes_prompt
 		let cards = Table1.selectedRow.cards_prompt
+
 		try{
-			course = JSON.parse(this.JsonText) 	
+			course = JSON.parse(Input2Copy1.text) 	
 			await updateRow.getCourseById()
 			let val ={
 				script_json:course,
@@ -144,10 +145,10 @@ export default {
 	isJson:false,
 	input2OnBlur(){
 		let txt = 	Input2Copy1.text
-		this.JsonText = txt
+		// this.JsonText = txt
 		try{
 			this.isJson =true
-			JSON.parse(this.JsonText)
+			JSON.parse(txt)
 			return true
 		}catch(e){
 			showAlert('不是标准的JSON格式','error')

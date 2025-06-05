@@ -157,11 +157,11 @@ export default {
 		let course_number = Table1.selectedRow.course_number
 		let course =''
 		let temp = ''
-		if (this.JsonText.startsWith('[') && this.JsonText.endsWith(']')) {
-			temp = this.JsonText.slice(1, -1);
+		if (Input2Copy1.text.startsWith('[') && Input2Copy1.text.endsWith(']')) {
+			temp = Input2Copy1.text.slice(1, -1);
 			// course = JSON.parse(result) 	
 		}else{
-			temp = this.JsonText
+			temp = Input2Copy1.text
 		}
 		try{
 
@@ -188,10 +188,10 @@ export default {
 	isJson:false,
 	input2OnBlur(){
 		let txt = 	Input2Copy1.text
-		this.JsonText = txt
+		// this.JsonText = txt
 		try{
 			this.isJson =true
-			JSON.parse(this.JsonText)
+			JSON.parse(txt)
 			return true
 		}catch(e){
 			this.isJson =false
