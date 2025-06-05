@@ -123,16 +123,16 @@ ${item.clip}
 		let overwrite =  isCover == 'cover' ? true : false
 		SaveCard.run({filename, overwrite,file}).then(res =>{
 			if(res == "success"){
-				showAlert('保存成功','success')
+				showAlert('保存成功11','success')
 				closeModal(Modal9.name)
-				if(isCover =='modify'){
-					// 如果是修改保存的话 则不在此处掉updateRow.updateCardProm()
-					console.log(isCover)
-				}else{
-					// updateRow.updateCardPrompt(item)
-
-				}
-
+				// if(isCover =='modify'){
+				// // 如果是修改保存的话 则不在此处掉updateRow.updateCardProm()
+				// console.log(isCover)
+				// }else{
+				// // updateRow.updateCardPrompt(item)
+				// 
+				// }
+				console.log(this.listItems[startIndex],'44')
 				this.listItems[startIndex].urls = file.data
 				this.listItems[startIndex].clip = item.clip
 				this.listItems[startIndex].name = item.name
@@ -150,7 +150,7 @@ ${item.clip}
 			}
 		}).catch((error)=>{
 			closeModal(Modal9.name)
-			showAlert(error,'error')
+			showAlert('上传失败upload catch','error')
 		})
 
 	},
@@ -164,18 +164,20 @@ ${item.clip}
 		let names = rlt[0]
 		let refs = rlt[1]
 		console.log("cardrlt", rlt,Object.keys(refs).length)
-		this.listItems = names.map((v)=>{
-			let item = {
-				name:v,
-				urls :`https://af.runfox.cn/courses/cards/${v}.webp?r=${Math.random()}` ,
-				clip:refs[v]?.[0] ?? ""
-			}
-			// if(refs[item.name])
-			if(item.clip.length>0 && !item.clip.includes('Illustrate')){
-				item.clip = `**Illustrate the word**: ${item.name}\n**references**:\n${refs[item.name].join("\n")}`
-			}
+		this.listItems = names.filter(v => v !== undefined).map((v)=>{
+		
+ 				let item = {
+					name:v,
+					urls :`https://af.runfox.cn/courses/cards/${v}.webp?r=${Math.random()}` ,
+					clip:refs[v]?.[0] ?? ""
+				}
+				// if(refs[item.name])
+				if(item.clip.length>0 && !item.clip.includes('Illustrate')){
+					item.clip = `**Illustrate the word**: ${item.name}\n**references**:\n${refs[item.name].join("\n")}`
+				}
 
-			return item
+				return item
+			
 		})
 		// let obj ={}
 

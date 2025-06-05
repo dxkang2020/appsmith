@@ -173,7 +173,7 @@ ${item.clip}
 		// console.log(updateRow.row.script_json,'updateRow.row.script_json')
 		let names = PackageTools.calcScenes(updateRow.row.script_json)
 
-		// console.log("images", names)
+		console.log("names", names)
 		let screenplay = Table1.selectedRow.screenplay
 		let level = Table1.selectedRow.level
 		let course_number =  Table1.selectedRow.course_number
@@ -199,7 +199,6 @@ ${item.clip}
 			// console.log("scenes:",res)
 			if(names.length !== res.length){
 
-				// console.log('1111122')
 				var urlarr = res.map((v)=>{
 					return {
 						...v,
