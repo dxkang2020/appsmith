@@ -110,28 +110,35 @@ export default {
 		if(!this.isJson)return
 		let level = Table1.selectedRow.level
 		let course_number = Table1.selectedRow.course_number
-		let course = JSON.parse(this.JsonText) 	
+		let course = ''
 		let scenes =Table1.selectedRow.scenes_prompt
 		let cards = Table1.selectedRow.cards_prompt
-
-		await updateRow.getCourseById()
-		let val ={
-			script_json:course,
-			id:Table1.selectedRow.id
-		}
-		await updateScriptJson.run(val)
-		await GenResource.run({course_number,level,course,scenes,cards}).then(async res=>{
-			if(res.scripts == 'success'){
-				showAlert('保存成功','success')
-				// await updateRow.update()
-
-			}else{
-				showAlert('保存失败','error')
-
+		try{
+			course = JSON.parse(this.JsonText) 	
+			await updateRow.getCourseById()
+			let val ={
+				script_json:course,
+				id:Table1.selectedRow.id
 			}
-		}).catch(error =>{
-			showAlert('保存失败','error')
-		})
+
+			await GenResource.run({course_number,level,course,scenes,cards}).then(async res=>{
+				if(res.scripts == 'success'){
+					showAlert('保存成功','success')
+					// await updateRow.update()
+					await updateScriptJson.run(val)
+				}else{
+					showAlert('保存失败','error')
+
+				}
+			}).catch(error =>{
+				showAlert('保存失败','error')
+			})
+		}catch{
+			showAlert('不是标准的JSON格式','error')
+
+			return false
+		}
+
 	},
 	JsonText:'',
 	isJson:false,
