@@ -107,13 +107,14 @@ export default {
 
 	},
 	async 	saveJson(){
-		if(!this.isJson)return
+
 		let level = Table1.selectedRow.level
 		let course_number = Table1.selectedRow.course_number
 		let course = ''
 		let scenes =Table1.selectedRow.scenes_prompt
 		let cards = Table1.selectedRow.cards_prompt
-
+		// console.log(level,course_number,Input2Copy1.text)
+		// return
 		try{
 			course = JSON.parse(Input2Copy1.text) 	
 			await updateRow.getCourseById()
@@ -128,7 +129,7 @@ export default {
 					// await updateRow.update()
 					await updateScriptJson.run(val)
 				}else{
-					showAlert('保存失败','error')
+					showAlert('保存失败'+res.scripts ,'error')
 
 				}
 			}).catch(error =>{
