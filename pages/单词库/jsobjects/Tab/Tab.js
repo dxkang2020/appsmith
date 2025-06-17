@@ -47,6 +47,7 @@ export default {
 	},
 	async	onTabSelectChanged () {
 		if(Tabs1.selectedTab == "Json"){
+			Text11.setVisibility(true)
 			Button20.setVisibility(true)
 			Button20.setDisabled(true)
 
