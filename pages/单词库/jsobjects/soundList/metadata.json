@@ -1,0 +1,40 @@
+{
+  "gitSyncId": "67bed107a0c78065eecac2b6_d23650ef-a6eb-49a8-b744-0f2e79608f1e",
+  "id": "单词库_soundList",
+  "unpublishedCollection": {
+    "name": "soundList",
+    "pageId": "单词库",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "audioArr",
+        "value": "[]"
+      },
+      {
+        "name": "listItems",
+        "value": "null"
+      },
+      {
+        "name": "soundList",
+        "value": "{}"
+      },
+      {
+        "name": "soundTextArr",
+        "value": "''"
+      },
+      {
+        "name": "soundNumText",
+        "value": "''"
+      },
+      {
+        "name": "showText",
+        "value": "''"
+      },
+      {
+        "name": "audioIndex",
+        "value": "0"
+      }
+    ]
+  }
+}

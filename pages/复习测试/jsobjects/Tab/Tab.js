@@ -27,7 +27,7 @@ export default {
 	async	onTabSelectChanged () {
 		if(Tabs1.selectedTab == "Json"){
 			Button20.setVisibility(true)
-
+			Button20.setDisabled(true)
 		}else{
 			Button20.setVisibility(false)
 		}
@@ -151,8 +151,8 @@ export default {
 	},
 	JsonArr :[],
 	async 	saveJson(){
-		console.log(this.isJson)
-		if(!this.isJson)return
+		// console.log(this.isJson)
+		// if(!this.isJson)return
 		let level = Table1.selectedRow.level
 		let course_number = Table1.selectedRow.course_number
 		let course =''
@@ -175,7 +175,7 @@ export default {
 					showAlert('保存失败'+res.scripts ,'error')
 				}
 			}).catch(error =>{
-				showAlert('保存失败 catch','error')
+				showAlert('保存失败'+JSON.stringify(error),'error')
 			})
 		}catch{
 			showAlert('不是标准的JSON格式','error')

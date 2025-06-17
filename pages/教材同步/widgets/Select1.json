@@ -2,7 +2,7 @@
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 9,
+  "bottomRow": 11,
   "boxShadow": "none",
   "defaultOptionValue": "GREEN",
   "dynamicBindingPathList": [
@@ -11,17 +11,29 @@
     },
     {
       "key": "borderRadius"
+    },
+    {
+      "key": "sourceData"
     }
   ],
   "dynamicHeight": "FIXED",
   "dynamicPropertyPathList": [
     {
+      "key": "onDropdownOpen"
+    },
+    {
       "key": "sourceData"
+    },
+    {
+      "key": "onOptionChange"
     }
   ],
   "dynamicTriggerPathList": [
     {
       "key": "onOptionChange"
+    },
+    {
+      "key": "onDropdownOpen"
     }
   ],
   "isDisabled": false,
@@ -32,7 +44,7 @@
   "key": "bdwtc55f1n",
   "labelAlignment": "left",
   "labelPosition": "Top",
-  "labelText": "级别",
+  "labelText": "出版社",
   "labelTextSize": "0.875rem",
   "labelWidth": 5,
   "leftColumn": 0,
@@ -44,19 +56,20 @@
   "mobileRightColumn": 6,
   "mobileTopRow": 5,
   "needsErrorInfo": false,
-  "onOptionChange": "",
+  "onDropdownOpen": "{{Test.testpublishers()}}",
+  "onOptionChange": "{{Test.allChange()}}",
   "optionLabel": "name",
   "optionValue": "code",
   "parentColumnSpace": 17.25,
   "parentId": "0",
   "parentRowSpace": 10,
-  "placeholderText": "选择级别",
+  "placeholderText": "选择出版社",
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
   "rightColumn": 7,
   "serverSideFiltering": false,
-  "sourceData": "[\n  {\n    \"name\": \"starters\",\n    \"code\": \"starters\"\n  },\n  {\n    \"name\": \"movers\",\n    \"code\": \"movers\"\n  },\n  {\n    \"name\": \"flyers\",\n    \"code\": \"flyers\"\n  },\n  {\n    \"name\": \"all\",\n    \"code\": \"all\"\n  }\n]",
-  "topRow": 2,
+  "sourceData": "{{Test.publisher}}",
+  "topRow": 4,
   "type": "SELECT_WIDGET",
   "version": 1,
   "widgetId": "bil9uvjti5",

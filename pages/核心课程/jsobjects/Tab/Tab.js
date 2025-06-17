@@ -21,7 +21,7 @@ export default {
 			let label = ""
 			let diffMinute = (Date.now() - new Date(Table1.selectedRow.updated_at))/60000
 			Button20.setVisibility(true)
-			Button20.setDisabled(false)
+			Button20.setDisabled(true)
 			if(!Table1.selectedRow?.script_json?.scripts?.length)
 				label = "生成JSON"
 			else if (Table1.selectedRow.status != "scripting" || diffMinute > 5 )
@@ -150,6 +150,7 @@ export default {
 		try{
 			this.isJson =true
 			JSON.parse(txt)
+
 			return true
 		}catch(e){
 			showAlert('不是标准的JSON格式','error')

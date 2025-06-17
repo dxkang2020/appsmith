@@ -170,7 +170,7 @@ export default {
 			]
 		}
 
-		GenResource.run({course_number,level,overwrite, course}).then((res)=>	{
+		GenAudio.run({course_number,level,overwrite, course}).then((res)=>	{
 			if(res.audio =='audios done'){
 				showAlert('生成成功','success')
 

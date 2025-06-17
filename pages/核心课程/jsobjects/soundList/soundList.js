@@ -152,7 +152,7 @@ export default {
 			]
 		}
 
-		GenResource.run({course_number,level,overwrite, course}).then(()=>	{
+		GenAudio.run({course_number,level,overwrite, course}).then(()=>	{
 			showAlert('生成成功','success')
 
 			let url = `https://af.runfox.cn/courses/sounds/dialogues/${this.generateAudioName(item)}.mp3`

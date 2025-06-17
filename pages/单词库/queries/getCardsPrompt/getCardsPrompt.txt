@@ -1,0 +1,1 @@
+SELECT c.* FROM public.cards AS c WHERE name = ANY({{this.params.names}})

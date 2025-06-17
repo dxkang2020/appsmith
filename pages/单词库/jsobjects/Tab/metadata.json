@@ -1,0 +1,36 @@
+{
+  "gitSyncId": "67bed107a0c78065eecac2b6_244ba7f8-f4e9-406a-a9c6-a5cd8450744f",
+  "id": "单词库_Tab",
+  "unpublishedCollection": {
+    "name": "Tab",
+    "pageId": "单词库",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "myVar1",
+        "value": "[]"
+      },
+      {
+        "name": "myVar2",
+        "value": "{}"
+      },
+      {
+        "name": "jsonData",
+        "value": "{}"
+      },
+      {
+        "name": "JsonArr",
+        "value": "[]"
+      },
+      {
+        "name": "JsonText",
+        "value": "''"
+      },
+      {
+        "name": "isJson",
+        "value": "false"
+      }
+    ]
+  }
+}

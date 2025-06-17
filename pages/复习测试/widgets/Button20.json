@@ -23,7 +23,7 @@
     }
   ],
   "isDefaultClickDisabled": true,
-  "isDisabled": false,
+  "isDisabled": true,
   "isLoading": false,
   "isVisible": true,
   "key": "kw2jxvrlpc",

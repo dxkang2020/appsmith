@@ -10,6 +10,30 @@
       {
         "name": "cardslistItems",
         "value": "[]"
+      },
+      {
+        "name": "publisher",
+        "value": "[]"
+      },
+      {
+        "name": "gradeArr",
+        "value": "[]"
+      },
+      {
+        "name": "seriseArr",
+        "value": "[]"
+      },
+      {
+        "name": "booksArr",
+        "value": "[]"
+      },
+      {
+        "name": "temporaryArr",
+        "value": "[]"
+      },
+      {
+        "name": "temGradeArr",
+        "value": "[]"
       }
     ]
   }

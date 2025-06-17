@@ -1,0 +1,52 @@
+{
+  "gitSyncId": "67bed107a0c78065eecac2b6_0e5c8688-1427-4743-8e60-9bbffe275d07",
+  "id": "单词库_cardList",
+  "unpublishedCollection": {
+    "name": "cardList",
+    "pageId": "单词库",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "myVar1",
+        "value": "[]"
+      },
+      {
+        "name": "myVar2",
+        "value": "{}"
+      },
+      {
+        "name": "isShowBtn",
+        "value": "false"
+      },
+      {
+        "name": "temText",
+        "value": "''"
+      },
+      {
+        "name": "newNameText",
+        "value": "''"
+      },
+      {
+        "name": "oldNameText",
+        "value": "''"
+      },
+      {
+        "name": "updateVal",
+        "value": "{}"
+      },
+      {
+        "name": "localIndex",
+        "value": "0"
+      },
+      {
+        "name": "listItems",
+        "value": "[]"
+      },
+      {
+        "name": "imgP",
+        "value": "''"
+      }
+    ]
+  }
+}

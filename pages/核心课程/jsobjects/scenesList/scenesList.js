@@ -114,6 +114,11 @@ ${item.clip}
 
 	},
 	coverSave(){
+		let newVal = Input14.text
+		if(!this.validateInput(newVal)){
+			showAlert('错误符号','error')
+			return
+		}
 		this.uploadImg(this.updateVal,'cover',this.localIndex)
 	},
 	localIndex :0, //记录index
