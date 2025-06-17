@@ -26,7 +26,7 @@ export default {
 	async onTableClick(){
 		let  rowIndex = Table1.selectedRowIndex
 		console.log(rowIndex)
-
+		Button20.setDisabled(true)
 		await wordJson.run().then(res=>{
 			if(res){
 				this.jsonData  = res
@@ -53,6 +53,7 @@ export default {
 
 		}else{
 			Button20.setVisibility(false)
+			Text11.setVisibility(false)
 		}
 		if(Tabs1.selectedTab == "Cards"){
 			// await updateRow.getCourseById()
