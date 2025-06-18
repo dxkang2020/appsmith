@@ -2,15 +2,37 @@ export default {
 	myVar1: [],
 	myVar2: {},
 	jsonData:{},
-
+	checkInput(input){
+		if (!input.includes('-')) return [input];
+	},
 	onQueryClick(){
+		let inputNum = Input19.text
+		var startNum,endNum = 0
+		if(inputNum.includes('-')){
+			[startNum, endNum] = inputNum.split('-');
+		}else{
+			showAlert('输入错误','error')
+			return
+		}
+		if(startNum <= 0){
+			showAlert('不能小于0','error')
+			return
+		}
+		UniqueWords.run().then(res=>{
 
+			let arr = res.slice(startNum-1,endNum)
+			this.JsonArr = arr.map((v)=>{
+				return {
+					name:v.word_id,
+
+				}
+			})
+		})
+
+		return
 		let params ={
 			filename:`words/${Input19.text}*.json`
 		} 
-		// wordJson.run(params).then(res=>{
-		// console.log(res)
-		// })
 		SearchFiles.run(params).then(res=>{
 			console.log(res)
 			// this.JsonArr =res

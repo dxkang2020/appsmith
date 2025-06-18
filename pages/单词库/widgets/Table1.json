@@ -5,7 +5,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 123,
+  "bottomRow": 125,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "canFreezeColumn": true,
   "childStylesheet": {
@@ -34,10 +34,10 @@
   "columnOrder": [
     "name"
   ],
-  "columnUpdatedAt": 1749781224672,
+  "columnUpdatedAt": 1750214034397,
   "columnWidthMap": {
     "course_number": 150,
-    "customColumn1": 157,
+    "customColumn1": 107,
     "level": 85,
     "status": 90,
     "version": 143
@@ -121,8 +121,8 @@
   "onRowSelected": "{{Tab.onTableClick();}}",
   "onSearchTextChanged": "{{\n            Select_public_course_documents1.run();\n            Total_record_public_course_documents1.run()\n          }}",
   "onSort": "",
-  "originalBottomRow": 123,
-  "originalTopRow": 15,
+  "originalBottomRow": 125,
+  "originalTopRow": 17,
   "parentColumnSpace": 17.25,
   "parentId": "0",
   "parentRowSpace": 10,
@@ -171,7 +171,7 @@
   "showInlineEditingOptionDropdown": true,
   "tableData": "{{Tab.JsonArr}}",
   "textSize": "0.875rem",
-  "topRow": 15,
+  "topRow": 17,
   "totalRecordsCount": "{{Total_record_public_course_documents1.data[0].count}}",
   "type": "TABLE_WIDGET_V2",
   "version": 2,
