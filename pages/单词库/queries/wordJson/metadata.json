@@ -21,7 +21,7 @@
       "httpMethod": "GET",
       "httpVersion": "HTTP11",
       "paginationType": "NONE",
-      "path": "/courses/{{encodeURI(Table1.selectedRow.name) }}",
+      "path": "/courses/words/{{encodeURI(Table1.selectedRow.name)}}.json",
       "pluginSpecifiedTemplates": [
         {
           "value": true

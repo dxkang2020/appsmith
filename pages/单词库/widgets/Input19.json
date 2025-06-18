@@ -14,7 +14,7 @@
       "key": "borderRadius"
     }
   ],
-  "dynamicHeight": "FIXED",
+  "dynamicHeight": "AUTO_HEIGHT",
   "dynamicTriggerPathList": [],
   "errorMessage": "输入数字和-",
   "iconAlign": "left",
@@ -40,6 +40,8 @@
   "mobileRightColumn": 20,
   "mobileTopRow": 6,
   "needsErrorInfo": false,
+  "originalBottomRow": 13,
+  "originalTopRow": 6,
   "parentColumnSpace": 20.25,
   "parentId": "0",
   "parentRowSpace": 10,
@@ -48,6 +50,7 @@
   "resetOnSubmit": true,
   "responsiveBehavior": "fill",
   "rightColumn": 15,
+  "shouldAllowAutofill": false,
   "showStepArrows": false,
   "topRow": 6,
   "type": "INPUT_WIDGET_V2",
