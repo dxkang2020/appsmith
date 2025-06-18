@@ -70,6 +70,9 @@ export default {
 				// Table1.setData([{level:this.JsonArr[rowIndex]['level'],course_number:this.JsonArr[rowIndex]['course_number'],script_json:this.jsonData} ])
 
 			}
+		}).catch(e=>{
+			showAlert('查找失败','error')
+
 		})
 
 	},
