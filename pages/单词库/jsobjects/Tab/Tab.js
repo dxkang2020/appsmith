@@ -21,9 +21,10 @@ export default {
 		UniqueWords.run().then(res=>{
 
 			let arr = res.slice(startNum-1,endNum)
-			this.JsonArr = arr.map((v)=>{
+			this.JsonArr = arr.map((v,i)=>{
 				return {
 					name:v.word_id,
+					num: i+Number(startNum)
 
 				}
 			})

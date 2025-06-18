@@ -32,13 +32,15 @@
     }
   },
   "columnOrder": [
+    "num",
     "name"
   ],
-  "columnUpdatedAt": 1750214034397,
+  "columnUpdatedAt": 1750214712482,
   "columnWidthMap": {
     "course_number": 150,
     "customColumn1": 107,
     "level": 85,
+    "num": 83,
     "status": 90,
     "version": 143
   },
@@ -69,6 +71,9 @@
     },
     {
       "key": "primaryColumns.name.computedValue"
+    },
+    {
+      "key": "primaryColumns.num.computedValue"
     }
   ],
   "dynamicPropertyPathList": [
@@ -154,6 +159,40 @@
       "label": "name",
       "notation": "standard",
       "originalId": "name",
+      "sticky": "",
+      "textColor": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "num": {
+      "alias": "num",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
+      "columnType": "text",
+      "computedValue": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"num\"]))}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "LEFT",
+      "id": "num",
+      "index": 1,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "num",
+      "notation": "standard",
+      "originalId": "num",
       "sticky": "",
       "textColor": "",
       "textSize": "0.875rem",
