@@ -106,7 +106,53 @@ export default {
 		updateTable.run({course_numbers})
 
 	},
+	checkJson(data){
+
+		function validateData(data,path='scripts'){
+			if (Array.isArray(data)) {
+				for (let i = 0; i < data.length; i++) {
+					const result = validateData(data[i], `${path}[${i}]`);
+					if (result !== true) return result;
+				}
+				return true;
+			}
+
+			// 处理对象
+			const stringFields = ['type', 'name', 'character', 'text'];
+			const booleanFields = ['image_only', 'retry'];
+			// 验证字符串字段
+			for (const field of stringFields) {
+				if (data.hasOwnProperty(field) && (typeof data[field] !== 'string'  && typeof data[field] !== 'object')) {
+					showAlert(`错误：在 ${path}.${field} 处应为字符串，实际为 ${typeof data[field]}`,'error')
+					return `错误：在 ${path}.${field} 处应为字符串，实际为 ${typeof data[field]}`;
+				}
+			}
+			// 验证布尔字段
+			for (const field of booleanFields) {
+				if (data.hasOwnProperty(field) && typeof data[field] !== 'boolean') {
+					showAlert(`错误：在 ${path}.${field} 处应为布尔值，实际为 ${typeof data[field]}`,'error')
+					return `错误：在 ${path}.${field} 处应为布尔值，实际为 ${typeof data[field]}`;
+				}
+			}
+			// 递归验证所有对象属性（包括feedback）
+			for (const key in data) {
+				if (data.hasOwnProperty(key) && (typeof data[key] === 'object' || Array.isArray(data[key]))) {
+					const result = validateData(data[key], `${path}.${key}`);
+					if (result !== true) return result;
+				}
+			}
+			return true
+		}
+
+
+		return validateData(data)
+	},
+
 	async 	saveJson(){
+		let b = JSON.parse(Input2Copy1.text)
+		let a =this.checkJson(b.scripts)
+		console.log(a,'+++++++a')
+		if(typeof a ==='string'  && a.includes('错误'))return
 
 		let level = Table1.selectedRow.level
 		let course_number = Table1.selectedRow.course_number

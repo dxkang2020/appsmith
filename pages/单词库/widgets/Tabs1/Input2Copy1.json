@@ -60,7 +60,7 @@
   "mobileTopRow": 0,
   "needsErrorInfo": false,
   "onBlur": "{{Tab.input2OnBlur()}}",
-  "onFocus": "{{Button20.setDisabled(false)}}",
+  "onFocus": "{{Button20.setDisabled(false)&&\n\t\tButton22.setDisabled(false)\n}}",
   "onTextChanged": "",
   "originalBottomRow": 9,
   "originalTopRow": 1,
