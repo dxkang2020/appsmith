@@ -292,7 +292,7 @@ ${item.clip}
 	},
 	imgP:'',
 	validateInput(input) {
-		const regex = /^[a-zA-Z0-9_]+$/;
+		const regex = /^[a-zA-Z0-9_.]+$/;
 		return regex.test(input);
 	},
 

@@ -21,6 +21,24 @@ export default {
 				'index': ++index
 			})
 		}
+		// if(other.linguistic_properties.syllable_split){
+		// console.log('dydyy')
+		// 
+		// let str = other.linguistic_properties.syllable_split
+		// if(str.indexOf("-") > 1 && str.indexOf(" ") == -1){
+		// console.log('dydyy22')
+		// texts.push({
+		// 'text':`ben_${str}`,
+		// "character":'ben',
+		// 'index': ++index
+		// })
+		// texts.push({
+		// 'text':`ben__sy_${str}`,
+		// "character":'ben',
+		// 'index': ++index
+		// })
+		// }
+		// }
 		if(other.examples){
 			Object.values(other.examples).forEach(exampleArray => {
 				// 遍历当前数组中的每个示例

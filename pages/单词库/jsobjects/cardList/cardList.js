@@ -117,16 +117,18 @@ ${item.clip}
 	async uploadImg(item,isCover,index){
 		showModal(Modal9.name)
 		this.updateVal = item
+		this.localIndex = index
+
 		const file =cList1.triggeredItemView.FilePicker3.files[0]
 		let filename = `${item.name}.webp`
-		let startIndex = ((cList1.pageNo -1 ) * cList1.pageNo) + index
+		var startIndex = ((cList1.pageNo -1 ) * cList1.pageNo) + index
 		let overwrite =  isCover == 'cover' ? true : false
 		SaveCard.run({filename, overwrite,file}).then(res =>{
 			if(res == "success"){
 				showAlert('保存成功','success')
 				closeModal(Modal9.name)
 
-				console.log(startIndex)
+				console.log(startIndex,11)
 				this.listItems[startIndex].urls = file.data
 				this.listItems[startIndex].clip = item.clip
 				this.listItems[startIndex].name = item.name
