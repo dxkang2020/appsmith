@@ -30,6 +30,7 @@ export default {
 	async	onTabSelectChanged () {
 		if(Tabs1.selectedTab == "Json"){
 			Button20.setVisibility(true)
+			Button20.setDisabled(true)
 
 		}else{
 			Button20.setVisibility(false)
@@ -104,17 +105,26 @@ export default {
 	},
 	onQueryClick(){
 
-		// let course_numbers = this.parseCourseRange(Input1.text)
 		let  filename =`books/${Select4.selectedOptionValue}/*.json` 
-
+		showModal(Modal9.name)
 		SearchFiles.run({filename}).then(res=>{
 			console.log(res)
-			this.JsonArr =  res.map(v=>{
-				return {
-					units:v,
+			if(res.length >0){
+				closeModal(Modal9.name)
+				this.JsonArr =  res.map(v=>{
+					return {
+						units:v,
 
-				}
-			})
+					}
+				})
+			}else{
+				showAlert('没有数据','error')
+				closeModal(Modal9.name)
+			}
+
+		}).catch(err=>{
+			showAlert('搜索失败','error')
+			closeModal(Modal9.name)
 		})
 		// if(course_numbers.length >10){
 		// showAlert('范围跨度不能大于10课','error')
