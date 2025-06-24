@@ -5,7 +5,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 142,
+  "bottomRow": 123,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "canFreezeColumn": true,
   "childStylesheet": {
@@ -32,9 +32,10 @@
     }
   },
   "columnOrder": [
-    "units"
+    "units",
+    "name"
   ],
-  "columnUpdatedAt": 1750731916210,
+  "columnUpdatedAt": 1750748078948,
   "columnWidthMap": {
     "course_number": 150,
     "customColumn1": 84,
@@ -69,6 +70,9 @@
     },
     {
       "key": "primaryColumns.units.computedValue"
+    },
+    {
+      "key": "primaryColumns.name.computedValue"
     }
   ],
   "dynamicPropertyPathList": [
@@ -128,6 +132,40 @@
   "parentRowSpace": 10,
   "primaryColumnId": "level",
   "primaryColumns": {
+    "name": {
+      "alias": "name",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
+      "columnType": "text",
+      "computedValue": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"name\"]))}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "LEFT",
+      "id": "name",
+      "index": 1,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": false,
+      "label": "name",
+      "notation": "standard",
+      "originalId": "name",
+      "sticky": "",
+      "textColor": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
     "units": {
       "alias": "units",
       "allowCellWrapping": false,
@@ -171,7 +209,7 @@
   "showInlineEditingOptionDropdown": true,
   "tableData": "{{Tab.JsonArr}}",
   "textSize": "0.875rem",
-  "topRow": 34,
+  "topRow": 15,
   "totalRecordsCount": "{{Total_record_public_course_documents1.data[0].count}}",
   "type": "TABLE_WIDGET_V2",
   "version": 2,

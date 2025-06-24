@@ -160,7 +160,7 @@ ${item.clip}
 
 	async getCardsList(){
 		// await updateRow.getCourseById()
-		let rlt = PackageTools.calcImages(Table1.selectedRow.script_json)
+		let rlt = PackageTools.calcImages(Tab.jsonData.dialogues)
 		let names = rlt[0]
 		let refs = rlt[1]
 		console.log("cardrlt", rlt,Object.keys(refs).length)

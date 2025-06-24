@@ -16,7 +16,7 @@
       "httpMethod": "GET",
       "httpVersion": "HTTP11",
       "paginationType": "NONE",
-      "path": "/courses/{{encodeURI(Table1.selectedRow.units)}}",
+      "path": "/courses/{{encodeURI(Table1.selectedRow.name)}}",
       "pluginSpecifiedTemplates": [
         {
           "value": true

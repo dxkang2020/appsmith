@@ -10,7 +10,7 @@
   "children": [
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-      "bottomRow": 1750,
+      "bottomRow": 6850,
       "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
       "canExtend": true,
       "detachFromLayout": true,
@@ -256,7 +256,7 @@
       "id": "tab5ncrs0yc79",
       "index": 1,
       "isDuplicateLabel": false,
-      "isVisible": false,
+      "isVisible": true,
       "label": "Cards",
       "widgetId": "0d63vzcv2n"
     },

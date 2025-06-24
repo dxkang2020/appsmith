@@ -56,7 +56,7 @@ export default {
 		console.log('45454',updateVal)
 		let oldName = updateVal?.name
 		// await this.getCourseById()
-		if(!oldName || !newName || oldName == newName || !Table1.selectedRow?.script_json?.scripts?.length)
+		if(!oldName || !newName || oldName == newName || !Tab.jsonData)
 			return
 		function _updateScrits(scripts, on, nn){
 			if(!scripts?.length)
@@ -75,9 +75,9 @@ export default {
 						}
 					}
 				}
-				if(v.answer_analysis?.image == on){
-					v.answer_analysis.image = nn
-				}
+				// if(v.answer_analysis?.image == on){
+					// v.answer_analysis.image = nn
+				// }
 				if(v.scripts && v.scripts.length > 0){
 					// v.scripts.forEach(function(fvs){
 					_updateScrits(v.scripts, on, nn)
@@ -93,14 +93,14 @@ export default {
 			})
 
 		}
-		console.log( Table1.selectedRow,'rou')
-		_updateScrits( Table1.selectedRow.script_json.scripts, oldName, newName)
+		// console.log( Table1.selectedRow,'rou')
+		_updateScrits( Tab.jsonData.dialogues, oldName, newName)
 
-		let level = Table1.selectedRow.level
-		let course_number = Table1.selectedRow.course_number
-		let course =  Table1.selectedRow.script_json
-
-		await GenResource.run({course_number,level,course}).then(async res=>{
+		// let level = Table1.selectedRow.level
+		// let course_number = Table1.selectedRow.course_number
+		// let course =  Table1.selectedRow.script_json
+		let book_scripts =  Tab.jsonData
+		await GenResource.run({book_scripts,overwrite:true}).then(async res=>{
 			if(res.scripts == 'success'){
 				showAlert('保存成功','success')
 				// await updateRow.update()
@@ -110,7 +110,7 @@ export default {
 					updateVal.name = newName
 					cardList.uploadImg(updateVal,'modify',cardList.localIndex)
 				}
-				Tab.onTableClick()
+				// Tab.onTableClick()
 				await cardList.getCardsList()
 			}else{
 				showAlert('保存失败','error')

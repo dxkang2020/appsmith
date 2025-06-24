@@ -1,6 +1,7 @@
 export default {
 	calcImages(json){
-		console.log(json)
+		console.log(json,'45')
+		// return
 		let refrences = {}
 
 		function _calcImages(scripts){
@@ -33,45 +34,38 @@ export default {
 				const myScripts = Array.isArray(scripts) ? scripts : [];
 
 				myScripts.forEach(function(v){
-					if(v.image && v.type != "task"  && v.image.length > 0){
-						images.add(v.image)
-						addRef(v.image, v)
-					}
-
-					if(v.images && v.images.length > 0){
-						v.images.forEach(function(vi){
-							images.add(vi)
-							addRef(vi, v)
+					// if((v?.image && v?.type != "task")  && v?.image.length > 0){
+					// images.add(v?.image)
+					// addRef(v?.image, v)
+					// }
+					if(v?.scripts && v?.scripts.length > 0){
+						v.scripts.forEach(vi =>{
+							if(vi.image){
+								console.log(vi.image,'00')
+								images.add(vi?.image)
+								addRef(vi?.image, vi)
+							}
 						})
-					}
-					if(v.answer_analysis?.image){
-						// console.log(v.answer_analysis.image)
-						images.add(v.answer_analysis.image)
-						addRef(v.answer_analysis.image, v.answer_analysis)
-						// _calcImages(v.answer_analysis).forEach(i=>{ images.add(i)})
 
+						// let rlt = _calcImages(v.scripts)
+						// console.log("rlt:",rlt)
+						// 
+						// images.add(...rlt)
 					}
-					// if(v.feedback && v.feedback.length > 0){
-					// v.feedback.forEach(function(fv){
-					// _calcImages(fv).forEach(i=>images.add(i))
+					// if(v.image){
+					// console.log(v.image,'00')
+					// images.add(v?.image)
+					// addRef(v?.image, v)
+					// }
+
+					// if(v?.images && v?.images.length > 0){
+					// v?.images.forEach(function(vi){
+					// images.add(vi)
+					// addRef(vi, v)
 					// })
 					// }
-					if(v.scripts && v.scripts.length > 0){
-						let rlt = _calcImages(v.scripts)
-						console.log("rlt:",rlt)
-
-						images.add(...rlt)
 
 
-						// addRef(...rlt, v.scripts)
-						// v.scripts.forEach(function(fvs,index){
-						// // _calcImages(fvs).forEach(is=>images.add(is))
-						// let rlt = _calcImages(fvs)
-						// console.log('7777',rlt)
-						// images.add(fvs)
-						// // addRef(fvs, v.scripts[index])
-						// })
-					}
 
 
 				})
@@ -80,7 +74,7 @@ export default {
 			}
 			return images
 		}
-		return [Array.from(_calcImages(json?.scripts)),refrences]
+		return [Array.from(_calcImages(json)),refrences]
 	},
 
 	calcScenes(json){

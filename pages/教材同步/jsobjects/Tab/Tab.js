@@ -3,8 +3,9 @@ export default {
 	myVar2: {},
 	jsonData:{},
 	async onTableClick(){
-		let  rowIndex = Table1.selectedRowIndex
-		console.log(rowIndex)
+		// let  rowIndex = Table1.selectedRowIndex
+
+		// let val = 	Table1.selectedRow.name 
 
 		await SearchBooks.run().then(res=>{
 			console.log(res)
@@ -113,11 +114,12 @@ export default {
 				closeModal(Modal9.name)
 				this.JsonArr =  res.map(v=>{
 					return {
-						units:v,
-
+						units:v.split('/').pop(),
+						name:v
 					}
 				})
 			}else{
+				this.JsonArr =[]
 				showAlert('没有数据','error')
 				closeModal(Modal9.name)
 			}
