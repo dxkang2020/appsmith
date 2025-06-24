@@ -4,30 +4,54 @@ export default {
 	listItems:null,
 	soundList:{},
 	getTexts(jsonArr,currentIndex){
-		if (!Array.isArray(jsonArr)) {
-			jsonArr = [jsonArr];
-		}
+		var assessList = jsonArr.assess_lists
+		var dialogues = jsonArr.dialogues
+
+		// if (!Array.isArray(dialogues)) {
+		// dialogues = [dialogues];
+		// }
+
+
 		// 测试后
 		var that = this
 		let texts = []
 		let index = currentIndex;
-		jsonArr.forEach((v)=>{
-			if(v.text  &&v.character){
+		assessList.forEach(vi=>{
+			vi.texts.forEach(sv =>{
+				texts.push({
+					'text':sv,
+					"character":vi.character,
+					'index': ++index
+				})
+			})
+		})
+		dialogues.forEach((v)=>{
+			if(v?.text  &&v?.character){
 
 				texts.push({
-					'text':v.text,
-					"character":v.character,
+					'text':v?.text,
+					"character":v?.character,
 					'index': ++index
 				})
 				// this.soundList[v.character][v.text] =1
 
 			}
-			if(v.scripts && v.scripts.length > 0){
+			if(v?.scripts && v?.scripts.length > 0){
 
-				v.scripts.forEach((item)=>{
-					let items = that.getTexts(item, index)
-					texts.push(...items)
-					index += items.length
+				v?.scripts.forEach((item)=>{
+					if(item?.text  &&item?.character){
+
+						texts.push({
+							'text':item?.text,
+							"character":item?.character,
+							'index': ++index	
+						})
+
+
+					}
+					// let items = that.getTexts(item, index)
+					// texts.push(...items)
+					// index += items.length
 				})
 			}
 			// if(v.feedback && v.feedback.length > 0){
@@ -38,17 +62,14 @@ export default {
 			// index += items.length
 			// })
 			// }
-			if(v.answer_analysis){
-				// let items = that.getTexts(item, index)
-				// texts.push(...items)
-				// index += items.length
-
-				texts.push({
-					'text':v.answer_analysis.text,
-					"character":v.answer_analysis.character,
-					'index': ++index
-				})
-			}
+			// if(v.answer_analysis){
+			// 
+			// texts.push({
+			// 'text':v.answer_analysis.text,
+			// "character":v.answer_analysis.character,
+			// 'index': ++index
+			// })
+			// }
 
 
 		})

@@ -5,7 +5,7 @@ export default {
 			"name": "外研社",
 			"series": [
 				{
-					"name": "三年级起点 (主编：孙有中)",
+					"name": "三年级起点2024-2025 (主编：孙有中)",
 					"shortname": "3起孙有中",
 					"grades": [
 						{
@@ -285,16 +285,6 @@ export default {
 									"name": "下册",
 									"shortname": "下",
 									"full_shortname": "外研社_3起刘兆义_3_下"
-								},
-								{
-									"name": "上册",
-									"shortname": "上",
-									"full_shortname": "外研社新_3起刘兆义_3_上"
-								},
-								{
-									"name": "下册",
-									"shortname": "下",
-									"full_shortname": "外研社新_3起刘兆义_3_下"
 								}
 							]
 						},
@@ -349,7 +339,7 @@ export default {
 					]
 				},
 				{
-					"name": "(主编：张祖春)",
+					"name": "三年级起点2024-2025(主编：张祖春)",
 					"shortname": "张祖春",
 					"grades": [
 						{
@@ -359,20 +349,20 @@ export default {
 								{
 									"name": "上册",
 									"shortname": "上",
-									"full_shortname": "外研社_张祖春_3_上"
+									"full_shortname": "外研社_3起张祖春_3_上"
 								},
 								{
 									"name": "下册",
 									"shortname": "下",
-									"full_shortname": "外研社_张祖春_3_下"
+									"full_shortname": "外研社_3起张祖春_3_下"
 								}
 							]
 						}
 					]
 				},
 				{
-					"name": "新启航 (主编：樊波)",
-					"shortname": "新启航樊波",
+					"name": "新启航2024-2025 (主编：樊波)",
+					"shortname": "新启航樊波新",
 					"grades": [
 						{
 							"name": "一年级",
@@ -387,6 +377,28 @@ export default {
 									"name": "下册",
 									"shortname": "下",
 									"full_shortname": "外研社_新启航樊波_1_下"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "三年级起点2024-2025 (主编：刘兆义)",
+					"shortname": "3起刘兆义新",
+					"grades": [
+						{
+							"name": "三年级",
+							"shortname": "三",
+							"volumes": [
+								{
+									"name": "上册",
+									"shortname": "上",
+									"full_shortname": "外研社新_3起刘兆义_3_上"
+								},
+								{
+									"name": "下册",
+									"shortname": "下",
+									"full_shortname": "外研社新_3起刘兆义_3_下"
 								}
 							]
 						}
@@ -414,16 +426,6 @@ export default {
 									"name": "下册",
 									"shortname": "下",
 									"full_shortname": "北京版_1起胡壮麟_1_下"
-								},
-								{
-									"name": "上册",
-									"shortname": "上",
-									"full_shortname": "北京新版_1起胡壮麟_1_上"
-								},
-								{
-									"name": "下册",
-									"shortname": "下",
-									"full_shortname": "北京新版_1起胡壮麟_1_下"
 								}
 							]
 						},
@@ -456,16 +458,6 @@ export default {
 									"name": "下册",
 									"shortname": "下",
 									"full_shortname": "北京版_1起胡壮麟_3_下"
-								},
-								{
-									"name": "上册",
-									"shortname": "上",
-									"full_shortname": "北京新版_1起胡壮麟_3_上"
-								},
-								{
-									"name": "下册",
-									"shortname": "下",
-									"full_shortname": "北京新版_1起胡壮麟_3_下"
 								}
 							]
 						},
@@ -520,8 +512,8 @@ export default {
 					]
 				},
 				{
-					"name": "一年级起点 (主编：李淑静)",
-					"shortname": "1起李淑静",
+					"name": "一年级起点2024-2025 (主编：李淑静)",
+					"shortname": "1起李淑静新",
 					"grades": [
 						{
 							"name": "一年级",
@@ -530,34 +522,28 @@ export default {
 								{
 									"name": "上册",
 									"shortname": "上",
-									"full_shortname": "北京版_1起李淑静_1_上"
+									"full_shortname": "北京版新_1起李淑静_1_上"
 								},
 								{
 									"name": "下册",
 									"shortname": "下",
-									"full_shortname": "北京版_1起李淑静_1_下"
+									"full_shortname": "北京版新_1起李淑静_1_下"
 								}
 							]
-						}
-					]
-				},
-				{
-					"name": "三年级起点 (主编：李淑静)",
-					"shortname": "3起李淑静",
-					"grades": [
+						},
 						{
-							"name": "三年级",
-							"shortname": "三",
+							"name": "三年级2024-2025 (主编：李淑静)",
+							"shortname": "3起李淑静新",
 							"volumes": [
 								{
 									"name": "上册",
 									"shortname": "上",
-									"full_shortname": "北京版_3起李淑静_3_上"
+									"full_shortname": "北京版新_1起李淑静_3_上"
 								},
 								{
 									"name": "下册",
 									"shortname": "下",
-									"full_shortname": "北京版_3起李淑静_3_下"
+									"full_shortname": "北京版新_1起李淑静_3_下"
 								}
 							]
 						}
@@ -639,7 +625,7 @@ export default {
 					]
 				},
 				{
-					"name": "三年级起点 (主编：陈则航)",
+					"name": "三年级起点2024-2025 (主编：陈则航)",
 					"shortname": "3起陈则航",
 					"grades": [
 						{
@@ -736,8 +722,8 @@ export default {
 					]
 				},
 				{
-					"name": "三年级起点 (主编：彭静)",
-					"shortname": "3起彭静",
+					"name": "三年级起点2024-2025 (主编：彭静)",
+					"shortname": "3起彭静新",
 					"grades": [
 						{
 							"name": "三年级",
@@ -746,12 +732,12 @@ export default {
 								{
 									"name": "上册",
 									"shortname": "上",
-									"full_shortname": "重庆大学版_3起彭静_3_上"
+									"full_shortname": "重庆大学版新_3起彭静_3_上"
 								},
 								{
 									"name": "下册",
 									"shortname": "下",
-									"full_shortname": "重庆大学版_3起彭静_3_下"
+									"full_shortname": "重庆大学版新_3起彭静_3_下"
 								}
 							]
 						}
@@ -779,16 +765,6 @@ export default {
 									"name": "下册",
 									"shortname": "下",
 									"full_shortname": "川教版_3起杨晓钰_3_下"
-								},
-								{
-									"name": "上册",
-									"shortname": "上",
-									"full_shortname": "川教新版_3起杨晓钰_3_上"
-								},
-								{
-									"name": "下册",
-									"shortname": "下",
-									"full_shortname": "川教新版_3起杨晓钰_3_下"
 								}
 							]
 						},
@@ -841,6 +817,28 @@ export default {
 							]
 						}
 					]
+				},
+				{
+					"name": "三年级起点2024-2025 (主编：杨晓钰)",
+					"shortname": "3起杨晓钰新",
+					"grades": [
+						{
+							"name": "三年级",
+							"shortname": "三",
+							"volumes": [
+								{
+									"name": "上册",
+									"shortname": "上",
+									"full_shortname": "川教版新_3起杨晓钰_3_上"
+								},
+								{
+									"name": "下册",
+									"shortname": "下",
+									"full_shortname": "川教版新_3起杨晓钰_3_下"
+								}
+							]
+						}
+					]
 				}
 			]
 		},
@@ -864,16 +862,6 @@ export default {
 									"name": "下册",
 									"shortname": "下",
 									"full_shortname": "沪教版_3起张春柏施嘉平_3_下"
-								},
-								{
-									"name": "上册",
-									"shortname": "上",
-									"full_shortname": "沪教新版_3起张春柏施嘉平_3_上"
-								},
-								{
-									"name": "下册",
-									"shortname": "下",
-									"full_shortname": "沪教新版_3起张春柏施嘉平_3_下"
 								}
 							]
 						},
@@ -926,6 +914,28 @@ export default {
 							]
 						}
 					]
+				},
+				{
+					"name": "三年级起点2024-2025 (主编：张春柏 施嘉平)",
+					"shortname": "3起张春柏施嘉平新",
+					"grades": [
+						{
+							"name": "三年级",
+							"shortname": "三",
+							"volumes": [
+								{
+									"name": "上册",
+									"shortname": "上",
+									"full_shortname": "沪教版新_3起张春柏施嘉平_3_上"
+								},
+								{
+									"name": "下册",
+									"shortname": "下",
+									"full_shortname": "沪教版新_3起张春柏施嘉平_3_下"
+								}
+							]
+						}
+					]
 				}
 			]
 		},
@@ -949,16 +959,6 @@ export default {
 									"name": "下册",
 									"shortname": "下",
 									"full_shortname": "冀教版_3起田贵森_3_下"
-								},
-								{
-									"name": "上册",
-									"shortname": "上",
-									"full_shortname": "冀教新版_3起田贵森_3_上"
-								},
-								{
-									"name": "下册",
-									"shortname": "下",
-									"full_shortname": "冀教新版_3起田贵森_3_下"
 								}
 							]
 						},
@@ -1039,7 +1039,7 @@ export default {
 								{
 									"name": "上册",
 									"shortname": "上",
-									"full_shortname":"冀教版_1起田贵森_2_上"
+									"full_shortname": "冀教版_1起田贵森_2_上"
 								},
 								{
 									"name": "下册",
@@ -1113,6 +1113,28 @@ export default {
 							]
 						}
 					]
+				},
+				{
+					"name": "三年级起点2024-2025 (主编：田贵森)",
+					"shortname": "3起田贵森新",
+					"grades": [
+						{
+							"name": "三年级",
+							"shortname": "三",
+							"volumes": [
+								{
+									"name": "上册",
+									"shortname": "上",
+									"full_shortname": "冀教版新_3起田贵森_3_上"
+								},
+								{
+									"name": "下册",
+									"shortname": "下",
+									"full_shortname": "冀教版新_3起田贵森_3_下"
+								}
+							]
+						}
+					]
 				}
 			]
 		},
@@ -1120,7 +1142,7 @@ export default {
 			"name": "教科",
 			"series": [
 				{
-					"name": "三年级起点 (主编：龚亚夫 & 鲁宗干)",
+					"name": "三年级起点 (主编：龚亚夫 鲁宗干)",
 					"shortname": "3起龚亚夫鲁宗干",
 					"grades": [
 						{
@@ -1136,16 +1158,6 @@ export default {
 									"name": "下册",
 									"shortname": "下",
 									"full_shortname": "教科版_3起龚亚夫鲁宗干_3_下"
-								},
-								{
-									"name": "上册",
-									"shortname": "上",
-									"full_shortname": "教科新版_3起龚亚夫_3_上"
-								},
-								{
-									"name": "下册",
-									"shortname": "下",
-									"full_shortname": "教科新版_3起龚亚夫_3_下"
 								}
 							]
 						},
@@ -1200,7 +1212,7 @@ export default {
 					]
 				},
 				{
-					"name": "EEC学院 三年级起点 (主编：无)",
+					"name": "EEC学院 三年级起点",
 					"shortname": "3起EEC学院",
 					"grades": [
 						{
@@ -1264,6 +1276,28 @@ export default {
 									"name": "下册",
 									"shortname": "下",
 									"full_shortname": "教科版_3起EEC学院_6_下"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "三年级起点2024-2025 (主编：龚亚夫)",
+					"shortname": "3起龚亚夫新",
+					"grades": [
+						{
+							"name": "三年级",
+							"shortname": "三",
+							"volumes": [
+								{
+									"name": "上册",
+									"shortname": "上",
+									"full_shortname": "教科版新_3起龚亚夫_3_上"
+								},
+								{
+									"name": "下册",
+									"shortname": "下",
+									"full_shortname": "教科版新_3起龚亚夫_3_下"
 								}
 							]
 						}
@@ -1345,7 +1379,7 @@ export default {
 					]
 				},
 				{
-					"name": "三年级起点 (主编：张京生)",
+					"name": "三年级起点2024-2025 (主编：张京生)",
 					"shortname": "3起张京生",
 					"grades": [
 						{
@@ -1355,12 +1389,12 @@ export default {
 								{
 									"name": "上册",
 									"shortname": "上",
-									"full_shortname": "接力版_3起张京生_3_上"
+									"full_shortname": "接力版新_3起张京生_3_上"
 								},
 								{
 									"name": "下册",
 									"shortname": "下",
-									"full_shortname": "接力版_3起张京生_3_下"
+									"full_shortname": "接力版新_3起张京生_3_下"
 								}
 							]
 						}
@@ -1388,16 +1422,6 @@ export default {
 									"name": "下册",
 									"shortname": "下",
 									"full_shortname": "科普版_3起马承李世虬_3_下"
-								},
-								{
-									"name": "上册",
-									"shortname": "上",
-									"full_shortname": "科普新版_3起马承_3_上"
-								},
-								{
-									"name": "下册",
-									"shortname": "下",
-									"full_shortname": "科普新版_3起马承_3_下"
 								}
 							]
 						},
@@ -1446,6 +1470,28 @@ export default {
 									"name": "下册",
 									"shortname": "下",
 									"full_shortname": "科普版_3起马承李世虬_6_下"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "三年级起点2024-2025 (主编：马承)",
+					"shortname": "3起马承新",
+					"grades": [
+						{
+							"name": "三年级",
+							"shortname": "三",
+							"volumes": [
+								{
+									"name": "上册",
+									"shortname": "上",
+									"full_shortname": "科普版新_3起马承_3_上"
+								},
+								{
+									"name": "下册",
+									"shortname": "下",
+									"full_shortname": "科普版新_3起马承_3_下"
 								}
 							]
 						}
@@ -1527,8 +1573,8 @@ export default {
 					]
 				},
 				{
-					"name": "三年级起点 (主编：常俊跃)",
-					"shortname": "3起常俊跃",
+					"name": "三年级起点2024-2025 (主编：常俊跃)",
+					"shortname": "3起常俊跃新",
 					"grades": [
 						{
 							"name": "三年级",
@@ -1537,12 +1583,12 @@ export default {
 								{
 									"name": "上册",
 									"shortname": "上",
-									"full_shortname": "辽宁师大新版_3起常俊跃_3_上"
+									"full_shortname": "辽宁师大版新_3起常俊跃_3_上"
 								},
 								{
 									"name": "下册",
 									"shortname": "下",
-									"full_shortname": "辽宁师大新版_3起常俊跃_3_下"
+									"full_shortname": "辽宁师大版新_3起常俊跃_3_下"
 								}
 							]
 						}
@@ -1624,7 +1670,7 @@ export default {
 					]
 				},
 				{
-					"name": "三年级起点 (主编：谷红丽)",
+					"name": "三年级起点2024-2025 (主编：谷红丽)",
 					"shortname": "3起谷红丽",
 					"grades": [
 						{
@@ -1634,12 +1680,12 @@ export default {
 								{
 									"name": "上册",
 									"shortname": "上",
-									"full_shortname": "鲁教湘教版_3起谷红丽_3_上"
+									"full_shortname": "鲁教湘教版新_3起谷红丽_3_上"
 								},
 								{
 									"name": "下册",
 									"shortname": "下",
-									"full_shortname": "鲁教湘教版_3起谷红丽_3_下"
+									"full_shortname": "鲁教湘教版新_3起谷红丽_3_下"
 								}
 							]
 						}
@@ -1667,16 +1713,6 @@ export default {
 									"name": "下册",
 									"shortname": "下",
 									"full_shortname": "鲁科版_3起五四学制田贵森高洪德_3_下"
-								},
-								{
-									"name": "上册",
-									"shortname": "上",
-									"full_shortname": "鲁科新版_3起五四学制高洪德_3_上"
-								},
-								{
-									"name": "下册",
-									"shortname": "下",
-									"full_shortname": "鲁科新版_3起五四学制高洪德_3_下"
 								}
 							]
 						},
@@ -1729,6 +1765,28 @@ export default {
 							]
 						}
 					]
+				},
+				{
+					"name": "三年级起点 五•四学制2024-2025 (主编：田贵森 高洪德)",
+					"shortname": "3起五四学制田贵森高洪德新",
+					"grades": [
+						{
+							"name": "三年级",
+							"shortname": "三",
+							"volumes": [
+								{
+									"name": "上册",
+									"shortname": "上",
+									"full_shortname": "鲁科版新_3起五四学制高洪德_3_上"
+								},
+								{
+									"name": "下册",
+									"shortname": "下",
+									"full_shortname": "鲁科版新_3起五四学制高洪德_3_下"
+								}
+							]
+						}
+					]
 				}
 			]
 		},
@@ -1752,16 +1810,6 @@ export default {
 									"name": "下册",
 									"shortname": "下",
 									"full_shortname": "闽教版_3起陈维振_3_下"
-								},
-								{
-									"name": "上册",
-									"shortname": "上",
-									"full_shortname": "闽教新版_3起陈维振_3_上"
-								},
-								{
-									"name": "下册",
-									"shortname": "下",
-									"full_shortname": "闽教新版_3起陈维振_3_下"
 								}
 							]
 						},
@@ -1816,7 +1864,7 @@ export default {
 					]
 				},
 				{
-					"name": "三年级起点 (主编：兰春寿)",
+					"name": "三年级起点2024-2025 (主编：兰春寿)",
 					"shortname": "3起兰春寿",
 					"grades": [
 						{
@@ -1826,12 +1874,12 @@ export default {
 								{
 									"name": "上册",
 									"shortname": "上",
-									"full_shortname": "闽教版_3起兰春寿_3_上"
+									"full_shortname": "闽教版新_3起兰春寿_3_上"
 								},
 								{
 									"name": "下册",
 									"shortname": "下",
-									"full_shortname": "闽教版_3起兰春寿_3_下"
+									"full_shortname": "闽教版新_3起兰春寿_3_下"
 								}
 							]
 						}
@@ -1998,16 +2046,6 @@ export default {
 									"name": "下册",
 									"shortname": "下",
 									"full_shortname": "清华大学版_1起范文芳_3_下"
-								},
-								{
-									"name": "上册",
-									"shortname": "上",
-									"full_shortname": "清华大学新版_1起范文芳_3_上"
-								},
-								{
-									"name": "下册",
-									"shortname": "下",
-									"full_shortname": "清华大学新版_1起范文芳_3_下"
 								}
 							]
 						},
@@ -2060,6 +2098,28 @@ export default {
 							]
 						}
 					]
+				},
+				{
+					"name": "一年级起点2024-2025 (主编：范文芳)",
+					"shortname": "1起范文芳新",
+					"grades": [
+						{
+							"name": "三年级",
+							"shortname": "三",
+							"volumes": [
+								{
+									"name": "上册",
+									"shortname": "上",
+									"full_shortname": "清华大学版新_1起范文芳_3_上"
+								},
+								{
+									"name": "下册",
+									"shortname": "下",
+									"full_shortname": "清华大学版新_1起范文芳_3_下"
+								}
+							]
+						}
+					]
 				}
 			]
 		},
@@ -2083,16 +2143,6 @@ export default {
 									"name": "下册",
 									"shortname": "下",
 									"full_shortname": "人教版_3起精通郝建平_3_下"
-								},
-								{
-									"name": "上册",
-									"shortname": "上",
-									"full_shortname": "人教版新版_3起精通苗兴伟_3_上"
-								},
-								{
-									"name": "下册",
-									"shortname": "下",
-									"full_shortname": "人教版新版_3起精通苗兴伟_3_下"
 								}
 							]
 						},
@@ -2265,16 +2315,6 @@ export default {
 									"name": "下册",
 									"shortname": "下",
 									"full_shortname": "人教版_3起PEP吴欣_3_下"
-								},
-								{
-									"name": "上册",
-									"shortname": "上",
-									"full_shortname": "人教版新版_3起PEP吴欣_3_上"
-								},
-								{
-									"name": "下册",
-									"shortname": "下",
-									"full_shortname": "人教版新版_3起PEP吴欣_3_下"
 								}
 							]
 						},
@@ -2349,6 +2389,50 @@ export default {
 							]
 						}
 					]
+				},
+				{
+					"name": "精通 三年级起点2024-2025 (主编：苗兴伟)",
+					"shortname": "3起精通苗兴伟新",
+					"grades": [
+						{
+							"name": "三年级",
+							"shortname": "三",
+							"volumes": [
+								{
+									"name": "上册",
+									"shortname": "上",
+									"full_shortname": "人教版新_3起精通苗兴伟_3_上"
+								},
+								{
+									"name": "下册",
+									"shortname": "下",
+									"full_shortname": "人教版新_3起精通苗兴伟_3_下"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "PEP 三年级起点2024-2025 (主编：吴欣)",
+					"shortname": "3起PEP吴欣新",
+					"grades": [
+						{
+							"name": "三年级",
+							"shortname": "三",
+							"volumes": [
+								{
+									"name": "上册",
+									"shortname": "上",
+									"full_shortname": "人教版新_3起PEP吴欣_3_上"
+								},
+								{
+									"name": "下册",
+									"shortname": "下",
+									"full_shortname": "人教版新_3起PEP吴欣_3_下"
+								}
+							]
+						}
+					]
 				}
 			]
 		},
@@ -2372,16 +2456,6 @@ export default {
 									"name": "下册",
 									"shortname": "下",
 									"full_shortname": "陕旅版_3起杨达复_3_下"
-								},
-								{
-									"name": "上册",
-									"shortname": "上",
-									"full_shortname": "陕旅新版_3起党争胜_3_上"
-								},
-								{
-									"name": "下册",
-									"shortname": "下",
-									"full_shortname": "陕旅新版_3起党争胜_3_下"
 								}
 							]
 						},
@@ -2436,8 +2510,8 @@ export default {
 					]
 				},
 				{
-					"name": "三年级起点 (主编：杨达复)",
-					"shortname": "3起杨达复",
+					"name": "三年级起点2024-2025 (主编：党争胜)",
+					"shortname": "3起党争胜新",
 					"grades": [
 						{
 							"name": "三年级",
@@ -2446,12 +2520,12 @@ export default {
 								{
 									"name": "上册",
 									"shortname": "上",
-									"full_shortname": "陕旅新版_3起党争胜_3_上"
+									"full_shortname": "陕旅版新_3起党争胜_3_上"
 								},
 								{
 									"name": "下册",
 									"shortname": "下",
-									"full_shortname": "陕旅新版_3起党争胜_3_下"
+									"full_shortname": "陕旅版新_3起党争胜_3_下"
 								}
 							]
 						}
@@ -2479,16 +2553,6 @@ export default {
 									"name": "下册",
 									"shortname": "下",
 									"full_shortname": "湘少版_3起白解红_3_下"
-								},
-								{
-									"name": "上册",
-									"shortname": "上",
-									"full_shortname": "湘少新版_3起白解红_3_上"
-								},
-								{
-									"name": "下册",
-									"shortname": "下",
-									"full_shortname": "湘少新版_3起白解红_3_下"
 								}
 							]
 						},
@@ -2541,6 +2605,28 @@ export default {
 							]
 						}
 					]
+				},
+				{
+					"name": "三年级起点2024-2025 (主编：白解红)",
+					"shortname": "3起白解红新",
+					"grades": [
+						{
+							"name": "三年级",
+							"shortname": "三",
+							"volumes": [
+								{
+									"name": "上册",
+									"shortname": "上",
+									"full_shortname": "湘少版新_3起白解红_3_上"
+								},
+								{
+									"name": "下册",
+									"shortname": "下",
+									"full_shortname": "湘少版新_3起白解红_3_下"
+								}
+							]
+						}
+					]
 				}
 			]
 		},
@@ -2564,16 +2650,6 @@ export default {
 									"name": "下册",
 									"shortname": "下",
 									"full_shortname": "译林版_3起何锋齐迅_3_下"
-								},
-								{
-									"name": "上册",
-									"shortname": "上",
-									"full_shortname": "译林新版_3起何锋齐迅_3_上"
-								},
-								{
-									"name": "下册",
-									"shortname": "下",
-									"full_shortname": "译林新版_3起何锋齐迅_3_下"
 								}
 							]
 						},
@@ -2666,8 +2742,8 @@ export default {
 					]
 				},
 				{
-					"name": "三年级起点 (何锋)",
-					"shortname": "3起何锋",
+					"name": "三年级起点2024-2025 (主编：何锋)",
+					"shortname": "3起何锋新",
 					"grades": [
 						{
 							"name": "三年级",
@@ -2676,12 +2752,12 @@ export default {
 								{
 									"name": "上册",
 									"shortname": "上",
-									"full_shortname": "译林新版_3起何锋_3_上"
+									"full_shortname": "译林版新_3起何锋_3_上"
 								},
 								{
 									"name": "下册",
 									"shortname": "下",
-									"full_shortname": "译林新版_3起何锋_3_下"
+									"full_shortname": "译林版新_3起何锋_3_下"
 								}
 							]
 						}
@@ -2693,7 +2769,7 @@ export default {
 			"name": "粤教沪外教",
 			"series": [
 				{
-					"name": "三年级起点 (主编：陈金诗)",
+					"name": "三年级起点2024-2025 (主编：陈金诗)",
 					"shortname": "陈金诗",
 					"grades": [
 						{
@@ -2703,12 +2779,12 @@ export default {
 								{
 									"name": "上册",
 									"shortname": "上",
-									"full_shortname": "粤教沪外教版_陈金诗_3_上"
+									"full_shortname": "粤教沪外教版新_3起陈金诗_3_上"
 								},
 								{
 									"name": "下册",
 									"shortname": "下",
-									"full_shortname": "粤教沪外教版_陈金诗_3_下"
+									"full_shortname": "粤教沪外教版新_3起陈金诗_3_下"
 								}
 							]
 						}
@@ -2792,7 +2868,6 @@ export default {
 			]
 		}
 	]
-
 
 
 }

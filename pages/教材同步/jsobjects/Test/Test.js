@@ -9,6 +9,7 @@ export default {
 	temporaryArr:[],
 	temGradeArr:[],
 	testpublishers(){
+		
 		this.publisher = JSObject4.publishers.map(v=>{
 			return{
 				name: v.name,

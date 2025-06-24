@@ -6,22 +6,25 @@ export default {
 		let  rowIndex = Table1.selectedRowIndex
 		console.log(rowIndex)
 
-		await queryJson.run().then(res=>{
-			if(res){
-				this.jsonData  = res
-
-				Table1.setSelectedRowIndex(rowIndex)
-				if(Array.isArray(res)){
-					this.JsonArr[rowIndex].script_json = res[0]
-				}else{
-					this.JsonArr[rowIndex].script_json = res
-				}
-				this.onTabSelectChanged()
-				// Table1.setData()
-				// Table1.setData([{level:this.JsonArr[rowIndex]['level'],course_number:this.JsonArr[rowIndex]['course_number'],script_json:this.jsonData} ])
-
-			}
+		await SearchBooks.run().then(res=>{
+			console.log(res)
+			this.jsonData  = res
 		})
+		// await queryJson.run().then(res=>{
+		// if(res){
+		// this.jsonData  = res
+		// 
+		// Table1.setSelectedRowIndex(rowIndex)
+		// if(Array.isArray(res)){
+		// this.JsonArr[rowIndex].script_json = res[0]
+		// }else{
+		// this.JsonArr[rowIndex].script_json = res
+		// }
+		// this.onTabSelectChanged()
+		// 
+		// 
+		// }
+		// })
 
 	},
 	async	onTabSelectChanged () {
@@ -38,7 +41,7 @@ export default {
 			// Test.getCardsList()
 		}else if(Tabs1.selectedTab == "Sounds"){
 			// soundList.getTexts(Table1.selectedRow.script_json.scripts,0)
-			soundList.getTexts(Table1.selectedRow.script_json.scripts,0)
+			soundList.getTexts(	this.jsonData,0)
 		}else if(Tabs1.selectedTab == 'Scenes'){
 			await scenesList.getScenesList()
 		}
@@ -101,96 +104,71 @@ export default {
 	},
 	onQueryClick(){
 
-		let course_numbers = this.parseCourseRange(Input1.text)
-		let  level = Select1.selectedOptionValue
-		console.log(course_numbers)
+		// let course_numbers = this.parseCourseRange(Input1.text)
+		let  filename =`books/${Select4.selectedOptionValue}/*.json` 
+
+		SearchFiles.run({filename}).then(res=>{
+			console.log(res)
+			this.JsonArr =  res.map(v=>{
+				return {
+					units:v,
+
+				}
+			})
+		})
 		// if(course_numbers.length >10){
 		// showAlert('范围跨度不能大于10课','error')
 		// return
 		// }
 
-		this.JsonArr = course_numbers.map(v=>{
-			return {
-				level: level,
-				course_number: v
-			};
-		})
-		return
-		// let course_numbers = Input1.text
+		// this.JsonArr = course_numbers.map(v=>{
+		// return {
+		// level: level,
+		// course_number: v
+		// };
+		// })
 
-		for(var i=0;i<course_numbers.length ;i++){
-			var  val =`scripts/${level}/${course_numbers[i]}_lt.json`
-			var temArr = []
-			SearchFiles.run({filename:val}).then(res=>{
-				console.log(res)
-				if(res.length > 0){
-					temArr = res.map(filePath => {
-						// 1. 拆分路径
-						const parts = filePath.split('/'); // ["scripts", "starters", "3.3_lt.json"]
-						const fileName = parts.pop();      // "3.3_lt.json"
-
-						// 2. 提取 level 和 course_number
-						const level = parts[parts.length - 1]; // "starters"
-						const courseNumber = fileName.split('_')[0]; // "3.3"
-
-						// 3. 返回目标对象
-						return {
-							level: level,
-							course_number: courseNumber
-						};
-					});
-					this.JsonArr = this.JsonArr.concat(temArr)
-
-
-				}
-			})
-		}
 
 		// this.JsonArr  = testJson.json
 
 	},
 	JsonArr :[],
 	async 	saveJson(){
-		if(!this.isJson)return
-		let level = Table1.selectedRow.level
-		let course_number = Table1.selectedRow.course_number
-		let course =''
-		if (this.JsonText.startsWith('[') && this.JsonText.endsWith(']')) {
-			var result = this.JsonText.slice(1, -1);
-			course = JSON.parse(result) 	
-		}else{
 
-			course = JSON.parse(this.JsonText) 	
-
+		let checkJson = this.isValidJSON(Input2Copy1.text)
+		if(checkJson){
+			let	book_scripts = JSON.parse(Input2Copy1.text)
+			await GenResource.run({book_scripts,overwrite:true}).then(async res=>{
+				if(res.scripts == 'success'){
+					showAlert('保存成功','success')
+					// await updateRow.update()
+					this.onTableClick()
+				}else{
+					showAlert('保存失败'+res.scripts ,'error')
+				}
+			}).catch(error =>{
+				showAlert('保存失败 catch','error')
+			})
 		}
 
-		await GenResource.run({course_number,level,course}).then(async res=>{
-			if(res.scripts == 'success'){
-				showAlert('保存成功','success')
-				// await updateRow.update()
-				this.onTableClick()
-			}else{
-				showAlert('保存失败'+res.scripts ,'error')
-			}
-		}).catch(error =>{
-			showAlert('保存失败 catch','error')
-		})
 	},
 	JsonText:'',
 	isJson:false,
 	input2OnBlur(){
-		let txt = 	Input2Copy1.text
-		this.JsonText = txt
-		try{
-			this.isJson =true
-			JSON.parse(this.JsonText)
-			return true
-		}catch(e){
+		this.isValidJSON(Input2Copy1.text)
+		Button20.setDisabled(false)
+
+
+	},
+
+	isValidJSON(str) {
+		try {
+			JSON.parse(str);
+			return true;
+		} catch (e) {
 			showAlert('不是标准的JSON格式','error')
-
-			return false
+			return false;
 		}
-
 	},
 	onBtnClicked(){
 		console.log("onBtnClicked")
