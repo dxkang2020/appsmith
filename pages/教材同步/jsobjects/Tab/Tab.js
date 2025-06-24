@@ -6,7 +6,8 @@ export default {
 		// let  rowIndex = Table1.selectedRowIndex
 
 		// let val = 	Table1.selectedRow.name 
-
+		Button20.setDisabled(true)
+		Button22.setDisabled(true)
 		await SearchBooks.run().then(res=>{
 			console.log(res)
 			this.jsonData  = res
@@ -32,9 +33,13 @@ export default {
 		if(Tabs1.selectedTab == "Json"){
 			Button20.setVisibility(true)
 			Button20.setDisabled(true)
-
+			Button22.setVisibility(true)
+			Button22.setDisabled(true)
 		}else{
 			Button20.setVisibility(false)
+			Button20.setDisabled(false)
+			Button22.setVisibility(false)
+			Button22.setDisabled(false)
 		}
 		if(Tabs1.selectedTab == "Cards"){
 			// await updateRow.getCourseById()
@@ -145,12 +150,31 @@ export default {
 
 	},
 	JsonArr :[],
+
+	saveJsonAudio(){
+		let checkJson = this.isValidJSON(Input2Copy1.text)
+		console.log(checkJson)
+		if(checkJson){
+			let	book_scripts = JSON.parse(Input2Copy1.text)
+			GenResource.run({book_scripts,overwrite:true}).then(async res=>{
+				if(res.scripts == 'success'){
+					showAlert('保存成功','success')
+					// await updateRow.update()
+					this.onTableClick()
+				}else{
+					showAlert('保存失败'+res.scripts ,'error')
+				}
+			}).catch(error =>{
+				showAlert('保存失败 catch','error')
+			})
+		}
+	},
 	async 	saveJson(){
 
 		let checkJson = this.isValidJSON(Input2Copy1.text)
 		if(checkJson){
 			let	book_scripts = JSON.parse(Input2Copy1.text)
-			await GenResource.run({book_scripts,overwrite:true}).then(async res=>{
+			await GenResource.run({book_scripts,overwrite:true,skip_audio:true}).then(async res=>{
 				if(res.scripts == 'success'){
 					showAlert('保存成功','success')
 					// await updateRow.update()

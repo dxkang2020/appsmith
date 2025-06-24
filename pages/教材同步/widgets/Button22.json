@@ -1,13 +1,15 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 15,
-  "bottomRowBeforeCollapse": 11,
+  "bottomRow": 10,
   "boxShadow": "none",
-  "buttonColor": "#22c55e",
+  "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
   "buttonVariant": "PRIMARY",
   "disabledWhenInvalid": false,
   "dynamicBindingPathList": [
+    {
+      "key": "buttonColor"
+    },
     {
       "key": "borderRadius"
     }
@@ -26,17 +28,15 @@
   "isDisabled": true,
   "isLoading": false,
   "isVisible": true,
-  "key": "kw2jxvrlpc",
+  "key": "y7juog24o7",
   "leftColumn": 56,
   "minWidth": 120,
-  "mobileBottomRow": 5,
-  "mobileLeftColumn": 38,
-  "mobileRightColumn": 54,
-  "mobileTopRow": 1,
+  "mobileBottomRow": 12,
+  "mobileLeftColumn": 28,
+  "mobileRightColumn": 44,
+  "mobileTopRow": 8,
   "needsErrorInfo": false,
-  "onClick": "{{Tab.saveJson()}}",
-  "originalBottomRow": 15,
-  "originalTopRow": 11,
+  "onClick": "{{Tab.saveJsonAudio()}}",
   "parentColumnSpace": 20.25,
   "parentId": "0",
   "parentRowSpace": 10,
@@ -46,11 +46,10 @@
   "resetFormOnClick": false,
   "responsiveBehavior": "hug",
   "rightColumn": 64,
-  "text": "保存Json",
-  "topRow": 11,
-  "topRowBeforeCollapse": 7,
+  "text": "保存并生成音频",
+  "topRow": 6,
   "type": "BUTTON_WIDGET",
   "version": 1,
-  "widgetId": "asd06f5vgj",
-  "widgetName": "Button20"
+  "widgetId": "stw9mby2kt",
+  "widgetName": "Button22"
 }
