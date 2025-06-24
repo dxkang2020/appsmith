@@ -156,38 +156,45 @@ export default {
 		return results;
 	},
 	saveJsonAudio(){
+		showModal(Modal9.name)
 		let checkJson = this.isValidJSON(Input2Copy1.text)
 		console.log(checkJson)
 		if(checkJson){
 			let	word_scripts = JSON.parse(Input2Copy1.text)
 			GenResource.run({word_scripts,overwrite:true}).then(async res=>{
 				if(res.scripts == 'success'){
-					showAlert('保存成功','success')
+					closeModal(Modal9.name)
+					showAlert('保存并生成成功','success')
 					// await updateRow.update()
 					this.onTableClick()
 				}else{
+					closeModal(Modal9.name)
 					showAlert('保存失败'+res.scripts ,'error')
 				}
 			}).catch(error =>{
+				closeModal(Modal9.name)
 				showAlert('保存失败 catch','error')
 			})
 		}
 	},
 	async 	saveJson(){
-
+		showModal(Modal9.name)
 		let checkJson = this.isValidJSON(Input2Copy1.text)
 		console.log(checkJson)
 		if(checkJson){
 			let	word_scripts = JSON.parse(Input2Copy1.text)
 			await GenResource.run({word_scripts,overwrite:true,skip_audio:true}).then(async res=>{
 				if(res.scripts == 'success'){
+					closeModal(Modal9.name)
 					showAlert('保存成功','success')
 					// await updateRow.update()
 					this.onTableClick()
 				}else{
+					closeModal(Modal9.name)
 					showAlert('保存失败'+res.scripts ,'error')
 				}
 			}).catch(error =>{
+				closeModal(Modal9.name)
 				showAlert('保存失败 catch','error')
 			})
 		}
