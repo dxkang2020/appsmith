@@ -263,7 +263,7 @@
     "tabc2it6yu1ev": {
       "id": "tabc2it6yu1ev",
       "index": 3,
-      "isVisible": false,
+      "isVisible": true,
       "label": "Scenes",
       "widgetId": "tcjn9fmfhw"
     }

@@ -108,7 +108,7 @@ export default {
 			}
 			return scenes
 		}
-		return Array.from(_calcScenes(json?.scripts))
+		return Array.from(_calcScenes(json?.dialogues))
 
 	},
 	verifyTask(json, scenes){

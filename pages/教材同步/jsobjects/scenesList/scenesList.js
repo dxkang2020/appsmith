@@ -169,7 +169,7 @@ ${item.clip}
 
 	async getScenesList(){
 
-		let names = PackageTools.calcScenes(Table1.selectedRow.script_json)
+		let names = PackageTools.calcScenes(Tab.jsonData)
 		console.log(names,'match')
 		// return
 		// let screenplay = Table1.selectedRow.screenplay

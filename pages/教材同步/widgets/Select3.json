@@ -4,7 +4,7 @@
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "bottomRow": 11,
   "boxShadow": "none",
-  "defaultOptionValue": "GREEN",
+  "defaultOptionValue": "{{ ((options, serverSideFiltering) => ( appsmith.store.select3||''))(Select3.options, Select3.serverSideFiltering) }}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
@@ -14,6 +14,9 @@
     },
     {
       "key": "sourceData"
+    },
+    {
+      "key": "defaultOptionValue"
     }
   ],
   "dynamicHeight": "FIXED",
@@ -59,7 +62,7 @@
   "onDropdownOpen": "{{Test.testGrade()}}",
   "onOptionChange": "{{Test.gradeChange()}}",
   "optionLabel": "name",
-  "optionValue": "code",
+  "optionValue": "name",
   "originalBottomRow": 11,
   "originalTopRow": 4,
   "parentColumnSpace": 17.25,

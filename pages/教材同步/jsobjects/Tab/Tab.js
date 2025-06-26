@@ -110,6 +110,11 @@ export default {
 
 	},
 	onQueryClick(){
+		storeValue('select1', Select1.selectedOptionValue)
+		storeValue('select2', Select2.selectedOptionValue)
+		storeValue('select3', Select3.selectedOptionValue)
+		storeValue('select4', Select4.selectedOptionValue)
+
 
 		let  filename =`books/${Select4.selectedOptionValue}/*.json` 
 		showModal(Modal9.name)
@@ -122,7 +127,13 @@ export default {
 						units:v.split('/').pop(),
 						name:v
 					}
-				})
+				}).sort((a, b) => {
+					// 提取a中的第一个数字
+					const numA = parseInt(a.units.match(/\d+/)[0]);
+					// 提取b中的第一个数字
+					const numB = parseInt(b.units.match(/\d+/)[0]);
+					return numA - numB;
+				});
 			}else{
 				this.JsonArr =[]
 				showAlert('没有数据','error')
