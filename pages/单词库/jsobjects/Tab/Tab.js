@@ -162,14 +162,14 @@ export default {
 		if(checkJson){
 			let	word_scripts = JSON.parse(Input2Copy1.text)
 			GenResource.run({word_scripts,overwrite:true}).then(async res=>{
-				if(res.scripts == 'success'){
+				if(res.scripts == 'success' && res.audio =='success' ){
 					closeModal(Modal9.name)
 					showAlert('保存并生成成功','success')
 					// await updateRow.update()
 					this.onTableClick()
 				}else{
 					closeModal(Modal9.name)
-					showAlert('保存失败'+res.scripts ,'error')
+					showAlert(`scripts+${res.scripts }, audio+${ res.audio}`,'error')
 				}
 			}).catch(error =>{
 				closeModal(Modal9.name)
