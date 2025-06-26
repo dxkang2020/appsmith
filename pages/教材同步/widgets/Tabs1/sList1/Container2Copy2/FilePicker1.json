@@ -33,7 +33,7 @@
   "isDisabled": false,
   "isLoading": false,
   "isRequired": false,
-  "isVisible": false,
+  "isVisible": true,
   "key": "uhnx7w6r2o",
   "label": "上传图片",
   "leftColumn": 43,
