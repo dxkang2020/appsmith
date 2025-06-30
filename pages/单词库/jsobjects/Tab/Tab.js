@@ -20,17 +20,22 @@ export default {
 		}
 		showModal(Modal9.name)
 		UniqueWords.run().then(res=>{
+			if(res.length > 0 ){
+				let arr = res.slice(startNum-1,endNum)
+				this.JsonArr = arr.map((v,i)=>{
+					return {
+						name:v.word_id,
+						num: i+Number(startNum)
 
-			let arr = res.slice(startNum-1,endNum)
-			this.JsonArr = arr.map((v,i)=>{
-				return {
-					name:v.word_id,
-					num: i+Number(startNum)
+					}
+				})
+			}else{
+				showAlert('数据为空','error')
+			}
 
-				}
-			})
 			closeModal(Modal9.name)
 		}).catch(e=>{
+			showAlert('请求错误','error')
 			closeModal(Modal9.name)
 
 		})
