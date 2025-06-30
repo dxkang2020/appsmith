@@ -8,6 +8,17 @@ export default {
 			data: this.cardsImgList 
 		}
 	},
+	enterfun(){
+		console.log(111)
+		this.nameSearch()
+		// 判断是否按下回车（Enter 键的 keyCode 是 13）
+		// if (event.keyCode === 13) {
+		// console.log("回车键被按下！");
+		// 
+		// showAlert("Enter pressed!", "success");
+		// 
+		// }
+	},
 	nameSearch(){
 		showModal(Modal9.name)
 		if(!Select1.selectedOptionValue){
@@ -24,7 +35,7 @@ export default {
 				this.cardsImgList = res.map(v=>{
 					return {
 						url:'https://af.runfox.cn/courses/' +v,
-						caption:v
+						caption:v.split('/').pop().split('.')[0]
 					}
 				})
 				// this.testCustom()

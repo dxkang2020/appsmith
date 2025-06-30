@@ -15,8 +15,19 @@
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
-  "dynamicPropertyPathList": [],
-  "dynamicTriggerPathList": [],
+  "dynamicPropertyPathList": [
+    {
+      "key": "onSubmit"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onTextChanged"
+    },
+    {
+      "key": "onSubmit"
+    }
+  ],
   "errorMessage": "",
   "iconAlign": "left",
   "inputType": "TEXT",
@@ -42,6 +53,8 @@
   "mobileTopRow": 6,
   "needsErrorInfo": false,
   "onBlur": "{{}}",
+  "onSubmit": "{{Tab.enterfun()}}",
+  "onTextChanged": "",
   "originalBottomRow": 8,
   "originalTopRow": 1,
   "parentColumnSpace": 20.25,
@@ -49,7 +62,7 @@
   "parentRowSpace": 10,
   "regex": "",
   "renderMode": "CANVAS",
-  "resetOnSubmit": true,
+  "resetOnSubmit": false,
   "responsiveBehavior": "fill",
   "rightColumn": 23,
   "shouldAllowAutofill": false,
