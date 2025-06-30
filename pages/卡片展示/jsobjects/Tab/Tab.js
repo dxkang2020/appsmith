@@ -9,25 +9,32 @@ export default {
 		}
 	},
 	nameSearch(){
-		
+		showModal(Modal9.name)
+		if(!Select1.selectedOptionValue){
+			showAlert('请选择卡片或场景','error')
+			return
+		}
 		let params ={
-			filename:`cards/*${Input19.text}*.webp`
+			filename:`${Select1.selectedOptionValue}/*${Input19.text}*.webp`
 		} 
 		SearchFiles.run(params).then(res=>{
 			console.log(res,'41')
 			if(res.length > 0){
-				// appsmith.model.data
-
-
+				closeModal(Modal9.name)
 				this.cardsImgList = res.map(v=>{
 					return {
 						url:'https://af.runfox.cn/courses/' +v,
 						caption:v
 					}
 				})
-				this.testCustom()
+				// this.testCustom()
 
+			}else{
+				closeModal(Modal9.name)
 			}
+		}).catch(e=>{
+			closeModal(Modal9.name)
+
 		})
 	},
 
