@@ -5,7 +5,7 @@ export default {
 	cardsImgList:{},
 	testCustom(){
 		return{
-			data: 	this.cardsImgList 
+			data: this.cardsImgList 
 		}
 	},
 	nameSearch(){
@@ -25,7 +25,7 @@ export default {
 						caption:v
 					}
 				})
-
+				this.testCustom()
 
 			}
 		})
