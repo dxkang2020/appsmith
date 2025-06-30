@@ -30,6 +30,7 @@ export default {
 				// this.testCustom()
 
 			}else{
+				showAlert('没有数据','error')
 				closeModal(Modal9.name)
 			}
 		}).catch(e=>{
