@@ -1,0 +1,6 @@
+SELECT id FROM public."course_documents" 
+WHERE status = 'published' 
+and script_json ISNULL
+and course_number =  ANY({{this.params.course_numbers}}) 
+and level = {{this.params.level}}  LIMIT 30;
+

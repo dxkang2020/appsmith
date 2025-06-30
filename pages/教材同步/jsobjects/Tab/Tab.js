@@ -175,7 +175,7 @@ export default {
 					// await updateRow.update()
 					this.onTableClick()
 				}else{
-					showAlert(`scripts+${res.scripts }, audio+${ res.audio}`,'error')
+					showAlert(`scripts:${res.scripts }, audio:${ res.audio}`,'error')
 				}
 			}).catch(error =>{
 				closeModal(Modal9.name)

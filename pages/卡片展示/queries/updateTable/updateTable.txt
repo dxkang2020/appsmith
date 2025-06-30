@@ -1,0 +1,44 @@
+SELECT 
+    o.level,
+    o.course_number,
+    o.unit_title,
+    o.new_vocab,
+    o.review_vocab,
+    o.sentence_patterns,
+    o.grammar,
+    d.version,
+    d.analysis_report,
+    d.pbl_design,
+    d.screenplay,
+    d.screenplay_json,
+    d.status,
+    d.score,
+		d.script_json,
+		d.scenes_prompt,
+		d.cards_prompt,
+		d.id,
+		d.error,
+		d.updated_at
+FROM course_outlines o
+LEFT JOIN course_documents d 
+    ON o.level = d.level 
+    AND o.course_number = d.course_number
+WHERE 
+    ({{Select1.selectedOptionValue}} = 'all' OR o.level = {{Select1.selectedOptionValue}})
+    AND ({{Input1.text}} = '' OR o.course_number =  ANY({{this.params.course_numbers}}))
+    AND ({{Select2.selectedOptionValue}} = 'all' OR d.status = 
+				 CASE 
+				 WHEN {{Select2.selectedOptionValue}} = 'draft' THEN 'draft'
+				 WHEN {{Select2.selectedOptionValue}} = 'release' THEN 'published'
+				 ELSE d.status
+				 END)
+ORDER BY 
+    CASE 
+        WHEN o.level = 'starters' THEN 1
+        WHEN o.level = 'movers' THEN 2
+        WHEN o.level = 'flyers' THEN 3
+        ELSE 999
+    END,
+    CAST(SPLIT_PART(o.course_number, '.', 1) AS INTEGER),
+    CAST(SPLIT_PART(o.course_number, '.', 2) AS INTEGER)
+LIMIT 50

@@ -1,0 +1,69 @@
+{
+  "backgroundColor": "#FFFFFF",
+  "borderColor": "#E0DEDE",
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "borderWidth": "1",
+  "bottomRow": 91,
+  "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+  "defaultModel": "{{Tab.testCustom()}}",
+  "dynamicBindingPathList": [
+    {
+      "key": "theme"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "boxShadow"
+    },
+    {
+      "key": "defaultModel"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicTriggerPathList": [
+    {
+      "key": "onResetClick"
+    }
+  ],
+  "events": [
+    "onResetClick"
+  ],
+  "isCanvas": false,
+  "isLoading": false,
+  "isSearchWildcard": true,
+  "isVisible": true,
+  "key": "n3gh5gar9o",
+  "leftColumn": 1,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "mobileBottomRow": 42,
+  "mobileLeftColumn": 1,
+  "mobileRightColumn": 24,
+  "mobileTopRow": 12,
+  "needsErrorInfo": false,
+  "onResetClick": "{{showAlert('Successfully reset!!', '');}}",
+  "originalBottomRow": 91,
+  "originalTopRow": 8,
+  "parentColumnSpace": 20.25,
+  "parentId": "0",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "rightColumn": 64,
+  "srcDoc": {
+    "css": ".image-gallery {\n  display: flex;\n  flex-wrap: wrap;\n  gap: 16px;\n}\n\n.image-item {\n  flex: 0 1 140px;\n  max-width: 180px;\n  min-width: 100px;\n  margin-bottom: 12px;\n  border-radius: 6px;\n  overflow: hidden;\n  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);\n  background: #fafbfc;\n  transition: box-shadow 0.2s;\n  cursor: pointer;\n  position: relative;\n}\n\n.image-item img {\n  display: block;\n  width: 100%;\n  height: 120px;\n  object-fit: cover;\n  border-bottom: 1px solid #f0f0f0;\n}\n\n.image-item .caption {\n  padding: 8px 10px;\n  font-size: 14px;\n  color: #444;\n  cursor: pointer;\n  transition: background 0.15s, color 0.15s;\n  user-select: none;\n  border-radius: 4px;\n}\n\n.image-item .caption.copied {\n  background: #e6ffec;\n  color: #319b45;\n}\n\n.image-item:hover {\n  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);\n}",
+    "html": "<div id=\"root\"></div>",
+    "js": "import React from 'https://cdn.jsdelivr.net/npm/react@18.2.0/+esm';\nimport ReactDOM from 'https://cdn.jsdelivr.net/npm/react-dom@18.2.0/+esm';\nfunction ImageGallery() {\n  // 支持 appsmith.model.data 传入数据，格式：[{url, caption}]\n  const [images, setImages] = React.useState(appsmith?.model?.data || [{\n    url: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=cover&w=400&q=80',\n    caption: '森林'\n  }, {\n    url: 'https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=cover&w=400&q=80',\n    caption: '雪山'\n  }]);\n  // 记录哪些caption被复制过\n  const [copiedIdx, setCopiedIdx] = React.useState(null);\n\n  // 监听 appsmith 数据变化\n  React.useEffect(() => {\n    appsmith.onModelChange((model, prevModel) => {\n      if (JSON.stringify(model.data) !== JSON.stringify(prevModel?.data)) {\n        setImages(model.data);\n      }\n    });\n  }, []);\n\n  // 点击图片在新窗口打开\n  const handleOpen = React.useCallback(url => {\n    window.open(url, '_blank');\n  }, []);\n\n  // 使用 Appsmith 自带的copy到剪贴板功能\n  const handleCopy = React.useCallback((text, idx) => {\n    if (!text) return;\n    appsmith.copyToClipboard(text); // Appsmith的内置API\n    setCopiedIdx(idx);\n    setTimeout(() => setCopiedIdx(null), 1200); // 1.2秒后恢复\n  }, []);\n  return /*#__PURE__*/React.createElement(\"div\", {\n    className: \"image-gallery\"\n  }, images?.map((img, idx) => /*#__PURE__*/React.createElement(\"div\", {\n    className: \"image-item\",\n    key: idx,\n    onClick: () => handleOpen(img.url)\n  }, /*#__PURE__*/React.createElement(\"img\", {\n    src: img.url,\n    alt: img.caption || `图片${idx + 1}`\n  }), img.caption && /*#__PURE__*/React.createElement(\"div\", {\n    className: copiedIdx === idx ? 'caption copied' : 'caption',\n    onClick: e => {\n      e.stopPropagation();\n      handleCopy(img.caption, idx);\n    },\n    title: copiedIdx === idx ? '已复制!' : '点击复制'\n  }, copiedIdx === idx ? '已复制!' : img.caption))));\n}\n\n// 渲染组件\nappsmith.onReady(() => {\n  ReactDOM.render( /*#__PURE__*/React.createElement(ImageGallery, null), document.getElementById('root'));\n});"
+  },
+  "theme": "{{appsmith.theme}}",
+  "topRow": 8,
+  "type": "CUSTOM_WIDGET",
+  "uncompiledSrcDoc": {
+    "css": ".image-gallery {\n  display: flex;\n  flex-wrap: wrap;\n  gap: 16px;\n}\n.image-item {\n  flex: 0 1 140px;\n  max-width: 180px;\n  min-width: 100px;\n  margin-bottom: 12px;\n  border-radius: 6px;\n  overflow: hidden;\n  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);\n  background: #fafbfc;\n  transition: box-shadow 0.2s;\n  cursor: pointer;\n  position: relative;\n}\n.image-item img {\n  display: block;\n  width: 100%;\n  height: 120px;\n  object-fit: cover;\n  border-bottom: 1px solid #f0f0f0;\n}\n.image-item .caption {\n  padding: 8px 10px;\n  font-size: 14px;\n  color: #444;\n  cursor: pointer;\n  transition: background 0.15s, color 0.15s;\n  user-select: none;\n  border-radius: 4px;\n}\n.image-item .caption.copied {\n  background: #e6ffec;\n  color: #319b45;\n}\n.image-item:hover {\n  box-shadow: 0 4px 16px rgba(0,0,0,0.15);\n}\n",
+    "html": "<div id=\"root\"></div>",
+    "js": "import React from 'https://cdn.jsdelivr.net/npm/react@18.2.0/+esm';\nimport ReactDOM from 'https://cdn.jsdelivr.net/npm/react-dom@18.2.0/+esm';\n\nfunction ImageGallery() {\n  // 支持 appsmith.model.data 传入数据，格式：[{url, caption}]\n  const [images, setImages] = React.useState(appsmith?.model?.data || [\n    { url: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=cover&w=400&q=80', caption: '森林' },\n    { url: 'https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=cover&w=400&q=80', caption: '雪山' }\n  ]);\n  // 记录哪些caption被复制过\n  const [copiedIdx, setCopiedIdx] = React.useState(null);\n\n  // 监听 appsmith 数据变化\n  React.useEffect(() => {\n    appsmith.onModelChange((model, prevModel) => {\n      if (JSON.stringify(model.data) !== JSON.stringify(prevModel?.data)) {\n        setImages(model.data);\n      }\n    });\n  }, []);\n\n  // 点击图片在新窗口打开\n  const handleOpen = React.useCallback((url) => {\n    window.open(url, '_blank');\n  }, []);\n\n  // 使用 Appsmith 自带的copy到剪贴板功能\n  const handleCopy = React.useCallback((text, idx) => {\n    if (!text) return;\n    appsmith.copyToClipboard(text); // Appsmith的内置API\n    setCopiedIdx(idx);\n    setTimeout(() => setCopiedIdx(null), 1200); // 1.2秒后恢复\n  }, []);\n\n  return (\n    <div className=\"image-gallery\">\n      {images?.map((img, idx) => (\n        <div className=\"image-item\" key={idx} onClick={() => handleOpen(img.url)}>\n          <img src={img.url} alt={img.caption || `图片${idx+1}`} />\n          {img.caption && (\n            <div\n              className={copiedIdx === idx ? 'caption copied' : 'caption'}\n              onClick={e => { e.stopPropagation(); handleCopy(img.caption, idx); }}\n              title={copiedIdx === idx ? '已复制!' : '点击复制'}\n            >\n              {copiedIdx === idx ? '已复制!' : img.caption}\n            </div>\n          )}\n        </div>\n      ))}\n    </div>\n  );\n}\n\n// 渲染组件\nappsmith.onReady(() => {\n  ReactDOM.render(<ImageGallery />, document.getElementById('root'));\n});\n"
+  },
+  "version": 1,
+  "widgetId": "qtwkpxuilc",
+  "widgetName": "Custom1"
+}

@@ -1,0 +1,3 @@
+UPDATE  public.cards 
+SET clip = coalesce({{this.params.clip}},clip)
+WHERE name = {{this.params.name}};

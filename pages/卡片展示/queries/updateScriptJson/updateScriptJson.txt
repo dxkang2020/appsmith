@@ -1,0 +1,3 @@
+UPDATE course_documents
+SET script_json = {{this.params.script_json}}
+WHERE id = {{this.params.id}} ;

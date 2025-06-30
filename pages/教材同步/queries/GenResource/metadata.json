@@ -33,7 +33,7 @@
         }
       ],
       "queryParameters": [],
-      "timeoutInMillisecond": 20000
+      "timeoutInMillisecond": 300000
     },
     "confirmBeforeExecute": false,
     "datasource": {
