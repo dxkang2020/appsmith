@@ -220,6 +220,12 @@ export default {
 			showAlert(error.error,'error')
 		})
 	},
+	test(){
+		console.log(this.generateAudioName({
+			text:"What do you **have**?",
+			character:"ben"
+		}))
+	},
 	// 音频名字处理
 	generateAudioName(item) {
 		// 保留字母、数字、波浪号和指定标点

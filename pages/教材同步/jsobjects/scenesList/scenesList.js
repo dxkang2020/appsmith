@@ -25,6 +25,7 @@ ${item.clip}
 		// this.localIndex = startIndex
 	},
 	confirmName(){
+
 		let txt = Input15.text
 		console.log(this.oldNameText,this.newNameText)
 		// return
@@ -36,9 +37,13 @@ ${item.clip}
 			showAlert('场景名相同')
 			return
 		}
+		showModal(Modal9.name)
 		updateRow.updateJsonScene(this.updateVal,this.newNameText).then(res=>{
 			closeModal(Modal8.name)
+			closeModal(Modal9.name)
 			// this.listItems[this.localIndex].name =  txt
+		}).catch(error=>{
+			closeModal(Modal9.name)
 		})
 
 
