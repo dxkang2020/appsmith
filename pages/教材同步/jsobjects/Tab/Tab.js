@@ -6,11 +6,16 @@ export default {
 		// let  rowIndex = Table1.selectedRowIndex
 
 		// let val = 	Table1.selectedRow.name 
+		showModal(Modal9.name)
 		Button20.setDisabled(true)
 		Button22.setDisabled(true)
 		await SearchBooks.run().then(res=>{
 			console.log(res)
+			closeModal(Modal9.name)
 			this.jsonData  = res
+		}).catch(err=>{
+			closeModal(Modal9.name)
+
 		})
 		// await queryJson.run().then(res=>{
 		// if(res){

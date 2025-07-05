@@ -38,12 +38,18 @@ ${item.clip}
 			showAlert('卡片名相同')
 			return
 		}
+		showModal(Modal9.name)
+
 		await updateRow.updateJsonImage(this.updateVal,this.newNameText).then(async res=>{
 			closeModal(Modal10.name)
+			closeModal(Modal9.name)
+
 			// this.listItems[this.localIndex].name =  txt
 
 			// await	updateRow.update()	
 			// await Tab.onTabSelectChanged()
+		}).catch(error=>{
+			closeModal(Modal9.name)
 		})
 
 
