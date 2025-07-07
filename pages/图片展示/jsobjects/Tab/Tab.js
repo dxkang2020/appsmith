@@ -5,7 +5,7 @@ export default {
 	cardsImgList:{},
 	testCustom(){
 		return{
-			data: this.cardsImgList 
+			images: this.cardsImgList 
 		}
 	},
 	enterfun(){
@@ -35,7 +35,7 @@ export default {
 				this.cardsImgList = res.map(v=>{
 					return {
 						url:'https://af.runfox.cn/courses/' +v,
-						caption:v.split('/').pop().split('.')[0]
+						name:v.split('/').pop().split('.')[0]
 					}
 				})
 				// this.testCustom()
