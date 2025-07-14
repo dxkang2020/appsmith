@@ -64,6 +64,14 @@ export default {
 				// this.soundList[v.character][v.text] =1
 
 			}
+			if(v.assess_text  &&v.character){
+				texts.push({
+					'text':v.assess_text,
+					"character":v.character,
+					'index': ++index
+				})
+			}
+
 			if(v.scripts && v.scripts.length > 0){
 
 				v.scripts.forEach((item)=>{

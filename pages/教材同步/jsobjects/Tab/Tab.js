@@ -2,6 +2,7 @@ export default {
 	myVar1: [],
 	myVar2: {},
 	jsonData:{},
+	BookJson :{},
 	async onTableClick(){
 		// let  rowIndex = Table1.selectedRowIndex
 
@@ -56,7 +57,19 @@ export default {
 			soundList.getTexts(	this.jsonData,0)
 		}else if(Tabs1.selectedTab == 'Scenes'){
 			await scenesList.getScenesList()
+		} if(Tabs1.selectedTab == 'BOOKJSON'){
+			await this.getBookJson()
 		}
+	},
+	getBookJson(){
+		let  filename =`${Select4.selectedOptionValue}` 
+		// showModal(Modal9.name)
+		GetBook.run({filename}).then(res=>{
+			// if(){
+			// 
+			// }
+			this.BookJson = res
+		})
 	},
 	onGenRes(){
 		let level = Table1.selectedRow.level
@@ -168,8 +181,9 @@ export default {
 	JsonArr :[],
 
 	saveJsonAudio(){
-		showModal(Modal9.name)
+
 		let checkJson = this.isValidJSON(Input2Copy1.text)
+		showModal(Modal9.name)
 		console.log(checkJson)
 		if(checkJson){
 			let	book_scripts = JSON.parse(Input2Copy1.text)
@@ -186,11 +200,14 @@ export default {
 				closeModal(Modal9.name)
 				showAlert('保存失败 catch','error')
 			})
+		}else{
+			closeModal(Modal9.name)
 		}
 	},
 	async 	saveJson(){
-		showModal(Modal9.name)
+
 		let checkJson = this.isValidJSON(Input2Copy1.text)
+		showModal(Modal9.name)
 		if(checkJson){
 			let	book_scripts = JSON.parse(Input2Copy1.text)
 			await GenResource.run({book_scripts,overwrite:true,skip_audio:true}).then(async res=>{
@@ -206,16 +223,45 @@ export default {
 				closeModal(Modal9.name)
 				showAlert('保存失败 catch','error')
 			})
+		}else{
+			closeModal(Modal9.name)
 		}
 
 	},
+	SaveBookJson(){
+
+		let checkJson = this.isValidJSON(Input30.text)
+		showModal(Modal9.name)
+		if(checkJson){
+			let	params = JSON.parse(Input30.text)
+			SaveBook.run(params).then(async res=>{
+				closeModal(Modal9.name)
+				console.log(res,'452')
+				if(res == 'success'){
+					showAlert('保存成功','success')
+
+					// this.onTableClick() 
+				}else{
+					showAlert('保存失败'+res ,'error')
+				}
+			}).catch(error =>{
+				closeModal(Modal9.name)
+				showAlert('保存失败 catch','error')
+			})
+		}else{
+			closeModal(Modal9.name)
+		}
+	},
+
 	JsonText:'',
 	isJson:false,
 	input2OnBlur(){
 		this.isValidJSON(Input2Copy1.text)
 		Button20.setDisabled(false)
-
-
+	},
+	input30OnBlur(){
+		this.isValidJSON(Input30.text)
+		// Button20.setDisabled(false)
 	},
 
 	isValidJSON(str) {

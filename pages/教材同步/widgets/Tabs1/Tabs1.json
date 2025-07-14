@@ -188,6 +188,51 @@
       "version": 1,
       "widgetId": "tcjn9fmfhw",
       "widgetName": "Canvas17"
+    },
+    {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "bottomRow": 32190,
+      "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+      "canExtend": false,
+      "containerStyle": "none",
+      "detachFromLayout": true,
+      "dynamicBindingPathList": [
+        {
+          "key": "borderRadius"
+        },
+        {
+          "key": "boxShadow"
+        }
+      ],
+      "dynamicHeight": "AUTO_HEIGHT",
+      "dynamicTriggerPathList": [],
+      "flexLayers": [],
+      "isLoading": false,
+      "isVisible": true,
+      "key": "ayl22xqkdy",
+      "leftColumn": 0,
+      "maxDynamicHeight": 9000,
+      "minDynamicHeight": 4,
+      "minHeight": 1790,
+      "minWidth": 450,
+      "mobileBottomRow": 1791,
+      "mobileLeftColumn": 0,
+      "mobileRightColumn": 724.5,
+      "mobileTopRow": 1,
+      "needsErrorInfo": false,
+      "parentColumnSpace": 1,
+      "parentId": "a9o1qzt281",
+      "parentRowSpace": 1,
+      "renderMode": "CANVAS",
+      "responsiveBehavior": "fill",
+      "rightColumn": 724.5,
+      "tabId": "tab3dp8sf46rk",
+      "tabName": "BOOKJSON",
+      "topRow": 1,
+      "type": "CANVAS_WIDGET",
+      "version": 1,
+      "widgetId": "od4wi0lkpm",
+      "widgetName": "Canvas18"
     }
   ],
   "defaultTab": "Json",
@@ -251,6 +296,13 @@
       "isVisible": true,
       "label": "Sounds",
       "widgetId": "x1qs5y2yha"
+    },
+    "tab3dp8sf46rk": {
+      "id": "tab3dp8sf46rk",
+      "index": 4,
+      "isVisible": true,
+      "label": "BOOKJSON",
+      "widgetId": "od4wi0lkpm"
     },
     "tab5ncrs0yc79": {
       "id": "tab5ncrs0yc79",
