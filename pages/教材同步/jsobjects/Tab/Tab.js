@@ -217,7 +217,26 @@ export default {
 					// await updateRow.update()
 					this.onTableClick()
 				}else{
-					showAlert('保存失败'+res.scripts ,'error')
+					// showAlert('保存失败'+res.scripts ,'error')
+					let  filename =`${Select4.selectedOptionValue}` 
+					GetBook.run({filename}).then(async gv=>{
+						await SaveBook.run(gv).then(async v=>{
+
+							if(v == 'success'){
+								showAlert('保存成功','success')
+								await GenResource.run({book_scripts,overwrite:true,skip_audio:true}).then(rv=>{
+									if(rv.scripts == 'success'){
+										showAlert('保存成功','success')
+										this.onTableClick()
+									}else{
+										showAlert('保存失败'+rv ,'error')
+									}
+								})
+							}else{
+								showAlert('保存失败'+v ,'error')
+							}
+						})
+					})
 				}
 			}).catch(error =>{
 				closeModal(Modal9.name)
