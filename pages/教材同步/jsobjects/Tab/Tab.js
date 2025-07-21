@@ -223,7 +223,7 @@ export default {
 						await SaveBook.run(gv).then(async v=>{
 
 							if(v == 'success'){
-								showAlert('保存成功','success')
+								// showAlert('保存成功','success')
 								await GenResource.run({book_scripts,overwrite:true,skip_audio:true}).then(rv=>{
 									if(rv.scripts == 'success'){
 										showAlert('保存成功','success')

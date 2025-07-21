@@ -80,58 +80,7 @@ export default {
 		return texts
 	},
 
-	reviewAudio(){
-		let script =  Table1.selectedRow.screenplay.replaceAll("[player]","<player>")//剧本
-		const scriptArray = [];
-		const regex = /([\w\. _]+)[：:\s]+\[[^\]]+\]\s*"([^\[]*)"/gm
-		let match;
-		while ((match = regex.exec(script))) {
-			scriptArray.push({
-				character: match[1].trim(),
-				text: match[2]
-			});
-		}
-		const audioSet = new Set();
-		scriptArray.forEach(item => {
-			let key2 = `${item.text}`;
-			audioSet.add(key2);
-		});
 
-
-		var missingDialogues = this.audioArr.filter(item => {
-			//不拿角色名进行匹配
-			// const result = item.character.replace(/_/g, '. ').replace(/\b\w/g, char => char.toUpperCase()); // 每个单词首字母大写
-			// let itemkey = `${result}|${item.text}`;
-			let itemkey = `${item.text}`;
-			return !audioSet.has(itemkey);
-		});
-
-		let extra = 0
-		// let yiExtra= 0
-
-		missingDialogues =  missingDialogues.filter(v=>{
-			if (script.indexOf(v.text) >= 0){
-				extra+=1
-				return false
-			}else{
-				return true
-			}
-		})
-
-		// if(scriptArray.length + extra  > this.audioArr.length){
-		// 
-		// }
-		showModal(Modal11.name)
-		this.soundTextArr = missingDialogues
-
-
-		// , 未找到: ${extra}
-		this.soundNumText = `剧本条数:${scriptArray.length + extra},JSON音频条数:${this.audioArr.length}`
-		console.log(extra,"lenght",this.audioArr.length, scriptArray.length,this.soundTextArr.length)
-
-
-
-	},
 	soundTextArr:'',
 	soundNumText:'',
 	showText:'',
@@ -166,6 +115,8 @@ export default {
 		// let course_number = Table1.selectedRow.course_number
 		let url = `https://af.runfox.cn/courses/sounds/dialogues/${this.generateAudioName(selectedRow)}.mp3`
 		console.log("url:", url)
+		let name = `${this.generateAudioName(selectedRow)}.mp3`
+		Text12.setText(name)
 		Audio1.setPlaying(false)
 		Audio1.setURL(url)
 		Audio1.setPlaying(true)

@@ -3,7 +3,7 @@
   "animateLoading": true,
   "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 1863,
+  "bottomRow": 1899,
   "boxShadow": "none",
   "defaultText": "{{Tab.jsonData}}",
   "dynamicBindingPathList": [

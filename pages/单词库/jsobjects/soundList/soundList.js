@@ -194,7 +194,10 @@ export default {
 		// let level = Table1.selectedRow.level
 		// let course_number = Table1.selectedRow.course_number
 		let url = `https://af.runfox.cn/courses/sounds/dialogues/${this.generateAudioName(selectedRow)}.mp3`
+
 		console.log("url:", url)
+		let name = `${this.generateAudioName(selectedRow)}.mp3`
+		Text12Copy.setText(name)
 		Audio1.setPlaying(false)
 		Audio1.setURL(url)
 		Audio1.setPlaying(true)

@@ -1,17 +1,17 @@
 {
   "animateLoading": true,
-  "borderRadius": "1.5rem",
-  "bottomRow": 9,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 14,
   "boxShadow": "none",
   "buttonColor": "#22c55e",
-  "buttonVariant": "PRIMARY",
+  "buttonVariant": "SECONDARY",
   "disabledWhenInvalid": false,
-  "dynamicBindingPathList": [],
-  "dynamicPropertyPathList": [
+  "dynamicBindingPathList": [
     {
-      "key": "onClick"
+      "key": "borderRadius"
     }
   ],
+  "dynamicPropertyPathList": [],
   "dynamicTriggerPathList": [
     {
       "key": "onClick"
@@ -20,16 +20,16 @@
   "isDefaultClickDisabled": true,
   "isDisabled": false,
   "isLoading": false,
-  "isVisible": false,
-  "key": "77ggu9gc7z",
-  "leftColumn": 50,
+  "isVisible": true,
+  "key": "sms0hqze8g",
+  "leftColumn": 55,
   "minWidth": 120,
-  "mobileBottomRow": 8,
+  "mobileBottomRow": 15,
   "mobileLeftColumn": 49,
   "mobileRightColumn": 64,
-  "mobileTopRow": 4,
+  "mobileTopRow": 11,
   "needsErrorInfo": false,
-  "onClick": "{{soundList.reviewAudio()}}",
+  "onClick": "{{copyToClipboard(Text12.text).then(() => {\n  showAlert('复制成功', 'success');\n});}}",
   "parentColumnSpace": 12.9765625,
   "parentId": "x1qs5y2yha",
   "parentRowSpace": 10,
@@ -38,11 +38,11 @@
   "renderMode": "CANVAS",
   "resetFormOnClick": false,
   "responsiveBehavior": "hug",
-  "rightColumn": 61,
-  "text": "检测音频",
-  "topRow": 5,
+  "rightColumn": 63,
+  "text": "复制",
+  "topRow": 10,
   "type": "BUTTON_WIDGET",
   "version": 1,
-  "widgetId": "yf6mcghdt1",
-  "widgetName": "Button19"
+  "widgetId": "lzieudx7dk",
+  "widgetName": "Button24"
 }
