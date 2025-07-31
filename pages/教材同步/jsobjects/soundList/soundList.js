@@ -130,8 +130,8 @@ export default {
 
 		showAlert('正在生成','success')
 		Audio1.setURL('')
-		let level = Table1.selectedRow.level
-		let course_number = Table1.selectedRow.course_number
+		// let level = Table1.selectedRow.level
+		// let course_number = Table1.selectedRow.course_number
 		let overwrite = true
 		let course = {
 			"scripts": [
@@ -141,11 +141,12 @@ export default {
 				}
 			]
 		}
+		// course_number,level,
 
-		GenResource.run({course_number,level,overwrite, course}).then(()=>	{
+		GenAudio.run({overwrite, course}).then(()=>	{
 			showAlert('生成成功','success')
 
-			let url = `https://af.runfox.cn/courses/sounds/dialogues/${this.generateAudioName(item)}.mp3`
+			let url = `https://af.runfox.cn/courses/sounds/dialogues/${this.generateAudioName(item)}.mp3?res=1`
 			console.log("url:", url)
 
 

@@ -85,12 +85,14 @@ export default {
 				scripts.forEach(function(v){
 					if(v.type == "scene" && v.name){
 						scenes.add(v.name)
-
+						console.log(v.name,'7444')
 					}
 					if(v.scripts && v.scripts.length > 0){
 						let rlt = _calcScenes(v.scripts)
-						console.log("rlt:",rlt)
-						scenes.add(...rlt)
+
+						// scenes.add(...rlt)
+						rlt.forEach(item => scenes.add(item));
+						// console.log("rlt:",scenes)
 						// v.scripts.forEach(function(fv){
 						// console.log(fv,'fv')
 						// // _calcScenes(fv)
