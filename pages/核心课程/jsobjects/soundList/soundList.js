@@ -125,7 +125,7 @@ export default {
 
 		// let level = Table1.selectedRow.level
 		// let course_number = Table1.selectedRow.course_number
-		let url = `https://af.runfox.cn/courses/sounds/dialogues/${this.generateAudioName(selectedRow)}.mp3`
+		let url = `https://af.runfox.cn/courses/sounds/dialogues/${this.generateAudioName(selectedRow)}.mp3?v=${Math.random()}`
 		console.log("url:", url)
 		Audio1.setPlaying(false)
 		Audio1.setURL(url)
