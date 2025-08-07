@@ -10,7 +10,7 @@
   "children": [
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-      "bottomRow": 9410,
+      "bottomRow": 7480,
       "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
       "canExtend": true,
       "detachFromLayout": true,
@@ -191,7 +191,7 @@
     },
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-      "bottomRow": 36880,
+      "bottomRow": 78120,
       "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
       "canExtend": false,
       "containerStyle": "none",
@@ -235,7 +235,7 @@
       "widgetName": "Canvas18"
     }
   ],
-  "defaultTab": "Json",
+  "defaultTab": "{{appsmith.store.defaulttab}}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
@@ -245,6 +245,9 @@
     },
     {
       "key": "boxShadow"
+    },
+    {
+      "key": "defaultTab"
     }
   ],
   "dynamicHeight": "FIXED",

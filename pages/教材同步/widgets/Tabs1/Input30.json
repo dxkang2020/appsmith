@@ -3,7 +3,7 @@
   "animateLoading": true,
   "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 3688,
+  "bottomRow": 7812,
   "boxShadow": "none",
   "defaultText": "{{Tab.BookJson}}",
   "dynamicBindingPathList": [
@@ -62,7 +62,7 @@
   "onBlur": "{{Tab.input30OnBlur()}}",
   "onFocus": "{{Button23.setDisabled(false)}}",
   "onTextChanged": "",
-  "originalBottomRow": 3219,
+  "originalBottomRow": 7812,
   "originalTopRow": 7,
   "parentColumnSpace": 11.81640625,
   "parentId": "od4wi0lkpm",

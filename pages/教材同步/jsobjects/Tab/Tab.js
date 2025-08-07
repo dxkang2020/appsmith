@@ -4,48 +4,37 @@ export default {
 	jsonData:{},
 	BookJson :{},
 	async onTableClick(){
-		// let  rowIndex = Table1.selectedRowIndex
-
-		// let val = 	Table1.selectedRow.name 
 		showModal(Modal9.name)
 		Button20.setDisabled(true)
 		Button22.setDisabled(true)
 		await SearchBooks.run().then(res=>{
 			console.log(res)
 			closeModal(Modal9.name)
+			storeValue('defaulttab', 'Json')
 			this.jsonData  = res
 		}).catch(err=>{
 			closeModal(Modal9.name)
 
 		})
-		// await queryJson.run().then(res=>{
-		// if(res){
-		// this.jsonData  = res
-		// 
-		// Table1.setSelectedRowIndex(rowIndex)
-		// if(Array.isArray(res)){
-		// this.JsonArr[rowIndex].script_json = res[0]
-		// }else{
-		// this.JsonArr[rowIndex].script_json = res
-		// }
-		// this.onTabSelectChanged()
-		// 
-		// 
-		// }
-		// })
 
 	},
 	async	onTabSelectChanged () {
+		storeValue('defaulttab',Tabs1.selectedTab)
+		console.log(appsmith.store.defaulttab)
+
 		if(Tabs1.selectedTab == "Json"){
 			Button20.setVisibility(true)
 			Button20.setDisabled(true)
 			Button22.setVisibility(true)
 			Button22.setDisabled(true)
+
+
 		}else{
 			Button20.setVisibility(false)
 			Button20.setDisabled(false)
 			Button22.setVisibility(false)
 			Button22.setDisabled(false)
+
 		}
 		if(Tabs1.selectedTab == "Cards"){
 			// await updateRow.getCourseById()
