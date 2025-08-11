@@ -7,7 +7,10 @@ export default {
 		showModal(Modal9.name)
 		Button20.setDisabled(true)
 		Button22.setDisabled(true)
-		await SearchBooks.run().then(res=>{
+		let params ={ 
+			t:Math.random()
+		}
+		await SearchBooks.run(params).then(res=>{
 			console.log(res)
 			closeModal(Modal9.name)
 			storeValue('defaulttab', 'Json')

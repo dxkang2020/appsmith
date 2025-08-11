@@ -25,7 +25,7 @@
       "queryParameters": [
         {
           "key": "r",
-          "value": "{{Math.random()}}"
+          "value": "{{this.params.t}}"
         }
       ],
       "timeoutInMillisecond": 10000
