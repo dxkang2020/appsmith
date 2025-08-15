@@ -14,6 +14,11 @@
       "key": "borderRadius"
     }
   ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
   "dynamicTriggerPathList": [
     {
       "key": "onClick"
@@ -31,7 +36,7 @@
   "mobileRightColumn": 19,
   "mobileTopRow": 14,
   "needsErrorInfo": false,
-  "onClick": "{{Tab.onQueryClick();}}",
+  "onClick": "{{Tab.onQueryClick()}}",
   "originalBottomRow": 10,
   "originalTopRow": 6,
   "parentColumnSpace": 17.25,

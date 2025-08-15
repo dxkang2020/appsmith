@@ -21,6 +21,66 @@ export default {
 		})
 
 	},
+	onQueryClick(){
+		storeValue('select1', Select1.selectedOptionValue)
+		storeValue('select2', Select2.selectedOptionValue)
+		storeValue('select3', Select3.selectedOptionValue)
+		storeValue('select4', Select4.selectedOptionValue)
+
+
+		let  filename =`${Select4.selectedOptionValue}` 
+		showModal(Modal9.name)
+		storeValue('defaulttab', 'Json')
+		this.jsonData = {}
+		GetBook.run({filename}).then(res=>{
+			if(res.units){
+				closeModal(Modal9.name)
+				this.JsonArr = res.units.map(v=>{
+					return {
+						units:`${v.page_start}_${v.page_end}_${v.title.replace(/[^a-zA-Z0-9]+/g, " ").trim().replace(/ /g, "_").toLowerCase()}.json`,
+						name:`books/${Select4.selectedOptionValue}/${v.page_start}_${v.page_end}_${v.title.replace(/[^a-zA-Z0-9]+/g, " ").trim().replace(/ /g, "_").toLowerCase()}.json`
+					}
+				})
+			}else{
+				this.JsonArr =[]
+				showAlert('没有数据','error')
+				closeModal(Modal9.name)
+			}
+		}).catch(err=>{
+			showAlert('搜索失败','error')
+			closeModal(Modal9.name)
+		})
+		// let  filename =`books/${Select4.selectedOptionValue}/*.json` 
+		// showModal(Modal9.name)
+		// SearchFiles.run({filename}).then(res=>{
+		// console.log(res)
+		// if(res.length >0){
+		// closeModal(Modal9.name)
+		// this.JsonArr =  res.map(v=>{
+		// return {
+		// units:v.split('/').pop(),
+		// name:v
+		// }
+		// }).sort((a, b) => {
+		// // 提取a中的第一个数字
+		// const numA = parseInt(a.units.match(/\d+/)[0]);
+		// // 提取b中的第一个数字
+		// const numB = parseInt(b.units.match(/\d+/)[0]);
+		// return numA - numB;
+		// });
+		// }else{
+		// this.JsonArr =[]
+		// showAlert('没有数据','error')
+		// closeModal(Modal9.name)
+		// }
+		// 
+		// }).catch(err=>{
+		// showAlert('搜索失败','error')
+		// closeModal(Modal9.name)
+		// })
+
+
+	},
 	async	onTabSelectChanged () {
 		storeValue('defaulttab',Tabs1.selectedTab)
 		console.log(appsmith.store.defaulttab)
@@ -57,119 +117,13 @@ export default {
 		let  filename =`${Select4.selectedOptionValue}` 
 		// showModal(Modal9.name)
 		GetBook.run({filename}).then(res=>{
-			// if(){
-			// 
-			// }
+
 			this.BookJson = res
 		})
 	},
-	onGenRes(){
-		let level = Table1.selectedRow.level
-		let course_number = Table1.selectedRow.course_number
-		let course = Table1.selectedRow.script_json
-		let scenes =Table1.selectedRow.scenes_prompt
-		let cards = Table1.selectedRow.cards_prompt
-		GenResource.run({course_number,level,course,scenes,cards})
-	},
-	onTestClicked(){
-		console.log("gen json")
-		let version = Table1.selectedRow.version
-		let level = Table1.selectedRow.level
-		let course_number = Table1.selectedRow.course_number
-		let course = Table1.selectedRow.script_json
-		let scenes =Table1.selectedRow.scenes_prompt
-		let cards = Table1.selectedRow.cards_prompt
-
-		// n8Json.run({course_number,version,level})
-		// n8JsonTest.run({course_number,version,level})
-		Button5.setDisabled(true)
-		showAlert('正在生成','success')
-		n8JsonTest.run({course_number,version,level}).then(
-			function(){
-				Button5.setDisabled(false)
-			}
-		).catch(function(){
-			Button5.setDisabled(false)
-		})
-	},
-	parseCourseRange(input) {
-		if (!input.includes('-')) return [input];
-
-		const [start, end] = input.split('-');
-		const [startUnit, startLesson] = start.split('.').map(Number);
-		const [endUnit, endLesson] = end.split('.').map(Number);
-
-		const results = [];
-		let currentUnit = startUnit;
-		let currentLesson = startLesson;
-
-		while (currentUnit < endUnit || (currentUnit === endUnit && currentLesson <= endLesson)) {
-			results.push(`${currentUnit}.${currentLesson}`);
-
-			currentLesson++;
-			if (currentLesson > 3) {
-				currentUnit++;
-				currentLesson = 1;
-			}
-		}
-
-		return results;
-	},
-	test(){
 
 
-	},
-	onQueryClick(){
-		storeValue('select1', Select1.selectedOptionValue)
-		storeValue('select2', Select2.selectedOptionValue)
-		storeValue('select3', Select3.selectedOptionValue)
-		storeValue('select4', Select4.selectedOptionValue)
 
-
-		let  filename =`books/${Select4.selectedOptionValue}/*.json` 
-		showModal(Modal9.name)
-		SearchFiles.run({filename}).then(res=>{
-			console.log(res)
-			if(res.length >0){
-				closeModal(Modal9.name)
-				this.JsonArr =  res.map(v=>{
-					return {
-						units:v.split('/').pop(),
-						name:v
-					}
-				}).sort((a, b) => {
-					// 提取a中的第一个数字
-					const numA = parseInt(a.units.match(/\d+/)[0]);
-					// 提取b中的第一个数字
-					const numB = parseInt(b.units.match(/\d+/)[0]);
-					return numA - numB;
-				});
-			}else{
-				this.JsonArr =[]
-				showAlert('没有数据','error')
-				closeModal(Modal9.name)
-			}
-
-		}).catch(err=>{
-			showAlert('搜索失败','error')
-			closeModal(Modal9.name)
-		})
-		// if(course_numbers.length >10){
-		// showAlert('范围跨度不能大于10课','error')
-		// return
-		// }
-
-		// this.JsonArr = course_numbers.map(v=>{
-		// return {
-		// level: level,
-		// course_number: v
-		// };
-		// })
-
-
-		// this.JsonArr  = testJson.json
-
-	},
 	JsonArr :[],
 
 	saveJsonAudio(){
@@ -251,7 +205,7 @@ export default {
 				if(res == 'success'){
 					showAlert('保存成功','success')
 
-					// this.onTableClick() 
+					this.onQueryClick() 
 				}else{
 					showAlert('保存失败'+res ,'error')
 				}
@@ -312,8 +266,42 @@ export default {
 
 		}
 	},
+
+	onGenRes(){
+		let level = Table1.selectedRow.level
+		let course_number = Table1.selectedRow.course_number
+		let course = Table1.selectedRow.script_json
+		let scenes =Table1.selectedRow.scenes_prompt
+		let cards = Table1.selectedRow.cards_prompt
+		GenResource.run({course_number,level,course,scenes,cards})
+	},
 	onPlayBlur(){
 
+	},
+
+
+	parseCourseRange(input) {
+		if (!input.includes('-')) return [input];
+
+		const [start, end] = input.split('-');
+		const [startUnit, startLesson] = start.split('.').map(Number);
+		const [endUnit, endLesson] = end.split('.').map(Number);
+
+		const results = [];
+		let currentUnit = startUnit;
+		let currentLesson = startLesson;
+
+		while (currentUnit < endUnit || (currentUnit === endUnit && currentLesson <= endLesson)) {
+			results.push(`${currentUnit}.${currentLesson}`);
+
+			currentLesson++;
+			if (currentLesson > 3) {
+				currentUnit++;
+				currentLesson = 1;
+			}
+		}
+
+		return results;
 	},
 	async myFun2 () {
 		//	use async-await or promises
