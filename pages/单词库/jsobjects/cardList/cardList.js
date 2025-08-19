@@ -101,8 +101,6 @@ ${item.clip}
 			return
 		}
 		console.log(newVal,'newVal')
-
-
 		updateRow.updateJsonImage(this.updateVal,newVal,'ismodify').then(()=>{
 			// this.updateVal.name = newVal
 

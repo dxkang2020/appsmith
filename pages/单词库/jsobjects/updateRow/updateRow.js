@@ -53,7 +53,7 @@ export default {
 
 	},
 	async updateJsonImage(updateVal, newName,ismodify){
-		console.log('45454',updateVal)
+		// console.log('45454',updateVal)
 		let oldName = updateVal?.name
 		// await this.getCourseById()
 		if(!oldName || !newName || oldName == newName || !Tab.jsonData)

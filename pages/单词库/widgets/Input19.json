@@ -15,7 +15,12 @@
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
-  "dynamicTriggerPathList": [],
+  "dynamicPropertyPathList": [],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onSubmit"
+    }
+  ],
   "errorMessage": "输入数字和-",
   "iconAlign": "left",
   "inputType": "TEXT",
@@ -40,6 +45,7 @@
   "mobileRightColumn": 20,
   "mobileTopRow": 6,
   "needsErrorInfo": false,
+  "onSubmit": "",
   "originalBottomRow": 13,
   "originalTopRow": 6,
   "parentColumnSpace": 20.25,

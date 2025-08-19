@@ -45,7 +45,7 @@
   "mobileRightColumn": 61,
   "mobileTopRow": 21,
   "needsErrorInfo": false,
-  "onFilesSelected": "{{cardList.uploadImg(currentItem,'cover',currentIndex)}}",
+  "onFilesSelected": "{{cardList.uploadImg(currentItem,'',currentIndex)}}",
   "parentColumnSpace": 12.85546875,
   "parentId": "wewkc3xpbn",
   "parentRowSpace": 10,
