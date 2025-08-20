@@ -32,6 +32,10 @@ ${item.clip}
 			showAlert('不能为空','error')	
 			return
 		}
+		if(!this.validateInput(txt)){
+			showAlert('错误符号','error')
+			return
+		}
 		if(this.oldNameText == txt){
 			showAlert('场景名相同')
 			return
@@ -195,7 +199,7 @@ ${item.clip}
 			return {
 				// ...v,
 				name:v,
-				urls :`https://af.runfox.cn/courses/scenes/${v}.webp?r=${Math.random()}` 
+				urls :`https://af.runfox.cn/courses/scenes/${v.toLowerCase()}.webp?r=${Math.random()}` 
 			}
 		})
 		// await getScenesPrompt.run({names}).then(res=>{
@@ -292,7 +296,7 @@ ${item.clip}
 	},
 	imgP:'',
 	validateInput(input) {
-		const regex = /^[a-zA-Z0-9_]+$/;
+		const regex = /^[a-z0-9-_]+$/;
 		return regex.test(input);
 	},
 

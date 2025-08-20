@@ -59,10 +59,12 @@ export default {
 	async onTableClick(){
 		let  rowIndex = Table1.selectedRowIndex
 		console.log(rowIndex)
+		showModal(Modal9.name)
 		Button20.setDisabled(true)
 		Button22.setDisabled(true)
 		await wordJson.run().then(res=>{
 			if(res){
+				closeModal(Modal9.name)
 				this.jsonData  = res
 
 				// Table1.setSelectedRowIndex(rowIndex)
@@ -78,7 +80,7 @@ export default {
 			}
 		}).catch(e=>{
 			showAlert('查找失败','error')
-
+			closeModal(Modal9.name)
 		})
 
 	},

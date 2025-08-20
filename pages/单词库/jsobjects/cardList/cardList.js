@@ -38,6 +38,10 @@ ${item.clip}
 			showAlert('卡片名相同')
 			return
 		}
+		if(!this.validateInput(txt)){
+			showAlert('错误符号','error')
+			return
+		}
 		await updateRow.updateJsonImage(this.updateVal,this.newNameText).then(async res=>{
 			closeModal(Modal10.name)
 			// this.listItems[this.localIndex].name =  txt
@@ -168,7 +172,7 @@ ${item.clip}
 		this.listItems = names.map((v)=>{
 			let item = {
 				name:v,
-				urls :`https://af.runfox.cn/courses/cards/${v}.webp?r=${Math.random()}` ,
+				urls :`https://af.runfox.cn/courses/cards/${v.toLowerCase()}.webp?r=${Math.random()}` ,
 				clip:refs[v]?.[0] ?? ""
 			}
 			// if(refs[item.name])
@@ -220,7 +224,7 @@ ${item.clip}
 	},
 	imgP:'',
 	validateInput(input) {
-		const regex = /^[a-zA-Z0-9_]+$/;
+		const regex = /^[a-z0-9-_]+$/;
 		return regex.test(input);
 	},
 

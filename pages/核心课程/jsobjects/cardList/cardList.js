@@ -34,6 +34,10 @@ ${item.clip}
 			showAlert('不能为空','error')	
 			return
 		}
+		if(!this.validateInput(txt)){
+			showAlert('错误符号','error')
+			return
+		}
 		if(this.oldNameText == txt){
 			showAlert('卡片名相同')
 			return
@@ -177,7 +181,7 @@ ${item.clip}
 			this.listItems = names.map((v)=>{
 				let item = {
 					name:v,
-					urls :`https://af.runfox.cn/courses/cards/${v}.webp?r=${Math.random()}` ,
+					urls :`https://af.runfox.cn/courses/cards/${v.toLowerCase()}.webp?r=${Math.random()}` ,
 					clip:obj[v]?.clip ?? "",
 					clip_zh:obj[v]?.clip_zh ?? v,
 					description:obj[v]?.description ?? v,
@@ -209,7 +213,7 @@ ${item.clip}
 	},
 	imgP:'',
 	validateInput(input) {
-		const regex = /^[a-zA-Z0-9_]+$/;
+		const regex = /^[a-z0-9-_]+$/;
 		return regex.test(input);
 	},
 

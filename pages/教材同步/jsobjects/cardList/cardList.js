@@ -34,6 +34,10 @@ ${item.clip}
 			showAlert('不能为空','error')	
 			return
 		}
+		if(!this.validateInput(txt)){
+			showAlert('错误符号','error')
+			return
+		}
 		if(this.oldNameText == txt){
 			showAlert('卡片名相同')
 			return
@@ -225,7 +229,7 @@ ${item.clip}
 	},
 	imgP:'',
 	validateInput(input) {
-		const regex = /^[a-zA-Z0-9_]+$/;
+		const regex = /^[a-z0-9-_]+$/;
 		return regex.test(input);
 	},
 

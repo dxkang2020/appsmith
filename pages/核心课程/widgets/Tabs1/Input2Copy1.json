@@ -3,7 +3,7 @@
   "animateLoading": true,
   "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 1603,
+  "bottomRow": 1649,
   "boxShadow": "none",
   "defaultText": "{{\nTable1.selectedRow.status == \"scripting\" ? Table1.selectedRow.error:JSON.stringify(Table1.selectedRow.script_json,null,2)}}\n",
   "dynamicBindingPathList": [
@@ -62,7 +62,7 @@
   "onBlur": "{{Tab.input2OnBlur()}}",
   "onFocus": "{{Button20.setDisabled(false)}}",
   "onTextChanged": "",
-  "originalBottomRow": 2159,
+  "originalBottomRow": 1603,
   "originalTopRow": 1,
   "parentColumnSpace": 11.81640625,
   "parentId": "qv0p77aqd4",
