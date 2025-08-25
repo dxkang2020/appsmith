@@ -31,6 +31,11 @@ export default {
 		let  filename =`${Select4.selectedOptionValue}` 
 		showModal(Modal9.name)
 		storeValue('defaulttab', 'Json')
+		Button20.setVisibility(true)
+		Button20.setDisabled(true)
+		Button22.setVisibility(true)
+		Button22.setDisabled(true)
+		
 		this.jsonData = {}
 		GetBook.run({filename}).then(res=>{
 			if(res.units){

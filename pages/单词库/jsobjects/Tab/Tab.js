@@ -173,6 +173,10 @@ export default {
 					closeModal(Modal9.name)
 					showAlert('保存并生成成功','success')
 					// await updateRow.update()
+					var val ={
+						a : [ Table1.selectedRow.name]
+					}
+					await importWord.run(val)
 					this.onTableClick()
 				}else{
 					closeModal(Modal9.name)
@@ -195,6 +199,11 @@ export default {
 					closeModal(Modal9.name)
 					showAlert('保存成功','success')
 					// await updateRow.update()
+
+					var val ={
+						a : [ Table1.selectedRow.name]
+					}
+					await importWord.run(val)
 					this.onTableClick()
 				}else{
 					closeModal(Modal9.name)
