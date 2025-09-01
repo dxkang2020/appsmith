@@ -15,7 +15,11 @@
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
-  "dynamicPropertyPathList": [],
+  "dynamicPropertyPathList": [
+    {
+      "key": "onSubmit"
+    }
+  ],
   "dynamicTriggerPathList": [
     {
       "key": "onSubmit"
@@ -45,15 +49,15 @@
   "mobileRightColumn": 20,
   "mobileTopRow": 6,
   "needsErrorInfo": false,
-  "onSubmit": "",
+  "onSubmit": "{{Tab.onQueryClick()}}",
   "originalBottomRow": 13,
   "originalTopRow": 6,
   "parentColumnSpace": 20.25,
   "parentId": "0",
   "parentRowSpace": 10,
-  "regex": "/^[0-9-]+$/ ",
+  "regex": "^[0-9\\-]+$",
   "renderMode": "CANVAS",
-  "resetOnSubmit": true,
+  "resetOnSubmit": false,
   "responsiveBehavior": "fill",
   "rightColumn": 15,
   "shouldAllowAutofill": false,

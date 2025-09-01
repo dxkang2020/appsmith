@@ -2,16 +2,25 @@ export default {
 	myVar1: [],
 	myVar2: {},
 	jsonData:{},
-
+	validateStrict(input) {
+		return /^[0-9\-]+$/.test(input);
+	},
 	onQueryClick(){
 
 		let inputNum = Input19.text
-
+		let validVal = 	this.validateStrict(inputNum)
+		if(!validVal){
+			showAlert('格式输入错误','error')
+			return
+		}
 		var startNum,endNum = 0
 		if(inputNum.includes('-')){
 			[startNum, endNum] = inputNum.split('-');
 		}else{
-			showAlert('输入错误','error')
+			startNum = endNum = inputNum
+		}
+		if(startNum > endNum){
+			showAlert('起始值不能大于结束值','error')
 			return
 		}
 		if(startNum <= 0){
@@ -30,7 +39,7 @@ export default {
 					}
 				})
 			}else{
-				showAlert('数据为空','error')
+				showAlert('没有找到匹配的数据','error')
 			}
 
 			closeModal(Modal9.name)
