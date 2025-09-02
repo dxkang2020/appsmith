@@ -119,11 +119,13 @@ ${item.clip}
 	localIndex :0,
 	// 上传图片
 	async uploadImg(item,isCover,index){
+
 		showModal(Modal9.name)
 		this.updateVal = item
+		this.localIndex = index
 		const file =cList1.triggeredItemView.FilePicker3.files[0]
 		let filename = `${item.name}.webp`
-		let startIndex = ((cList1.pageNo -1 ) * cList1.pageNo) + index
+		// let startIndex = ((cList1.pageNo -1 ) * cList1.pageNo) + index
 		let overwrite =  isCover == 'cover' ? true : false
 		SaveCard.run({filename, overwrite,file}).then(res =>{
 			if(res == "success"){
@@ -136,10 +138,10 @@ ${item.clip}
 				// // updateRow.updateCardPrompt(item)
 				// 
 				// }
-				console.log(this.listItems[startIndex],'44')
-				this.listItems[startIndex].urls = file.data
-				this.listItems[startIndex].clip = item.clip
-				this.listItems[startIndex].name = item.name
+				console.log(this.listItems[index],'44',index)
+				this.listItems[index].urls = file.data
+				this.listItems[index].clip = item.clip
+				this.listItems[index].name = item.name
 				closeModal(Modal6.name)
 
 
@@ -169,19 +171,19 @@ ${item.clip}
 		let refs = rlt[1]
 		console.log("cardrlt", rlt,Object.keys(refs).length)
 		this.listItems = names.filter(v => v !== undefined).map((v)=>{
-		
- 				let item = {
-					name:v,
-					urls :`https://af.runfox.cn/courses/cards/${v.toLowerCase()}.webp?r=${Math.random()}` ,
-					clip:refs[v]?.[0] ?? ""
-				}
-				// if(refs[item.name])
-				if(item.clip.length>0 && !item.clip.includes('Illustrate')){
-					item.clip = `**Illustrate the word**: ${item.name}\n**references**:\n${refs[item.name].join("\n")}`
-				}
 
-				return item
-			
+			let item = {
+				name:v,
+				urls :`https://af.runfox.cn/courses/cards/${v.toLowerCase()}.webp?r=${Math.random()}` ,
+				clip:refs[v]?.[0] ?? ""
+			}
+			// if(refs[item.name])
+			if(item.clip.length>0 && !item.clip.includes('Illustrate')){
+				item.clip = `**Illustrate the word**: ${item.name}\n**references**:\n${refs[item.name].join("\n")}`
+			}
+
+			return item
+
 		})
 		// let obj ={}
 

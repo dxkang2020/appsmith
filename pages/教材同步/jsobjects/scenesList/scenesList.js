@@ -134,7 +134,7 @@ ${item.clip}
 		this.updateVal = item
 		this.localIndex = index
 		const file =sList1.triggeredItemView.FilePicker1.files[0]
-		let startIndex = ((sList1.pageNo -1 ) * sList1.pageNo) + index
+		// let startIndex = ((sList1.pageNo -1 ) * sList1.pageNo) + index
 
 		// console.log(startIndex,'startIndex')
 		let filename = `${item.name}.webp`
@@ -151,9 +151,9 @@ ${item.clip}
 					updateRow.updateScenePrompt(item)
 				}
 
-				this.listItems[startIndex].urls = file.data
-				this.listItems[startIndex].clip = item.clip
-				this.listItems[startIndex].name = item.name
+				this.listItems[index].urls = file.data
+				this.listItems[index].clip = item.clip
+				this.listItems[index].name = item.name
 				closeModal(Modal7.name)
 			}else if (res == "exists"){
 				closeModal(Modal9.name)

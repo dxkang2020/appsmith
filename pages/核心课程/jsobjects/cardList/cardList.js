@@ -126,6 +126,7 @@ ${item.clip}
 	async uploadImg(item,isCover,index){
 		showModal(Modal9.name)
 		this.updateVal = item
+		this.localIndex = index
 		const file =cList1.triggeredItemView.FilePicker3.files[0]
 		let filename = `${item.name}.webp`
 		// let startIndex = ((cList1.pageNo -1 ) * cList1.pageNo) + index
@@ -142,9 +143,9 @@ ${item.clip}
 
 				}
 
-				// this.listItems[startIndex].urls = file.data
-				// this.listItems[startIndex].clip = item.clip
-				// this.listItems[startIndex].name = item.name
+				this.listItems[index].urls = file.data
+				this.listItems[index].clip = item.clip
+				this.listItems[index].name = item.name
 				closeModal(Modal6.name)
 
 

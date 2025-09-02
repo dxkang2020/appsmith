@@ -123,17 +123,17 @@ ${item.clip}
 
 		const file =cList1.triggeredItemView.FilePicker3.files[0]
 		let filename = `${item.name}.webp`
-		var startIndex = ((cList1.pageNo -1 ) * cList1.pageNo) + index
+		// var startIndex = ((cList1.pageNo -1 ) * cList1.pageNo) + index
 		let overwrite =  isCover == 'cover' ? true : false
 		SaveCard.run({filename, overwrite,file}).then(res =>{
 			if(res == "success"){
 				showAlert('保存成功','success')
 				closeModal(Modal9.name)
 
-				console.log(startIndex,11)
-				this.listItems[startIndex].urls = file.data
-				this.listItems[startIndex].clip = item.clip
-				this.listItems[startIndex].name = item.name
+				console.log(index,11)
+				this.listItems[index].urls = file.data
+				this.listItems[index].clip = item.clip
+				this.listItems[index].name = item.name
 				closeModal(Modal6.name)
 				// if(isCover =='modify'){
 				// // 如果是修改保存的话 则不在此处掉updateRow.updateCardProm()
