@@ -223,7 +223,7 @@ export default {
 					updateVal.name = newName
 					scenesList.uploadImg(updateVal,'modify',scenesList.localIndex)
 				}
-				Tab.onTableClick()
+				// Tab.onTableClick()
 				await  scenesList.getScenesList()
 			}else{
 				showAlert('保存失败','error')
