@@ -36,7 +36,7 @@ export default {
 		let course = this.row.script_json
 		let scenes = this.row.scenes_prompt
 		let cards = this.row.cards_prompt
-		GenResource.run({course_number,level,course,scenes,cards})
+		GenResource.run({course_number,level,course,scenes,cards,skip_audio:true})
 	},
 	async updateScenePrompt(item){
 		await this.getCourseById()
@@ -118,7 +118,7 @@ export default {
 		// let course_number = Table1.selectedRow.course_number
 		let word_scripts =  Tab.jsonData
 
-		await GenResource.run({word_scripts,overwrite:true}).then(async res=>{
+		await GenResource.run({word_scripts,overwrite:true,skip_audio:true}).then(async res=>{
 			if(res.scripts == 'success'){
 				showAlert('保存成功','success')
 				// await updateRow.update()
@@ -231,7 +231,7 @@ export default {
 		let course_number = Table1.selectedRow.course_number
 		let course =  Table1.selectedRow.script_json
 
-		await GenResource.run({course_number,level,course}).then(async res=>{
+		await GenResource.run({course_number,level,course,skip_audio:true}).then(async res=>{
 			if(res.scripts == 'success'){
 				showAlert('保存成功','success')
 				// await updateRow.update()

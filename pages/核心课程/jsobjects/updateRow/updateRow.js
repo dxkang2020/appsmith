@@ -57,7 +57,7 @@ export default {
 		let course = this.row.script_json
 		let scenes = this.row.scenes_prompt
 		let cards = this.row.cards_prompt
-		GenResource.run({course_number,level,course,scenes,cards}).then(async res=>{
+		GenResource.run({course_number,level,course,scenes,cards,skip_audio:true}).then(async res=>{
 			if(res.scripts == 'success'){
 				showAlert('保存成功','success')
 			}else{
