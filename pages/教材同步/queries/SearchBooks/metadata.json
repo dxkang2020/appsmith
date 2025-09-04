@@ -25,7 +25,7 @@
       "queryParameters": [
         {
           "key": "r",
-          "value": "{{this.params.t}}"
+          "value": "{{new Date().getTime()}}"
         }
       ],
       "timeoutInMillisecond": 10000

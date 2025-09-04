@@ -7,10 +7,11 @@ export default {
 		showModal(Modal9.name)
 		Button20.setDisabled(true)
 		Button22.setDisabled(true)
-		let params ={ 
-			t:Math.random()
-		}
-		await SearchBooks.run(params).then(res=>{
+		// let params ={ 
+		// t:Math.random()
+		// new Date().getTime()
+		// }params
+		await SearchBooks.run().then(res=>{
 			console.log(res)
 			closeModal(Modal9.name)
 			storeValue('defaulttab', 'Json')
@@ -35,7 +36,7 @@ export default {
 		Button20.setDisabled(true)
 		Button22.setVisibility(true)
 		Button22.setDisabled(true)
-		
+
 		this.jsonData = {}
 		GetBook.run({filename}).then(res=>{
 			if(res.units){
