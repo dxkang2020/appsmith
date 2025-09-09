@@ -37,6 +37,10 @@
         {
           "key": "filename",
           "value": "{{this.params.filename}}"
+        },
+        {
+          "key": "r",
+          "value": "{{new Date().getTime()}}"
         }
       ],
       "timeoutInMillisecond": 60000
@@ -57,6 +61,9 @@
       },
       {
         "key": "queryParameters[0].value"
+      },
+      {
+        "key": "queryParameters[1].value"
       }
     ],
     "executeOnLoad": false,

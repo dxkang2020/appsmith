@@ -27,7 +27,12 @@
           "value": true
         }
       ],
-      "queryParameters": [],
+      "queryParameters": [
+        {
+          "key": "r",
+          "value": "{{new Date().getTime()}}"
+        }
+      ],
       "timeoutInMillisecond": 10000
     },
     "confirmBeforeExecute": false,
@@ -40,6 +45,9 @@
     "dynamicBindingPathList": [
       {
         "key": "path"
+      },
+      {
+        "key": "queryParameters[0].value"
       }
     ],
     "executeOnLoad": false,
