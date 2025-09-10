@@ -18,7 +18,8 @@ export default {
 			this.jsonData  = res
 		}).catch(err=>{
 			closeModal(Modal9.name)
-
+			this.jsonData = {}
+			showAlert('加载失败','error')
 		})
 
 	},
