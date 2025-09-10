@@ -62,7 +62,7 @@
   "onBlur": "{{Tab.input30OnBlur()}}",
   "onFocus": "{{Button23.setDisabled(false)}}",
   "onTextChanged": "",
-  "originalBottomRow": 7812,
+  "originalBottomRow": 15,
   "originalTopRow": 7,
   "parentColumnSpace": 11.81640625,
   "parentId": "od4wi0lkpm",

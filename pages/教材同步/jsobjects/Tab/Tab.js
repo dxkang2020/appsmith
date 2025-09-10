@@ -3,16 +3,19 @@ export default {
 	myVar2: {},
 	jsonData:{},
 	BookJson :{},
+
+	unitInfo:'',
 	async onTableClick(){
 		showModal(Modal9.name)
 		Button20.setDisabled(true)
 		Button22.setDisabled(true)
+		this.unitInfo = Table1.selectedRow.units
 		// let params ={ 
 		// t:Math.random()
 		// new Date().getTime()
 		// }params
 		await SearchBooks.run().then(res=>{
-			console.log(res)
+			// console.log(res)
 			closeModal(Modal9.name)
 			storeValue('defaulttab', 'Json')
 			this.jsonData  = res
@@ -136,8 +139,13 @@ export default {
 	saveJsonAudio(){
 
 		let checkJson = this.isValidJSON(Input2Copy1.text)
+		let checkNum = this.checkJsonNum(Input2Copy1.text)
+		if(!checkNum){
+			showAlert('页码不符' ,'error')
+			return
+		}
 		showModal(Modal9.name)
-		console.log(checkJson)
+
 		if(checkJson){
 			let	book_scripts = JSON.parse(Input2Copy1.text)
 			GenResource.run({book_scripts,overwrite:true}).then(async res=>{
@@ -160,6 +168,11 @@ export default {
 	async 	saveJson(){
 
 		let checkJson = this.isValidJSON(Input2Copy1.text)
+		let checkNum = this.checkJsonNum(Input2Copy1.text)
+		if(!checkNum){
+			showAlert('页码不符' ,'error')
+			return
+		}
 		showModal(Modal9.name)
 		if(checkJson){
 			let	book_scripts = JSON.parse(Input2Copy1.text)
@@ -234,6 +247,16 @@ export default {
 	input30OnBlur(){
 		this.isValidJSON(Input30.text)
 		// Button20.setDisabled(false)
+	},
+	checkJsonNum(json){
+		let val = JSON.parse(json)
+		let num =`${val.page_start}_${val.page_end}` 
+
+		if( !this.unitInfo.includes(num) ){
+			return false
+		}else{
+			return true
+		}
 	},
 
 	isValidJSON(str) {

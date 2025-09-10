@@ -24,6 +24,10 @@
         "value": "{}"
       },
       {
+        "name": "unitInfo",
+        "value": "''"
+      },
+      {
         "name": "JsonArr",
         "value": "[]"
       },
